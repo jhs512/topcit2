@@ -14,3 +14,11 @@ dialog{border:1px solid #dce2d9;border-radius:18px;padding:26px;max-width:560px;
 .option.correct .option-number,.option.correct .answer-tag{background:#166534;color:#fff}
 .option.wrong{border:2px dashed #be123c;padding:14px;background:#fff1f2}
 .option.wrong .option-number,.option.wrong .answer-tag{background:#be123c;color:#fff}
+
+.question-context{margin-top:16px;padding:14px 16px;background:#f6f8f5;border:1px solid #dce2d9;border-radius:10px;font-size:13px;line-height:1.8}
+.category-path,.syllabus-detail{display:grid;grid-template-columns:68px minmax(0,1fr);gap:8px}
+.syllabus-detail{border-top:1px solid #dce2d9;margin-top:10px;padding-top:10px}
+.category-separator{color:#708076;margin:0 4px}
+.question-context small{color:#60736a}
+.question-context a{font-size:12px}
+.question-context span{overflow-wrap:anywhere}
