@@ -1,7 +1,9 @@
+import { mountBookNavigation } from '../../shared/book-navigation.mjs';
 import { books } from './books.mjs';
 const bookId = new URLSearchParams(location.search).get('book') || '05';
 const book = books.find(item => item.id === bookId && item.status === 'ready');
 if (!book) location.replace('./index.html');
+if (book) mountBookNavigation(bookId, 'text');
 const totalPages = book?.pages || 0;
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];

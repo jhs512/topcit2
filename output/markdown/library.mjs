@@ -1,3 +1,4 @@
+import { examSummary } from '../../shared/exam-mapping.mjs';
 import { books } from './books.mjs';
 // Preserve links shared before the library was introduced.
 function redirectLegacyLink() {
@@ -17,6 +18,7 @@ for (const book of books) {
   const area = document.createElement('p'); area.className = 'eyebrow'; area.textContent = book.area;
   const title = document.createElement('h2'); title.textContent = book.title;
   const description = document.createElement('p'); description.className = 'description'; description.textContent = book.description;
+  const exam = document.createElement('p'); exam.className = 'card-exam'; exam.textContent = examSummary(book.id);
   const bottom = document.createElement('div'); bottom.className = 'card-bottom';
   const count = document.createElement('span'); count.textContent = `PDF ${book.pages}쪽`; bottom.append(count);
   if (book.status === 'ready') {
@@ -30,5 +32,5 @@ for (const book of books) {
   } else {
     const note = document.createElement('span'); note.textContent = '검수 후 공개'; bottom.append(note);
   }
-  card.prepend(top, area, title, description, bottom); grid.append(card);
+  card.prepend(top, area, title, description, exam, bottom); grid.append(card);
 }

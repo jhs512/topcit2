@@ -1,0 +1,21 @@
+.book-navigation{position:fixed;left:0;right:0;z-index:21;background:var(--paper,#fbfaf7);color:var(--text,#33443f);border-bottom:1px solid var(--line,#dce1d9);padding:8px 20px 7px;font-family:'Noto Sans KR','Malgun Gothic',sans-serif}
+.book-navigation nav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;max-width:1200px;margin:auto;padding:0;border:0;background:none}
+.book-navigation nav a{display:flex;justify-content:center;align-items:center;min-height:36px;padding:5px 7px;text-align:center;text-decoration:none;font-size:12px;line-height:1.4;border:1px solid var(--line,#dce1d9);border-radius:6px;color:inherit;white-space:nowrap}
+.book-navigation nav a:hover{background:var(--wash,#e7eee7)}
+.book-navigation nav a[aria-current=page]{background:var(--accent,#226956);border-color:var(--accent,#226956);color:var(--paper,#fbfaf7);font-weight:700}
+.book-navigation a:focus-visible{outline:3px solid #cc9c39;outline-offset:2px}
+.exam-summary{display:flex;flex-wrap:wrap;gap:3px 12px;justify-content:center;margin:6px auto 0;max-width:1200px;font-size:11px;line-height:1.6}
+.exam-summary a{color:var(--muted,#61776b);white-space:nowrap}
+body[data-reader-kind=text]{--topbar-height:70px;--reader-offset:calc(var(--topbar-height) + var(--books-height,80px))}
+body[data-reader-kind=text] .book-navigation{top:var(--topbar-height)}
+body[data-reader-kind=text] .progress-track{top:var(--reader-offset)}
+body[data-reader-kind=text] #sidebar{top:calc(var(--reader-offset) + 2px)}
+body[data-reader-kind=text] #scrim{top:var(--reader-offset)}
+body[data-reader-kind=text] #main{padding-top:calc(var(--reader-offset) + 40px)}
+body[data-reader-kind=text] .book-page,body[data-reader-kind=text] .prose [id]{scroll-margin-top:calc(var(--reader-offset) + 20px)}
+body[data-reader-kind=pdf] .book-navigation{top:0}
+body[data-reader-kind=pdf] main{margin-top:var(--books-height,80px);height:calc(100dvh - var(--books-height,80px))}
+body[data-reader-kind=pdf] #reader{height:100%}
+body[data-reader-kind=pdf] #menu{top:calc(var(--books-height,80px) + 12px)}
+@media(max-width:760px){.book-navigation{padding:6px 10px}.book-navigation nav{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}.book-navigation nav a{font-size:11px;min-height:34px;padding:4px}.exam-summary{font-size:10px;margin-top:4px;gap:1px 8px}body[data-reader-kind=text]{--topbar-height:60px}body[data-reader-kind=text] #main{padding-top:calc(var(--reader-offset) + 20px)}}
+@media print{.book-navigation{display:none}body[data-reader-kind=text] #main{padding-top:0}}

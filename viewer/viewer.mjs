@@ -1,3 +1,4 @@
+import { mountBookNavigation } from '../shared/book-navigation.mjs';
 import * as pdfjs from './vendor/pdf.mjs';
 pdfjs.GlobalWorkerOptions.workerSrc=new URL('./vendor/pdf.worker.mjs',import.meta.url).href;
 const books={
@@ -11,6 +12,7 @@ const books={
 const $=id=>document.getElementById(id),params=new URL(location.href).searchParams;
 const book=Object.hasOwn(books,params.get('book'))?params.get('book'):'05',meta=books[book];
 let current=Math.max(1,parseInt(params.get('page')||'1',10)||1),pdf=null,revision=0,activeTasks=[],statusTimer;
+mountBookNavigation(book, 'pdf');
 $('title').textContent=meta[0];document.title=`${meta[0]} · TOPCIT 교재`;
 const pdfUrl='../sources/'+encodeURIComponent(meta[1]);$('download').href=pdfUrl;
 function spread(){return $('layout').value==='spread'||($('layout').value==='auto'&&matchMedia('(orientation: landscape)').matches)}
