@@ -376,18 +376,24 @@ IT 비즈니스는 기업의 궁극적인 비즈니스 목표를 달성하기 �
 
 [그림 2] IT 비즈니스 개념의 발전
 
+<!-- 두 도표의 순서는 문서 순서로 고정한다. Mermaid의 ~~~는 A~E 배치용 비가시 연결이며 업무 관계를 추가하지 않는다. -->
+
 ```mermaid
-flowchart LR
+flowchart TB
  subgraph a["(a) IT 활용: 비즈니스가 IT를 도구로 사용"]
   subgraph proc["비즈니스 프로세스"]
-   A["프로세스 A"] & B["프로세스 B"] & C["프로세스 C"] & D["프로세스 D"] & E["프로세스 E"]
+   A["프로세스 A"] ~~~ B["프로세스 B"] ~~~ C["프로세스 C"] ~~~ D["프로세스 D"] ~~~ E["프로세스 E"]
   end
   IT[IT] -.-> A & B & C & D & E
   proc --> goal((비즈니스 목표))
  end
+```
+
+```mermaid
+flowchart TB
  subgraph b["(b) IT 접목: 비즈니스와 IT가 밀접하게 결합"]
   subgraph proc2["비즈니스 프로세스"]
-   A2["프로세스 A + IT"] & B2["프로세스 B + IT"] & C2["프로세스 C + IT"] & D2["프로세스 D + IT"] & E2["프로세스 E + IT"]
+   A2["프로세스 A + IT"] ~~~ B2["프로세스 B + IT"] ~~~ C2["프로세스 C + IT"] ~~~ D2["프로세스 D + IT"] ~~~ E2["프로세스 E + IT"]
   end
   proc2 --> goal2((비즈니스 목표))
  end
