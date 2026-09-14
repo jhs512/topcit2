@@ -1,0 +1,1 @@
+{"name":"topcit2","private":true,"type":"module","scripts":{"test":"node --test tests/reader-catalog.test.mjs","serve":"python -m http.server 4173","test:viewer":"node tests/viewer.mjs"},"devDependencies":{"marked":"^18.0.12","playwright":"^1.62.1"}}
