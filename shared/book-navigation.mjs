@@ -18,7 +18,8 @@ export function mountBookNavigation(bookId, mode) {
   const label = document.createElement('span'); label.textContent = examSummary(bookId);
   const source = document.createElement('a'); source.href = examSource; source.textContent = '2026 공식 기준'; source.target = '_blank'; source.rel = 'noopener';
   const guide = document.createElement('a'); guide.href = new URL('../exam/index.html', import.meta.url).href; guide.textContent = '시험 안내';
-  summary.append(label, guide, source); panel.append(nav, summary); document.body.prepend(panel);
+  const practice = document.createElement('a'); practice.href = new URL('../practice/index.html', import.meta.url).href; practice.textContent = '문제 연습';
+  summary.append(label, guide, practice, source); panel.append(nav, summary); document.body.prepend(panel);
   const resize = () => document.documentElement.style.setProperty('--books-height', `${Math.ceil(panel.getBoundingClientRect().height)}px`);
   new ResizeObserver(resize).observe(panel); resize();
 }

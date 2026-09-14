@@ -3,10 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test tests/reader-catalog.test.mjs",
+    "test": "node --test tests/reader-catalog.test.mjs tests/practice-engine.test.mjs tests/practice-content.test.mjs",
     "serve": "python -m http.server 4173",
     "test:viewer": "node tests/viewer.mjs",
-    "test:navigation": "node tests/book-navigation.mjs"
+    "test:navigation": "node tests/book-navigation.mjs",
+    "test:practice": "node tests/practice-browser.mjs"
   },
   "devDependencies": {
     "marked": "^18.0.12",

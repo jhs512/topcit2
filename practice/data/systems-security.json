@@ -1,0 +1,6002 @@
+[
+  {
+    "id": "sys4-001",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "시스템 아키텍처 구성",
+    "prompt": "온라인 쇼핑몰에서 화면 표시, 주문 규칙 처리, 데이터 저장을 서로 다른 계층으로 나누는 주된 이유는?",
+    "options": [
+      "책임을 분리하여 변경의 영향을 줄이기 위해",
+      "모든 계층의 변경을 하나의 배포 단위로 강제하기 위해",
+      "계층마다 동일한 업무 검증 코드를 중복 배치하기 위해",
+      "표현 계층이 데이터 저장 구조에 직접 의존하게 하기 위해"
+    ],
+    "answer": 0,
+    "explanation": "계층화는 표현·업무·저장 책임을 분리한다. 통신 자체를 금지하거나 데이터 제약을 제거하는 설계가 아니다.",
+    "syllabus": "3.1.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.1.1.1 시스템 아키텍처 구성"
+    }
+  },
+  {
+    "id": "sys4-002",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "시스템 아키텍처 구성",
+    "prompt": "설계 검토자가 '주문 서비스는 결제 서비스의 공개 API만 사용하고 내부 테이블을 직접 읽지 않는다'고 요구했다. 가장 직접적인 설계 목적은?",
+    "options": [
+      "두 서비스의 내부 테이블 구조를 공통 계약으로 고정하기",
+      "결합도를 낮추고 내부 구현을 감추기",
+      "결제 서비스의 변경 사항을 주문 서비스에도 반드시 배포하기",
+      "API 대신 공유 데이터베이스 의존성을 높이기"
+    ],
+    "answer": 1,
+    "explanation": "공개 계약을 통한 접근은 내부 구조 변경이 다른 서비스에 전파되는 것을 줄인다. 서비스 간 필요한 교환은 계속 가능하다.",
+    "syllabus": "3.1.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.1.1.1 시스템 아키텍처 구성"
+    }
+  },
+  {
+    "id": "sys4-003",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "시스템 아키텍처 구성",
+    "prompt": "동시 접속자가 늘어 웹 서버 1대의 CPU가 포화되었다. 같은 역할의 서버 여러 대로 요청을 나누는 확장 방식은?",
+    "options": [
+      "수직 확장",
+      "캐시 크기 확대",
+      "수평 확장",
+      "쿼리 인덱스 추가"
+    ],
+    "answer": 2,
+    "explanation": "수평 확장은 노드 수를 늘린다. 수직 확장은 기존 노드의 CPU나 메모리 용량을 키우는 방식이다.",
+    "syllabus": "3.1.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.1.1.1 시스템 아키텍처 구성"
+    }
+  },
+  {
+    "id": "sys4-004",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "시스템 아키텍처 구성",
+    "prompt": "서비스 요구사항 중 기능 요구사항에 해당하는 것은?",
+    "options": [
+      "응답 시간의 95백분위수가 2초 이하여야 한다",
+      "월간 가용성이 99.9% 이상이어야 한다",
+      "장애 후 30분 안에 복구해야 한다",
+      "고객이 주문을 취소할 수 있어야 한다"
+    ],
+    "answer": 3,
+    "explanation": "주문 취소는 시스템이 제공할 동작이다. 응답 시간·가용성·복구 시간은 품질이나 운영 제약이다.",
+    "syllabus": "3.1.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.1.1.1 시스템 아키텍처 구성"
+    }
+  },
+  {
+    "id": "sys4-005",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "시스템 아키텍처 구성",
+    "prompt": "모든 모듈이 하나의 공통 파일에 있는 전역 변수들을 직접 수정한다. 가장 우려되는 설계 문제는?",
+    "options": [
+      "한 모듈의 변경이 다른 모듈에 예기치 않은 영향을 준다",
+      "독립 변경이 쉬워져 회귀 검증 범위가 줄어든다",
+      "각 모듈의 상태 변경 경로가 명시적인 API로 제한된다",
+      "데이터 소유권이 모듈별로 명확히 분리된다"
+    ],
+    "answer": 0,
+    "explanation": "공유 가변 상태는 모듈 사이 숨은 의존성을 만든다. 응집도 향상이나 컴파일 제거를 보장하지 않는다.",
+    "syllabus": "3.1.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.1.1.1 시스템 아키텍처 구성"
+    }
+  },
+  {
+    "id": "sys4-006",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "시스템 아키텍처 구성",
+    "prompt": "CPU 사용률은 낮지만 외부 결제 API 응답을 기다리는 요청이 쌓인다. 성능 개선 전에 가장 먼저 구분해야 할 병목은?",
+    "options": [
+      "서버의 물리 메모리 총용량만",
+      "외부 서비스 대기 시간과 동시 대기 요청 수",
+      "정적 콘텐츠 압축률만",
+      "데이터베이스 테이블의 총개수만"
+    ],
+    "answer": 1,
+    "explanation": "CPU 사용률만으로 병목을 판단할 수 없다. 외부 호출 지연과 동시에 대기하는 요청 수를 측정해야 하며 메모리 용량·테이블 개수만으로 원인을 확정하지 않는다.",
+    "syllabus": "3.1.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.1.1.1 시스템 아키텍처 구성"
+    }
+  },
+  {
+    "id": "sys4-007",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "시스템 아키텍처 구성",
+    "prompt": "컴포넌트와 컴포넌트 사이의 연결 및 의존 관계를 표현한 설계 자료의 주된 용도는?",
+    "options": [
+      "개별 함수의 변수 값을 실행 중 추적하기",
+      "현재 사용자의 로그인 성공 여부 판정하기",
+      "시스템 구조와 상호작용을 이해하기",
+      "완료된 요청의 응답 시간을 실측하기"
+    ],
+    "answer": 2,
+    "explanation": "구성 요소와 연결 관계는 시스템의 구조와 상호작용을 전달한다. 변수 값 추적과 응답 시간 실측은 실행 중 관측 자료의 역할이다.",
+    "syllabus": "3.1.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.1.1.1 시스템 아키텍처 구성"
+    }
+  },
+  {
+    "id": "sys4-008",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "시스템 아키텍처 구성",
+    "prompt": "한 기능을 수정할 때 관련 로직이 여러 무관한 모듈에 흩어져 있어 수정 누락이 잦다. 우선 개선할 설계 속성은?",
+    "options": [
+      "장애 복구 목표 시간",
+      "네트워크 처리량",
+      "수평 확장 노드 수",
+      "관련 책임을 모으는 응집도"
+    ],
+    "answer": 3,
+    "explanation": "응집도는 한 모듈 안의 책임이 얼마나 관련되는지를 뜻한다. 관련 변경을 같은 모듈에 모으는 문제는 복구 시간이나 네트워크 용량 개선과 다르다.",
+    "syllabus": "3.1.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.1.1.1 시스템 아키텍처 구성"
+    }
+  },
+  {
+    "id": "sys4-009",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "네트워크 계층",
+    "prompt": "OSI 모델에서 서로 다른 네트워크 사이의 경로 선택과 논리 주소를 주로 담당하는 계층은?",
+    "options": [
+      "네트워크 계층",
+      "물리 계층",
+      "표현 계층",
+      "세션 계층"
+    ],
+    "answer": 0,
+    "explanation": "네트워크 계층은 IP 같은 논리 주소와 라우팅을 다룬다. 물리 계층은 신호 전달을 다룬다.",
+    "syllabus": "3.1.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.1.1.2 네트워크 계층"
+    }
+  },
+  {
+    "id": "sys4-010",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "네트워크 계층",
+    "prompt": "같은 이더넷 링크에서 프레임의 송수신과 MAC 주소를 다루는 OSI 계층은?",
+    "options": [
+      "응용 계층",
+      "데이터 링크 계층",
+      "전송 계층",
+      "표현 계층"
+    ],
+    "answer": 1,
+    "explanation": "데이터 링크 계층은 링크 단위 프레임 전달을 담당한다. 전송 계층의 포트 기반 프로세스 통신과 구분된다.",
+    "syllabus": "3.1.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.1.1.2 네트워크 계층"
+    }
+  },
+  {
+    "id": "sys4-011",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "네트워크 계층",
+    "prompt": "송신 측에서 상위 계층의 데이터에 하위 계층 제어 정보를 붙이는 과정은?",
+    "options": [
+      "역캡슐화",
+      "단편화",
+      "캡슐화",
+      "다중화"
+    ],
+    "answer": 2,
+    "explanation": "캡슐화는 헤더 등을 붙여 하위 계층 데이터 단위로 만드는 과정이다. 암호 해제와는 다른 개념이다.",
+    "syllabus": "3.1.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.1.1.2 네트워크 계층"
+    }
+  },
+  {
+    "id": "sys4-012",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "네트워크 계층",
+    "prompt": "OSI 전송 계층의 역할로 가장 적절한 것은?",
+    "options": [
+      "서로 다른 IP 네트워크 사이 경로 선택",
+      "링크 내 MAC 주소 기반 프레임 전달",
+      "응용 데이터의 문자 표현 변환",
+      "호스트의 응용 프로세스 사이 통신 제공"
+    ],
+    "answer": 3,
+    "explanation": "전송 계층은 포트 등을 이용해 프로세스 간 전달을 제공한다. 물리적 신호 전송과 구별된다.",
+    "syllabus": "3.1.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.1.1.2 네트워크 계층"
+    }
+  },
+  {
+    "id": "sys4-013",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "네트워크 계층",
+    "prompt": "라우터가 일반적인 IP 패킷을 다음 홉으로 전달할 때 참조하는 핵심 정보는?",
+    "options": [
+      "목적지 IP 주소",
+      "이더넷 프레임의 목적지 MAC만",
+      "TCP 수신 윈도 크기",
+      "HTTP의 Content-Type"
+    ],
+    "answer": 0,
+    "explanation": "라우터는 목적지 IP에 가장 구체적으로 일치하는 경로를 선택한다. MAC은 링크 전달에 쓰이며 TCP 윈도와 HTTP 콘텐츠 형식은 일반 IP 경로 선택 기준이 아니다.",
+    "syllabus": "3.1.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.1.1.2 네트워크 계층"
+    }
+  },
+  {
+    "id": "sys4-014",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "네트워크 계층",
+    "prompt": "TCP/IP 계층 모델의 인터넷 계층에 해당하는 대표 프로토콜은?",
+    "options": [
+      "HTTP",
+      "IP",
+      "SMTP",
+      "FTP"
+    ],
+    "answer": 1,
+    "explanation": "IP는 네트워크 간 패킷 전달을 제공한다. HTTP·SMTP·FTP는 응용 계층 프로토콜이다.",
+    "syllabus": "3.1.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.1.1.2 네트워크 계층"
+    }
+  },
+  {
+    "id": "sys4-015",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "네트워크 계층",
+    "prompt": "수신 측이 이더넷 헤더, IP 헤더, TCP 헤더를 차례로 해석하고 제거하여 응용 데이터에 도달하는 과정은?",
+    "options": [
+      "단편화",
+      "암호화",
+      "역캡슐화",
+      "오류 정정"
+    ],
+    "answer": 2,
+    "explanation": "역캡슐화는 수신 계층별 제어 정보를 처리하는 과정이다. 단편화는 큰 데이터 단위를 작은 조각으로 나누는 것이다.",
+    "syllabus": "3.1.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.1.1.2 네트워크 계층"
+    }
+  },
+  {
+    "id": "sys4-016",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "네트워크 계층",
+    "prompt": "네트워크를 계층별로 설계하는 장점으로 가장 적절한 것은?",
+    "options": [
+      "계층 분리만으로 모든 전달 오류가 정정된다",
+      "상위 계층이 하위 계층의 내부 구현에 직접 의존한다",
+      "모든 계층에 같은 제어 정보를 중복 구현해야 한다",
+      "정의된 인터페이스를 유지하며 특정 계층의 구현을 바꿀 수 있다"
+    ],
+    "answer": 3,
+    "explanation": "계층화는 책임과 인터페이스를 분리한다. 오류 자체를 없애거나 모든 계층의 데이터 형식을 동일하게 만들지는 않는다.",
+    "syllabus": "3.1.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.1.1.2 네트워크 계층"
+    }
+  },
+  {
+    "id": "sys4-017",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "하드웨어 구성",
+    "prompt": "CPU에서 산술 계산과 논리 연산을 직접 수행하는 구성 요소는?",
+    "options": [
+      "ALU",
+      "제어 장치",
+      "메모리 주소 레지스터",
+      "명령어 레지스터"
+    ],
+    "answer": 0,
+    "explanation": "ALU는 산술·논리 연산을 수행한다. 제어 장치는 순서를 제어하고 주소 레지스터와 명령어 레지스터는 각각 주소와 명령어를 보관한다.",
+    "syllabus": "3.2.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.1.1 하드웨어 구성"
+    }
+  },
+  {
+    "id": "sys4-018",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "하드웨어 구성",
+    "prompt": "주기억장치와 장치 사이 대량 데이터를 옮길 때 CPU가 모든 바이트를 직접 복사하지 않도록 돕는 기능은?",
+    "options": [
+      "CPU의 프로그램 입출력 반복",
+      "DMA",
+      "장치 상태 폴링만",
+      "캐시의 쓰기 관통 정책"
+    ],
+    "answer": 1,
+    "explanation": "DMA는 데이터 전송을 장치와 메모리 사이에서 수행하여 CPU의 바이트별 복사 부담을 줄인다. 폴링이나 프로그램 입출력 반복은 CPU가 직접 관여한다.",
+    "syllabus": "3.2.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.1.1 하드웨어 구성"
+    }
+  },
+  {
+    "id": "sys4-019",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "하드웨어 구성",
+    "prompt": "키보드 입력이 발생했음을 CPU에 알리는 대표적인 방식은?",
+    "options": [
+      "페이징",
+      "스풀링",
+      "인터럽트",
+      "문맥의 영구 저장"
+    ],
+    "answer": 2,
+    "explanation": "인터럽트는 장치나 사건이 CPU의 처리를 요청하는 신호이다. 페이지 교체는 메모리 관리 기능이다.",
+    "syllabus": "3.2.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.1.1 하드웨어 구성"
+    }
+  },
+  {
+    "id": "sys4-020",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "하드웨어 구성",
+    "prompt": "동일한 명령어 수를 실행하며 CPI가 동일한 두 CPU에서 A의 클록이 2GHz, B가 4GHz이다. 다른 조건이 같을 때 B의 실행 시간은 A의 얼마인가?",
+    "options": [
+      "2배",
+      "4배",
+      "동일",
+      "1/2"
+    ],
+    "answer": 3,
+    "explanation": "실행 시간은 명령어 수×CPI÷클록 주파수이다. 명령어 수와 CPI가 같으면 주파수가 2배일 때 시간은 절반이다.",
+    "syllabus": "3.2.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.1.1 하드웨어 구성"
+    }
+  },
+  {
+    "id": "sys4-021",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "하드웨어 구성",
+    "prompt": "명령어 1억 개, 평균 CPI 2, 클록 1GHz인 CPU의 실행 시간은? 메모리 대기 등은 CPI에 포함한다.",
+    "options": [
+      "0.2초",
+      "0.05초",
+      "2초",
+      "20초"
+    ],
+    "answer": 0,
+    "explanation": "총 2억 사이클을 초당 10억 사이클로 나누면 0.2초이다. CPI를 곱해야 하며 클록과 단위를 맞춰야 한다.",
+    "syllabus": "3.2.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.1.1 하드웨어 구성"
+    }
+  },
+  {
+    "id": "sys4-022",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "하드웨어 구성",
+    "prompt": "명령어 파이프라이닝의 일반적인 효과는?",
+    "options": [
+      "하나의 명령어가 모든 단계를 마친 후에만 다음 명령을 시작한다",
+      "여러 명령어의 실행 단계를 겹쳐 처리량을 높인다",
+      "명령어 하나의 지연 시간이 단계 수에 비례해 반드시 줄어든다",
+      "데이터 의존성이 있는 명령도 대기 없이 항상 실행한다"
+    ],
+    "answer": 1,
+    "explanation": "파이프라인은 단계의 중첩으로 처리량을 개선한다. 데이터·분기 위험은 여전히 관리해야 한다.",
+    "syllabus": "3.2.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.1.1 하드웨어 구성"
+    }
+  },
+  {
+    "id": "sys4-023",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "하드웨어 구성",
+    "prompt": "대규모 행렬 연산처럼 같은 연산을 많은 데이터에 적용할 때 GPU가 유리한 주된 이유는?",
+    "options": [
+      "모든 코어가 항상 하나의 순차 명령만 실행하기 때문",
+      "분기 의존성이 큰 순차 코드의 단일 스레드 속도만 극대화하기 때문",
+      "많은 연산을 병렬로 수행하도록 구성되어 있기 때문",
+      "주기억장치 접근 지연을 설계상 완전히 제거했기 때문"
+    ],
+    "answer": 2,
+    "explanation": "GPU는 데이터 병렬 처리에 적합하다. 순차 의존성이 큰 작업까지 항상 빠른 것은 아니다.",
+    "syllabus": "3.2.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.1.1 하드웨어 구성"
+    }
+  },
+  {
+    "id": "sys4-024",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "하드웨어 구성",
+    "prompt": "장치의 상태 레지스터를 CPU가 반복해서 읽어 완료 여부를 확인하는 방식은?",
+    "options": [
+      "인터럽트 기반 알림",
+      "DMA에 전송 위임",
+      "입출력 완료까지 블로킹",
+      "폴링"
+    ],
+    "answer": 3,
+    "explanation": "폴링은 상태를 능동적으로 반복 확인한다. 인터럽트 방식은 사건 발생 시 장치가 처리를 요청한다.",
+    "syllabus": "3.2.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.1.1 하드웨어 구성"
+    }
+  },
+  {
+    "id": "sys4-025",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "메모리 계층 유형",
+    "prompt": "일반적인 메모리 계층에서 CPU 레지스터 다음으로 가까워 자주 쓰는 데이터를 빠르게 제공하는 것은?",
+    "options": [
+      "캐시 메모리",
+      "주기억장치 DRAM",
+      "SSD",
+      "HDD"
+    ],
+    "answer": 0,
+    "explanation": "캐시는 CPU와 주기억장치의 속도 차이를 줄인다. 보조기억장치는 보통 용량이 크지만 접근 지연이 더 크다.",
+    "syllabus": "3.2.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.1.2 메모리 계층 유형"
+    }
+  },
+  {
+    "id": "sys4-026",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "메모리 계층 유형",
+    "prompt": "반복문에서 같은 변수에 계속 접근할 때 캐시가 활용하는 지역성은?",
+    "options": [
+      "공간 지역성만",
+      "시간 지역성",
+      "순차 접근 제약",
+      "캐시 일관성 자체"
+    ],
+    "answer": 1,
+    "explanation": "시간 지역성은 최근 사용한 데이터가 곧 다시 사용될 가능성이다. 공간 지역성은 인접 주소에 대한 접근이다.",
+    "syllabus": "3.2.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.1.2 메모리 계층 유형"
+    }
+  },
+  {
+    "id": "sys4-027",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "메모리 계층 유형",
+    "prompt": "배열 원소를 주소 순서대로 읽을 때 인접 원소가 한 캐시 블록에 들어 있어 얻는 이점은?",
+    "options": [
+      "시간 지역성만 활용",
+      "완전 연관 사상 제거",
+      "공간 지역성 활용",
+      "캐시 쓰기 지연 보장"
+    ],
+    "answer": 2,
+    "explanation": "공간 지역성은 참조한 위치 주변을 곧 사용할 가능성이다. 메모리 보호나 프로그램 오류 제거를 의미하지 않는다.",
+    "syllabus": "3.2.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.1.2 메모리 계층 유형"
+    }
+  },
+  {
+    "id": "sys4-028",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "메모리 계층 유형",
+    "prompt": "캐시 확인에 2ns가 걸리고 적중률이 90%이다. 실패한 경우에만 추가 50ns가 걸린다면 평균 접근 시간은?",
+    "options": [
+      "45ns",
+      "52ns",
+      "5ns",
+      "7ns"
+    ],
+    "answer": 3,
+    "explanation": "평균은 2+0.1×50=7ns이다. 50ns는 실패 시 추가 비용이므로 기본 조회 시간은 모든 접근에 포함한다.",
+    "syllabus": "3.2.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.1.2 메모리 계층 유형"
+    }
+  },
+  {
+    "id": "sys4-029",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "메모리 계층 유형",
+    "prompt": "CPU가 수정한 캐시 데이터를 즉시 하위 메모리에도 기록하는 정책은?",
+    "options": [
+      "Write-through",
+      "Write-back",
+      "LRU",
+      "FIFO"
+    ],
+    "answer": 0,
+    "explanation": "Write-through는 쓰기를 하위 계층에 즉시 반영한다. Write-back은 수정 표시를 두고 나중에 반영한다.",
+    "syllabus": "3.2.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.1.2 메모리 계층 유형"
+    }
+  },
+  {
+    "id": "sys4-030",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "메모리 계층 유형",
+    "prompt": "LRU 페이지 교체에서 교체 대상으로 고르는 페이지는?",
+    "options": [
+      "가장 최근에 참조한 페이지",
+      "가장 오래 참조되지 않은 페이지",
+      "페이지 번호가 가장 큰 페이지",
+      "항상 첫 번째 프로세스의 페이지"
+    ],
+    "answer": 1,
+    "explanation": "LRU는 최근 사용 이력을 기준으로 가장 오래 사용하지 않은 페이지를 교체한다. 적재 시점만 보는 FIFO와 다르다.",
+    "syllabus": "3.2.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.1.2 메모리 계층 유형"
+    }
+  },
+  {
+    "id": "sys4-031",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "메모리 계층 유형",
+    "prompt": "페이지 크기가 4KiB일 때 바이트 단위 가상 주소의 페이지 내부 오프셋에 필요한 비트 수는?",
+    "options": [
+      "4비트",
+      "10비트",
+      "12비트",
+      "16비트"
+    ],
+    "answer": 2,
+    "explanation": "4KiB는 4096바이트=2의 12제곱이므로 12비트가 필요하다. 나머지 상위 비트가 페이지 번호를 나타낸다.",
+    "syllabus": "3.2.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.1.2 메모리 계층 유형"
+    }
+  },
+  {
+    "id": "sys4-032",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "메모리 계층 유형",
+    "prompt": "전원을 끄면 저장 내용이 사라지는 주기억장치의 일반적인 특성은?",
+    "options": [
+      "불변성",
+      "영속성",
+      "순차 접근 전용성",
+      "휘발성"
+    ],
+    "answer": 3,
+    "explanation": "일반적인 RAM은 휘발성이며 전원 유지가 필요하다. SSD 같은 비휘발성 저장장치와 구별된다.",
+    "syllabus": "3.2.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.1.2 메모리 계층 유형"
+    }
+  },
+  {
+    "id": "sys4-033",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "운영체제 개념과 역할",
+    "prompt": "운영체제가 사용자 프로그램에 파일 읽기 같은 보호된 기능을 제공하는 대표 인터페이스는?",
+    "options": [
+      "시스템 호출",
+      "사용자 함수의 단순 호출만",
+      "하드웨어 주소 직접 쓰기",
+      "응용 프로그램 간 공유 변수"
+    ],
+    "answer": 0,
+    "explanation": "시스템 호출은 커널 서비스를 요청하는 경계이다. 일반 응용 프로그램이 장치를 무제한 직접 제어하도록 하는 것이 아니다.",
+    "syllabus": "3.2.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.1 운영체제 개념과 역할"
+    }
+  },
+  {
+    "id": "sys4-034",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "운영체제 개념과 역할",
+    "prompt": "사용자 모드와 커널 모드를 구분하는 가장 직접적인 목적은?",
+    "options": [
+      "사용자 코드가 모든 장치 레지스터를 직접 쓰게 하기",
+      "특권 명령과 핵심 자원을 보호하기",
+      "모든 프로세스를 동일한 권한으로 실행하기",
+      "메모리 보호를 응용 프로그램의 자발적 검사에만 맡기기"
+    ],
+    "answer": 1,
+    "explanation": "모드 구분은 사용자 코드의 특권 동작을 제한한다. 암호화나 저장 용량 증가는 별개의 기능이다.",
+    "syllabus": "3.2.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.1 운영체제 개념과 역할"
+    }
+  },
+  {
+    "id": "sys4-035",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "운영체제 개념과 역할",
+    "prompt": "여러 프로그램이 CPU를 번갈아 사용하도록 하는 운영체제의 역할은?",
+    "options": [
+      "파일 이름의 계층적 조직화",
+      "장치 독립 인터페이스 제공만",
+      "자원 관리와 스케줄링",
+      "입출력 데이터 인코딩 변환"
+    ],
+    "answer": 2,
+    "explanation": "CPU 스케줄링은 준비된 프로그램 사이에 CPU를 배분한다. 파일 조직화와 장치 추상화도 OS 기능이지만 질문의 실행 순서 조정과는 다르다.",
+    "syllabus": "3.2.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.1 운영체제 개념과 역할"
+    }
+  },
+  {
+    "id": "sys4-036",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "운영체제 개념과 역할",
+    "prompt": "응용 프로그램이 권한 없이 커널 메모리를 변경하려 한다. 운영체제가 이를 차단해야 하는 이유는?",
+    "options": [
+      "커널과 응용 코드가 같은 주소를 자유롭게 공유하게 하기",
+      "성능을 위해 특권 명령 검사를 생략하기",
+      "오류 처리 책임을 다른 프로세스에 넘기기",
+      "다른 프로그램과 시스템의 무결성을 보호하기"
+    ],
+    "answer": 3,
+    "explanation": "메모리 보호는 격리와 시스템 안정성을 위한 것이다. 정상 기능까지 일괄 차단할 필요는 없다.",
+    "syllabus": "3.2.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.1 운영체제 개념과 역할"
+    }
+  },
+  {
+    "id": "sys4-037",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "운영체제 개념과 역할",
+    "prompt": "운영체제의 커널에 대한 설명으로 적절한 것은?",
+    "options": [
+      "핵심 자원 관리 기능을 수행하는 부분이다",
+      "사용자의 명령을 읽는 셸과 항상 동일하다",
+      "디스크에 저장된 모든 응용 프로그램의 합이다",
+      "장치별 제어 규칙을 담은 드라이버 한 개이다"
+    ],
+    "answer": 0,
+    "explanation": "커널은 프로세스·메모리·장치 등 핵심 자원을 관리한다. 셸은 명령 인터페이스이며 드라이버는 장치별 제어 부분이므로 각각 커널 전체와 같지 않다.",
+    "syllabus": "3.2.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.1 운영체제 개념과 역할"
+    }
+  },
+  {
+    "id": "sys4-038",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "운영체제 개념과 역할",
+    "prompt": "하드웨어 장치 종류가 바뀌어도 응용 프로그램이 동일한 파일 읽기 인터페이스를 사용하게 하는 OS의 특성은?",
+    "options": [
+      "동적 우선순위 조정",
+      "하드웨어 추상화",
+      "메모리 단편화 해소",
+      "사용자 인증의 외부 위임"
+    ],
+    "answer": 1,
+    "explanation": "추상화는 장치의 세부 차이를 공통 인터페이스 뒤에 감춘다. 소스 공개 여부나 복제 정책과는 구별된다.",
+    "syllabus": "3.2.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.1 운영체제 개념과 역할"
+    }
+  },
+  {
+    "id": "sys4-039",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "운영체제 개념과 역할",
+    "prompt": "한 프로그램이 잘못된 메모리 주소에 접근했을 때 그 프로그램만 종료하고 다른 프로그램은 계속 실행하게 하는 기반은?",
+    "options": [
+      "모든 프로세스에 같은 쓰기 권한 부여",
+      "사용자 코드의 주소 검사 생략",
+      "프로세스 격리와 메모리 보호",
+      "프로세스 간 전역 메모리 공유 강제"
+    ],
+    "answer": 2,
+    "explanation": "격리와 보호는 오류의 영향을 제한한다. 전체 자원 공유나 시스템 전원 차단은 이런 목표와 맞지 않는다.",
+    "syllabus": "3.2.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.1 운영체제 개념과 역할"
+    }
+  },
+  {
+    "id": "sys4-040",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "운영체제 개념과 역할",
+    "prompt": "짧은 시간 간격으로 CPU를 나누어 여러 사용자가 대화식으로 작업하게 하는 운영 방식은?",
+    "options": [
+      "일괄 처리",
+      "단일 작업 독점 처리",
+      "비선점 실행만",
+      "시분할"
+    ],
+    "answer": 3,
+    "explanation": "시분할은 시간 조각을 배분하여 대화식 응답성을 제공한다. 백업과 미러링은 저장 데이터 관리 방식이다.",
+    "syllabus": "3.2.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.1 운영체제 개념과 역할"
+    }
+  },
+  {
+    "id": "sys4-041",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "프로세스 관리",
+    "prompt": "실행 중인 프로그램의 상태와 자원을 운영체제가 관리하는 기본 실행 단위는?",
+    "options": [
+      "프로세스",
+      "프로그램 파일",
+      "명령어 집합",
+      "파일 디스크립터"
+    ],
+    "answer": 0,
+    "explanation": "프로세스는 실행 문맥과 자원을 갖는다. 디스크에 저장된 프로그램 파일은 아직 실행 상태가 아니다.",
+    "syllabus": "3.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.2 프로세스 관리"
+    }
+  },
+  {
+    "id": "sys4-042",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "프로세스 관리",
+    "prompt": "프로세스가 디스크 읽기를 요청하고 완료를 기다릴 때 일반적으로 이동하는 상태는?",
+    "options": [
+      "준비 상태만",
+      "대기 상태",
+      "종료 상태",
+      "항상 실행 상태 유지"
+    ],
+    "answer": 1,
+    "explanation": "입출력 완료가 필요하면 대기 상태가 된다. 준비 상태는 실행에 필요한 조건을 갖추고 CPU만 기다리는 상태이다.",
+    "syllabus": "3.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.2 프로세스 관리"
+    }
+  },
+  {
+    "id": "sys4-043",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "프로세스 관리",
+    "prompt": "문맥 교환 시 운영체제가 저장하고 복원해야 하는 정보는?",
+    "options": [
+      "실행 파일의 이름만",
+      "프로세스의 시작 시각만",
+      "프로그램 카운터와 CPU 레지스터 등 실행 상태",
+      "메모리 총용량만"
+    ],
+    "answer": 2,
+    "explanation": "프로세스를 중단 지점부터 재개하려면 프로그램 카운터와 레지스터 등 실행 문맥이 필요하다. 파일 이름이나 시작 시각만으로 실행 상태를 재구성할 수 없다.",
+    "syllabus": "3.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.2 프로세스 관리"
+    }
+  },
+  {
+    "id": "sys4-044",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "프로세스 관리",
+    "prompt": "같은 프로세스에 속한 스레드들이 일반적으로 공유하는 것은?",
+    "options": [
+      "각 스레드의 독립적인 스택 내용 전체",
+      "각 스레드의 프로그램 카운터 값",
+      "각 스레드의 CPU 레지스터 값",
+      "프로세스의 주소 공간과 열린 파일 자원"
+    ],
+    "answer": 3,
+    "explanation": "스레드는 주소 공간 등 프로세스 자원을 공유하지만 스택·레지스터·프로그램 카운터는 개별 실행 문맥이다.",
+    "syllabus": "3.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.2 프로세스 관리"
+    }
+  },
+  {
+    "id": "sys4-045",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "프로세스 관리",
+    "prompt": "세 작업이 시각 0에 도착하고 CPU 실행 시간이 각각 A=4, B=2, C=1이다. 비선점 FCFS로 A,B,C 순서 실행 시 평균 대기 시간은?",
+    "options": [
+      "10/3 시간 단위",
+      "7/3 시간 단위",
+      "4 시간 단위",
+      "7 시간 단위"
+    ],
+    "answer": 0,
+    "explanation": "대기 시간은 A=0, B=4, C=6이므로 평균은 10/3이다. 실행 시간을 포함한 반환 시간과 구별한다.",
+    "syllabus": "3.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.2 프로세스 관리"
+    }
+  },
+  {
+    "id": "sys4-046",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "프로세스 관리",
+    "prompt": "모든 작업이 시각 0에 준비되고 실행 시간이 A=6, B=2, C=4이다. 비선점 SJF의 실행 순서는?",
+    "options": [
+      "A→B→C",
+      "B→C→A",
+      "C→A→B",
+      "A→C→B"
+    ],
+    "answer": 1,
+    "explanation": "SJF는 실행 시간이 짧은 작업부터 선택한다. 준비 시점이 같으므로 2,4,6의 순서이다.",
+    "syllabus": "3.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.2 프로세스 관리"
+    }
+  },
+  {
+    "id": "sys4-047",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "프로세스 관리",
+    "prompt": "라운드 로빈에서 타임 퀀텀을 지나치게 작게 하면 발생할 수 있는 문제는?",
+    "options": [
+      "시간 조각 만료에 따른 선점 횟수 감소",
+      "FCFS와 같은 장시간 CPU 독점 증가",
+      "문맥 교환 부담 증가",
+      "준비 큐의 회전 횟수 감소"
+    ],
+    "answer": 2,
+    "explanation": "시간 조각이 작으면 교대가 잦아 문맥 교환 비용이 커진다. 적절한 응답성과 오버헤드의 균형이 필요하다.",
+    "syllabus": "3.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.2 프로세스 관리"
+    }
+  },
+  {
+    "id": "sys4-048",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "프로세스 관리",
+    "prompt": "낮은 우선순위 작업이 새로 도착하는 높은 우선순위 작업 때문에 오랫동안 실행되지 못한다. 완화 방법은?",
+    "options": [
+      "실행 중 작업이 끝날 때까지 모든 우선순위 갱신 금지",
+      "낮은 우선순위 작업의 우선순위를 추가로 낮추기",
+      "새 작업에 항상 더 높은 우선순위를 부여하기",
+      "대기 시간이 길수록 우선순위를 높이는 에이징"
+    ],
+    "answer": 3,
+    "explanation": "에이징은 장기 대기 작업의 우선순위를 높여 기아를 완화한다. 우선순위를 더 낮추면 문제가 악화된다.",
+    "syllabus": "3.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.2 프로세스 관리"
+    }
+  },
+  {
+    "id": "sys4-049",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "병행성",
+    "prompt": "두 스레드가 공유 변수에 대해 읽기·증가·쓰기를 동시에 수행하여 증가 결과 하나가 사라졌다. 원인은?",
+    "options": [
+      "경쟁 상태",
+      "교착상태",
+      "기아 상태",
+      "외부 단편화"
+    ],
+    "answer": 0,
+    "explanation": "경쟁 상태는 실행 순서에 따라 공유 데이터 결과가 달라지는 상황이다. 임계 구역을 적절히 보호해야 한다.",
+    "syllabus": "3.2.2.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.3 병행성"
+    }
+  },
+  {
+    "id": "sys4-050",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "병행성",
+    "prompt": "한 번에 하나의 스레드만 공유 자료를 수정하게 하려는 동기화 목적은?",
+    "options": [
+      "공정성 보장만",
+      "상호 배제",
+      "메모리 압축",
+      "프로세스 선점 금지 전체"
+    ],
+    "answer": 1,
+    "explanation": "상호 배제는 한 번에 하나의 실행 흐름만 임계 구역에 진입하도록 한다. 공정성이나 선점 정책과는 구별되며 전체 시스템 선점을 금지할 필요는 없다.",
+    "syllabus": "3.2.2.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.3 병행성"
+    }
+  },
+  {
+    "id": "sys4-051",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "병행성",
+    "prompt": "P는 자원 A를 가진 채 B를 기다리고 Q는 B를 가진 채 A를 기다린다. 가장 직접적인 문제는?",
+    "options": [
+      "기아 상태",
+      "경쟁 상태",
+      "교착상태",
+      "스래싱"
+    ],
+    "answer": 2,
+    "explanation": "서로 상대가 가진 자원을 기다리며 진행할 수 없으므로 교착상태이다. 단순한 일시적 CPU 대기와 다르다.",
+    "syllabus": "3.2.2.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.3 병행성"
+    }
+  },
+  {
+    "id": "sys4-052",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "병행성",
+    "prompt": "모든 스레드가 잠금을 동일한 전역 순서로 획득하게 하면 교착상태의 어떤 조건을 깨는 데 도움이 되는가?",
+    "options": [
+      "상호 배제",
+      "점유 대기",
+      "비선점",
+      "순환 대기"
+    ],
+    "answer": 3,
+    "explanation": "자원 획득 순서를 통일하면 역방향 의존으로 이루어진 원형 대기를 방지할 수 있다. 상호 배제는 유지할 수 있다.",
+    "syllabus": "3.2.2.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.3 병행성"
+    }
+  },
+  {
+    "id": "sys4-053",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "병행성",
+    "prompt": "초기값 3인 계수 세마포어를 사용해 동시 접근을 제한한다. 반환 전까지 성공적인 획득이 허용되는 최대 개수는?",
+    "options": [
+      "3개",
+      "1개",
+      "4개",
+      "무제한"
+    ],
+    "answer": 0,
+    "explanation": "계수 세마포어의 값은 이용 가능한 허가 수를 나타낸다. 초기값 1인 이진 제한과 구별된다.",
+    "syllabus": "3.2.2.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.3 병행성"
+    }
+  },
+  {
+    "id": "sys4-054",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "병행성",
+    "prompt": "생산자·소비자 문제에서 버퍼가 비어 있을 때 소비자가 해야 할 적절한 동작은?",
+    "options": [
+      "빈 버퍼의 이전 값을 다시 소비한다",
+      "데이터가 들어올 때까지 조건을 기다린다",
+      "생산자도 빈 버퍼 때문에 반드시 대기하게 한다",
+      "데이터 유무 확인 없이 소비 인덱스를 증가시킨다"
+    ],
+    "answer": 1,
+    "explanation": "빈 버퍼에서는 소비할 데이터가 없으므로 조건 동기화가 필요하다. 상호 배제만으로 데이터 존재를 보장하지 않는다.",
+    "syllabus": "3.2.2.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.3 병행성"
+    }
+  },
+  {
+    "id": "sys4-055",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "병행성",
+    "prompt": "두 프로세스가 서로 양보하느라 계속 상태를 바꾸지만 유용한 작업은 진행하지 못한다. 이를 무엇이라 하는가?",
+    "options": [
+      "교착상태",
+      "기아 상태",
+      "라이브락",
+      "스래싱"
+    ],
+    "answer": 2,
+    "explanation": "라이브락은 활동은 있으나 진전이 없는 상태이다. 교착상태는 보통 서로 기다리며 멈춘 상태로 설명한다.",
+    "syllabus": "3.2.2.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.3 병행성"
+    }
+  },
+  {
+    "id": "sys4-056",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "병행성",
+    "prompt": "뮤텍스 보호 구역에서 예외가 발생한 뒤 잠금을 해제하지 않아 다른 스레드가 계속 기다린다. 가장 적절한 수정은?",
+    "options": [
+      "대기 스레드의 우선순위만 높인다",
+      "뮤텍스 대신 더 많은 미해제 잠금을 추가한다",
+      "잠금 해제를 정상 반환 경로에만 둔다",
+      "예외 경로에서도 잠금 해제가 보장되게 한다"
+    ],
+    "answer": 3,
+    "explanation": "finally나 범위 기반 해제 같은 방식으로 자원 정리를 보장해야 한다. 스레드 증가는 미해제 잠금을 해결하지 못한다.",
+    "syllabus": "3.2.2.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.3 병행성"
+    }
+  },
+  {
+    "id": "sys4-057",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "운영체제 서비스 종류",
+    "prompt": "가상 메모리에서 필요한 페이지가 현재 물리 메모리에 없어서 OS의 처리가 필요한 사건은?",
+    "options": [
+      "페이지 폴트",
+      "TLB 적중",
+      "페이지 적중",
+      "문맥 생성"
+    ],
+    "answer": 0,
+    "explanation": "페이지 폴트는 주소 변환 과정에서 필요한 페이지가 없거나 접근 조건에 문제가 있을 때 발생한다. 적중과는 반대이다.",
+    "syllabus": "3.2.2.4",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.4 운영체제 서비스 종류"
+    }
+  },
+  {
+    "id": "sys4-058",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "운영체제 서비스 종류",
+    "prompt": "메모리 부족으로 페이지 입출력에 대부분의 시간을 쓰고 유용한 실행이 줄어드는 현상은?",
+    "options": [
+      "스풀링",
+      "스래싱",
+      "미러링",
+      "브리징"
+    ],
+    "answer": 1,
+    "explanation": "스래싱은 잦은 페이지 교체 때문에 성능이 급락하는 현상이다. 스풀링은 장치 작업을 임시 저장해 순서대로 처리한다.",
+    "syllabus": "3.2.2.4",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.4 운영체제 서비스 종류"
+    }
+  },
+  {
+    "id": "sys4-059",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "운영체제 서비스 종류",
+    "prompt": "여러 사용자의 인쇄 요청을 디스크 큐에 보관한 뒤 프린터로 순차 전송하는 방식은?",
+    "options": [
+      "버퍼 캐시 교체",
+      "메모리 페이징",
+      "스풀링",
+      "파일 미러링"
+    ],
+    "answer": 2,
+    "explanation": "스풀링은 느리거나 공유되는 장치의 작업을 대기열로 관리한다. 가상 메모리 페이지 이동과는 목적이 다르다.",
+    "syllabus": "3.2.2.4",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.4 운영체제 서비스 종류"
+    }
+  },
+  {
+    "id": "sys4-060",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "운영체제 서비스 종류",
+    "prompt": "파일 시스템의 디렉터리가 주로 제공하는 기능은?",
+    "options": [
+      "파일 데이터의 암호화",
+      "디스크 고장 시 패리티 복원",
+      "프로세스 CPU 시간 배분",
+      "파일 이름과 파일 식별 정보의 조직화"
+    ],
+    "answer": 3,
+    "explanation": "디렉터리는 파일 이름과 파일 식별 정보의 대응을 조직한다. 파일 암호화·저장장치 복구·CPU 배분은 별도 기능이다.",
+    "syllabus": "3.2.2.4",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.4 운영체제 서비스 종류"
+    }
+  },
+  {
+    "id": "sys4-061",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "운영체제 서비스 종류",
+    "prompt": "연속된 빈 공간이 충분하지 않아 전체 여유 메모리는 남아도 큰 연속 영역을 배정하지 못한다. 현상은?",
+    "options": [
+      "외부 단편화",
+      "내부 단편화만",
+      "교착상태",
+      "캐시 오염만"
+    ],
+    "answer": 0,
+    "explanation": "외부 단편화는 빈 영역이 흩어져 생긴다. 내부 단편화는 할당된 블록 내부의 사용되지 않는 공간이다.",
+    "syllabus": "3.2.2.4",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.4 운영체제 서비스 종류"
+    }
+  },
+  {
+    "id": "sys4-062",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "운영체제 서비스 종류",
+    "prompt": "고정 4KiB 페이지 단위로 10KiB 영역을 할당했다. 마지막 페이지의 사용되지 않는 공간은?",
+    "options": [
+      "1KiB",
+      "2KiB",
+      "4KiB",
+      "6KiB"
+    ],
+    "answer": 1,
+    "explanation": "3개 페이지로 12KiB를 할당하므로 2KiB가 남는다. 고정 할당 단위 내부에서 생기는 내부 단편화이다.",
+    "syllabus": "3.2.2.4",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.4 운영체제 서비스 종류"
+    }
+  },
+  {
+    "id": "sys4-063",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "운영체제 서비스 종류",
+    "prompt": "파일 시스템이 갑작스러운 중단 후 일관성 복구를 돕기 위해 변경 의도를 로그에 기록하는 기법은?",
+    "options": [
+      "스트라이핑",
+      "메모리 압축",
+      "저널링",
+      "선점 스케줄링"
+    ],
+    "answer": 2,
+    "explanation": "저널링은 변경 기록을 활용해 복구를 돕는다. 모든 사용자 파일에 대한 별도 백업을 대신하는 것은 아니다.",
+    "syllabus": "3.2.2.4",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.4 운영체제 서비스 종류"
+    }
+  },
+  {
+    "id": "sys4-064",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "운영체제 서비스 종류",
+    "prompt": "운영체제에서 장치 드라이버의 역할로 적절한 것은?",
+    "options": [
+      "응용 명령을 기계어로 번역한다",
+      "다음 실행 프로세스를 선택한다",
+      "디렉터리 계층의 업무 분류를 결정한다",
+      "운영체제의 요청을 해당 장치의 제어 방식으로 연결한다"
+    ],
+    "answer": 3,
+    "explanation": "장치 드라이버는 공통 OS 요청을 해당 하드웨어의 제어 동작으로 연결한다. 컴파일러의 번역, CPU 스케줄링, 업무 분류와 역할이 다르다.",
+    "syllabus": "3.2.2.4",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.2.2.4 운영체제 서비스 종류"
+    }
+  },
+  {
+    "id": "sys4-065",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "클라이언트 서버와 웹 아키텍처",
+    "prompt": "웹 3계층 구조에서 할인 규칙 검증과 주문 처리 로직을 두기 가장 적절한 계층은?",
+    "options": [
+      "응용 계층",
+      "브라우저 표현 계층",
+      "데이터 저장 계층만",
+      "네트워크 전송 계층"
+    ],
+    "answer": 0,
+    "explanation": "업무 규칙은 응용 계층의 책임이다. 표현 계층은 사용자 인터페이스를, 데이터 계층은 저장과 조회를 담당한다.",
+    "syllabus": "3.3.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.1.1 클라이언트 서버와 웹 아키텍처"
+    }
+  },
+  {
+    "id": "sys4-066",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "클라이언트 서버와 웹 아키텍처",
+    "prompt": "여러 웹 서버 앞에서 요청을 받아 내부 서버로 전달하며 외부에 내부 구성을 감추는 구성 요소는?",
+    "options": [
+      "포워드 프록시",
+      "리버스 프록시",
+      "DNS 리졸버",
+      "NAT 게이트웨이만"
+    ],
+    "answer": 1,
+    "explanation": "리버스 프록시는 서버를 대신하여 외부 요청을 수신한다. 포워드 프록시는 보통 클라이언트의 외부 접근을 대리하며 DNS와 NAT만으로 동일한 응용 중개를 제공하지 않는다.",
+    "syllabus": "3.3.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.1.1 클라이언트 서버와 웹 아키텍처"
+    }
+  },
+  {
+    "id": "sys4-067",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "클라이언트 서버와 웹 아키텍처",
+    "prompt": "웹 서버 A에만 로그인 세션을 저장했더니 다음 요청이 B로 가면 로그인이 풀린다. 여러 서버에서 세션을 공유하는 해결책은?",
+    "options": [
+      "각 서버에서 세션 식별자를 독립 재발급",
+      "DNS TTL을 짧게 하는 것만 적용",
+      "공통 세션 저장소 사용",
+      "정적 파일 캐시 크기만 확대"
+    ],
+    "answer": 2,
+    "explanation": "공통 저장소는 어느 서버에서도 같은 세션을 조회하게 한다. 서버 로컬 상태에만 의존하면 분산 시 문제가 생긴다.",
+    "syllabus": "3.3.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.1.1 클라이언트 서버와 웹 아키텍처"
+    }
+  },
+  {
+    "id": "sys4-068",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "클라이언트 서버와 웹 아키텍처",
+    "prompt": "정적 이미지와 CSS를 사용자와 가까운 여러 위치에 배포하여 지연과 원본 서버 부하를 줄이는 기술은?",
+    "options": [
+      "중앙 데이터베이스 정규화",
+      "서버 로컬 메모리 증설만",
+      "원본 서버의 디스크 미러링만",
+      "CDN"
+    ],
+    "answer": 3,
+    "explanation": "CDN은 분산된 엣지에서 콘텐츠를 전달한다. 데이터베이스 트랜잭션 처리나 로컬 디스크 스트라이핑과 다른 기술이다.",
+    "syllabus": "3.3.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.1.1 클라이언트 서버와 웹 아키텍처"
+    }
+  },
+  {
+    "id": "sys4-069",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "클라이언트 서버와 웹 아키텍처",
+    "prompt": "REST 방식에서 각 요청이 처리에 필요한 정보를 담고 서버가 이전 요청 문맥에 의존하지 않는 제약은?",
+    "options": [
+      "무상태성",
+      "계층화",
+      "캐시 가능성",
+      "균일한 인터페이스 자체"
+    ],
+    "answer": 0,
+    "explanation": "무상태성은 서버가 클라이언트의 대화 상태를 요청 사이에 보관해야만 처리되는 구조를 피한다. 데이터 저장 자체를 금지하지 않는다.",
+    "syllabus": "3.3.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.1.1 클라이언트 서버와 웹 아키텍처"
+    }
+  },
+  {
+    "id": "sys4-070",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "클라이언트 서버와 웹 아키텍처",
+    "prompt": "메시지 큐로 주문 접수와 후속 알림 발송을 분리하는 주된 효과는?",
+    "options": [
+      "큐 추가만으로 전체 업무의 즉시 일관성을 보장한다",
+      "처리 시점을 분리하고 일시적 속도 차이를 완충한다",
+      "수신자 처리 속도가 송신자보다 느려도 큐가 늘지 않는다",
+      "재시도와 중복 처리 검토가 불필요해진다"
+    ],
+    "answer": 1,
+    "explanation": "큐는 비동기 처리와 부하 완충을 지원한다. 전달 지연이나 저장 한계를 제거하지는 않는다.",
+    "syllabus": "3.3.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.1.1 클라이언트 서버와 웹 아키텍처"
+    }
+  },
+  {
+    "id": "sys4-071",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "클라이언트 서버와 웹 아키텍처",
+    "prompt": "각 마이크로서비스를 독립 배포하는 설계의 운영상 고려사항은?",
+    "options": [
+      "독립 배포이면 분산 트랜잭션 고려가 필요 없다",
+      "서비스 수가 늘어도 호출 실패 지점 수가 늘지 않는다",
+      "서비스 간 통신 장애와 관측 가능성을 관리해야 한다",
+      "내부 API 버전 호환성 검증이 불필요해진다"
+    ],
+    "answer": 2,
+    "explanation": "분산 구조는 독립성을 주지만 통신·장애·추적·일관성 관리를 요구한다. 장점만 있고 비용이 없는 구조는 아니다.",
+    "syllabus": "3.3.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.1.1 클라이언트 서버와 웹 아키텍처"
+    }
+  },
+  {
+    "id": "sys4-072",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "클라이언트 서버와 웹 아키텍처",
+    "prompt": "클라이언트의 입력값을 브라우저에서 검사하고 있다. 서버에서도 검증해야 하는 이유는?",
+    "options": [
+      "브라우저 검증 성공이면 요청 데이터가 전송 중에도 항상 신뢰되기 때문",
+      "서버 검증은 인증을 완전히 대신하기 때문",
+      "클라이언트 검증과 서버 검증은 같은 프로세스에서 실행되기 때문",
+      "클라이언트 검사를 우회한 요청이 올 수 있기 때문"
+    ],
+    "answer": 3,
+    "explanation": "클라이언트는 신뢰 경계 밖이며 직접 만든 요청을 보낼 수 있다. 서버는 처리 규칙과 데이터 유효성을 자체 검증해야 한다.",
+    "syllabus": "3.3.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.1.1 클라이언트 서버와 웹 아키텍처"
+    }
+  },
+  {
+    "id": "sys4-073",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "가상화",
+    "prompt": "물리 서버 위에서 여러 가상 머신을 생성하고 CPU·메모리 자원을 배분하는 소프트웨어는?",
+    "options": [
+      "하이퍼바이저",
+      "컨테이너 이미지 레지스트리",
+      "응용 프로세스 스케줄러만",
+      "분산 파일 시스템"
+    ],
+    "answer": 0,
+    "explanation": "하이퍼바이저는 가상 머신 실행과 자원 관리를 담당한다. 요청 분배 장치나 이름 해석 서비스와 다르다.",
+    "syllabus": "3.3.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.1.2 가상화"
+    }
+  },
+  {
+    "id": "sys4-074",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "가상화",
+    "prompt": "일반적인 컨테이너와 가상 머신의 차이로 적절한 것은?",
+    "options": [
+      "컨테이너마다 반드시 독립 게스트 커널이 실행된다",
+      "컨테이너는 보통 호스트 커널을 공유하고 가상 머신은 게스트 OS를 실행한다",
+      "VM은 호스트 커널의 프로세스 격리만 사용한다",
+      "컨테이너 이미지와 VM 디스크 이미지는 격리 구조가 동일하다"
+    ],
+    "answer": 1,
+    "explanation": "일반적인 OS 수준 컨테이너는 커널을 공유한다. VM은 가상 하드웨어 위에 게스트 OS를 두므로 격리 단위가 다르다.",
+    "syllabus": "3.3.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.1.2 가상화"
+    }
+  },
+  {
+    "id": "sys4-075",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "가상화",
+    "prompt": "서버 통합을 위해 여러 VM을 한 물리 서버에 모았다. 함께 검토할 위험은?",
+    "options": [
+      "가상 디스크 사용만으로 물리 디스크 손상이 자동 복구된다",
+      "호스트 자원이 부족해도 VM 간 자원 경쟁이 발생하지 않는다",
+      "물리 서버 장애가 여러 VM에 동시에 영향을 줄 수 있다",
+      "가상화 계층이 모든 단일 장애점을 자동 제거한다"
+    ],
+    "answer": 2,
+    "explanation": "자원 효율은 높아지지만 장애 범위가 집중될 수 있다. 가상화만으로 별도 백업이나 고가용성이 보장되지는 않는다.",
+    "syllabus": "3.3.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.1.2 가상화"
+    }
+  },
+  {
+    "id": "sys4-076",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "가상화",
+    "prompt": "가상 머신의 특정 시점 디스크 상태 등을 기록하여 되돌리기 쉽게 하는 기능은?",
+    "options": [
+      "라이브 마이그레이션",
+      "가상 스위치 생성",
+      "CPU 핫플러그",
+      "스냅샷"
+    ],
+    "answer": 3,
+    "explanation": "스냅샷은 시점 상태를 보존한다. 원본 저장소와 독립적인 복구 전략 없이 스냅샷만을 완전한 백업으로 간주하면 안 된다.",
+    "syllabus": "3.3.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.1.2 가상화"
+    }
+  },
+  {
+    "id": "sys4-077",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "가상화",
+    "prompt": "호스트 운영체제 위에 설치되어 동작하는 가상화 방식의 하이퍼바이저 분류는?",
+    "options": [
+      "타입 2",
+      "타입 1",
+      "L2 스위치",
+      "응용 프록시"
+    ],
+    "answer": 0,
+    "explanation": "타입 2는 호스트 OS 위에서 동작한다. 타입 1은 일반적으로 하드웨어 위에서 직접 동작하는 방식으로 분류한다.",
+    "syllabus": "3.3.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.1.2 가상화"
+    }
+  },
+  {
+    "id": "sys4-078",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "가상화",
+    "prompt": "한 컨테이너가 CPU를 과도하게 소비하여 다른 컨테이너가 느려진다. 적절한 운영 조치는?",
+    "options": [
+      "인스턴스의 로그 보관 기간만 단축",
+      "CPU와 메모리 사용 제한을 설정한다",
+      "이미지 태그 이름만 변경",
+      "CPU 사용 제한을 모두 해제"
+    ],
+    "answer": 1,
+    "explanation": "자원 제한은 한 워크로드의 과소비가 이웃에 미치는 영향을 줄인다. 이름이나 파일 확장자 변경은 자원 경쟁을 해결하지 못한다.",
+    "syllabus": "3.3.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.1.2 가상화"
+    }
+  },
+  {
+    "id": "sys4-079",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "가상화",
+    "prompt": "가상 머신을 가능한 짧은 중단으로 다른 호스트로 옮기는 기능의 목적은?",
+    "options": [
+      "가상 머신의 업무 데이터를 논리적으로 정규화하기",
+      "게스트 OS의 모든 패치를 자동 검증하기",
+      "호스트 유지보수 중 서비스 중단을 줄이기",
+      "응용 프로그램의 트랜잭션 오류를 자동 복구하기"
+    ],
+    "answer": 2,
+    "explanation": "라이브 마이그레이션은 실행 상태를 이동해 호스트 유지보수와 자원 재배치를 돕는다. 무조건 무중단을 보장하는 것은 아니다.",
+    "syllabus": "3.3.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.1.2 가상화"
+    }
+  },
+  {
+    "id": "sys4-080",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "가상화",
+    "prompt": "운영 환경과 동일한 애플리케이션 의존성을 이미지로 묶어 배포할 때 기대하는 효과는?",
+    "options": [
+      "이미지가 같으면 외부 데이터베이스 상태도 항상 같아진다",
+      "이미지에 포함된 취약점은 배포 후 자동으로 제거된다",
+      "런타임 환경 변수 차이도 이미지 이름만으로 해소된다",
+      "환경 차이로 인한 실행 불일치를 줄인다"
+    ],
+    "answer": 3,
+    "explanation": "이미지 기반 패키징은 실행 환경 재현성을 높인다. 패치·데이터 마이그레이션·장애 대응은 별도로 필요하다.",
+    "syllabus": "3.3.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.1.2 가상화"
+    }
+  },
+  {
+    "id": "sys4-081",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "고가용성",
+    "prompt": "주 서버 장애 시 대기 서버가 역할을 이어받는 구성은?",
+    "options": [
+      "Active-Standby",
+      "Active-Active",
+      "단일 노드 단독 운영",
+      "콜드 백업 파일만 보관"
+    ],
+    "answer": 0,
+    "explanation": "Active-Standby는 대기 노드가 장애 시 역할을 전환받는다. 여러 노드가 평상시 동시에 처리하는 Active-Active와 구별된다.",
+    "syllabus": "3.3.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.1.3 고가용성"
+    }
+  },
+  {
+    "id": "sys4-082",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "고가용성",
+    "prompt": "서비스 경로의 부하 분산기가 1대이고 대체 장비가 없다. 이 장비의 아키텍처상 위험은?",
+    "options": [
+      "부하 분산 편향만",
+      "단일 장애점",
+      "복제 지연",
+      "데이터 중복 저장"
+    ],
+    "answer": 1,
+    "explanation": "해당 장비 하나가 고장 나 전체 서비스 경로가 중단될 수 있으므로 단일 장애점이다. 뒤쪽 서버 이중화만으로 해결되지 않는다.",
+    "syllabus": "3.3.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.1.3 고가용성"
+    }
+  },
+  {
+    "id": "sys4-083",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "고가용성",
+    "prompt": "서비스 복구 목표 시간인 RTO가 30분이라는 뜻은?",
+    "options": [
+      "허용 데이터 손실 기간이 30분이다",
+      "백업 생성 간격이 반드시 30분이다",
+      "장애 후 목표 복구 시간이 30분이다",
+      "장애 간 평균 정상 동작 시간이 30분이다"
+    ],
+    "answer": 2,
+    "explanation": "RTO는 장애 발생 후 목표 복구 시간이다. RPO는 데이터 손실 시점 목표이고 백업 주기나 MTBF는 서로 다른 지표이다.",
+    "syllabus": "3.3.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.1.3 고가용성"
+    }
+  },
+  {
+    "id": "sys4-084",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "고가용성",
+    "prompt": "RPO를 5분으로 정한 시스템의 백업·복제 설계가 목표로 삼는 것은?",
+    "options": [
+      "장애가 발생한 뒤 5분 이내에 서비스를 복구",
+      "정상 상태의 평균 연속 가동 시간을 5분으로 유지",
+      "백업 데이터를 복원하는 작업 자체를 5분 내 종료",
+      "장애 시 데이터 손실 시간 범위를 5분 이내로 제한"
+    ],
+    "answer": 3,
+    "explanation": "RPO는 복구할 데이터의 허용 손실 시간 범위를 정한다. 서비스 복구 소요 시간은 RTO이므로 5분 안에 재시작하라는 의미와 다르다.",
+    "syllabus": "3.3.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.1.3 고가용성"
+    }
+  },
+  {
+    "id": "sys4-085",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "고가용성",
+    "prompt": "평균 정상 가동 시간 MTBF=99시간, 평균 수리 시간 MTTR=1시간이다. 단순 가용도 MTBF/(MTBF+MTTR)는?",
+    "options": [
+      "99%",
+      "1%",
+      "90%",
+      "100%"
+    ],
+    "answer": 0,
+    "explanation": "99÷100=0.99이다. 수리 시간이 0이 아니므로 이 식의 가용도는 100%가 아니다.",
+    "syllabus": "3.3.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.1.3 고가용성"
+    }
+  },
+  {
+    "id": "sys4-086",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "고가용성",
+    "prompt": "네트워크 단절로 두 노드가 모두 자신이 주 서버라고 판단하여 같은 저장 데이터를 수정한다. 문제는?",
+    "options": [
+      "복제 지연만",
+      "스플릿 브레인",
+      "정상적 리더 선출 완료",
+      "단일 노드 캐시 미스"
+    ],
+    "answer": 1,
+    "explanation": "스플릿 브레인은 분리된 노드가 동시에 주 역할을 수행하는 상황이다. 쿼럼이나 펜싱 등으로 상충 쓰기를 방지한다.",
+    "syllabus": "3.3.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.1.3 고가용성"
+    }
+  },
+  {
+    "id": "sys4-087",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "고가용성",
+    "prompt": "복제 서버를 운영하고 있어도 별도 백업이 필요한 이유로 적절한 것은?",
+    "options": [
+      "복제본은 과거 모든 변경 시점을 영구 보존하기 때문",
+      "동기 복제이면 사용자 실수로 삭제한 데이터가 자동 보존되기 때문",
+      "논리적 삭제나 손상이 복제본에도 전파될 수 있다",
+      "복제 여부와 무관하게 백업만 있으면 무중단이 보장되기 때문"
+    ],
+    "answer": 2,
+    "explanation": "복제는 가용성에 도움이 되지만 잘못된 변경도 복제할 수 있다. 이전 시점 복구를 위한 백업이 필요하다.",
+    "syllabus": "3.3.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.1.3 고가용성"
+    }
+  },
+  {
+    "id": "sys4-088",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "고가용성",
+    "prompt": "로드 밸런서가 장애 서버로 계속 요청을 보내지 않게 하는 직접적인 기능은?",
+    "options": [
+      "세션 쿠키 크기 감소",
+      "DNS 이름의 길이 축소",
+      "정적 파일 캐시 시간 증가",
+      "헬스 체크와 비정상 대상 제외"
+    ],
+    "answer": 3,
+    "explanation": "헬스 체크로 처리 가능 여부를 확인하고 실패 대상을 제외한다. 압축이나 정규화만으로 장애 대상을 식별하지 못한다.",
+    "syllabus": "3.3.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.1.3 고가용성"
+    }
+  },
+  {
+    "id": "sys4-089",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "클라우드 플랫폼",
+    "prompt": "가상 머신과 가상 네트워크를 제공받고 이용자가 OS 패치와 응용 프로그램을 관리하는 대표 서비스 모델은?",
+    "options": [
+      "IaaS",
+      "SaaS",
+      "PaaS",
+      "FaaS"
+    ],
+    "answer": 0,
+    "explanation": "IaaS는 인프라 자원을 제공하며 고객이 OS와 응용을 관리하는 범위가 크다. SaaS는 완성된 응용 서비스를 이용한다.",
+    "syllabus": "3.3.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.2.1 클라우드 플랫폼"
+    }
+  },
+  {
+    "id": "sys4-090",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "클라우드 플랫폼",
+    "prompt": "개발자가 코드와 설정을 배포하면 제공자가 실행 플랫폼을 관리하는 모델은?",
+    "options": [
+      "IaaS",
+      "PaaS",
+      "SaaS",
+      "서버 하우징"
+    ],
+    "answer": 1,
+    "explanation": "PaaS는 런타임과 플랫폼 관리를 제공한다. 이용자는 주로 애플리케이션과 데이터에 집중한다.",
+    "syllabus": "3.3.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.2.1 클라우드 플랫폼"
+    }
+  },
+  {
+    "id": "sys4-091",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "클라우드 플랫폼",
+    "prompt": "회사가 웹 브라우저로 제공자의 완성된 이메일 서비스를 이용한다. 대표적인 클라우드 모델은?",
+    "options": [
+      "IaaS",
+      "PaaS",
+      "SaaS",
+      "서버 하우징"
+    ],
+    "answer": 2,
+    "explanation": "SaaS는 완성된 소프트웨어 기능을 서비스로 제공한다. 사용자가 OS부터 설치하는 IaaS와 다르다.",
+    "syllabus": "3.3.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.2.1 클라우드 플랫폼"
+    }
+  },
+  {
+    "id": "sys4-092",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "클라우드 플랫폼",
+    "prompt": "평상시 2대, 행사 중 10대로 서버를 자동 증설하고 이후 다시 줄인다. 강조되는 클라우드 특성은?",
+    "options": [
+      "멀티테넌시",
+      "지역 중복 저장",
+      "하드웨어 종속성",
+      "탄력성"
+    ],
+    "answer": 3,
+    "explanation": "탄력성은 수요에 따라 자원을 늘리고 줄이는 능력이다. 멀티테넌시는 여러 고객의 자원 공유, 지역 중복은 장애 대응에 관한 특성이다.",
+    "syllabus": "3.3.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.2.1 클라우드 플랫폼"
+    }
+  },
+  {
+    "id": "sys4-093",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "클라우드 플랫폼",
+    "prompt": "가상 머신의 관리 포트를 인터넷 전체에 개방해 침해가 발생했다. 책임 공유 관점의 적절한 판단은?",
+    "options": [
+      "고객의 네트워크 접근 설정도 관리 대상이다",
+      "가상 머신 관리 포트 설정까지 항상 제공자가 대신 결정한다",
+      "IaaS에서는 고객이 게스트 OS 접근 통제를 하지 않는다",
+      "제공자의 물리 보안 인증만 확인하면 고객 설정 검토는 필요 없다"
+    ],
+    "answer": 0,
+    "explanation": "서비스 모델에 따른 책임을 구분해야 하며 고객의 계정·설정 책임이 사라지지 않는다. 제공자만의 문제로 단정할 수 없다.",
+    "syllabus": "3.3.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.2.1 클라우드 플랫폼"
+    }
+  },
+  {
+    "id": "sys4-094",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "클라우드 플랫폼",
+    "prompt": "특정 조직만 사용하도록 운영하는 클라우드 배치 유형은?",
+    "options": [
+      "퍼블릭 클라우드",
+      "프라이빗 클라우드",
+      "하이브리드 클라우드",
+      "커뮤니티 클라우드"
+    ],
+    "answer": 1,
+    "explanation": "프라이빗 클라우드는 단일 조직 전용이라는 배치 특성이다. 조직 내부 또는 외부에서 운영할 수 있다.",
+    "syllabus": "3.3.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.2.1 클라우드 플랫폼"
+    }
+  },
+  {
+    "id": "sys4-095",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "클라우드 플랫폼",
+    "prompt": "서버리스 함수가 유휴 상태 이후 첫 요청에서 상대적으로 늦게 응답한다. 검토할 현상은?",
+    "options": [
+      "DNS 존 전송",
+      "스토리지 미러링",
+      "콜드 스타트",
+      "IP 주소 충돌"
+    ],
+    "answer": 2,
+    "explanation": "콜드 스타트는 실행 환경 준비에 따른 초기 지연이다. 서버리스라는 이름이 실제 서버나 시작 비용이 없다는 뜻은 아니다.",
+    "syllabus": "3.3.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.2.1 클라우드 플랫폼"
+    }
+  },
+  {
+    "id": "sys4-096",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "클라우드 플랫폼",
+    "prompt": "객체 스토리지에 적합한 활용 사례는?",
+    "options": [
+      "로컬 블록 장치처럼 섹터를 직접 갱신",
+      "CPU의 명령어 인출용 레지스터 대체",
+      "커널의 가상 주소 페이지 테이블로 사용",
+      "사진과 백업 파일을 객체 키로 저장"
+    ],
+    "answer": 3,
+    "explanation": "객체 스토리지는 키와 메타데이터를 가진 객체를 저장한다. 섹터를 직접 갱신하는 블록 장치나 CPU·커널 내부 메모리 구조의 대체재는 아니다.",
+    "syllabus": "3.3.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.2.1 클라우드 플랫폼"
+    }
+  },
+  {
+    "id": "sys4-097",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "빅데이터 아키텍처",
+    "prompt": "분산 파일 시스템에서 큰 파일을 여러 블록으로 나누어 여러 노드에 저장하는 목적은?",
+    "options": [
+      "용량과 처리 부하를 여러 노드에 분산",
+      "분산 배치만으로 모든 데이터의 중복이 제거된다",
+      "분산 저장을 하면 데이터의 논리 스키마가 자동 정규화된다",
+      "노드 수와 무관하게 단일 노드 장애 시 모든 데이터가 사라진다"
+    ],
+    "answer": 0,
+    "explanation": "분산 저장은 여러 노드의 용량과 병렬성을 활용한다. 암호화나 물리 디스크 속도 향상을 자동 제공하지 않는다.",
+    "syllabus": "3.3.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.3.1 빅데이터 아키텍처"
+    }
+  },
+  {
+    "id": "sys4-098",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "빅데이터 아키텍처",
+    "prompt": "매일 새벽 전날 매출 전체를 모아 정산하는 처리 방식은?",
+    "options": [
+      "스트림 처리",
+      "배치 처리",
+      "대화식 단건 질의",
+      "이벤트 기반 즉시 제어"
+    ],
+    "answer": 1,
+    "explanation": "배치는 일정량 데이터를 모아 처리한다. 실시간 이벤트 흐름을 지속 처리하는 스트리밍과 구별된다.",
+    "syllabus": "3.3.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.3.1 빅데이터 아키텍처"
+    }
+  },
+  {
+    "id": "sys4-099",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "빅데이터 아키텍처",
+    "prompt": "초당 들어오는 센서 이벤트를 지속 처리하여 이상 징후를 즉시 탐지하는 방식은?",
+    "options": [
+      "일 단위 배치 처리",
+      "월말 통합 정산",
+      "스트림 처리",
+      "오프라인 아카이빙"
+    ],
+    "answer": 2,
+    "explanation": "스트림 처리는 계속 도착하는 이벤트를 처리해 낮은 지연의 결과를 낸다. 월말 배치처럼 장시간 모으는 방식과 다르다.",
+    "syllabus": "3.3.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.3.1 빅데이터 아키텍처"
+    }
+  },
+  {
+    "id": "sys4-100",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "빅데이터 아키텍처",
+    "prompt": "MapReduce에서 Map 결과를 같은 키별로 모아 Reduce 작업에 전달하는 중간 단계는?",
+    "options": [
+      "맵 입력 분할만",
+      "최종 결과 출력만",
+      "복제본 장애 복구",
+      "셔플"
+    ],
+    "answer": 3,
+    "explanation": "셔플은 키별 분배와 집계를 위한 데이터 이동을 수행한다. 파일 시스템 연결이나 프로그램 번역과 다른 단계이다.",
+    "syllabus": "3.3.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.3.1 빅데이터 아키텍처"
+    }
+  },
+  {
+    "id": "sys4-101",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "빅데이터 아키텍처",
+    "prompt": "데이터가 있는 노드 근처에서 계산을 실행하여 네트워크 전송을 줄이는 원칙은?",
+    "options": [
+      "데이터 지역성",
+      "중앙 집중 전송",
+      "전역 동기 잠금",
+      "전체 데이터 정규화"
+    ],
+    "answer": 0,
+    "explanation": "데이터 지역성은 큰 데이터를 옮기는 비용을 줄인다. 잠금이나 전원 구성은 다른 목적의 설계 요소이다.",
+    "syllabus": "3.3.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.3.1 빅데이터 아키텍처"
+    }
+  },
+  {
+    "id": "sys4-102",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "빅데이터 아키텍처",
+    "prompt": "원시 정형·반정형·비정형 데이터를 다양한 형태로 보관하고 사용 시 해석하는 저장 구조는?",
+    "options": [
+      "정제된 데이터 웨어하우스만",
+      "데이터 레이크",
+      "분석용 데이터 마트만",
+      "키 값 캐시만"
+    ],
+    "answer": 1,
+    "explanation": "데이터 레이크는 다양한 원시 데이터를 수용한다. 분석용으로 정제·구조화한 데이터 웨어하우스와 초점이 다르다.",
+    "syllabus": "3.3.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.3.1 빅데이터 아키텍처"
+    }
+  },
+  {
+    "id": "sys4-103",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "빅데이터 아키텍처",
+    "prompt": "이벤트가 생성된 시각과 처리 시스템에 도착한 시각이 다를 때 지연 도착 데이터를 다루기 위해 구분할 시간은?",
+    "options": [
+      "큐의 전체 용량과 메시지 크기",
+      "데이터의 복제 수와 샤드 수",
+      "이벤트 시간과 처리 시간",
+      "보관 기간과 백업 주기"
+    ],
+    "answer": 2,
+    "explanation": "이벤트 시간은 사건 발생 시각, 처리 시간은 시스템 처리 시각이다. 네트워크 지연으로 순서와 시각 차이가 생길 수 있다.",
+    "syllabus": "3.3.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.3.1 빅데이터 아키텍처"
+    }
+  },
+  {
+    "id": "sys4-104",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "빅데이터 아키텍처",
+    "prompt": "분산 로그에서 같은 파티션 내 이벤트 순서를 유지하면서 소비자를 병렬 확장하려 한다. 주로 조정할 단위는?",
+    "options": [
+      "복제본의 파일 이름",
+      "메시지 본문의 문자 인코딩",
+      "브로커 관리 화면의 정렬 순서",
+      "파티션"
+    ],
+    "answer": 3,
+    "explanation": "분산 로그의 파티션은 병렬 처리 단위와 순서 보장의 범위를 정한다. 파일 이름·인코딩·관리 화면 정렬은 소비 병렬성을 결정하는 기본 단위가 아니다.",
+    "syllabus": "3.3.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.3.3.1 빅데이터 아키텍처"
+    }
+  },
+  {
+    "id": "sys4-105",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "네트워크 장비",
+    "prompt": "이더넷 스위치가 학습 테이블을 만들 때 일반적으로 관찰하는 정보는?",
+    "options": [
+      "수신 프레임의 출발지 MAC 주소와 입력 포트",
+      "목적지 IP 주소와 TTL",
+      "목적지 TCP 포트와 ACK 번호",
+      "출발지 DNS 이름과 조회 시간"
+    ],
+    "answer": 0,
+    "explanation": "스위치는 출발지 MAC이 어느 포트에서 보이는지 학습한다. 목적지 MAC은 이후 전달 포트를 찾는 데 사용한다.",
+    "syllabus": "3.4.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.1.1 네트워크 장비"
+    }
+  },
+  {
+    "id": "sys4-106",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "네트워크 장비",
+    "prompt": "허브와 일반적인 이더넷 스위치의 차이로 적절한 것은?",
+    "options": [
+      "허브가 MAC 학습으로 프레임 전달 포트를 선택한다",
+      "스위치는 학습된 MAC 정보를 이용해 전달 포트를 선택한다",
+      "스위치는 학습 여부와 관계없이 모든 유니캐스트를 전체 포트로 전달한다",
+      "스위치의 모든 포트는 반드시 하나의 충돌 도메인을 이룬다"
+    ],
+    "answer": 1,
+    "explanation": "스위치는 MAC 기반으로 전달하고 허브는 신호를 여러 포트로 반복한다. 단, 스위치도 브로드캐스트나 미학습 목적지는 플러딩할 수 있다.",
+    "syllabus": "3.4.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.1.1 네트워크 장비"
+    }
+  },
+  {
+    "id": "sys4-107",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "네트워크 장비",
+    "prompt": "서로 다른 IP 서브넷에 속한 단말 간 통신을 연결하는 기본 장비 역할은?",
+    "options": [
+      "리피터만",
+      "패시브 허브만",
+      "라우터",
+      "프린터 스풀러"
+    ],
+    "answer": 2,
+    "explanation": "라우터는 네트워크 계층에서 서브넷 간 패킷을 전달한다. 신호만 재생하는 장비는 IP 라우팅을 수행하지 않는다.",
+    "syllabus": "3.4.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.1.1 네트워크 장비"
+    }
+  },
+  {
+    "id": "sys4-108",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "네트워크 장비",
+    "prompt": "하나의 물리 스위치에서 부서별로 논리적 브로드캐스트 도메인을 나누는 기술은?",
+    "options": [
+      "NAT",
+      "포트 미러링",
+      "링크 집성만",
+      "VLAN"
+    ],
+    "answer": 3,
+    "explanation": "VLAN은 논리적으로 LAN을 분리한다. 서로 다른 VLAN 간 통신에는 라우팅 기능이 필요하다.",
+    "syllabus": "3.4.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.1.1 네트워크 장비"
+    }
+  },
+  {
+    "id": "sys4-109",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "네트워크 장비",
+    "prompt": "무선 단말을 유선 LAN에 연결하는 접속 지점 역할을 하는 장비는?",
+    "options": [
+      "무선 AP",
+      "유선 리피터",
+      "수동 패치 패널",
+      "DHCP 서버만"
+    ],
+    "answer": 0,
+    "explanation": "무선 AP는 무선 단말을 LAN에 접속시킨다. 유선 리피터와 패치 패널은 무선 접속을 제공하지 않으며 DHCP만으로 링크 연결은 성립하지 않는다.",
+    "syllabus": "3.4.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.1.1 네트워크 장비"
+    }
+  },
+  {
+    "id": "sys4-110",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "네트워크 장비",
+    "prompt": "IP와 TCP 포트를 기준으로 트래픽을 여러 서버에 분산하는 장비 기능은?",
+    "options": [
+      "L7 URL 경로 분산",
+      "L4 부하 분산",
+      "L2 MAC 학습",
+      "L1 신호 재생"
+    ],
+    "answer": 1,
+    "explanation": "L4 부하 분산은 전송 계층 정보 등을 이용한다. URL 경로 같은 응용 내용을 기준으로 하는 L7 분산과 구분된다.",
+    "syllabus": "3.4.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.1.1 네트워크 장비"
+    }
+  },
+  {
+    "id": "sys4-111",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "네트워크 장비",
+    "prompt": "스위치 사이에 이중 링크를 연결했더니 브로드캐스트 프레임이 반복 순환한다. 이를 방지하는 대표 프로토콜은?",
+    "options": [
+      "SMTP",
+      "DHCP",
+      "STP",
+      "NTP"
+    ],
+    "answer": 2,
+    "explanation": "STP는 계층 2 토폴로지의 루프를 방지하도록 경로를 제어한다. 나머지는 메일·주소 설정·시간 동기화 프로토콜이다.",
+    "syllabus": "3.4.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.1.1 네트워크 장비"
+    }
+  },
+  {
+    "id": "sys4-112",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "전송과 오류 제어",
+    "prompt": "수신 데이터의 비트 오류를 검출하기 위해 다항식 연산 기반 검사값을 사용하는 방식은?",
+    "options": [
+      "단순 패리티",
+      "체크섬의 단순 합산만",
+      "Stop-and-Wait ARQ",
+      "CRC"
+    ],
+    "answer": 3,
+    "explanation": "CRC는 오류 검출용 검사값을 계산한다. 오류를 검출하는 것과 원래 데이터를 직접 복원하는 것은 구별된다.",
+    "syllabus": "3.4.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.1.2 전송과 오류 제어"
+    }
+  },
+  {
+    "id": "sys4-113",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "전송과 오류 제어",
+    "prompt": "정지 대기 ARQ에서 송신자가 다음 프레임을 보내기 전 일반적으로 기다리는 것은?",
+    "options": [
+      "현재 프레임에 대한 확인 응답",
+      "다음 프레임의 수신 확인",
+      "전체 파일의 DNS 등록",
+      "수신자의 연결 종료 통보"
+    ],
+    "answer": 0,
+    "explanation": "정지 대기는 현재 전송한 프레임의 ACK를 받은 뒤 다음 프레임을 보낸다. 다음 프레임은 아직 보내지 않았으며 전체 연결 종료를 기다리는 방식도 아니다.",
+    "syllabus": "3.4.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.1.2 전송과 오류 제어"
+    }
+  },
+  {
+    "id": "sys4-114",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "전송과 오류 제어",
+    "prompt": "오류를 검출한 뒤 재전송을 요청하는 대신 추가 중복 정보로 수신 측이 복구하는 방식은?",
+    "options": [
+      "정지 대기 ARQ",
+      "전방 오류 정정",
+      "선택적 재전송 ARQ",
+      "Go-Back-N ARQ"
+    ],
+    "answer": 1,
+    "explanation": "전방 오류 정정은 중복 정보를 활용해 일정 범위 오류를 정정한다. ARQ는 주로 재전송으로 복구한다.",
+    "syllabus": "3.4.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.1.2 전송과 오류 제어"
+    }
+  },
+  {
+    "id": "sys4-115",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "전송과 오류 제어",
+    "prompt": "송신 속도를 수신 버퍼의 처리 능력에 맞추는 제어는?",
+    "options": [
+      "혼잡 제어",
+      "오류 검출",
+      "흐름 제어",
+      "경로 제어"
+    ],
+    "answer": 2,
+    "explanation": "흐름 제어는 수신자의 수용 능력을 보호한다. 네트워크 전체 과부하에 대응하는 혼잡 제어와 초점이 다르다.",
+    "syllabus": "3.4.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.1.2 전송과 오류 제어"
+    }
+  },
+  {
+    "id": "sys4-116",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "전송과 오류 제어",
+    "prompt": "여러 프레임을 ACK 도착 전까지 전송할 수 있도록 허용하는 기법은?",
+    "options": [
+      "정지 대기",
+      "단순 패리티",
+      "프레임 비트 스터핑",
+      "슬라이딩 윈도"
+    ],
+    "answer": 3,
+    "explanation": "슬라이딩 윈도는 미확인 데이터 범위를 제한하면서 파이프라인 전송을 가능하게 한다. 한 프레임만 보내는 방식보다 회선을 효율적으로 쓸 수 있다.",
+    "syllabus": "3.4.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.1.2 전송과 오류 제어"
+    }
+  },
+  {
+    "id": "sys4-117",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "전송과 오류 제어",
+    "prompt": "손상되거나 누락된 프레임만 골라 재전송하는 ARQ 방식은?",
+    "options": [
+      "선택적 재전송",
+      "Go-Back-N",
+      "정지 대기에서의 연속 일괄 전송",
+      "오류 검출 없는 전송"
+    ],
+    "answer": 0,
+    "explanation": "선택적 재전송은 필요한 프레임만 다시 보낸다. Go-Back-N은 오류 지점 이후의 여러 프레임을 다시 보낼 수 있다.",
+    "syllabus": "3.4.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.1.2 전송과 오류 제어"
+    }
+  },
+  {
+    "id": "sys4-118",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "전송과 오류 제어",
+    "prompt": "패리티 비트 하나로 일반적으로 검출할 수 있지만 단순 패리티만으로 항상 검출하지 못하는 오류는?",
+    "options": [
+      "모든 비트 오류를 반드시 정정한다",
+      "홀수 개 비트 오류는 검출하지만 짝수 개 비트 오류는 놓칠 수 있다",
+      "짝수 개 오류만 검출하고 홀수 개는 놓친다",
+      "데이터 길이에 관계없이 암호 위조를 방지한다"
+    ],
+    "answer": 1,
+    "explanation": "짝수 개 비트가 반전되면 패리티가 원래와 같을 수 있다. 패리티는 암호학적 무결성이나 일반적인 오류 정정 수단이 아니다.",
+    "syllabus": "3.4.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.1.2 전송과 오류 제어"
+    }
+  },
+  {
+    "id": "sys4-119",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "계층별 프로토콜",
+    "prompt": "IPv4 서브넷 192.168.10.0/26의 일반적인 사용 가능 호스트 주소 수는?",
+    "options": [
+      "64개",
+      "30개",
+      "62개",
+      "254개"
+    ],
+    "answer": 2,
+    "explanation": "호스트 비트는 6개여서 64주소이며 네트워크·브로드캐스트 주소를 제외하면 62개이다. /31 같은 예외 구간을 묻는 문제가 아니다.",
+    "syllabus": "3.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.2.1 계층별 프로토콜"
+    }
+  },
+  {
+    "id": "sys4-120",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "계층별 프로토콜",
+    "prompt": "192.168.10.130/26이 속하는 네트워크 주소는?",
+    "options": [
+      "192.168.10.0",
+      "192.168.10.64",
+      "192.168.10.192",
+      "192.168.10.128"
+    ],
+    "answer": 3,
+    "explanation": "/26은 마지막 옥텟에서 64단위로 구간을 나눈다. 130은 128~191 구간에 있으므로 네트워크는 .128이다.",
+    "syllabus": "3.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.2.1 계층별 프로토콜"
+    }
+  },
+  {
+    "id": "sys4-121",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "계층별 프로토콜",
+    "prompt": "IPv4 LAN에서 같은 링크의 IP 주소에 대응하는 MAC 주소를 찾는 프로토콜은?",
+    "options": [
+      "ARP",
+      "DNS",
+      "DHCP",
+      "ICMP"
+    ],
+    "answer": 0,
+    "explanation": "ARP는 로컬 링크에서 IPv4 주소와 MAC 주소의 대응을 찾는다. 도메인 이름의 IP 주소 조회는 DNS이다.",
+    "syllabus": "3.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.2.1 계층별 프로토콜"
+    }
+  },
+  {
+    "id": "sys4-122",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "계층별 프로토콜",
+    "prompt": "DHCP의 대표적인 기능은?",
+    "options": [
+      "웹 문서를 암호화한다",
+      "호스트에 IP 주소 등 네트워크 설정을 임대한다",
+      "이메일 본문을 전달한다",
+      "도메인 이름을 사람이 읽는 설명으로 번역한다"
+    ],
+    "answer": 1,
+    "explanation": "DHCP는 주소·게이트웨이·DNS 등 설정을 제공한다. DNS 자체의 이름 해석이나 TLS 암호화 기능과 다르다.",
+    "syllabus": "3.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.2.1 계층별 프로토콜"
+    }
+  },
+  {
+    "id": "sys4-123",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "계층별 프로토콜",
+    "prompt": "기본 게이트웨이를 잘못 설정했지만 같은 서브넷의 단말에는 접근할 수 있다. 예상되는 영향은?",
+    "options": [
+      "호스트의 서브넷 마스크와 무관하게 외부 통신이 정상이다",
+      "같은 서브넷의 모든 통신도 반드시 게이트웨이를 지나 실패한다",
+      "다른 네트워크로 나가는 통신이 실패할 수 있다",
+      "DNS 캐시가 있으면 외부 IP 경로 오류가 자동 해결된다"
+    ],
+    "answer": 2,
+    "explanation": "같은 서브넷은 직접 전달할 수 있지만 외부 목적지는 보통 게이트웨이를 거친다. 게이트웨이 오류는 외부 경로에 영향을 준다.",
+    "syllabus": "3.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.2.1 계층별 프로토콜"
+    }
+  },
+  {
+    "id": "sys4-124",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "계층별 프로토콜",
+    "prompt": "라우팅 테이블에 10.0.0.0/8과 10.1.0.0/16 경로가 있다. 10.1.2.3에 대해 일반적인 최장 접두사 일치가 고르는 경로는?",
+    "options": [
+      "10.0.0.0/8",
+      "두 경로의 다음 홉을 번갈아 항상 사용",
+      "더 구체적인 경로를 무시하고 기본 경로 사용",
+      "10.1.0.0/16"
+    ],
+    "answer": 3,
+    "explanation": "두 경로가 일치하지만 /16이 더 구체적이므로 선택된다. 단순히 주소 범위가 큰 경로를 고르지 않는다.",
+    "syllabus": "3.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.2.1 계층별 프로토콜"
+    }
+  },
+  {
+    "id": "sys4-125",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "계층별 프로토콜",
+    "prompt": "IPv6 기본 주소 길이는?",
+    "options": [
+      "128비트",
+      "32비트",
+      "48비트",
+      "64비트"
+    ],
+    "answer": 0,
+    "explanation": "IPv6 주소는 128비트이며 IPv4는 32비트이다. 이더넷 MAC 주소의 일반적인 48비트와 혼동하지 않는다.",
+    "syllabus": "3.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.2.1 계층별 프로토콜"
+    }
+  },
+  {
+    "id": "sys4-126",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "TCP와 UDP 활용",
+    "prompt": "TCP가 응용 프로그램에 제공하는 데이터 전달 형태는?",
+    "options": [
+      "메시지 경계를 보존하는 신뢰성 없는 데이터그램",
+      "신뢰성 있는 순서 보장 바이트 스트림",
+      "응용 메시지 단위의 자동 암호화 스트림",
+      "프레임의 목적지 MAC 기준 전달 서비스"
+    ],
+    "answer": 1,
+    "explanation": "TCP는 바이트 스트림을 제공하며 응용 메시지 경계를 자동 보존하지 않는다. 보안 암호화도 TCP 자체의 기본 기능이 아니다.",
+    "syllabus": "3.4.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.2.2 TCP와 UDP 활용"
+    }
+  },
+  {
+    "id": "sys4-127",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "TCP와 UDP 활용",
+    "prompt": "UDP에 대한 설명으로 적절한 것은?",
+    "options": [
+      "항상 3-way handshake 후 전송한다",
+      "손실된 데이터그램을 반드시 자체 재전송한다",
+      "기본적으로 전달 성공과 순서를 보장하지 않는다",
+      "모든 데이터그램을 암호화한다"
+    ],
+    "answer": 2,
+    "explanation": "UDP는 비연결 데이터그램 전송을 제공한다. 신뢰성이나 암호화가 필요하면 상위 프로토콜에서 추가할 수 있다.",
+    "syllabus": "3.4.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.2.2 TCP와 UDP 활용"
+    }
+  },
+  {
+    "id": "sys4-128",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "TCP와 UDP 활용",
+    "prompt": "TCP 연결 설정에서 일반적인 메시지 순서는?",
+    "options": [
+      "SYN → ACK → FIN",
+      "SYN/ACK → SYN → ACK",
+      "SYN → FIN/ACK → ACK",
+      "SYN → SYN/ACK → ACK"
+    ],
+    "answer": 3,
+    "explanation": "3-way handshake는 연결과 초기 순서 번호를 확인한다. FIN은 주로 연결 종료와 관련된다.",
+    "syllabus": "3.4.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.2.2 TCP와 UDP 활용"
+    }
+  },
+  {
+    "id": "sys4-129",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "TCP와 UDP 활용",
+    "prompt": "실시간 음성 통화에서 늦은 음성 패킷의 재전송보다 낮은 지연을 우선하려 한다. 전송 설계로 적절한 것은?",
+    "options": [
+      "UDP 기반으로 손실·지터 대응을 응용 수준에서 설계",
+      "음성이 손실되면 재전송 완료까지 모든 후속 음성을 무조건 보류",
+      "UDP를 선택했으므로 수신 버퍼와 지터 관리를 생략",
+      "손실율과 무관하게 버퍼를 무한히 늘려 실시간성 확보"
+    ],
+    "answer": 0,
+    "explanation": "실시간 미디어는 오래된 데이터의 재전송보다 적시성을 중시할 수 있다. UDP 선택만으로 품질 관리가 사라지는 것은 아니다.",
+    "syllabus": "3.4.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.2.2 TCP와 UDP 활용"
+    }
+  },
+  {
+    "id": "sys4-130",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "TCP와 UDP 활용",
+    "prompt": "TCP 수신자가 광고하는 수신 윈도 크기가 줄었다. 송신자가 고려할 직접적인 의미는?",
+    "options": [
+      "네트워크 혼잡이 반드시 발생했다",
+      "수신 버퍼의 여유가 줄었다",
+      "목적지 포트가 변경되었다",
+      "송신 데이터가 모두 확인되었다"
+    ],
+    "answer": 1,
+    "explanation": "수신 윈도는 수신자가 수용할 수 있는 데이터량을 나타낸다. 혼잡 윈도와 별개이며 포트 변경이나 모든 데이터의 확인 완료를 뜻하지 않는다.",
+    "syllabus": "3.4.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.2.2 TCP와 UDP 활용"
+    }
+  },
+  {
+    "id": "sys4-131",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "TCP와 UDP 활용",
+    "prompt": "TCP 포트 번호의 주된 용도는?",
+    "options": [
+      "호스트 간 최적 경로 선택",
+      "링크에서 MAC 주소 학습",
+      "호스트 내 통신할 응용 엔드포인트 구분",
+      "IP 패킷의 단편 크기 결정"
+    ],
+    "answer": 2,
+    "explanation": "IP 주소가 호스트 식별에 쓰인다면 포트는 전송 계층에서 응용 엔드포인트를 구분한다. 물리 위치나 압축 정보가 아니다.",
+    "syllabus": "3.4.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.2.2 TCP와 UDP 활용"
+    }
+  },
+  {
+    "id": "sys4-132",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "TCP와 UDP 활용",
+    "prompt": "TCP에서 확인 응답과 재전송 타이머를 사용하는 주된 목적은?",
+    "options": [
+      "패킷 내용을 기본적으로 비밀로 유지",
+      "IP 주소를 도메인 이름으로 바꾸기",
+      "물리 전송 속도를 무한대로 높이기",
+      "손실 가능성이 있는 네트워크 위에서 신뢰성 있는 전달 제공"
+    ],
+    "answer": 3,
+    "explanation": "ACK와 타이머는 손실을 감지하고 복구하도록 돕는다. 기밀성은 TLS 등 별도 보안 프로토콜로 제공한다.",
+    "syllabus": "3.4.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.4.2.2 TCP와 UDP 활용"
+    }
+  },
+  {
+    "id": "sys4-133",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "애플리케이션 프로토콜",
+    "prompt": "도메인 이름에 대응하는 IP 주소 등을 조회하는 서비스는?",
+    "options": [
+      "DNS",
+      "DHCP",
+      "SMTP",
+      "NTP"
+    ],
+    "answer": 0,
+    "explanation": "DNS는 이름 공간의 레코드를 조회한다. DHCP는 호스트의 네트워크 설정을 배정한다.",
+    "syllabus": "3.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.1.1 애플리케이션 프로토콜"
+    }
+  },
+  {
+    "id": "sys4-134",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "애플리케이션 프로토콜",
+    "prompt": "메일 서버 사이에서 이메일을 전달할 때 사용하는 대표 프로토콜은?",
+    "options": [
+      "IMAP",
+      "SMTP",
+      "NTP",
+      "ARP"
+    ],
+    "answer": 1,
+    "explanation": "SMTP는 메일 전송에 사용한다. IMAP은 주로 사용자 클라이언트의 서버 메일함 접근에 사용한다.",
+    "syllabus": "3.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.1.1 애플리케이션 프로토콜"
+    }
+  },
+  {
+    "id": "sys4-135",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "애플리케이션 프로토콜",
+    "prompt": "메일을 서버에 유지하면서 여러 기기에서 메일함 상태를 동기화하는 데 적합한 프로토콜은?",
+    "options": [
+      "SMTP",
+      "NTP",
+      "IMAP",
+      "FTP"
+    ],
+    "answer": 2,
+    "explanation": "IMAP은 서버 메일함과 상태를 관리하는 기능을 제공한다. SMTP는 메일 전송 역할이 중심이다.",
+    "syllabus": "3.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.1.1 애플리케이션 프로토콜"
+    }
+  },
+  {
+    "id": "sys4-136",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "애플리케이션 프로토콜",
+    "prompt": "네트워크 장비와 서버의 시간을 동기화하는 대표 프로토콜은?",
+    "options": [
+      "FTP",
+      "SMTP",
+      "ARP",
+      "NTP"
+    ],
+    "answer": 3,
+    "explanation": "NTP는 시간 동기화를 제공한다. 정확한 시간은 로그 비교에 도움이 되지만 NTP 자체가 모든 로그를 수집하는 것은 아니다.",
+    "syllabus": "3.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.1.1 애플리케이션 프로토콜"
+    }
+  },
+  {
+    "id": "sys4-137",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "애플리케이션 프로토콜",
+    "prompt": "HTTP의 GET 요청이 의미상 적합한 용도는?",
+    "options": [
+      "리소스의 표현 조회",
+      "서버 데이터 삭제를 반드시 실행",
+      "비밀번호를 반드시 변경",
+      "새 계정 생성만 수행"
+    ],
+    "answer": 0,
+    "explanation": "GET은 안전한 조회 의미를 갖는다. 삭제나 계정 생성 같은 변경 작업을 GET으로 설계하면 HTTP 의미와 어긋난다.",
+    "syllabus": "3.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.1.1 애플리케이션 프로토콜"
+    }
+  },
+  {
+    "id": "sys4-138",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "애플리케이션 프로토콜",
+    "prompt": "DNS 캐시의 TTL 값이 의미하는 것은?",
+    "options": [
+      "IP 패킷의 남은 홉 수",
+      "응답 레코드를 캐시에 유지할 수 있는 시간",
+      "TCP 연결의 수신 버퍼 크기",
+      "DHCP 주소의 임대 기간"
+    ],
+    "answer": 1,
+    "explanation": "DNS TTL은 캐시 유효 기간을 제어한다. 이름 변경의 전파 속도와 조회 부하에 영향을 줄 수 있다.",
+    "syllabus": "3.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.1.1 애플리케이션 프로토콜"
+    }
+  },
+  {
+    "id": "sys4-139",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "애플리케이션 프로토콜",
+    "prompt": "원격 시스템에 암호화된 셸 접속을 제공하는 대표 프로토콜은?",
+    "options": [
+      "Telnet",
+      "TFTP",
+      "SSH",
+      "HTTP 평문 통신"
+    ],
+    "answer": 2,
+    "explanation": "SSH는 암호화된 원격 접속 기능을 제공한다. Telnet은 기본적으로 평문이므로 같은 보안 특성을 갖지 않는다.",
+    "syllabus": "3.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.1.1 애플리케이션 프로토콜"
+    }
+  },
+  {
+    "id": "sys4-140",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "웹 응용",
+    "prompt": "HTTP 응답 코드 404의 일반적인 의미는?",
+    "options": [
+      "요청이 정상 처리되어 본문이 있음",
+      "영구 리다이렉션",
+      "서버 내부 오류",
+      "요청한 리소스를 찾을 수 없음"
+    ],
+    "answer": 3,
+    "explanation": "404는 대상 리소스를 찾지 못했다는 클라이언트 오류 계열이다. 200·301·500과 구별한다.",
+    "syllabus": "3.5.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.1.2 웹 응용"
+    }
+  },
+  {
+    "id": "sys4-141",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "웹 응용",
+    "prompt": "HTTP 응답 코드 500이 나타내는 것은?",
+    "options": [
+      "서버 내부 오류",
+      "정상 생성 완료",
+      "추가 인증만 항상 필요",
+      "영구 이동 완료"
+    ],
+    "answer": 0,
+    "explanation": "500은 서버가 요청 처리를 완료하지 못한 내부 오류를 나타낸다. 201은 생성 성공, 301은 영구 이동이다.",
+    "syllabus": "3.5.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.1.2 웹 응용"
+    }
+  },
+  {
+    "id": "sys4-142",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "웹 응용",
+    "prompt": "브라우저 쿠키의 주된 사용 방식은?",
+    "options": [
+      "서버 내부 메모리에만 저장되며 브라우저에는 전달되지 않는다",
+      "서버가 설정한 값을 조건에 맞는 후속 요청에 포함",
+      "같은 브라우저의 모든 출처에 조건 없이 전송한다",
+      "TCP 연결이 끊기면 모든 쿠키가 반드시 즉시 삭제된다"
+    ],
+    "answer": 1,
+    "explanation": "쿠키는 브라우저에 저장되고 도메인·경로·보안 속성 등에 맞는 요청에 포함된다. 모든 출처에 무조건 전송하지 않으며 TCP 연결 수명과도 동일하지 않다.",
+    "syllabus": "3.5.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.1.2 웹 응용"
+    }
+  },
+  {
+    "id": "sys4-143",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "웹 응용",
+    "prompt": "ETag와 If-None-Match를 활용하는 HTTP 캐시 검증의 목적은?",
+    "options": [
+      "클라이언트 신원 인증을 대신하기",
+      "서버의 세션 상태를 반드시 삭제하기",
+      "리소스가 바뀌지 않았으면 본문 재전송을 줄이기",
+      "전송 본문을 자동 암호화하기"
+    ],
+    "answer": 2,
+    "explanation": "조건부 요청은 표현 변경 여부를 확인한다. 변경이 없으면 304 등으로 본문 전달을 줄일 수 있다.",
+    "syllabus": "3.5.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.1.2 웹 응용"
+    }
+  },
+  {
+    "id": "sys4-144",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "웹 응용",
+    "prompt": "동일 출처 정책에서 출처를 구분하는 기본 조합은?",
+    "options": [
+      "호스트·경로·쿼리",
+      "스킴·경로·문서 제목",
+      "호스트·쿠키 이름·파일 확장자",
+      "스킴·호스트·포트"
+    ],
+    "answer": 3,
+    "explanation": "웹 출처는 스킴·호스트·포트 조합으로 구분한다. 경로만 다른 URL은 일반적으로 같은 출처일 수 있다.",
+    "syllabus": "3.5.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.1.2 웹 응용"
+    }
+  },
+  {
+    "id": "sys4-145",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "웹 응용",
+    "prompt": "채팅에서 연결을 유지하며 클라이언트와 서버가 양방향으로 메시지를 보내는 데 적합한 웹 기술은?",
+    "options": [
+      "WebSocket",
+      "단발성 GET 응답만",
+      "정적 HTML 캐시만",
+      "DNS 라운드 로빈"
+    ],
+    "answer": 0,
+    "explanation": "WebSocket은 지속 연결을 통한 양방향 통신을 지원한다. 정적 문서만 반복 다운로드하는 방식과 다르다.",
+    "syllabus": "3.5.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.1.2 웹 응용"
+    }
+  },
+  {
+    "id": "sys4-146",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "웹 응용",
+    "prompt": "HTTP 요청을 처리한 뒤 다른 URL로 이동하라고 응답하는 기능은?",
+    "options": [
+      "서버 내부 함수 호출",
+      "리다이렉션",
+      "메시지 본문 압축",
+      "TLS 키 교환"
+    ],
+    "answer": 1,
+    "explanation": "리다이렉션은 3xx 응답과 Location 등으로 다른 위치를 안내한다. 서버 내부 파일 이동 자체와 동일하지 않다.",
+    "syllabus": "3.5.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.1.2 웹 응용"
+    }
+  },
+  {
+    "id": "sys4-147",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "네트워크 융합",
+    "prompt": "SDN에서 전달 장치의 패킷 포워딩과 경로·정책 결정을 분리하는 두 영역은?",
+    "options": [
+      "응용 계층과 표현 계층",
+      "원본 저장소와 백업 저장소",
+      "데이터 평면과 제어 평면",
+      "송신 버퍼와 수신 버퍼"
+    ],
+    "answer": 2,
+    "explanation": "SDN은 제어와 전달을 분리하고 제어를 프로그램 가능하게 하는 접근이다. 메모리 영역 구분과 다른 개념이다.",
+    "syllabus": "3.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.2.1 네트워크 융합"
+    }
+  },
+  {
+    "id": "sys4-148",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "네트워크 융합",
+    "prompt": "방화벽이나 로드 밸런서 같은 네트워크 기능을 범용 서버의 소프트웨어로 구현하는 접근은?",
+    "options": [
+      "SDN의 제어 평면 분리만",
+      "VLAN에 의한 브로드캐스트 분리",
+      "NAT에 의한 주소 변환",
+      "NFV"
+    ],
+    "answer": 3,
+    "explanation": "NFV는 네트워크 기능 가상화를 뜻한다. SDN의 제어·전달 평면 분리와 관련되지만 같은 개념은 아니다.",
+    "syllabus": "3.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.2.1 네트워크 융합"
+    }
+  },
+  {
+    "id": "sys4-149",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "네트워크 융합",
+    "prompt": "음성·영상·데이터를 공통 IP 기반 네트워크로 전달할 때 핵심적으로 고려할 품질 요소는?",
+    "options": [
+      "트래픽별 지연·지터·손실 요구",
+      "파일 보관 기간만",
+      "IP 주소 배정 순서만",
+      "모든 트래픽의 패킷 크기 통일만"
+    ],
+    "answer": 0,
+    "explanation": "실시간 음성과 영상은 지연·지터·손실 요구를 함께 고려해야 한다. 보관 기간이나 주소 배정 순서는 이를 대신하는 품질 지표가 아니다.",
+    "syllabus": "3.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.2.1 네트워크 융합"
+    }
+  },
+  {
+    "id": "sys4-150",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "네트워크 융합",
+    "prompt": "패킷 도착 간격의 변동을 뜻하며 실시간 음성 품질에 영향을 주는 값은?",
+    "options": [
+      "대역폭",
+      "지터",
+      "처리량",
+      "패킷 손실률"
+    ],
+    "answer": 1,
+    "explanation": "지터는 지연의 변동이다. 평균 지연이 같더라도 도착 간격이 불규칙하면 재생 품질이 달라질 수 있다.",
+    "syllabus": "3.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.2.1 네트워크 융합"
+    }
+  },
+  {
+    "id": "sys4-151",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "네트워크 융합",
+    "prompt": "QoS 정책에서 혼잡 시 음성 패킷을 일반 파일 전송보다 우선 처리하는 목적은?",
+    "options": [
+      "파일 트래픽의 패킷 손실을 완전히 금지",
+      "모든 트래픽에 동일한 대기 시간 보장",
+      "실시간 트래픽의 지연 요구를 보호",
+      "우선순위 설정만으로 물리 대역폭 증가"
+    ],
+    "answer": 2,
+    "explanation": "QoS는 분류·스케줄링 등으로 제한된 자원을 요구에 맞게 배분한다. 회선 용량 자체를 무한대로 만들지 않는다.",
+    "syllabus": "3.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.2.1 네트워크 융합"
+    }
+  },
+  {
+    "id": "sys4-152",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "네트워크 융합",
+    "prompt": "지점 여러 회선을 소프트웨어 정책으로 선택하며 애플리케이션별 경로를 관리하는 기술은?",
+    "options": [
+      "SDN 컨트롤러 없는 단일 정적 경로",
+      "단일 LAN의 포트 미러링",
+      "서버 내부 가상 메모리",
+      "SD-WAN"
+    ],
+    "answer": 3,
+    "explanation": "SD-WAN은 광역 네트워크 연결을 정책 기반으로 관리한다. 저장장치나 CPU 내부 기술과 구별된다.",
+    "syllabus": "3.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.2.1 네트워크 융합"
+    }
+  },
+  {
+    "id": "sys4-153",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "네트워크 융합",
+    "prompt": "공장 센서 분석을 먼 데이터센터 대신 현장 가까이에서 처리하는 에지 컴퓨팅의 기대 효과는?",
+    "options": [
+      "왕복 지연과 외부 전송량 감소",
+      "모든 원시 데이터를 중앙으로 전송해야만 판단 가능",
+      "현장 처리만 추가하면 데이터 동기화 검토가 불필요",
+      "중앙 연결 지연과 현장 응답 시간이 반드시 동일해짐"
+    ],
+    "answer": 0,
+    "explanation": "에지는 데이터 발생 지점 가까이에서 처리해 지연과 전송 비용을 줄인다. 중앙 분석과 병행할 수도 있다.",
+    "syllabus": "3.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.2.1 네트워크 융합"
+    }
+  },
+  {
+    "id": "sys4-154",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "IoT 네트워크",
+    "prompt": "배터리 센서가 긴 시간 대기하며 소량 데이터를 먼 거리로 보내려 한다. 우선 고려할 통신 특성은?",
+    "options": [
+      "고속·근거리 연속 영상 전송",
+      "저전력 광역 통신",
+      "고정 전원 전제의 유선 백본 통신",
+      "대용량 데이터의 상시 동기 전송"
+    ],
+    "answer": 1,
+    "explanation": "LPWAN 계열은 장거리·저전력·소량 데이터 요구에 초점을 둔다. 고해상도 연속 영상에는 다른 대역폭 설계가 필요하다.",
+    "syllabus": "3.5.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.2.2 IoT 네트워크"
+    }
+  },
+  {
+    "id": "sys4-155",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "IoT 네트워크",
+    "prompt": "MQTT에서 발행자가 주제로 메시지를 보내고 구독자가 해당 메시지를 받도록 중개하는 구성 요소는?",
+    "options": [
+      "DNS 리졸버",
+      "HTTP 캐시 프록시만",
+      "브로커",
+      "라우팅 프로토콜 피어"
+    ],
+    "answer": 2,
+    "explanation": "MQTT 브로커는 발행된 메시지를 주제 구독 관계에 따라 전달한다. DNS 이름 해석이나 IP 라우팅 피어와는 응용 계층 역할이 다르다.",
+    "syllabus": "3.5.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.2.2 IoT 네트워크"
+    }
+  },
+  {
+    "id": "sys4-156",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "IoT 네트워크",
+    "prompt": "제약된 IoT 환경을 위해 설계되었으며 기본적으로 UDP 위에서 REST 형태의 요청·응답을 지원하는 프로토콜은?",
+    "options": [
+      "HTTP/1.1",
+      "SMTP",
+      "FTP",
+      "CoAP"
+    ],
+    "answer": 3,
+    "explanation": "CoAP는 자원 제약 장치의 웹 전송 요구를 고려한다. 전통적인 메일이나 파일 전송 프로토콜과 목적이 다르다.",
+    "syllabus": "3.5.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.2.2 IoT 네트워크"
+    }
+  },
+  {
+    "id": "sys4-157",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "IoT 네트워크",
+    "prompt": "IoT 게이트웨이가 서로 다른 센서 프로토콜과 상위 서버 사이에서 수행할 수 있는 역할은?",
+    "options": [
+      "프로토콜 변환과 데이터 집계",
+      "측정 주기와 프로토콜이 달라도 아무 변환 없이 같은 바이트로 전달",
+      "상위 서버가 센서별 모든 링크 규칙을 직접 처리하게만 하기",
+      "게이트웨이 사용만으로 센서 교정 오류까지 자동 해결"
+    ],
+    "answer": 0,
+    "explanation": "게이트웨이는 이종 통신 연결·집계·전처리를 수행할 수 있다. 측정 정확도나 배터리 물리 한계를 자동 해결하지 않는다.",
+    "syllabus": "3.5.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.2.2 IoT 네트워크"
+    }
+  },
+  {
+    "id": "sys4-158",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "IoT 네트워크",
+    "prompt": "스마트 잠금장치가 인터넷 단절 중에도 등록된 사용자의 로컬 인증으로 열려야 한다. 적절한 설계는?",
+    "options": [
+      "인터넷 서버 응답이 있어야만 인증 성공 처리",
+      "필요한 인증 정보와 판단 기능을 현장에 두고 동기화 정책을 정한다",
+      "연결 단절 시 로컬 인증 정보도 삭제",
+      "인증 결과가 오기 전 모든 사용자를 허용"
+    ],
+    "answer": 1,
+    "explanation": "오프라인 동작에는 필요한 로컬 기능과 상태가 있어야 한다. 보안을 없애는 대신 갱신·만료·동기화 정책을 함께 설계한다.",
+    "syllabus": "3.5.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.2.2 IoT 네트워크"
+    }
+  },
+  {
+    "id": "sys4-159",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "IoT 네트워크",
+    "prompt": "전력 절감을 위해 센서가 주기적으로 깨어나 전송하고 다시 잠드는 설계의 주요 절충은?",
+    "options": [
+      "주소 길이와 라우팅 홉 수",
+      "저장 용량과 파일 이름 길이",
+      "전력 사용과 데이터 갱신 지연",
+      "암호 키 길이와 센서 일련번호"
+    ],
+    "answer": 2,
+    "explanation": "수면 주기가 길면 활성 시간과 전력 사용이 줄지만 새 데이터가 보고되는 데 더 오래 걸릴 수 있다. 따라서 전력 예산과 반응 시간 요구를 함께 정한다.",
+    "syllabus": "3.5.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.2.2 IoT 네트워크"
+    }
+  },
+  {
+    "id": "sys4-160",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "IoT 네트워크",
+    "prompt": "메시지 전달 중 중복이 생길 수 있는 IoT 수집 경로에서 같은 측정값이 두 번 집계되는 것을 막는 설계는?",
+    "options": [
+      "브로커 연결만 반복 재설정",
+      "메시지 도착 순서만 저장",
+      "수신 타임스탬프가 다르면 모두 새 이벤트로 간주",
+      "메시지 식별자를 이용한 중복 제거"
+    ],
+    "answer": 3,
+    "explanation": "메시지 ID와 처리 이력을 이용하면 재전송된 동일 이벤트를 식별할 수 있다. 단순히 프로토콜을 사용한다는 이유만으로 전체 처리의 중복이 사라지지는 않는다.",
+    "syllabus": "3.5.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.5.2.2 IoT 네트워크"
+    }
+  },
+  {
+    "id": "sys4-161",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "기밀성",
+    "prompt": "급여 자료의 금액은 바뀌지 않았지만 권한 없는 협력사가 내려받았다. 직접 침해된 보안 속성은?",
+    "options": [
+      "기밀성",
+      "가용성",
+      "무결성",
+      "부인방지"
+    ],
+    "answer": 0,
+    "explanation": "기밀성은 허가된 주체만 정보를 알 수 있게 하는 성질이다. 값의 변조는 무결성, 서비스 이용 불가는 가용성, 행위의 사후 부인은 부인방지와 관련된다.",
+    "syllabus": "3.1.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.1.1.3 정보보안 개념과 구성"
+    }
+  },
+  {
+    "id": "sys4-162",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "무결성",
+    "prompt": "전송 중 계좌번호 한 자리가 바뀌었는데 수신자가 이를 확인하지 못했다. 가장 직접적으로 부족한 통제는?",
+    "options": [
+      "서버 이중화",
+      "메시지 변조 탐지",
+      "사용자 역할 배정",
+      "전송 내용 암호화만 적용하고 인증 태그는 검증하지 않음"
+    ],
+    "answer": 1,
+    "explanation": "메시지 변조 탐지는 전송 무결성을 확인한다. 이중화는 가용성, 역할 배정은 인가에 해당하며 암호화만 하고 무결성 검증을 생략하는 것은 변조 탐지를 충분히 보장하지 않는다.",
+    "syllabus": "3.1.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.1.1.3 정보보안 개념과 구성"
+    }
+  },
+  {
+    "id": "sys4-163",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "가용성",
+    "prompt": "조회 권한과 데이터 정확성은 유지되지만 과부하로 예약 서비스에 접속할 수 없다. 우선 회복할 속성은?",
+    "options": [
+      "무결성",
+      "기밀성",
+      "가용성",
+      "진본성"
+    ],
+    "answer": 2,
+    "explanation": "가용성은 허가된 사용자가 필요한 때 서비스를 이용할 수 있는 성질이다. 지문에서는 비밀 노출·내용 변조·진본 여부의 문제가 아니라 서비스 이용 불가가 직접 발생했다.",
+    "syllabus": "3.1.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.1.1.3 정보보안 개념과 구성"
+    }
+  },
+  {
+    "id": "sys4-164",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "위협과 취약점",
+    "prompt": "패치되지 않은 파일 서버의 결함을 랜섬웨어가 악용할 가능성을 분석한다. 취약점에 해당하는 것은?",
+    "options": [
+      "업무 중단에 따른 예상 손실액",
+      "공격을 수행하는 랜섬웨어",
+      "암호화되어 손실될 업무 자료",
+      "파일 서버에 남아 있는 소프트웨어 결함"
+    ],
+    "answer": 3,
+    "explanation": "취약점은 악용될 수 있는 약점이다. 랜섬웨어는 위협 수단, 자료는 자산, 예상 손실은 영향에 해당한다.",
+    "syllabus": "3.1.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.1.1.3 정보보안 개념과 구성"
+    }
+  },
+  {
+    "id": "sys4-165",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "위험 평가",
+    "prompt": "두 취약점의 악용 가능성은 같지만 하나는 공개 안내문 서버, 다른 하나는 생산 제어 서버에 있다. 우선순위 판단에 추가로 필요한 것은?",
+    "options": [
+      "각 자산에서 침해가 발생했을 때의 업무 영향",
+      "두 자산에 적용한 암호키의 길이만",
+      "취약점이 처음 보고된 날짜만",
+      "운영체제의 버전 번호만"
+    ],
+    "answer": 0,
+    "explanation": "위험은 악용 가능성과 발생 시 영향을 함께 고려한다. 암호키 길이·발견일·버전도 일부 판단 자료가 될 수 있으나 지문의 서로 다른 업무 피해를 직접 설명하지 못한다.",
+    "syllabus": "3.1.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.1.1.3 정보보안 개념과 구성"
+    }
+  },
+  {
+    "id": "sys4-166",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "심층 방어",
+    "prompt": "피싱으로 비밀번호가 유출되어도 피해를 제한하도록 MFA, 최소권한, 이상 행위 탐지를 함께 적용했다. 해당 설계 원리는?",
+    "options": [
+      "단일 실패점 집중",
+      "심층 방어",
+      "보안의 전면 위탁",
+      "암호 알고리즘의 비공개화"
+    ],
+    "answer": 1,
+    "explanation": "서로 다른 통제가 한 통제의 실패를 보완하는 심층 방어다. 단일 장치 의존이나 알고리즘 은닉, 위탁 자체는 다층 방어를 의미하지 않는다.",
+    "syllabus": "3.1.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.1.1.3 정보보안 개념과 구성"
+    }
+  },
+  {
+    "id": "sys4-167",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "보안 통제 유형",
+    "prompt": "사고 후 누가 설정을 바꿨는지 확인하기 위해 관리자 변경 이력을 별도 서버에 보관한다. 이 통제의 주된 기능은?",
+    "options": [
+      "장애 발생 시 자동 서비스 복구",
+      "설정 변경의 원천 차단",
+      "탐지와 추적을 위한 증거 확보",
+      "관리자 신원의 최초 등록"
+    ],
+    "answer": 2,
+    "explanation": "로그는 변경 사실의 탐지·분석·책임 추적에 쓰인다. 차단 규칙이나 복구 장치, 신원 등록 절차를 대신하지는 않는다.",
+    "syllabus": "3.1.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.1.1.3 정보보안 개념과 구성"
+    }
+  },
+  {
+    "id": "sys4-168",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "잔여 위험",
+    "prompt": "접근통제와 백업을 적용한 뒤에도 공급망 장애 위험이 일부 남았다. 이 위험을 처리하는 적절한 절차는?",
+    "options": [
+      "백업 성공률만으로 모든 위험을 수용 처리한다",
+      "통제를 설치했으므로 위험을 0으로 기록한다",
+      "운영 담당자가 위험 등록부에서 임의 삭제한다",
+      "잔여 위험을 평가하고 권한 있는 책임자의 수용 여부를 기록한다"
+    ],
+    "answer": 3,
+    "explanation": "통제 후에도 잔여 위험이 존재하며 책임 있는 판단과 기록이 필요하다. 통제 설치나 단일 지표는 위험 소멸의 증거가 아니다.",
+    "syllabus": "3.1.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.1.1.3 정보보안 개념과 구성"
+    }
+  },
+  {
+    "id": "sys4-169",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "대칭키 암호",
+    "prompt": "서로 신뢰하는 두 시스템이 이미 안전하게 공유한 키로 대용량 파일을 암호화하려 한다. 가장 적합한 방식은?",
+    "options": [
+      "대칭키 암호로 본문을 암호화한다",
+      "해시값만 생성하여 원문 복구에 사용한다",
+      "전자서명만 생성하여 본문을 숨긴다",
+      "공개 인증서만 파일 옆에 저장한다"
+    ],
+    "answer": 0,
+    "explanation": "대칭키 암호는 공유 키로 대용량 데이터 기밀성을 제공한다. 해시는 복호화 수단이 아니며 서명과 인증서만으로 원문이 숨겨지지 않는다.",
+    "syllabus": "3.6.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.1 암호기술"
+    }
+  },
+  {
+    "id": "sys4-170",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "공개키 암호",
+    "prompt": "수신자만 복호화할 수 있도록 공개키 암호 방식으로 메시지를 보호한다. 송신자가 암호화에 사용할 키는?",
+    "options": [
+      "송신자의 공개키",
+      "수신자의 공개키",
+      "수신자의 개인키",
+      "송신자의 개인키"
+    ],
+    "answer": 1,
+    "explanation": "수신자 공개키로 암호화한 내용은 대응하는 수신자 개인키로 복호화한다. 송신자 키는 수신자 전용 기밀성을 제공하는 짝이 아니며 수신자 개인키는 수신자가 비밀로 보유하는 복호화 키다.",
+    "syllabus": "3.6.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.1 암호기술"
+    }
+  },
+  {
+    "id": "sys4-171",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "전자서명",
+    "prompt": "배포 파일이 개발사의 서명 이후 변경되지 않았는지 검증하려 한다. 필요한 핵심 정보는?",
+    "options": [
+      "수신자 자신의 공개키만",
+      "개발사의 개인키 사본",
+      "신뢰할 수 있게 확인한 개발사의 공개키와 파일의 서명",
+      "파일의 키 없는 체크섬만"
+    ],
+    "answer": 2,
+    "explanation": "서명 검증에는 서명자 공개키와 서명이 필요하며 공개키의 신뢰도 확인해야 한다. 개인키는 비밀로 유지하고 수신자 키나 체크섬만으로 개발사의 서명을 검증하지 못한다.",
+    "syllabus": "3.6.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.1 암호기술"
+    }
+  },
+  {
+    "id": "sys4-172",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "해시 한계",
+    "prompt": "파일과 SHA-256 해시를 같은 변조 가능한 사이트에서 내려받았다. 두 값이 일치해도 보장할 수 없는 것은?",
+    "options": [
+      "파일 내용에 대해 고정 길이 요약값을 만들 수 있다는 사실",
+      "받은 파일로 계산한 해시가 제시된 값과 같다는 사실",
+      "동일한 해시 함수로 검사를 수행할 수 있다는 사실",
+      "파일이 신뢰하는 제작자가 배포한 진본이라는 사실"
+    ],
+    "answer": 3,
+    "explanation": "공격자가 파일과 해시를 함께 바꾸면 일치할 수 있다. 해시 비교 자체의 수행 가능성과 달리 제작자 인증에는 신뢰된 서명 등 별도 근거가 필요하다.",
+    "syllabus": "3.6.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.1 암호기술"
+    }
+  },
+  {
+    "id": "sys4-173",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "HMAC",
+    "prompt": "두 서버가 공유 비밀키를 알고 있다. 메시지 변조 여부와 공유키 보유자가 만든 메시지인지 확인하는 데 적합한 것은?",
+    "options": [
+      "HMAC",
+      "키 없는 해시값만 첨부",
+      "Base64 인코딩",
+      "단순 체크섬"
+    ],
+    "answer": 0,
+    "explanation": "HMAC은 비밀키를 포함하여 메시지 인증 코드를 계산한다. 키 없는 해시·체크섬은 공격자도 다시 계산할 수 있고 Base64는 표현 변환이다.",
+    "syllabus": "3.6.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.1 암호기술"
+    }
+  },
+  {
+    "id": "sys4-174",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "솔트",
+    "prompt": "비밀번호 저장에 사용자별 무작위 솔트를 추가하는 주된 효과는?",
+    "options": [
+      "비밀번호 검증 없이 사용자를 자동 인증한다",
+      "같은 비밀번호의 저장값을 다르게 하고 사전 계산 결과의 재사용을 어렵게 한다",
+      "비밀번호를 원문으로 안전하게 복원한다",
+      "느린 비밀번호 해시를 빠른 체크섬으로 대체한다"
+    ],
+    "answer": 1,
+    "explanation": "솔트는 동일 비밀번호의 동일 해시와 사전 계산 공격을 완화한다. 솔트 자체는 인증이나 복호화 기능이 없고 전용 비밀번호 해시의 필요성도 없애지 않는다.",
+    "syllabus": "3.6.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.1 암호기술"
+    }
+  },
+  {
+    "id": "sys4-175",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "비밀번호 해시",
+    "prompt": "비밀번호 데이터베이스 유출 시 오프라인 추측 비용을 높이려 한다. 가장 적절한 저장 방법은?",
+    "options": [
+      "Base64로 바꾼 뒤 비밀로 취급한다",
+      "빠른 일반 해시를 솔트 없이 한 번 적용한다",
+      "사용자별 솔트와 비용 조절 가능한 비밀번호 해시를 사용한다",
+      "모든 비밀번호에 같은 고정 문자열만 붙여 저장한다"
+    ],
+    "answer": 2,
+    "explanation": "전용 비밀번호 해시는 추측 한 번의 계산 비용을 높이고 솔트는 사전 계산 재사용을 제한한다. 빠른 무솔트 해시, 인코딩, 고정 접미사만으로는 이 목적을 충분히 달성하지 못한다.",
+    "syllabus": "3.6.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.1 암호기술"
+    }
+  },
+  {
+    "id": "sys4-176",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "인증 암호",
+    "prompt": "파일의 기밀성과 함께 암호문 변조도 검출해야 한다. 요구에 가장 부합하는 것은?",
+    "options": [
+      "Base64 인코딩을 암호화 대신 사용한다",
+      "암호화하되 인증 태그는 검증하지 않는다",
+      "키 없는 체크섬만 함께 제공한다",
+      "인증 암호 방식으로 암호화하고 인증 태그를 검증한다"
+    ],
+    "answer": 3,
+    "explanation": "인증 암호는 기밀성과 무결성 검증을 결합한다. 태그를 무시하면 검증 보장이 사라지고 키 없는 체크섬·인코딩은 요구된 보안 속성을 제공하지 못한다.",
+    "syllabus": "3.6.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.1 암호기술"
+    }
+  },
+  {
+    "id": "sys4-177",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "논스 관리",
+    "prompt": "같은 AES-GCM 키로 여러 메시지를 암호화한다. 암호화마다 특히 보장해야 할 것은?",
+    "options": [
+      "해당 키 아래에서 논스를 재사용하지 않는다",
+      "모든 메시지에 같은 논스를 고정한다",
+      "태그를 저장하지 않는다",
+      "키를 암호문 앞에 평문으로 붙인다"
+    ],
+    "answer": 0,
+    "explanation": "GCM은 같은 키에서 논스 재사용을 피해야 한다. 고정 논스는 이 조건을 어기고 태그 누락은 검증을 어렵게 하며 평문 키 동봉은 기밀성을 없앤다.",
+    "syllabus": "3.6.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.1 암호기술"
+    }
+  },
+  {
+    "id": "sys4-178",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "인코딩과 암호화",
+    "prompt": "API 토큰을 Base64로 변환해 로그에 남기면서 암호화했다고 주장한다. 정확한 평가는?",
+    "options": [
+      "공개키 암호와 동일하게 비밀키 없이는 복원할 수 없다",
+      "키 없이 되돌릴 수 있는 인코딩이므로 토큰 비밀을 보호하지 못한다",
+      "해시처럼 원문 복원 기능이 없는 일방향 처리다",
+      "비밀키 기반 메시지 인증 코드로 변조까지 검출한다"
+    ],
+    "answer": 1,
+    "explanation": "Base64는 키 없이 복원할 수 있는 표현 변환이다. 공개키 암호·일방향 해시·MAC가 각각 제공하는 기밀성 또는 무결성·인증 기능과 구분해야 한다.",
+    "syllabus": "3.6.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.1 암호기술"
+    }
+  },
+  {
+    "id": "sys4-179",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "키 수명주기",
+    "prompt": "운영 암호키가 외부에 노출된 사실을 확인했다. 적절한 대응은?",
+    "options": [
+      "향후 데이터만 새 키를 쓰고 과거 노출 영향은 분석하지 않는다",
+      "동일한 노출 키를 다른 파일에 복사해 계속 쓴다",
+      "노출 키 사용을 중지하고 새 키로 전환하며 영향 데이터의 재보호를 검토한다",
+      "알고리즘을 유지하는 동안 키 회전이 불가능하다고 판단한다"
+    ],
+    "answer": 2,
+    "explanation": "키 유출에는 해당 키의 사용 중지·교체와 영향 범위 확인이 필요하다. 같은 키 복사는 교체가 아니고 미래 키 변경만으로 과거 유출이 해결되지 않으며 키 회전은 알고리즘 유지 중에도 가능하다.",
+    "syllabus": "3.6.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.1 암호기술"
+    }
+  },
+  {
+    "id": "sys4-180",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "인증서 검증",
+    "prompt": "TLS 클라이언트가 인증서 서명은 확인하지만 접속한 호스트명과 인증서 이름의 일치는 검사하지 않는다. 남는 주요 위험은?",
+    "options": [
+      "클라이언트 인증서를 추가하면 서버 호스트명 검사를 대체한다",
+      "서명 검증을 했으므로 대상 도메인 신원도 자동 확정된다",
+      "호스트명 검사를 안 하면 암호 알고리즘 협상 자체가 불가능하다",
+      "다른 도메인용 유효 인증서를 가진 서버를 대상 서버로 오인할 수 있다"
+    ],
+    "answer": 3,
+    "explanation": "유효한 인증서라도 접속 대상의 이름과 일치해야 대상 서버의 신원을 검증할 수 있다. 서명 검사나 클라이언트 인증은 다른 도메인 인증서의 수용 문제를 자동 해결하지 않는다.",
+    "syllabus": "3.6.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.1 암호기술"
+    }
+  },
+  {
+    "id": "sys4-181",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "순방향 비밀성",
+    "prompt": "과거 TLS 통신이 녹화된 뒤 서버의 장기 개인키가 유출되었다. 순방향 비밀성이 목표로 하는 보호는?",
+    "options": [
+      "과거 세션 키가 별도로 안전하게 폐기된 경우 장기 키 유출만으로 과거 내용을 복호화하지 못하게 한다",
+      "장기 개인키 유출 자체를 물리적으로 불가능하게 한다",
+      "서버 인증서를 영구적으로 갱신하지 않아도 되게 한다",
+      "현재 단말의 평문 메모리까지 항상 숨긴다"
+    ],
+    "answer": 0,
+    "explanation": "순방향 비밀성은 장기 키 노출이 과거 세션으로 번지는 것을 제한한다. 키 유출 예방, 인증서 갱신 면제, 침해된 단말의 메모리 보호까지 의미하지 않는다.",
+    "syllabus": "3.6.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.1 암호기술"
+    }
+  },
+  {
+    "id": "sys4-182",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "봉투 암호화",
+    "prompt": "대용량 자료는 데이터 키로 암호화하고 데이터 키는 키 암호화 키로 보호한다. 이 구조의 장점은?",
+    "options": [
+      "암호문과 평문 키를 함께 공개해도 안전하게 한다",
+      "데이터 암호화와 키 보호를 분리하여 키 관리를 유연하게 한다",
+      "모든 키의 접근통제를 불필요하게 한다",
+      "암호화 없이 해시만으로 원문을 복원한다"
+    ],
+    "answer": 1,
+    "explanation": "봉투 암호화는 데이터 키와 이를 보호하는 키를 구분한다. 키 보호·권한관리는 여전히 필요하며 평문 키 공개나 해시 복원이 허용되는 구조가 아니다.",
+    "syllabus": "3.6.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.1 암호기술"
+    }
+  },
+  {
+    "id": "sys4-183",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "인증과 인가",
+    "prompt": "직원 신원은 로그인으로 확인됐지만 다른 부서 급여 파일 열람은 거부됐다. 파일 열람 거부를 결정한 단계는?",
+    "options": [
+      "암호화 키 교환",
+      "식별자 입력",
+      "인가",
+      "사용자 등록"
+    ],
+    "answer": 2,
+    "explanation": "인가는 인증된 주체에게 어떤 자원·행동을 허용할지 결정한다. 식별자 제시나 계정 생성, 키 교환 자체와는 구별된다.",
+    "syllabus": "3.6.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.2 인증기술"
+    }
+  },
+  {
+    "id": "sys4-184",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "다중 요소 인증",
+    "prompt": "서로 다른 인증 요소 두 가지를 결합한 것은?",
+    "options": [
+      "생일과 출신 학교 이름",
+      "비밀번호와 추가 비밀번호",
+      "PIN과 비밀 질문 답",
+      "비밀번호와 소유한 보안키"
+    ],
+    "answer": 3,
+    "explanation": "비밀번호는 지식 요소이고 보안키는 소유 요소다. 나머지는 모두 사용자가 아는 정보에 속하므로 서로 다른 요소를 결합한 것으로 보기 어렵다.",
+    "syllabus": "3.6.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.2 인증기술"
+    }
+  },
+  {
+    "id": "sys4-185",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "일회용 비밀번호",
+    "prompt": "시간 기반 OTP를 쓰는데 인증 서버와 단말의 시간이 크게 어긋났다. 먼저 확인할 항목은?",
+    "options": [
+      "허용 시간 오차와 안전한 시간 동기화 상태",
+      "사용자에게 부여된 문서 읽기 권한",
+      "서버 인증서의 호스트명 일치 여부",
+      "세션 쿠키의 SameSite 속성"
+    ],
+    "answer": 0,
+    "explanation": "시간 기반 OTP는 시간 구간과 공유 비밀에 의존하므로 큰 시계 오차가 정상 코드 거부를 일으킬 수 있다. 자원 인가·TLS 서버 인증·쿠키의 사이트 전송 정책은 코드 생성 조건과 별개다.",
+    "syllabus": "3.6.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.2 인증기술"
+    }
+  },
+  {
+    "id": "sys4-186",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "재전송 방지",
+    "prompt": "고정된 인증 응답을 도청한 공격자가 그대로 다시 보내 로그인했다. 개선 방향으로 적합한 것은?",
+    "options": [
+      "응답의 전송 형식만 고정 길이로 바꾼다",
+      "매 인증 시 새로운 도전값을 주고 그 값에 결합된 응답을 검증한다",
+      "인증 응답에 사용자 이름만 반복해서 덧붙인다",
+      "응답을 Base64로 바꿔 계속 재사용한다"
+    ],
+    "answer": 1,
+    "explanation": "신선한 도전값에 결합한 응답은 과거 인증 응답의 재사용을 제한한다. 길이 고정·고정 식별자 추가·인코딩은 응답의 신선성을 제공하지 않는다.",
+    "syllabus": "3.6.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.2 인증기술"
+    }
+  },
+  {
+    "id": "sys4-187",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "세션 고정",
+    "prompt": "로그인 전 사용하던 세션 ID가 로그인 후에도 그대로 유지된다. 세션 고정 공격을 줄이는 조치는?",
+    "options": [
+      "로그인 후 사용자 이름만 쿠키에 추가한다",
+      "같은 세션 ID의 유효기간만 더 길게 늘린다",
+      "인증 성공 시 새 세션 ID를 발급하고 이전 것을 폐기한다",
+      "세션 ID를 사용자의 고정 계정 번호로 대체한다"
+    ],
+    "answer": 2,
+    "explanation": "인증 성공 시 세션 ID를 바꿔 기존 식별자의 악용을 줄인다. 기간 연장이나 사용자 이름 추가는 식별자를 그대로 남기며 계정 번호처럼 고정된 값은 추측·재사용 위험이 있다.",
+    "syllabus": "3.6.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.2 인증기술"
+    }
+  },
+  {
+    "id": "sys4-188",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "계정 열거",
+    "prompt": "로그인 실패 응답이 '없는 계정'과 '비밀번호 오류'로 구분된다. 이를 동일한 메시지로 바꾸는 주된 목적은?",
+    "options": [
+      "다중 요소 인증을 자동으로 대체한다",
+      "잘못된 비밀번호를 정답으로 인정한다",
+      "데이터베이스에서 계정 인덱스를 제거한다",
+      "공격자가 유효 계정의 존재를 추정하기 어렵게 한다"
+    ],
+    "answer": 3,
+    "explanation": "일관된 실패 메시지는 계정 존재 정보 노출을 줄인다. 비밀번호 검증·인덱스·추가 인증과는 별도 통제이며 응답 시간 차이도 함께 검토할 수 있다.",
+    "syllabus": "3.6.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.2 인증기술"
+    }
+  },
+  {
+    "id": "sys4-189",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "자격증명 대입",
+    "prompt": "다른 사이트에서 유출된 아이디와 비밀번호 쌍으로 대량 로그인이 발생했다. 공격 유형은?",
+    "options": [
+      "크리덴셜 스터핑",
+      "한 계정에 가능한 비밀번호를 무작위로 대입하는 무차별 대입",
+      "소수의 흔한 비밀번호를 많은 계정에 시도하는 패스워드 스프레이",
+      "기존 세션 ID를 피해자에게 사용시키는 세션 고정"
+    ],
+    "answer": 0,
+    "explanation": "크리덴셜 스터핑은 유출된 아이디·비밀번호 쌍의 재사용이 핵심이다. 무차별 대입·스프레이는 추측 방식, 세션 고정은 세션 식별자 악용이라는 점에서 다르다.",
+    "syllabus": "3.6.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.2 인증기술"
+    }
+  },
+  {
+    "id": "sys4-190",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "비밀번호 복구",
+    "prompt": "비밀번호 재설정 링크의 토큰 설계로 가장 적절한 것은?",
+    "options": [
+      "사용자 번호를 그대로 토큰으로 쓴다",
+      "추측하기 어렵고 짧게 만료되며 성공 사용 후 폐기한다",
+      "한 번 발급하면 영구적으로 반복 사용한다",
+      "재설정된 비밀번호를 URL에 포함한다"
+    ],
+    "answer": 1,
+    "explanation": "재설정 토큰은 계정 탈취에 직결되므로 무작위성·만료·일회성이 필요하다. 예측 가능하거나 영구 재사용 가능한 값, URL 비밀번호는 비밀 노출 위험을 높인다.",
+    "syllabus": "3.6.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.2 인증기술"
+    }
+  },
+  {
+    "id": "sys4-191",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "인증 연동",
+    "prompt": "여러 업무 시스템이 중앙 신원 제공자의 로그인 결과를 신뢰하도록 했다. 이 구조에서 특히 필요한 것은?",
+    "options": [
+      "발급자가 같으면 다른 서비스 대상 토큰도 허용한다",
+      "토큰을 디코딩할 수 있으면 서명 검증은 생략한다",
+      "각 서비스가 토큰의 서명·발급자·대상·만료를 검증한다",
+      "서명이 맞으면 만료 시간을 검사하지 않는다"
+    ],
+    "answer": 2,
+    "explanation": "토큰 서명뿐 아니라 발급자·대상·만료 등 사용 맥락을 검증해야 한다. 디코딩은 진위 검증이 아니며 정상 서명도 다른 대상이나 만료된 토큰의 사용을 정당화하지 않는다.",
+    "syllabus": "3.6.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.2 인증기술"
+    }
+  },
+  {
+    "id": "sys4-192",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "재인증",
+    "prompt": "로그인한 지 오래된 사용자가 출금 계좌를 바꾸려 한다. 세션 탈취 피해를 줄이는 적절한 추가 절차는?",
+    "options": [
+      "과거 로그인 성공 로그의 존재만 확인한다",
+      "세션의 만료 시간을 더 길게 연장한다",
+      "클라이언트의 사용자 이름 표시만 확인한다",
+      "민감한 변경 직전에 재인증 또는 추가 인증을 요구한다"
+    ],
+    "answer": 3,
+    "explanation": "민감 작업 직전에 현재 사용자를 다시 확인하면 오래된 세션 탈취 위험을 줄인다. 세션 연장이나 표시 이름, 과거 성공 기록은 현재 요청자의 재확인이 아니다.",
+    "syllabus": "3.6.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.2 인증기술"
+    }
+  },
+  {
+    "id": "sys4-193",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "서비스 계정 인증",
+    "prompt": "배치 작업의 장기 비밀번호가 소스 코드에 박혀 있다. 자동화와 비밀 보호를 함께 개선하는 방법은?",
+    "options": [
+      "관리되는 워크로드 신원으로 필요한 단기 자격증명을 받는다",
+      "같은 비밀번호를 여러 저장소에 복제한다",
+      "운영 로그에 비밀번호를 출력해 배포를 확인한다",
+      "서비스 계정으로 모든 직원이 함께 로그인한다"
+    ],
+    "answer": 0,
+    "explanation": "관리되는 신원과 단기 자격증명은 정적 비밀 배포 부담을 줄인다. 복제·로그 출력은 유출 지점을 늘리고 공유 로그인은 행위 추적을 약화한다.",
+    "syllabus": "3.6.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.2 인증기술"
+    }
+  },
+  {
+    "id": "sys4-194",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "생체 인증",
+    "prompt": "생체 정보 기반 인증 도입 시 생체 특성에 대해 올바르게 고려한 것은?",
+    "options": [
+      "생체 인식의 오인 수락률과 오인 거부율은 항상 함께 0이 된다",
+      "생체 정보는 유출 후 비밀번호처럼 간단히 바꾸기 어려우므로 템플릿 보호가 중요하다",
+      "생체 인증 성공은 해당 사용자의 모든 데이터 수정 권한을 뜻한다",
+      "생체 템플릿은 계정 식별자와 달리 접근통제 대상에서 제외한다"
+    ],
+    "answer": 1,
+    "explanation": "생체 특성은 유출 후 교체가 어려워 템플릿 보호가 중요하다. 인식에는 오류와 임계값의 절충이 있고 인증 성공도 인가를 대체하지 않으며 템플릿 역시 보호 대상이다.",
+    "syllabus": "3.6.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.2 인증기술"
+    }
+  },
+  {
+    "id": "sys4-195",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "최소권한",
+    "prompt": "일일 통계 배치가 주문 테이블 조회만 하는데 데이터베이스 관리자 권한을 갖는다. 개선안은?",
+    "options": [
+      "배치를 여러 관리자 계정으로 번갈아 실행한다",
+      "관리자 비밀번호 길이만 늘리고 권한은 유지한다",
+      "필요한 조회 대상과 작업만 허용하는 전용 권한을 부여한다",
+      "주문 테이블을 모든 계정에 공개한다"
+    ],
+    "answer": 2,
+    "explanation": "최소권한은 실제 업무에 필요한 동작으로 권한 범위를 제한한다. 비밀번호 강화만으로 과도한 권한의 피해 범위가 줄어들지는 않는다.",
+    "syllabus": "3.6.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.3 접근통제"
+    }
+  },
+  {
+    "id": "sys4-196",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "RBAC",
+    "prompt": "직원별 권한을 직접 지정하던 조직이 '수납 담당', '회계 승인자' 역할에 권한을 묶었다. 사용한 접근통제 모델은?",
+    "options": [
+      "문서 소유자별 임의적 권한 위임",
+      "속성 기반 접근통제",
+      "강제적 접근통제의 보안 등급 비교",
+      "역할 기반 접근통제"
+    ],
+    "answer": 3,
+    "explanation": "RBAC는 직무 역할에 권한을 묶고 사용자를 역할에 배정한다. ABAC는 여러 속성의 조건 평가, MAC는 중앙 등급 정책, DAC는 소유자의 재량이라는 관점이 중심이다.",
+    "syllabus": "3.6.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.3 접근통제"
+    }
+  },
+  {
+    "id": "sys4-197",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "ABAC",
+    "prompt": "문서 열람 여부를 사용자의 부서, 문서 등급, 접속 위치, 요청 시간으로 결정한다. 적합한 모델은?",
+    "options": [
+      "속성 기반 접근통제",
+      "역할 이름 하나에만 고정 권한을 묶는 방식",
+      "문서 소유자가 자유롭게 권한을 위임하는 방식",
+      "로그인 비밀번호의 일치 여부만 검사하는 방식"
+    ],
+    "answer": 0,
+    "explanation": "ABAC는 주체·자원·환경 속성을 함께 정책으로 평가한다. 단일 역할 매핑이나 소유자 재량과 다르며 비밀번호 검사는 신원 인증이지 자원 접근 조건 평가가 아니다.",
+    "syllabus": "3.6.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.3 접근통제"
+    }
+  },
+  {
+    "id": "sys4-198",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "강제적 접근통제",
+    "prompt": "사용자가 문서 소유자여도 중앙 보안 등급 정책을 벗어나 다른 사용자에게 읽기 권한을 줄 수 없다. 가장 가까운 모델은?",
+    "options": [
+      "임의적 접근통제",
+      "강제적 접근통제",
+      "익명 공개 공유",
+      "소유자 자율 위임"
+    ],
+    "answer": 1,
+    "explanation": "강제적 접근통제는 중앙 정책과 보안 표시 등에 따라 허용 여부를 통제한다. 소유자가 권한을 자율적으로 나누는 임의적 접근통제와 다르다.",
+    "syllabus": "3.6.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.3 접근통제"
+    }
+  },
+  {
+    "id": "sys4-199",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "직무 분리",
+    "prompt": "한 사람이 거래처 등록과 해당 거래처 대금 지급 승인까지 할 수 있다. 부정 거래를 줄일 설계는?",
+    "options": [
+      "동일인에게 두 권한을 주고 비밀번호만 강화한다",
+      "동일인에게 두 권한을 주고 로그인 횟수만 나눈다",
+      "등록과 지급 승인 권한을 서로 다른 책임자에게 분리한다",
+      "동일인에게 두 권한을 주고 계정을 두 개 발급한다"
+    ],
+    "answer": 2,
+    "explanation": "직무 분리는 상충 업무의 책임자를 나눠 단독 남용을 억제한다. 같은 사람이 계정·화면·로그인 방식만 달리하는 것은 독립된 승인자 확보가 아니다.",
+    "syllabus": "3.6.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.3 접근통제"
+    }
+  },
+  {
+    "id": "sys4-200",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "객체 수준 인가",
+    "prompt": "사용자가 URL의 주문 번호를 바꾸자 다른 고객 주문이 보인다. 반드시 추가해야 할 검사는?",
+    "options": [
+      "로그인 여부만 한 번 더 검사한다",
+      "주문 번호 입력 칸을 화면에서 숨긴다",
+      "주문 번호를 더 큰 정수로 바꾼다",
+      "요청 사용자가 해당 주문을 열람할 권한이 있는지 서버에서 검사한다"
+    ],
+    "answer": 3,
+    "explanation": "인증된 사용자라도 모든 객체에 권한이 있는 것은 아니다. 서버의 객체별 인가가 필요하며 UI 은닉이나 추측 난이도만으로 이를 대체할 수 없다.",
+    "syllabus": "3.6.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.3 접근통제"
+    }
+  },
+  {
+    "id": "sys4-201",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "기본 거부",
+    "prompt": "새 API에 정책 항목이 빠졌을 때 접근을 허용하는 시스템이 있다. 기본 거부 원칙을 적용하면 어떻게 바뀌는가?",
+    "options": [
+      "명시적으로 허용된 정책이 없으면 요청을 거부한다",
+      "정책이 없으면 인증된 사용자에게 모두 허용한다",
+      "정책이 없으면 내부 IP에서 온 요청만 무조건 허용한다",
+      "클라이언트가 허용 표시를 보내면 정책 누락을 보완한다"
+    ],
+    "answer": 0,
+    "explanation": "기본 거부는 명시적 허용 근거 없는 요청을 막는다. 로그인·내부 IP·클라이언트 표시만으로 누락된 자원 권한 정책이 충족되지는 않는다.",
+    "syllabus": "3.6.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.3 접근통제"
+    }
+  },
+  {
+    "id": "sys4-202",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "완전한 중재",
+    "prompt": "메뉴 진입 시만 권한을 검사하고 저장 API는 검사하지 않는다. 보완할 원칙은?",
+    "options": [
+      "메뉴 화면을 생성할 때만 권한을 확인한다",
+      "보호 자원에 대한 각 요청에서 권한을 확인한다",
+      "로그인 성공 여부만 캐시하고 작업별 권한은 보지 않는다",
+      "저장 API 주소를 추측하기 어렵게 만든다"
+    ],
+    "answer": 1,
+    "explanation": "보호 작업에 대한 각 요청에서 인가를 확인해야 한다. 메뉴 진입이나 로그인만 검증하면 직접 API 호출을 막지 못하며 주소 은닉은 권한 검사가 아니다.",
+    "syllabus": "3.6.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.3 접근통제"
+    }
+  },
+  {
+    "id": "sys4-203",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "권한 회수",
+    "prompt": "회계팀에서 영업팀으로 이동한 직원에게 회계 승인 권한이 남았다. 필요한 관리 활동은?",
+    "options": [
+      "로그인 세션만 종료하고 다음 로그인에 이전 권한을 복원한다",
+      "비밀번호를 초기화하되 역할 소속은 그대로 둔다",
+      "인사 이동과 연계한 권한 재검토·회수",
+      "이전 역할에 새 역할을 계속 추가한다"
+    ],
+    "answer": 2,
+    "explanation": "업무 이동 시 권한을 재검토하고 불필요한 기존 권한을 회수해야 한다. 비밀번호 변경·세션 종료는 역할 설정을 바꾸지 않으며 역할을 계속 더하면 과도한 권한이 누적된다.",
+    "syllabus": "3.6.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.3 접근통제"
+    }
+  },
+  {
+    "id": "sys4-204",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "긴급 권한",
+    "prompt": "장애 대응 때만 관리자 권한이 필요하다. 상시 권한 보유를 줄이는 운영은?",
+    "options": [
+      "관리자 비밀번호만 정기 변경하고 상시 권한을 유지한다",
+      "별도 관리자 계정은 만들되 권한 만료를 두지 않는다",
+      "권한 신청을 승인한 뒤 사용 범위와 기간은 관리하지 않는다",
+      "승인된 시간 동안만 권한을 부여하고 만료·사용 이력을 관리한다"
+    ],
+    "answer": 3,
+    "explanation": "일시적 업무에는 승인된 시간·범위로 권한을 제한하고 이력을 남기는 것이 적합하다. 계정 분리·신청 승인·비밀번호 변경만으로 상시 고권한의 노출 기간이 줄어들지는 않는다.",
+    "syllabus": "3.6.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.3 접근통제"
+    }
+  },
+  {
+    "id": "sys4-205",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "인가 정책의 위치",
+    "prompt": "모바일 앱이 role='admin' 값을 서버에 보내면 관리자 기능을 허용한다. 적절한 수정은?",
+    "options": [
+      "서버가 신뢰하는 신원·권한 정보로 인가 결정을 내린다",
+      "앱에서 role 필드를 읽기 전용으로 표시한다",
+      "필드 이름을 추측하기 어렵게 바꾼다",
+      "문자열을 Base64로 바꿔 보낸다"
+    ],
+    "answer": 0,
+    "explanation": "클라이언트 입력은 변경 가능하므로 권한의 근거로 직접 신뢰할 수 없다. UI 설정·이름 은닉·인코딩은 서버 인가 검증을 대체하지 못한다.",
+    "syllabus": "3.6.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.3 접근통제"
+    }
+  },
+  {
+    "id": "sys4-206",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "행과 열 접근통제",
+    "prompt": "분석가가 고객별 구매액은 봐야 하지만 주민식별 정보 열은 볼 필요가 없다. 요구에 맞는 통제는?",
+    "options": [
+      "민감한 열을 포함한 모든 데이터를 내려준 뒤 UI에서만 가린다",
+      "허용 열만 제공하는 뷰나 열 단위 권한을 적용한다",
+      "행 개수만 제한하고 민감한 열은 모두 반환한다",
+      "저장 시 암호화되어 있으므로 조회 권한은 전체 허용한다"
+    ],
+    "answer": 1,
+    "explanation": "필요한 열만 서버에서 제공하면 분석 목적과 민감 속성 보호를 함께 만족한다. UI 가림·행 개수 제한·저장 암호화는 불필요한 열의 평문 접근 제한을 대신하지 못한다.",
+    "syllabus": "3.6.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.1.3 접근통제"
+    }
+  },
+  {
+    "id": "sys4-207",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "국제 관리체계",
+    "prompt": "ISO/IEC 27001이 주로 규정하는 대상은?",
+    "options": [
+      "모든 산업에 동일한 암호키 한 개",
+      "특정 방화벽 제품의 패킷 처리 속도",
+      "정보보호 관리체계의 수립·운영·개선 요구사항",
+      "소스 코드 들여쓰기 규칙"
+    ],
+    "answer": 2,
+    "explanation": "ISO/IEC 27001은 조직이 정보보호 위험을 관리하는 체계의 요구사항을 다룬다. 특정 장비 성능이나 단일 키, 코딩 스타일을 정하는 제품 규격은 아니다.",
+    "syllabus": "3.6.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.2.1 국제표준 정보보호 관리체계"
+    }
+  },
+  {
+    "id": "sys4-208",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "인증 범위",
+    "prompt": "협력사가 인증서를 제시했으나 계약 서비스가 인증 범위에 포함되는지 불분명하다. 우선 확인할 것은?",
+    "options": [
+      "협력사의 정보보호 정책 제목만",
+      "인증서를 보유한 다른 계열사의 서비스 목록",
+      "제품의 개별 보안기능 시험 결과만",
+      "인증서의 범위와 실제 계약 서비스·조직·시스템의 대응 관계"
+    ],
+    "answer": 3,
+    "explanation": "관리체계 인증은 명시된 조직·업무·시스템 범위와 계약 대상의 대응을 확인해야 한다. 다른 계열사 인증이나 제품 시험, 정책 제목은 해당 서비스의 인증 범위를 증명하지 않는다.",
+    "syllabus": "3.6.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.2.1 국제표준 정보보호 관리체계"
+    }
+  },
+  {
+    "id": "sys4-209",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "위험 기반 관리",
+    "prompt": "조직이 자산과 업무 위험을 분석하지 않고 다른 회사의 통제 목록을 그대로 복제했다. 핵심 보완점은?",
+    "options": [
+      "자체 업무 맥락의 위험 평가를 토대로 필요한 통제와 처리 계획을 정한다",
+      "타사 목록이 길면 위험 평가를 생략한다",
+      "모든 위험을 동일 점수로 고정한다",
+      "가장 비싼 제품 구매를 평가 완료로 처리한다"
+    ],
+    "answer": 0,
+    "explanation": "통제는 조직의 위험과 요구에 대응해야 한다. 목록의 길이나 제품 가격은 실제 위험 식별·처리의 적절성을 보여 주지 않는다.",
+    "syllabus": "3.6.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.2.1 국제표준 정보보호 관리체계"
+    }
+  },
+  {
+    "id": "sys4-210",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "내부 감사",
+    "prompt": "통제 담당자가 정책을 문서화했지만 실제 운영 여부는 알 수 없다. 감사에 유용한 증거는?",
+    "options": [
+      "승인된 정책 문서의 존재만",
+      "접근권한 검토 기록과 시정 조치의 수행 내역",
+      "통제 장비 구매 계약서만",
+      "통제 담당자의 계획서만"
+    ],
+    "answer": 1,
+    "explanation": "통제의 실제 수행은 검토 기록과 조치 결과 등 운영 증거로 확인한다. 정책·계약·계획은 기반 자료지만 실제로 통제가 반복 실행됐다는 사실까지 단독으로 증명하지 못한다.",
+    "syllabus": "3.6.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.2.1 국제표준 정보보호 관리체계"
+    }
+  },
+  {
+    "id": "sys4-211",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "지속적 개선",
+    "prompt": "지난 감사에서 발견한 퇴사자 계정 미삭제가 다음 감사에서도 반복됐다. 개선 활동에 필요한 것은?",
+    "options": [
+      "감사 표본에서 퇴사자 계정을 제외한다",
+      "발견된 퇴사자 계정만 지우고 원인 분석은 하지 않는다",
+      "근본 원인을 확인하고 조치 후 재발 방지 효과를 검증한다",
+      "삭제 계획서를 갱신하고 실제 효과 확인은 생략한다"
+    ],
+    "answer": 2,
+    "explanation": "반복 문제는 계정 삭제 연계·책임 등 근본 원인을 해결하고 효과를 검증해야 한다. 표본만 수정하거나 범위에서 제외하고 계획만 고치면 재발 방지를 확인할 수 없다.",
+    "syllabus": "3.6.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.2.1 국제표준 정보보호 관리체계"
+    }
+  },
+  {
+    "id": "sys4-212",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "경영진 역할",
+    "prompt": "관리체계가 보안팀의 문서 작업으로만 운영되고 사업 부서가 위험 처리 결정을 하지 않는다. 필요한 변화는?",
+    "options": [
+      "보안팀이 사업 영향을 추정 없이 0으로 기록한다",
+      "사업 부서의 책임을 보안 장비 공급사에 전부 넘긴다",
+      "정보보호 목표를 문서에서 삭제한다",
+      "경영진과 위험 소유자가 목표·책임·자원·위험 결정을 관리한다"
+    ],
+    "answer": 3,
+    "explanation": "관리체계에는 경영 참여와 명확한 책임이 필요하다. 보안팀 문서나 장비 공급사만으로 조직의 업무 위험에 대한 의사결정을 대신할 수 없다.",
+    "syllabus": "3.6.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.2.1 국제표준 정보보호 관리체계"
+    }
+  },
+  {
+    "id": "sys4-213",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "인증의 의미",
+    "prompt": "정보보호 관리체계 인증을 획득한 조직의 설명 중 적절한 것은?",
+    "options": [
+      "인증 범위의 관리체계 적합성을 입증하되 사고 가능성까지 없어지는 것은 아니다",
+      "인증일부터 모든 취약점이 존재할 수 없다",
+      "사용자의 권한 검사가 더 이상 필요 없다",
+      "인증은 데이터 내용의 정확성을 건별로 보증한다"
+    ],
+    "answer": 0,
+    "explanation": "관리체계 인증은 위험 관리 활동의 적합성에 관한 것이다. 무사고·무취약점이나 모든 데이터 정확성을 무조건 보증하지 않는다.",
+    "syllabus": "3.6.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.2.1 국제표준 정보보호 관리체계"
+    }
+  },
+  {
+    "id": "sys4-214",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "변경과 위험 재평가",
+    "prompt": "인증 대상 업무가 온프레미스에서 외부 클라우드로 옮겨졌다. 관리체계 관점의 후속 조치는?",
+    "options": [
+      "인증 이력이 있으므로 변경을 평가하지 않는다",
+      "새 책임 경계·자산·위험을 반영해 통제와 문서를 재검토한다",
+      "이전 네트워크 그림을 그대로 유지한다",
+      "클라우드 계약서를 백업 정책의 대체물로 사용한다"
+    ],
+    "answer": 1,
+    "explanation": "환경 변화는 위험과 책임을 바꾸므로 관리체계에 반영해야 한다. 과거 인증이나 계약서 하나가 새로운 위험 검토를 대체하지 않는다.",
+    "syllabus": "3.6.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.2.1 국제표준 정보보호 관리체계"
+    }
+  },
+  {
+    "id": "sys4-215",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "국내 관리체계",
+    "prompt": "ISMS와 비교해 ISMS-P에서 함께 다루는 중요한 관점은?",
+    "options": [
+      "개별 보안 제품의 기능 평가만",
+      "암호모듈의 알고리즘 구현 적합성만",
+      "개인정보 처리 단계의 보호와 정보주체 권리",
+      "소프트웨어 소스 코드의 성능 최적화만"
+    ],
+    "answer": 2,
+    "explanation": "ISMS-P는 정보보호와 함께 개인정보 처리 단계 보호와 정보주체 권리를 다룬다. 암호모듈·제품 기능 시험이나 코드 성능 검사와는 인증 대상과 목적이 다르다.",
+    "syllabus": "3.6.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.2.2 국내표준 정보보호 관리체계"
+    }
+  },
+  {
+    "id": "sys4-216",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "개인정보 흐름",
+    "prompt": "회원 정보를 수집해 결제사에 전달하고 보관 후 파기한다. 관리체계 현황 분석에서 먼저 정리할 것은?",
+    "options": [
+      "결제 완료 API의 평균 지연 시간만",
+      "DB 테이블의 물리 저장 크기만",
+      "홈페이지 개인정보 안내 문구의 존재만",
+      "수집·이용·제공·보관·파기의 흐름과 처리 주체"
+    ],
+    "answer": 3,
+    "explanation": "개인정보의 처리 단계·위치·주체를 파악해야 각 단계의 보호를 평가할 수 있다. 저장 크기나 안내 문구, API 지연만으로 전체 수집·제공·파기 흐름을 파악하지 못한다.",
+    "syllabus": "3.6.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.2.2 국내표준 정보보호 관리체계"
+    }
+  },
+  {
+    "id": "sys4-217",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "보호대책 운영",
+    "prompt": "외주 인력이 고객 정보에 접근한다. 외부자 보안 관리에 적합한 증거는?",
+    "options": [
+      "계약상 보안 요구·접근 승인·종료 시 권한 회수 기록",
+      "외주사 보안 서약서만 받고 접근 이력은 관리하지 않은 상태",
+      "외주 인력 명단만 있고 종료 권한 회수는 확인하지 않은 상태",
+      "납품 검수 완료 기록만"
+    ],
+    "answer": 0,
+    "explanation": "외부자 보안은 계약 요구부터 접근 승인·운영·종료까지 증거로 확인해야 한다. 서약서·명단·납품 기록만으로 실제 접근과 권한 종료가 통제됐다고 판단하기 어렵다.",
+    "syllabus": "3.6.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.2.2 국내표준 정보보호 관리체계"
+    }
+  },
+  {
+    "id": "sys4-218",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "관리체계 점검",
+    "prompt": "백업 정책은 있으나 실제 복원이 되는지 확인하지 않았다. 점검에서 필요한 활동은?",
+    "options": [
+      "백업 완료 메시지의 존재만 확인한다",
+      "복원 시험으로 업무 데이터와 복구 절차의 유효성을 확인한다",
+      "백업 파일 크기가 어제와 비슷한지만 본다",
+      "백업 정책 승인 여부만 다시 확인한다"
+    ],
+    "answer": 1,
+    "explanation": "백업의 존재와 실제 복원 성공은 다르다. 성공 메시지·크기·정책 승인만으로 데이터와 복구 절차가 업무 요구대로 복원됨을 입증할 수 없다.",
+    "syllabus": "3.6.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.2.2 국내표준 정보보호 관리체계"
+    }
+  },
+  {
+    "id": "sys4-219",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "교육과 인식",
+    "prompt": "정보보호 교육을 실시했다는 기록은 있지만 직원이 사고 신고 경로를 모른다. 효과 평가에 적합한 방법은?",
+    "options": [
+      "교육 자료를 배포한 횟수만 세어 신고 능력을 판단한다",
+      "교육 참석 기록만으로 실제 절차 수행 능력까지 확정한다",
+      "모의 상황에서 신고 절차를 수행하게 하고 결과를 확인한다",
+      "교육 시간이 길면 모의 검증은 생략한다"
+    ],
+    "answer": 2,
+    "explanation": "교육의 실제 효과는 이해와 행동을 확인하는 방식으로 점검할 수 있다. 참석·배포·시간은 실시 증거지만 사고 신고를 수행할 수 있다는 사실을 직접 입증하지는 않는다.",
+    "syllabus": "3.6.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.2.2 국내표준 정보보호 관리체계"
+    }
+  },
+  {
+    "id": "sys4-220",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "자산 관리",
+    "prompt": "사용 중인 테스트 서버가 자산 목록에서 빠져 패치와 접근권한 점검도 누락됐다. 먼저 보완할 관리 기반은?",
+    "options": [
+      "IP 주소만 바꾸고 관리 목록은 유지한다",
+      "목록에 있는 서버의 패치 횟수만 더 늘린다",
+      "테스트 서버라는 이유로 자산 관리 범위에서 영구 제외한다",
+      "자산 식별과 소유자·용도·관리 책임의 현행화"
+    ],
+    "answer": 3,
+    "explanation": "보호 대상 자산과 소유자·책임을 현행화해야 패치·권한 점검의 누락을 막을 수 있다. 기존 자산만 더 점검하거나 누락 서버를 제외하는 것은 범위 결함을 해결하지 못한다.",
+    "syllabus": "3.6.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.2.2 국내표준 정보보호 관리체계"
+    }
+  },
+  {
+    "id": "sys4-221",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "개인정보 파기",
+    "prompt": "보유 목적이 끝난 자료가 운영 DB에서만 삭제되고 내려받은 사본은 남았다. 파기 절차의 보완점은?",
+    "options": [
+      "보유 근거와 대상 사본·보관 위치를 확인해 파기 범위를 관리한다",
+      "운영 DB 삭제 기록만으로 모든 사본도 파기됐다고 본다",
+      "사본 읽기 권한을 줄이면 파기 완료로 기록한다",
+      "정당한 보유 근거 확인 없이 별도 저장소에 무기한 옮긴다"
+    ],
+    "answer": 0,
+    "explanation": "자료의 보유 근거와 사본 위치를 확인해야 실제 파기 범위를 관리할 수 있다. 접근 제한은 파기와 다르고 별도 저장소 이동도 데이터를 없애는 조치가 아니다.",
+    "syllabus": "3.6.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.2.2 국내표준 정보보호 관리체계"
+    }
+  },
+  {
+    "id": "sys4-222",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "사고 대응 체계",
+    "prompt": "정보 유출 의심 알림이 왔는데 어느 부서가 판단하고 조치할지 정해져 있지 않다. 우선 필요한 것은?",
+    "options": [
+      "탐지 규칙의 민감도만 높이고 역할은 정하지 않는다",
+      "사고 분류·보고·대응 책임과 연락 절차를 정하고 훈련한다",
+      "장비 공급사의 지원 계약으로 내부 판단 책임을 전부 대체한다",
+      "과거 사고 보고서만 보관하고 훈련은 하지 않는다"
+    ],
+    "answer": 1,
+    "explanation": "탐지 후 누가 판단·보고·조치할지 정한 절차와 훈련이 필요하다. 탐지 성능·지원 계약·과거 기록만으로 현재 조직의 대응 책임 공백이 해소되지는 않는다.",
+    "syllabus": "3.6.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.6.2.2 국내표준 정보보호 관리체계"
+    }
+  },
+  {
+    "id": "sys4-223",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "시큐어 코딩 목적",
+    "prompt": "기능 테스트를 통과한 프로그램에도 입력 검증과 인가 결함이 남았다. 시큐어 코딩이 별도로 필요한 이유는?",
+    "options": [
+      "전송 구간 암호화가 모든 코드의 입력 해석을 안전하게 만들기 때문이다",
+      "정상 입력의 정답 출력만 확인하면 권한 경계도 검증되기 때문이다",
+      "정상 기능 동작만으로 악의적 입력과 권한 오용에 대한 안전성이 보장되지 않기 때문이다",
+      "코드 정렬 규칙이 메모리 접근 범위를 자동 검증하기 때문이다"
+    ],
+    "answer": 2,
+    "explanation": "정상 기능 동작은 악의적 입력과 권한 오용에 대한 안전성까지 입증하지 않는다. 전송 암호화와 코드 스타일도 입력 해석·인가·메모리 경계를 자동 보장하지 않는다.",
+    "syllabus": "3.7.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.1 시큐어 코딩 설명"
+    }
+  },
+  {
+    "id": "sys4-224",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "신뢰 경계",
+    "prompt": "외부 API 응답의 문자열을 신뢰하고 그대로 명령 실행 인수로 사용한다. 설계에서 확인할 핵심은?",
+    "options": [
+      "해당 문자열이 압축되어 전송됐는지 여부만",
+      "API 제공자의 브랜드 인지도만",
+      "API 응답 속도의 평균값만",
+      "외부 데이터가 신뢰 경계를 넘어 실행 맥락으로 들어가는 지점"
+    ],
+    "answer": 3,
+    "explanation": "외부 입력이 실행 의미를 갖는 경계가 핵심이다. 유명 제공자·빠른 응답·압축 여부가 데이터의 안전성을 보장하지 않으므로 검증과 안전한 실행 API가 필요하다.",
+    "syllabus": "3.7.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.1 시큐어 코딩 설명"
+    }
+  },
+  {
+    "id": "sys4-225",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "입력 검증 전략",
+    "prompt": "상품 수량은 1~99의 정수여야 한다. 적절한 검증 정책은?",
+    "options": [
+      "정수 형식과 허용 범위를 명시적으로 검사한다",
+      "알려진 공격 단어 몇 개만 삭제한다",
+      "따옴표만 제거하면 모든 값을 허용한다",
+      "브라우저 입력 칸의 폭을 두 자리로 한다"
+    ],
+    "answer": 0,
+    "explanation": "허용 형식과 범위를 정의하는 검증이 업무 규칙에 맞는다. 차단 단어·문자 제거와 화면 폭은 서버에 들어오는 모든 잘못된 입력을 통제하지 못한다.",
+    "syllabus": "3.7.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.1 시큐어 코딩 설명"
+    }
+  },
+  {
+    "id": "sys4-226",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "SAST",
+    "prompt": "코드를 실행하지 않고 소스의 데이터 흐름과 위험한 함수 호출을 분석하는 방식은?",
+    "options": [
+      "동적 애플리케이션 보안 분석",
+      "정적 애플리케이션 보안 분석",
+      "운영 트래픽 부하 시험",
+      "백업 복구 시험"
+    ],
+    "answer": 1,
+    "explanation": "SAST는 소스나 중간 표현을 실행 없이 분석한다. DAST는 실행 중인 애플리케이션을 외부에서 시험하며 부하·복구 시험과 목적도 다르다.",
+    "syllabus": "3.7.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.1 시큐어 코딩 설명"
+    }
+  },
+  {
+    "id": "sys4-227",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "DAST",
+    "prompt": "실행 중인 테스트 웹앱에 요청을 보내 응답과 동작에서 취약점을 찾는다. 해당 방식은?",
+    "options": [
+      "저장소 라이선스 목록 작성",
+      "소스 코드 들여쓰기 검사",
+      "동적 애플리케이션 보안 분석",
+      "데이터베이스 정규화"
+    ],
+    "answer": 2,
+    "explanation": "DAST는 실행 환경의 요청·응답을 관찰한다. 스타일 검사나 의존성 목록, 스키마 설계와는 검증 대상과 방법이 다르다.",
+    "syllabus": "3.7.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.1 시큐어 코딩 설명"
+    }
+  },
+  {
+    "id": "sys4-228",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "의존성 보안",
+    "prompt": "직접 작성한 코드는 안전하지만 포함한 라이브러리 버전에 공개 취약점이 있다. 적절한 분석은?",
+    "options": [
+      "소스의 들여쓰기 검사만 수행한다",
+      "직접 작성한 파일만 정적 검사하고 외부 패키지는 제외한다",
+      "최종 실행 파일의 성능 부하 시험만 수행한다",
+      "소프트웨어 구성 분석으로 구성요소와 취약 버전을 식별한다"
+    ],
+    "answer": 3,
+    "explanation": "구성 분석은 포함된 제3자 구성요소와 취약 버전을 추적한다. 자체 소스만 검사하거나 성능·스타일만 시험하면 외부 라이브러리의 알려진 결함을 놓칠 수 있다.",
+    "syllabus": "3.7.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.1 시큐어 코딩 설명"
+    }
+  },
+  {
+    "id": "sys4-229",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "오탐 검토",
+    "prompt": "자동 분석 도구가 SQL 인젝션을 경고했지만 실제 쿼리는 매개변수 바인딩을 사용한다. 적절한 검토 방법은?",
+    "options": [
+      "입력부터 쿼리 실행까지 흐름을 확인해 경고의 실제 위험을 판단한다",
+      "도구 경고는 항상 참이므로 기능을 삭제한다",
+      "도구 경고는 항상 거짓이므로 전부 숨긴다",
+      "코드 줄 수가 짧으면 검토를 생략한다"
+    ],
+    "answer": 0,
+    "explanation": "자동 경고는 데이터 흐름과 실행 방식을 근거로 확인해야 한다. 도구 결과를 무조건 참·거짓으로 취급하면 실제 취약점과 오탐을 구분하지 못한다.",
+    "syllabus": "3.7.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.1 시큐어 코딩 설명"
+    }
+  },
+  {
+    "id": "sys4-230",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "보안 회귀 검증",
+    "prompt": "파일 경로 검증 결함을 수정했다. 같은 결함의 재발을 줄이는 후속 작업은?",
+    "options": [
+      "수정한 줄을 주석 처리한다",
+      "허용 경로와 거부할 경계 사례를 회귀 테스트로 남긴다",
+      "보안 테스트를 이번 릴리스에서만 삭제한다",
+      "버전 번호만 올린다"
+    ],
+    "answer": 1,
+    "explanation": "수정된 경계 동작을 검증하는 회귀 테스트는 이후 변경으로 방어가 깨지는 것을 찾는다. 주석·버전 변경만으로는 방어 동작을 확인하지 못한다.",
+    "syllabus": "3.7.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.1 시큐어 코딩 설명"
+    }
+  },
+  {
+    "id": "sys4-231",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "SQL 매개변수",
+    "prompt": "query = \"SELECT * FROM orders WHERE owner='\" + input + \"'\" 형태로 SQL을 만든다. 가장 적절한 수정은?",
+    "options": [
+      "완성된 SQL 전체를 암호화했다가 실행 전에 복호화한다",
+      "입력에 따옴표를 덧붙이는 처리만 유지한다",
+      "SQL 구조를 고정하고 input을 매개변수로 바인딩한다",
+      "SQL 실행 계정의 비밀번호만 교체한다"
+    ],
+    "answer": 2,
+    "explanation": "바인딩은 값을 SQL 문법과 분리해 입력이 쿼리 구조를 바꾸는 것을 방지한다. 전체 쿼리 암호화나 계정 비밀번호 교체는 문자열 결합의 해석 문제를 해결하지 못한다.",
+    "syllabus": "3.7.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.2 시큐어 코딩 수행"
+    }
+  },
+  {
+    "id": "sys4-232",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "HTML 출력 처리",
+    "prompt": "댓글을 innerHTML에 그대로 넣자 사용자가 쓴 태그가 실행된다. 댓글을 일반 텍스트로만 보여 줄 때 적합한 수정은?",
+    "options": [
+      "댓글 작성자 인증만 확인하고 HTML로 출력한다",
+      "입력을 HTML 문자열로 이어 붙인 뒤 저장 시에만 암호화한다",
+      "문자열에서 script라는 단어만 제거한다",
+      "textContent 등 텍스트 전용 출력 API를 사용한다"
+    ],
+    "answer": 3,
+    "explanation": "textContent는 값을 HTML이 아닌 텍스트로 처리한다. 저장 암호화와 사용자 인증은 출력 해석을 바꾸지 않으며 특정 단어 제거만으로 여러 실행 맥락을 안전하게 다루기 어렵다.",
+    "syllabus": "3.7.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.2 시큐어 코딩 수행"
+    }
+  },
+  {
+    "id": "sys4-233",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "CSRF 방어",
+    "prompt": "브라우저가 세션 쿠키를 자동 전송하는 송금 API가 외부 사이트의 요청도 처리한다. 우선 적용할 방어는?",
+    "options": [
+      "서버가 요청의 CSRF 토큰을 검증하도록 한다",
+      "인증 쿠키를 HttpOnly로 설정하는 것만으로 종결한다",
+      "송금 API가 로그인된 사용자 요청인지 확인하는 것만으로 종결한다",
+      "입력 금액의 범위만 검사한다"
+    ],
+    "answer": 0,
+    "explanation": "CSRF 토큰은 쿠키가 자동 전송되는 요청의 위조 여부를 확인하는 통제다. HttpOnly는 스크립트의 쿠키 읽기 제한이며 로그인과 금액 검사는 외부 페이지가 유도한 요청인지 판단하지 못한다.",
+    "syllabus": "3.7.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.2 시큐어 코딩 수행"
+    }
+  },
+  {
+    "id": "sys4-234",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "파일 경로 검사",
+    "prompt": "다운로드 API가 사용자 파일명을 저장 디렉터리에 이어 붙인다. 경로 이탈을 막는 가장 적절한 조치는?",
+    "options": [
+      "파일명에 점이 있으면 모두 로그에만 기록한다",
+      "정규화된 최종 경로가 허용 디렉터리 내부인지 검사하고 허용 파일만 제공한다",
+      "디렉터리 이름을 비밀로 둔다",
+      "파일명을 URL 인코딩한 상태로만 신뢰한다"
+    ],
+    "answer": 1,
+    "explanation": "경로 정규화와 실제 허용 범위 검사는 상위 경로 이동이나 표현 차이를 통제한다. 은닉과 인코딩, 로그만으로는 파일 접근을 제한하지 못한다.",
+    "syllabus": "3.7.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.2 시큐어 코딩 수행"
+    }
+  },
+  {
+    "id": "sys4-235",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "명령 실행",
+    "prompt": "서버가 이미지 변환 옵션을 문자열로 조립해 셸에 전달한다. 안전성을 높이는 방법은?",
+    "options": [
+      "명령 결과만 HTML 인코딩한다",
+      "사용자 옵션을 셸 문자열에 그대로 넣고 로그만 기록한다",
+      "셸을 거치지 않는 API로 명령과 인수를 분리하고 허용 옵션을 검사한다",
+      "호출자가 로그인했으면 옵션 검증은 생략한다"
+    ],
+    "answer": 2,
+    "explanation": "명령과 인수를 구조적으로 분리하고 허용 옵션을 검사해야 셸 해석 위험을 줄인다. 결과의 HTML 처리·로그·사용자 인증은 이미 실행되는 명령 인수의 안전성을 보장하지 못한다.",
+    "syllabus": "3.7.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.2 시큐어 코딩 수행"
+    }
+  },
+  {
+    "id": "sys4-236",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "SSRF",
+    "prompt": "URL 미리보기 서버가 사용자가 준 주소로 내부 관리 서비스에도 요청한다. 적절한 통제는?",
+    "options": [
+      "응답을 사용자에게 숨기면 서버의 내부 요청은 허용한다",
+      "최초 URL 문자열만 검사하고 리디렉션 대상은 신뢰한다",
+      "HTTPS 주소면 내부 주소 여부 검사를 생략한다",
+      "허용 목적지·프로토콜을 제한하고 해석된 주소 및 리디렉션도 검증한다"
+    ],
+    "answer": 3,
+    "explanation": "SSRF는 서버가 실제 어디로 요청하는지가 핵심이다. HTTPS 여부나 응답 비공개는 내부 자원 접근을 막지 못하고 리디렉션·이름 해석을 포함해 목적지를 확인해야 한다.",
+    "syllabus": "3.7.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.2 시큐어 코딩 수행"
+    }
+  },
+  {
+    "id": "sys4-237",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "안전한 업로드",
+    "prompt": "업로드 파일의 확장자만 .jpg이면 실행 가능한 웹 디렉터리에 저장한다. 적절한 개선은?",
+    "options": [
+      "내용·허용 형식을 검증하고 실행되지 않는 별도 위치에 안전한 이름으로 저장한다",
+      "요청 헤더의 Content-Type 값만 신뢰한다",
+      "확장자만 확인한 뒤 웹 실행 경로에 그대로 둔다",
+      "인증된 사용자라면 파일 내용 검증을 생략한다"
+    ],
+    "answer": 0,
+    "explanation": "파일 확장자와 요청 헤더는 위조될 수 있어 실제 형식과 저장·실행 경계를 함께 통제해야 한다. 사용자 인증도 업로드 내용의 안전성을 보증하지 않는다.",
+    "syllabus": "3.7.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.2 시큐어 코딩 수행"
+    }
+  },
+  {
+    "id": "sys4-238",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "오류 정보",
+    "prompt": "데이터베이스 예외의 전체 스택과 접속 문자열을 웹 응답에 보여 준다. 적절한 수정은?",
+    "options": [
+      "상세 오류를 더 큰 글씨로 보여 준다",
+      "사용자에게 일반 오류와 추적 ID를 주고 상세 진단은 보호된 로그에 남긴다",
+      "접속 문자열만 Base64로 출력한다",
+      "모든 오류를 성공 응답으로 바꿔 기록도 하지 않는다"
+    ],
+    "answer": 1,
+    "explanation": "외부에는 필요한 오류 정보만 제공하고 내부에서는 추적 가능성을 유지해야 한다. 인코딩은 비밀 보호가 아니고 무조건 성공 처리하면 장애 탐지까지 어려워진다.",
+    "syllabus": "3.7.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.2 시큐어 코딩 수행"
+    }
+  },
+  {
+    "id": "sys4-239",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "안전한 실패",
+    "prompt": "인가 서비스 호출이 시간 초과되면 catch 블록에서 allow=true로 처리한다. 보안상 올바른 기본 동작은?",
+    "options": [
+      "모든 사용자를 관리자 그룹에 캐시한다",
+      "오류가 날수록 더 높은 권한을 준다",
+      "권한 확인 실패 시 보호 작업을 거부하고 오류를 기록한다",
+      "예외 메시지만 지우고 허용은 유지한다"
+    ],
+    "answer": 2,
+    "explanation": "권한 확인이 되지 않은 요청은 안전하게 거부해야 한다. 예외를 허용으로 처리하면 장애가 접근통제 우회 경로가 된다.",
+    "syllabus": "3.7.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.2 시큐어 코딩 수행"
+    }
+  },
+  {
+    "id": "sys4-240",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "버퍼 경계",
+    "prompt": "길이 16인 버퍼에 외부 입력을 길이 검사 없이 복사한다. 개선의 핵심은?",
+    "options": [
+      "입력 송신자가 로그인했으면 경계 검사를 생략한다",
+      "복사 후 결과 문자열의 표시 길이만 제한한다",
+      "네트워크 패킷의 체크섬만 확인한다",
+      "버퍼 용량과 종료 문자 등 저장 조건을 고려해 복사 길이를 제한한다"
+    ],
+    "answer": 3,
+    "explanation": "쓰기 전에 저장 용량과 종료 문자 등 경계를 확인해야 한다. 복사 후 화면 제한은 이미 일어난 메모리 손상을 막지 못하고 체크섬·인증은 입력 길이를 보장하지 않는다.",
+    "syllabus": "3.7.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.2 시큐어 코딩 수행"
+    }
+  },
+  {
+    "id": "sys4-241",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "정수 범위",
+    "prompt": "항목 수 n에 단가를 곱해 결제 금액을 계산하는데 정수 오버플로가 가능하다. 올바른 검증은?",
+    "options": [
+      "n의 허용 범위와 곱셈 결과의 표현 가능 범위를 확인한다",
+      "계산 결과를 문자열로 표시하기만 한다",
+      "오버플로 결과가 음수면 무료 처리한다",
+      "n을 클라이언트가 보냈으므로 신뢰한다"
+    ],
+    "answer": 0,
+    "explanation": "입력 범위와 연산 한계를 확인해야 금액 계산의 왜곡을 막는다. 표시 방식은 이미 잘못된 연산을 고치지 못하며 음수 무료 처리는 취약점을 악용 가능하게 만든다.",
+    "syllabus": "3.7.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.2 시큐어 코딩 수행"
+    }
+  },
+  {
+    "id": "sys4-242",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "역직렬화",
+    "prompt": "외부에서 받은 직렬화 객체를 검증 없이 복원하면서 객체 메서드도 실행한다. 위험을 줄이는 방법은?",
+    "options": [
+      "어떤 클래스든 자동 생성하도록 설정한다",
+      "단순 데이터 형식과 명시적 스키마를 사용하고 허용 타입만 처리한다",
+      "직렬화 문자열을 짧게 만들기만 한다",
+      "받은 객체에 운영 관리자 권한을 준다"
+    ],
+    "answer": 1,
+    "explanation": "신뢰하지 않는 객체 복원은 예상하지 않은 코드 경로를 실행할 수 있다. 데이터와 타입을 제한하는 방식이 필요하며 길이 축소나 권한 확대는 방어가 아니다.",
+    "syllabus": "3.7.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.2 시큐어 코딩 수행"
+    }
+  },
+  {
+    "id": "sys4-243",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "XXE",
+    "prompt": "업로드된 XML 파서가 외부 엔티티를 해석해 서버 파일에 접근한다. 가장 직접적인 조치는?",
+    "options": [
+      "전송을 TLS로 보호하는 것만으로 종결한다",
+      "XML 문서 크기만 제한하고 외부 엔티티는 허용한다",
+      "외부 엔티티와 불필요한 DTD 처리를 비활성화한다",
+      "파싱 결과 화면에 HTML 인코딩만 적용한다"
+    ],
+    "answer": 2,
+    "explanation": "XXE는 XML 파서의 외부 엔티티 해석을 통제해야 한다. 문서 크기·TLS·출력 인코딩은 파서가 외부 또는 내부 자원에 접근하는 동작 자체를 차단하지 않는다.",
+    "syllabus": "3.7.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.2 시큐어 코딩 수행"
+    }
+  },
+  {
+    "id": "sys4-244",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "로그 주입",
+    "prompt": "사용자 입력의 줄바꿈 때문에 한 요청이 여러 정상 로그 행처럼 기록된다. 적합한 개선은?",
+    "options": [
+      "로그 파일을 압축해 저장하는 것만으로 종결한다",
+      "전송 구간을 TLS로 보호하는 것만으로 종결한다",
+      "입력이 있는 요청은 로그의 시간 정보만 생략한다",
+      "구조화 로그를 사용하고 제어문자를 안전하게 처리한다"
+    ],
+    "answer": 3,
+    "explanation": "로그 구조를 깨는 제어문자를 안전하게 다뤄야 한다. TLS·압축은 내용의 구조적 위조를 막지 않으며 시간 제거는 증거의 유용성을 떨어뜨린다.",
+    "syllabus": "3.7.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.2 시큐어 코딩 수행"
+    }
+  },
+  {
+    "id": "sys4-245",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "TOCTOU",
+    "prompt": "파일 권한을 검사한 뒤 파일을 여는 사이에 대상이 바뀔 수 있다. 이 경쟁 상태를 줄이는 방향은?",
+    "options": [
+      "검사와 사용 사이의 대상 변경을 막는 원자적·안전한 파일 작업을 사용한다",
+      "권한 검사 결과를 오래 캐시해 재검사를 줄인다",
+      "파일 경로 문자열의 길이만 검사한다",
+      "검사와 열기 사이에 지연을 추가한다"
+    ],
+    "answer": 0,
+    "explanation": "검사 시점과 사용 시점 사이에 대상이 바뀌는 경쟁 상태이므로 동일 대상을 안전하게 다루는 연산이 필요하다. 캐시·길이 검사·지연은 이 시간차 문제를 해결하지 않는다.",
+    "syllabus": "3.7.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.2 시큐어 코딩 수행"
+    }
+  },
+  {
+    "id": "sys4-246",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "대량 할당",
+    "prompt": "회원 수정 API가 JSON의 모든 필드를 객체에 자동 복사해 isAdmin 값까지 바꾼다. 적절한 수정은?",
+    "options": [
+      "요청을 보낸 사용자의 로그인 여부만 검사한다",
+      "사용자가 수정 가능한 필드만 명시적으로 허용한다",
+      "JSON 문법만 검증한 뒤 모든 필드를 복사한다",
+      "관리자 필드를 웹 화면에서만 숨긴다"
+    ],
+    "answer": 1,
+    "explanation": "서버에서 사용자가 바꿀 수 있는 필드를 제한해야 한다. 정상 JSON이나 인증된 요청에도 허가되지 않은 필드가 들어갈 수 있고 숨겨진 필드 역시 직접 전송할 수 있다.",
+    "syllabus": "3.7.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.2 시큐어 코딩 수행"
+    }
+  },
+  {
+    "id": "sys4-247",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "데이터 최소화",
+    "prompt": "배송 통계에는 지역별 건수만 필요하다. 분석용 데이터 제공 방식으로 적합한 것은?",
+    "options": [
+      "원본을 모두 제공한 뒤 파일명을 통계로 바꾼다",
+      "전체 고객 신분증 사본도 함께 제공한다",
+      "필요한 지역 단위 집계만 제공하고 불필요한 개인 식별 속성은 제외한다",
+      "식별 속성을 새 열로 복제해 제공한다"
+    ],
+    "answer": 2,
+    "explanation": "최소화는 목적 달성에 필요한 데이터만 처리하는 것이다. 파일명 변경이나 복제는 실제 노출 정보를 줄이지 않는다.",
+    "syllabus": "3.7.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.3 데이터 보안"
+    }
+  },
+  {
+    "id": "sys4-248",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "마스킹 한계",
+    "prompt": "화면에는 카드번호 일부만 보이지만 API 응답에 전체 번호가 포함된다. 정확한 평가는?",
+    "options": [
+      "서버의 저장 암호화가 응답의 평문까지 숨긴다",
+      "HTTPS를 사용하면 클라이언트는 전체 응답을 볼 수 없다",
+      "로그인 사용자는 모든 민감 열을 받아도 인가가 충족된다",
+      "화면 마스킹만으로 클라이언트에 전달된 원문을 보호하지 못한다"
+    ],
+    "answer": 3,
+    "explanation": "화면 표현과 클라이언트에 전달된 실제 데이터는 다르다. HTTPS·저장 암호화는 정상 수신자에게 전달된 평문을 숨기지 않고 로그인만으로 모든 열의 권한이 생기지도 않는다.",
+    "syllabus": "3.7.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.3 데이터 보안"
+    }
+  },
+  {
+    "id": "sys4-249",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "가명처리",
+    "prompt": "고객 식별자를 임의 코드로 바꾸고 대응표를 따로 보관한다. 적절한 해석은?",
+    "options": [
+      "대응표 등 추가 정보로 재식별 가능성이 있어 이를 분리·보호해야 한다",
+      "코드로 바꾸는 즉시 어떤 상황에서도 익명정보가 된다",
+      "대응표를 함께 공개할수록 비밀성이 높아진다",
+      "원본 식별자를 더 많이 복제해야 한다"
+    ],
+    "answer": 0,
+    "explanation": "가명처리는 추가 정보와 결합하면 식별 가능성이 남을 수 있다. 대응표 보호가 중요하며 코드 변환을 완전한 익명화로 단정하면 안 된다.",
+    "syllabus": "3.7.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.3 데이터 보안"
+    }
+  },
+  {
+    "id": "sys4-250",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "테스트 데이터",
+    "prompt": "개발자가 운영 고객 DB를 개인 노트북으로 복사해 테스트하려 한다. 우선 선택할 방식은?",
+    "options": [
+      "운영 DB 전체를 암호화해 전송한 뒤 테스트 계정에 전체 평문 조회를 허용한다",
+      "테스트 목적에 맞는 합성 데이터나 적절히 비식별 처리된 최소 데이터를 사용한다",
+      "운영 DB 전체를 접근 제한 폴더에 저장하되 불필요한 식별 항목도 그대로 사용한다",
+      "원본 이름 열만 가리고 식별 가능한 다른 속성과 대응표를 함께 복사한다"
+    ],
+    "answer": 1,
+    "explanation": "테스트 목적에 필요한 최소한의 합성·비식별 데이터를 우선 사용하면 실제 고객 노출을 줄인다. 전송 암호화와 폴더 제한도 유용하지만 불필요한 원본 처리를 없애지 않으며 일부 열만 가리는 것은 충분한 비식별 처리를 뜻하지 않는다.",
+    "syllabus": "3.7.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.3 데이터 보안"
+    }
+  },
+  {
+    "id": "sys4-251",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "저장 암호화 한계",
+    "prompt": "디스크 암호화를 적용한 DB에서 과도한 조회 권한을 가진 앱이 전체 평문을 추출했다. 이유는?",
+    "options": [
+      "암호화하면 SQL 권한이 자동으로 늘어나기 때문이다",
+      "디스크 암호화는 파일을 항상 공개하기 때문이다",
+      "저장 암호화가 애플리케이션의 정당한 복호화 이후 접근권한을 대신하지 않기 때문이다",
+      "저장 암호화는 백업 복원을 금지하기 때문이다"
+    ],
+    "answer": 2,
+    "explanation": "저장 암호화는 저장 매체 노출 등을 방어하지만 실행 중 허용된 평문 접근은 인가로 통제해야 한다. 암호화 자체가 권한을 확대하거나 복원을 금지하지 않는다.",
+    "syllabus": "3.7.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.3 데이터 보안"
+    }
+  },
+  {
+    "id": "sys4-252",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "백업 보안",
+    "prompt": "운영 DB는 접근통제가 엄격한데 백업 파일을 누구나 읽을 수 있다. 우선 필요한 조치는?",
+    "options": [
+      "백업의 체크섬만 확인하고 읽기 권한은 유지한다",
+      "운영 DB의 비밀번호만 교체한다",
+      "백업 파일 이름만 추측하기 어렵게 바꾼다",
+      "백업에도 원본에 맞는 접근통제·암호화·보관 관리를 적용한다"
+    ],
+    "answer": 3,
+    "explanation": "백업에도 원본 수준의 민감 정보가 있으므로 접근통제와 암호화·보관 정책이 필요하다. DB 비밀번호 변경이나 파일명 은닉·체크섬은 백업의 공개 읽기 권한을 회수하지 않는다.",
+    "syllabus": "3.7.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.3 데이터 보안"
+    }
+  },
+  {
+    "id": "sys4-253",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "DLP",
+    "prompt": "외부 메일로 민감 자료가 전송되는지 정책에 따라 탐지·제어하려 한다. 가장 직접적인 솔루션 범주는?",
+    "options": [
+      "데이터 유출 방지(DLP)",
+      "장애 시 서버 요청을 분산하는 로드밸런서",
+      "주체별 문서 열람 역할만 부여하는 RBAC",
+      "저장 매체만 암호화하는 디스크 암호화"
+    ],
+    "answer": 0,
+    "explanation": "DLP는 민감 데이터의 이동과 사용을 정책에 따라 탐지·통제한다. 부하 분산·역할 부여·저장 암호화는 각기 다른 통제이며 외부 전송 내용의 정책 감시와 직접 같지 않다.",
+    "syllabus": "3.7.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.3 데이터 보안"
+    }
+  },
+  {
+    "id": "sys4-254",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "데이터 분류",
+    "prompt": "여러 팀이 같은 문서를 서로 다르게 보호한다. 일관된 보호 수준을 정할 출발점은?",
+    "options": [
+      "파일 크기에 따라 보안 등급을 일괄 배정한다",
+      "민감도와 업무 영향에 따른 분류 기준 및 취급 규칙을 정한다",
+      "작성 시각만 기준으로 모든 문서의 공유 범위를 정한다",
+      "확장자가 같으면 항상 같은 민감도라고 간주한다"
+    ],
+    "answer": 1,
+    "explanation": "데이터의 민감도와 침해 영향을 분류해야 취급 규칙을 연결할 수 있다. 크기·시각·확장자만으로는 동일 형식 안의 서로 다른 민감성을 충분히 평가하지 못한다.",
+    "syllabus": "3.7.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.3 데이터 보안"
+    }
+  },
+  {
+    "id": "sys4-255",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "감사 데이터 보호",
+    "prompt": "관리자가 자신이 남긴 조회 로그를 자유롭게 수정할 수 있다. 책임 추적을 강화할 방법은?",
+    "options": [
+      "로그를 암호화하되 같은 관리자에게 복호화·수정·재암호화 권한을 모두 준다",
+      "로그를 같은 관리자 권한의 폴더에 더 오래 보관한다",
+      "로그 수정 권한을 분리하고 별도 보관·변조 탐지를 적용한다",
+      "같은 관리자가 원본과 체크섬을 함께 수정할 수 있도록 보관한다"
+    ],
+    "answer": 2,
+    "explanation": "책임 추적에는 조사 대상자가 증거를 임의 변경하기 어렵도록 권한과 보관을 분리해야 한다. 기간 연장·암호화·체크섬만 추가하고 동일한 수정 권한을 유지하면 변조 위험이 계속 남는다.",
+    "syllabus": "3.7.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.3 데이터 보안"
+    }
+  },
+  {
+    "id": "sys4-256",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "암호키 분리",
+    "prompt": "암호화한 고객 파일과 복호화 키를 같은 공개 폴더에 보관했다. 문제의 핵심은?",
+    "options": [
+      "파일 소유자가 다르면 공개 폴더의 키도 자동 비공개가 된다",
+      "암호문 무결성만 검증하면 키 공개 영향은 사라진다",
+      "키 길이가 길면 평문 키 공개를 보완할 수 있다",
+      "암호문에 접근한 사람이 키도 얻을 수 있어 기밀성 보호가 무력화된다"
+    ],
+    "answer": 3,
+    "explanation": "키를 획득한 주체는 암호문을 복호화할 수 있으므로 분리와 접근통제가 중요하다. 키 길이·무결성·명목상 소유자가 평문 키 공개를 상쇄하지 않는다.",
+    "syllabus": "3.7.1.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.1.3 데이터 보안"
+    }
+  },
+  {
+    "id": "sys4-257",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "OS 하드닝",
+    "prompt": "파일 전송만 하는 서버에 웹·메일·원격 데스크톱 서비스가 기본 설치되어 실행 중이다. 공격 표면을 줄일 우선 조치는?",
+    "options": [
+      "업무에 불필요한 서비스를 중지하고 제거한다",
+      "모든 서비스의 로그만 상세하게 만든다",
+      "서비스 실행을 유지하고 접속 배너에서 버전만 숨긴다",
+      "서비스 수와 무관하게 디스크 암호화만 적용한다"
+    ],
+    "answer": 0,
+    "explanation": "불필요한 서비스 제거는 진입점 자체를 줄인다. 로그는 탐지, 버전 은닉은 정보 노출 감소, 디스크 암호화는 저장 기밀성이 중심이므로 실행 서비스 제거를 대신하지 않는다.",
+    "syllabus": "3.7.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.2.1 운영체제 보안"
+    }
+  },
+  {
+    "id": "sys4-258",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "패치 우선순위",
+    "prompt": "취약점 두 개 중 하나는 인터넷 노출 서버에서 실제 악용 중이고 다른 하나는 격리된 테스트 장비의 결함이다. 합리적인 판단은?",
+    "options": [
+      "취약점 번호가 작은 것부터 무조건 처리한다",
+      "악용 현황·노출·업무 영향을 종합해 인터넷 노출 취약점의 긴급 조치를 우선 검토한다",
+      "격리 장비라는 이유만으로 인터넷 서버 위험까지 수용한다",
+      "심각도 수치만 보고 노출 환경은 제외한다"
+    ],
+    "answer": 1,
+    "explanation": "패치 우선순위에는 실제 악용·노출·업무 중요도 등이 함께 필요하다. 번호 순서나 단일 점수만으로 환경별 위험을 충분히 반영하지 못한다.",
+    "syllabus": "3.7.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.2.1 운영체제 보안"
+    }
+  },
+  {
+    "id": "sys4-259",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "서비스 실행 계정",
+    "prompt": "웹 서버 프로세스가 일반 정적 파일을 제공하는데 운영체제 최고관리자 권한으로 실행된다. 적절한 개선은?",
+    "options": [
+      "관리자 계정을 여러 프로세스가 공동으로 사용한다",
+      "로그 보관 기간만 늘리고 실행 권한은 유지한다",
+      "필요한 디렉터리와 포트 권한만 가진 전용 계정으로 실행한다",
+      "파일 내용을 암호화하면 프로세스 권한은 무관하다고 본다"
+    ],
+    "answer": 2,
+    "explanation": "프로세스 최소권한은 취약점 악용 후 OS 전체로 번지는 피해를 제한한다. 로그나 저장 암호화는 과도한 실행 권한을 직접 줄이지 않는다.",
+    "syllabus": "3.7.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.2.1 운영체제 보안"
+    }
+  },
+  {
+    "id": "sys4-260",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "파일 권한",
+    "prompt": "설정 파일에는 DB 접속 비밀이 들어 있고 해당 서비스 계정만 읽으면 된다. 적절한 권한 설정은?",
+    "options": [
+      "실행 권한만 제거하고 전체 읽기 권한은 유지한다",
+      "모든 사용자에게 읽기를 허용하고 쓰기만 막는다",
+      "설정 파일을 압축했으므로 일반 사용자 읽기를 허용한다",
+      "서비스에 필요한 읽기만 허용하고 불필요한 사용자 읽기·쓰기를 제거한다"
+    ],
+    "answer": 3,
+    "explanation": "접속 비밀의 기밀성에는 읽기 권한 제한이 필요하다. 쓰기·실행만 제한하거나 압축하는 것은 다른 사용자가 내용을 읽는 것을 막지 못한다.",
+    "syllabus": "3.7.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.2.1 운영체제 보안"
+    }
+  },
+  {
+    "id": "sys4-261",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "보안 부팅",
+    "prompt": "부팅 과정에서 승인되지 않은 부트 구성요소가 실행되는 것을 제한하려 한다. 직접 관련된 기술은?",
+    "options": [
+      "신뢰된 서명을 검증하는 보안 부팅",
+      "실행 후 메모리 주소를 무작위화하는 ASLR",
+      "일반 사용자 프로세스에 대한 파일 ACL",
+      "저장 중 데이터의 디스크 암호화"
+    ],
+    "answer": 0,
+    "explanation": "보안 부팅은 부팅 구성요소의 서명과 신뢰를 확인한다. ASLR은 실행 시 주소 예측 완화, ACL은 자원 인가, 디스크 암호화는 저장 데이터 기밀성에 초점을 둔다.",
+    "syllabus": "3.7.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.2.1 운영체제 보안"
+    }
+  },
+  {
+    "id": "sys4-262",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "EDR",
+    "prompt": "단말에서 파일 변경·프로세스 생성·네트워크 연결을 연계 분석하고 감염 단말을 격리하려 한다. 적합한 범주는?",
+    "options": [
+      "패킷의 출발지·목적지 포트만 거르는 기본 ACL",
+      "엔드포인트 탐지 및 대응(EDR)",
+      "프로세스 행위 없이 파일 해시 목록만 정적으로 비교하는 검사",
+      "연결 주소만 변환하는 NAT"
+    ],
+    "answer": 1,
+    "explanation": "EDR은 단말의 프로세스·파일·연결 행위를 연계해 탐지와 대응을 수행한다. 포트 ACL·정적 파일 비교·NAT만으로는 지문의 다중 행위 조사와 단말 격리를 충족하지 못한다.",
+    "syllabus": "3.7.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.2.1 운영체제 보안"
+    }
+  },
+  {
+    "id": "sys4-263",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "로그 시간",
+    "prompt": "사고 분석에서 각 서버 로그의 시간이 달라 사건 순서가 뒤섞였다. 보완할 운영 통제는?",
+    "options": [
+      "모든 로그의 시간대 표기를 제거한다",
+      "각 서버의 로컬 시각이 다르더라도 순서를 추정해 확정한다",
+      "신뢰할 수 있는 시간 동기화와 일관된 시간대 기록",
+      "보관 주기만 늘리고 시계 오차는 유지한다"
+    ],
+    "answer": 2,
+    "explanation": "공통 시간 기준과 시간대 기록이 있어야 시스템 간 사건 순서를 연계할 수 있다. 추정·시간대 제거·보관 기간 연장만으로 실제 시계 차이가 해결되지 않는다.",
+    "syllabus": "3.7.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.2.1 운영체제 보안"
+    }
+  },
+  {
+    "id": "sys4-264",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "애플리케이션 허용 정책",
+    "prompt": "업무 단말에서 승인된 실행 파일만 구동하려 한다. 가장 직접적인 통제는?",
+    "options": [
+      "부팅 후 모든 실행 파일을 허용하는 감사 전용 정책",
+      "사용자별 디스크 사용량 제한 정책",
+      "전송 구간의 인증서 만료 감시 정책",
+      "서명·해시 등 신뢰 기준을 이용한 애플리케이션 실행 허용 정책"
+    ],
+    "answer": 3,
+    "explanation": "실행 허용 정책은 신뢰 기준에 맞는 코드만 구동하도록 제한한다. 저장량·인증서 감시와 다르고 감사만 수행하는 정책은 실행을 차단하지 않는다.",
+    "syllabus": "3.7.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.2.1 운영체제 보안"
+    }
+  },
+  {
+    "id": "sys4-265",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "커널 보호 완화기법",
+    "prompt": "ASLR을 적용한 시스템의 설명으로 적절한 것은?",
+    "options": [
+      "메모리 배치를 무작위화해 알려진 주소에 의존하는 공격을 어렵게 한다",
+      "모든 메모리 안전성 결함을 소스에서 제거한다",
+      "모든 프로세스에 관리자 권한을 자동 부여한다",
+      "비밀번호를 사용자별 솔트로 해시한다"
+    ],
+    "answer": 0,
+    "explanation": "ASLR은 공격의 주소 예측을 어렵게 하는 완화 기법이다. 코드 결함 자체 제거와 비밀번호 저장 기능은 아니며 취약점 수정 등 다른 방어도 필요하다.",
+    "syllabus": "3.7.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.2.1 운영체제 보안"
+    }
+  },
+  {
+    "id": "sys4-266",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "운영체제 격리",
+    "prompt": "신뢰 수준이 다른 두 서비스가 같은 OS에서 실행된다. 피해 전파를 줄이는 접근은?",
+    "options": [
+      "두 서비스를 같은 최고권한 계정으로 통합한다",
+      "서비스별 계정·자원 권한·격리 경계를 설정한다",
+      "포트 번호만 다르면 파일 권한을 공유한다",
+      "같은 호스트이므로 내부 호출은 검증하지 않는다"
+    ],
+    "answer": 1,
+    "explanation": "같은 호스트에서도 프로세스와 자원 간 경계를 제한해야 한다. 포트 분리는 파일·권한 격리를 자동 보장하지 않으며 내부 호출도 신뢰 조건을 검토해야 한다.",
+    "syllabus": "3.7.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.2.1 운영체제 보안"
+    }
+  },
+  {
+    "id": "sys4-267",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "방화벽과 WAF",
+    "prompt": "IP와 포트는 정상인 HTTP 요청에 SQL 인젝션 문자열이 포함되었다. 애플리케이션 요청 내용을 기준으로 탐지·차단하는 장비는?",
+    "options": [
+      "단순 목적지 IP 라우팅 테이블",
+      "계층 2 스위치의 MAC 주소 학습",
+      "웹 애플리케이션 방화벽(WAF)",
+      "전원 이중화 장치"
+    ],
+    "answer": 2,
+    "explanation": "WAF는 웹 요청의 애플리케이션 맥락을 검사한다. MAC 학습·라우팅·전원 보호만으로 HTTP 입력의 공격 패턴을 분석하지 않는다.",
+    "syllabus": "3.7.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.2.2 네트워크 보안"
+    }
+  },
+  {
+    "id": "sys4-268",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "IDS와 IPS",
+    "prompt": "보안 장비가 공격을 발견해 알림을 보내지만 트래픽 경로 밖에서 관찰하므로 직접 차단하지 않는다. 가장 가까운 역할은?",
+    "options": [
+      "암호키 보관 장치",
+      "인라인 침입 방지 시스템(IPS)",
+      "IP 주소 임대 서버",
+      "침입 탐지 시스템(IDS)"
+    ],
+    "answer": 3,
+    "explanation": "IDS는 관찰한 위협을 탐지·경고하는 역할이다. 인라인 IPS는 경로에서 차단할 수 있으며 주소 임대·키 보관과는 기능이 다르다.",
+    "syllabus": "3.7.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.2.2 네트워크 보안"
+    }
+  },
+  {
+    "id": "sys4-269",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "네트워크 분할",
+    "prompt": "직원 단말이 감염돼도 데이터베이스 관리 포트에 바로 접근하지 못하게 하려 한다. 적절한 설계는?",
+    "options": [
+      "망을 역할별로 나누고 구간 간 필요한 흐름만 허용한다",
+      "단말과 DB를 같은 신뢰 구역으로 유지하고 이름만 나눈다",
+      "서브넷은 나누되 구간 간 모든 포트를 허용한다",
+      "DB 통신을 암호화하되 단말의 관리 포트 접근은 유지한다"
+    ],
+    "answer": 0,
+    "explanation": "구역 분리와 구간 간 허용 통신 제한이 함께 있어야 횡적 이동을 줄인다. 명칭·서브넷 구분만 하거나 암호화만 적용하는 것은 관리 포트 접근 제한이 아니다.",
+    "syllabus": "3.7.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.2.2 네트워크 보안"
+    }
+  },
+  {
+    "id": "sys4-270",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "TLS 보호 범위",
+    "prompt": "사용자가 HTTPS로 접속했지만 서버 자체가 침해되어 평문을 유출한다. HTTPS에 대한 정확한 설명은?",
+    "options": [
+      "HTTPS는 서버 파일 권한을 자동 복구한다",
+      "전송 경로 보호가 종단 서버 내부 침해까지 해결하는 것은 아니다",
+      "HTTPS를 쓰면 서버는 평문을 처리하지 않는다",
+      "HTTPS는 모든 업무상 접근권한을 인증서로 대체한다"
+    ],
+    "answer": 1,
+    "explanation": "TLS는 통신 중 기밀성·무결성 등을 제공하지만 종단이 데이터를 사용하는 단계는 별도 보안이 필요하다. OS 권한과 업무 인가를 자동 관리하지 않는다.",
+    "syllabus": "3.7.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.2.2 네트워크 보안"
+    }
+  },
+  {
+    "id": "sys4-271",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "VPN 한계",
+    "prompt": "원격 직원의 VPN 연결은 암호화되지만 단말이 악성코드에 감염됐다. 필요한 추가 관점은?",
+    "options": [
+      "VPN이 있으면 단말 패치가 불필요하다",
+      "VPN 연결이면 모든 내부 자원 접근을 무제한 허용한다",
+      "접속 단말 상태와 사용자 권한을 별도로 검증한다",
+      "암호화 터널이 악성 프로세스를 자동 삭제한다고 본다"
+    ],
+    "answer": 2,
+    "explanation": "VPN은 통신 경로를 보호해도 단말의 신뢰성까지 보장하지 않는다. 단말 보안과 최소권한을 함께 적용해야 한다.",
+    "syllabus": "3.7.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.2.2 네트워크 보안"
+    }
+  },
+  {
+    "id": "sys4-272",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "제로 트러스트",
+    "prompt": "사내망 접속이라는 이유만으로 데이터 접근을 허용하던 정책을 개선한다. 제로 트러스트에 맞는 방향은?",
+    "options": [
+      "방화벽 한 대를 설치하면 이후 검증을 중단한다",
+      "외부망 사용자에게만 인증하고 내부망은 면제한다",
+      "모든 요청을 동일 관리자 계정으로 처리한다",
+      "네트워크 위치만 신뢰하지 않고 신원·장치·자원별 정책으로 접근을 평가한다"
+    ],
+    "answer": 3,
+    "explanation": "제로 트러스트는 위치에 따른 암묵적 신뢰를 줄이고 접근을 명시적으로 평가한다. 내부망 예외와 공유 관리자 권한은 이 방향과 어긋난다.",
+    "syllabus": "3.7.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.2.2 네트워크 보안"
+    }
+  },
+  {
+    "id": "sys4-273",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "DDoS 대응",
+    "prompt": "대량 트래픽이 회선 대역폭을 소진하여 서버까지 도달하지 못한다. 효과적인 대응 위치는?",
+    "options": [
+      "상위 네트워크·전문 방어 서비스에서 트래픽을 완화하도록 연계한다",
+      "서버의 로그인 오류 문구만 변경한다",
+      "애플리케이션의 DB 인덱스만 재생성한다",
+      "서버 CPU 코어만 늘리면 회선 문제도 항상 해결된다"
+    ],
+    "answer": 0,
+    "explanation": "회선이 먼저 포화되면 서버 내부 조치만으로 정상 트래픽을 전달할 수 없다. 상위 구간의 분산·필터링이 필요하며 CPU·DB 개선은 병목 위치와 다르다.",
+    "syllabus": "3.7.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.2.2 네트워크 보안"
+    }
+  },
+  {
+    "id": "sys4-274",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "DNSSEC",
+    "prompt": "DNS 응답의 출처와 변조 여부를 검증하는 기능을 원한다. DNSSEC의 주요 역할은?",
+    "options": [
+      "DNS 질의 내용을 암호화해 질의 이름 기밀성을 제공한다",
+      "DNS 데이터의 디지털 서명을 검증해 진위와 무결성을 확인한다",
+      "DNS 응답의 최대 캐시 시간을 결정한다",
+      "웹 애플리케이션의 사용자 권한을 검사한다"
+    ],
+    "answer": 1,
+    "explanation": "DNSSEC는 DNS 데이터의 서명으로 진위·무결성을 검증한다. 질의 전송 기밀성이나 캐시 기간 설정, 웹 사용자 인가와는 별도 기능이다.",
+    "syllabus": "3.7.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.2.2 네트워크 보안"
+    }
+  },
+  {
+    "id": "sys4-275",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "상태 기반 방화벽",
+    "prompt": "내부에서 시작한 연결의 정상 응답만 외부에서 돌아오도록 허용한다. 필요한 주요 기능은?",
+    "options": [
+      "연결 여부와 무관한 고정 목적지 포트 허용",
+      "각 패킷의 출발지 주소만 독립적으로 비교",
+      "연결 상태 추적",
+      "TCP 플래그 한 비트만 보고 기존 연결 여부를 추정"
+    ],
+    "answer": 2,
+    "explanation": "정상 응답이 허용된 기존 연결에 속하는지 보려면 연결 상태를 추적해야 한다. 개별 주소·고정 포트·단일 플래그만으로는 실제 연결 맥락을 충분히 확인하지 못한다.",
+    "syllabus": "3.7.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.2.2 네트워크 보안"
+    }
+  },
+  {
+    "id": "sys4-276",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "보안 규칙 정리",
+    "prompt": "임시 작업을 위해 허용한 전체 포트 규칙이 작업 후에도 남았다. 적절한 운영 개선은?",
+    "options": [
+      "다른 구역의 규칙을 줄이면 해당 예외도 회수됐다고 본다",
+      "임시 규칙에 승인자만 적고 만료 없이 유지한다",
+      "전체 포트 규칙을 여러 좁은 이름의 동일 허용 규칙으로 복제한다",
+      "예외 규칙에 소유자·사유·만료를 두고 사용 필요성을 재검토한다"
+    ],
+    "answer": 3,
+    "explanation": "예외의 소유자·사유·만료와 실제 필요성을 관리해야 임시 허용이 누적되지 않는다. 승인 기록만 남기거나 규칙 이름·다른 구역을 고쳐도 해당 허용은 계속 남는다.",
+    "syllabus": "3.7.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.2.2 네트워크 보안"
+    }
+  },
+  {
+    "id": "sys4-277",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "무선망 보안",
+    "prompt": "방문자 무선망에 접속하면 사내 파일 서버에도 접근할 수 있다. 우선적인 개선은?",
+    "options": [
+      "방문자 구간을 내부 업무망과 분리하고 접근 정책을 제한한다",
+      "SSID를 숨기는 것만으로 내부 접근을 모두 허용한다",
+      "방문자 암호를 직원 암호와 같게 맞춘다",
+      "접속 안내문의 글씨 크기를 줄인다"
+    ],
+    "answer": 0,
+    "explanation": "방문자 망은 별도 신뢰 수준이므로 네트워크 분리와 통신 제한이 필요하다. SSID 은닉이나 동일 비밀번호는 내부 자원 인가를 제공하지 않는다.",
+    "syllabus": "3.7.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.2.2 네트워크 보안"
+    }
+  },
+  {
+    "id": "sys4-278",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "출발지 위조 한계",
+    "prompt": "관리 API가 요청의 출발지 IP만으로 관리자를 인정한다. 보완해야 할 점은?",
+    "options": [
+      "허용 IP이면 요청 사용자의 개별 권한은 검사하지 않는다",
+      "IP 제한과 별도로 강한 사용자·서비스 인증 및 인가를 적용한다",
+      "사설 IP에서 온 요청은 모두 동일 신원으로 인정한다",
+      "NAT가 있으면 공유 주소 뒤의 사용자가 자동 인증된다"
+    ],
+    "answer": 1,
+    "explanation": "IP 주소는 네트워크 위치 정보이지 사용자별 신원과 인가의 충분한 증거가 아니다. NAT나 사설 주소도 개별 요청자 인증을 대신하지 못한다.",
+    "syllabus": "3.7.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.2.2 네트워크 보안"
+    }
+  },
+  {
+    "id": "sys4-279",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "간접 프롬프트 주입",
+    "prompt": "문서 요약 AI가 검색한 문서 속 '이전 지시를 무시하라'는 문장을 운영 지시로 실행했다. 해당 문제는?",
+    "options": [
+      "추론 결과로 학습 집합 포함 여부를 추정하는 멤버십 추론",
+      "모델 재학습 데이터의 라벨을 바꾸는 포이즈닝",
+      "간접 프롬프트 주입",
+      "많은 API 응답으로 모델을 복제하는 모델 추출"
+    ],
+    "answer": 2,
+    "explanation": "외부 검색 자료의 명령을 실제 지시로 해석한 간접 주입이다. 학습 자료 오염·학습 포함 추론·모델 복제와는 공격의 경로와 목표가 다르다.",
+    "syllabus": "3.7.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.3.1 AI 보안"
+    }
+  },
+  {
+    "id": "sys4-280",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "프롬프트 주입 방어",
+    "prompt": "검색 자료를 읽는 AI에 내부 결제 도구가 연결되어 있다. 자료 속 악성 지시 피해를 줄이는 실질적 설계는?",
+    "options": [
+      "모델이 생성한 권한 값을 그대로 서버가 신뢰한다",
+      "시스템 프롬프트에 조심하라고 한 줄 쓰면 모든 검증을 없앤다",
+      "검색 결과를 모두 운영자 지시로 승격한다",
+      "자료를 신뢰하지 않고 도구 권한·인수 검증·중요 작업 승인을 별도 계층에서 강제한다"
+    ],
+    "answer": 3,
+    "explanation": "모델 지시문만으로 경계가 완벽히 보장되지는 않는다. 도구 측 검증과 권한 제한으로 악성 자료가 실행 권한으로 바뀌는 것을 억제해야 한다.",
+    "syllabus": "3.7.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.3.1 AI 보안"
+    }
+  },
+  {
+    "id": "sys4-281",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "데이터 오염",
+    "prompt": "공격자가 재학습 자료에 조작된 라벨을 섞어 특정 거래를 정상으로 학습시키려 한다. 공격 유형은?",
+    "options": [
+      "학습 데이터 포이즈닝",
+      "추론 시 입력 교란만 수행하는 회피 공격",
+      "통신 암호화",
+      "정상적인 교차 검증"
+    ],
+    "answer": 0,
+    "explanation": "포이즈닝은 학습 자료나 학습 과정에 영향을 주려는 공격이다. 이미 학습된 모델에 추론 입력만 바꾸는 회피 공격과 시점·대상이 다르다.",
+    "syllabus": "3.7.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.3.1 AI 보안"
+    }
+  },
+  {
+    "id": "sys4-282",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "적대적 예제",
+    "prompt": "이미 학습된 이미지 분류기에 사람이 거의 구별하지 못할 변화가 있는 입력을 넣어 오분류를 유도했다. 가장 가까운 유형은?",
+    "options": [
+      "학습 데이터 라벨의 대량 교체",
+      "추론 단계의 적대적 입력을 이용한 회피",
+      "모델 저장 파일의 암호화",
+      "정상 성능 평가 지표의 집계"
+    ],
+    "answer": 1,
+    "explanation": "모델을 바꾸지 않고 추론 입력을 조작해 판단을 피하는 회피 공격이다. 학습 자료 오염이나 모델 파일 보호와 구별된다.",
+    "syllabus": "3.7.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.3.1 AI 보안"
+    }
+  },
+  {
+    "id": "sys4-283",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "모델 추출",
+    "prompt": "외부인이 예측 API를 대량 질의해 비슷한 동작의 모델을 재구성하려 한다. 우선 고려할 위험은?",
+    "options": [
+      "추론 입력을 약간 바꿔 분류를 피하는 회피",
+      "특정 레코드가 학습에 포함됐는지 판단하는 멤버십 추론",
+      "모델 추출",
+      "학습 데이터 라벨을 사전에 바꾸는 포이즈닝"
+    ],
+    "answer": 2,
+    "explanation": "모델 추출은 질의와 출력으로 원 모델의 기능을 모방하는 것이 목표다. 학습 포함 여부 추정, 단일 입력 회피, 재학습 자료 오염과 구분된다.",
+    "syllabus": "3.7.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.3.1 AI 보안"
+    }
+  },
+  {
+    "id": "sys4-284",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "멤버십 추론",
+    "prompt": "공격자가 모델 응답의 특성을 보고 특정 사람의 자료가 학습 집합에 포함됐는지 추정한다. 해당 위험은?",
+    "options": [
+      "학습 자료에 잘못된 라벨을 주입하는 포이즈닝",
+      "모델의 기능을 복제하는 모델 추출",
+      "추론 입력을 변형해 오분류를 유도하는 회피",
+      "멤버십 추론"
+    ],
+    "answer": 3,
+    "explanation": "멤버십 추론은 특정 자료가 학습 집합에 속했는지 알아내는 것이 목표다. 모델 기능 복제·판단 회피·학습 과정 변조와 구분된다.",
+    "syllabus": "3.7.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.3.1 AI 보안"
+    }
+  },
+  {
+    "id": "sys4-285",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "AI 출력 검증",
+    "prompt": "AI가 생성한 SQL을 관리자 권한으로 즉시 실행한다. 가장 적절한 개선은?",
+    "options": [
+      "허용 작업·쿼리 구조를 검증하고 제한된 권한으로 실행한다",
+      "AI 출력이면 사용자 입력보다 항상 안전하다고 본다",
+      "SQL의 공백만 삭제한 뒤 실행한다",
+      "모델 온도를 낮추면 DB 권한 검사를 생략한다"
+    ],
+    "answer": 0,
+    "explanation": "모델 출력도 신뢰 경계를 통과하는 입력이므로 실행 전 검증과 최소권한이 필요하다. 생성 설정이나 공백 제거가 실행 안전성과 인가를 보장하지 않는다.",
+    "syllabus": "3.7.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.3.1 AI 보안"
+    }
+  },
+  {
+    "id": "sys4-286",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "RAG 접근통제",
+    "prompt": "사내 검색 AI가 사용자에게 권한 없는 부서 문서를 검색해 답변에 섞는다. 적합한 개선은?",
+    "options": [
+      "답변 끝에 비밀 유지 문구만 붙인다",
+      "검색 단계에서 사용자별 문서 접근권한을 적용한다",
+      "임베딩 벡터이면 원본 권한을 무시한다",
+      "전체 검색 후 모델이 알아서 권한을 추정하게 한다"
+    ],
+    "answer": 1,
+    "explanation": "RAG에도 원본 자료의 접근 정책이 유지되어야 한다. 모델에 판단을 맡기거나 벡터 변환을 익명화로 간주하면 권한 없는 정보가 컨텍스트에 유입될 수 있다.",
+    "syllabus": "3.7.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.3.1 AI 보안"
+    }
+  },
+  {
+    "id": "sys4-287",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "AI 공급망",
+    "prompt": "출처가 불명확한 모델 파일과 실행 스크립트를 받아 서비스에 올리려 한다. 우선 확인할 사항은?",
+    "options": [
+      "모델 정확도 벤치마크만으로 실행 스크립트 안전성을 판단한다",
+      "공개 저장소의 다운로드 수만으로 안전성을 판단한다",
+      "출처·무결성·구성요소와 로딩 시 실행 위험",
+      "파일 확장자가 알려진 형식이면 로딩 동작은 검토하지 않는다"
+    ],
+    "answer": 2,
+    "explanation": "모델·스크립트도 공급망 산출물이므로 출처·무결성·로딩 실행 위험을 확인해야 한다. 인기도·예측 정확도·확장자는 포함 코드의 안전성을 직접 증명하지 못한다.",
+    "syllabus": "3.7.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.3.1 AI 보안"
+    }
+  },
+  {
+    "id": "sys4-288",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "민감한 프롬프트",
+    "prompt": "고객 상담 내용을 외부 AI로 보내려 한다. 데이터 보안 관점의 선행 조치는?",
+    "options": [
+      "응답 길이만 제한하면 입력 데이터도 삭제된다",
+      "모델 성능이 높으면 고객 식별 정보를 전부 보내도 된다고 본다",
+      "프롬프트 앞에 비밀이라고 쓰면 유출 방지가 보장된다",
+      "목적에 필요한 정보만 남기고 제공 범위·보관·접근 정책을 확인한다"
+    ],
+    "answer": 3,
+    "explanation": "외부 처리 전에 정보의 필요성과 처리 조건을 확인해야 한다. 프롬프트 문구나 출력 길이는 입력 데이터의 보관·노출을 통제하는 계약·기술 조치가 아니다.",
+    "syllabus": "3.7.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.3.1 AI 보안"
+    }
+  },
+  {
+    "id": "sys4-289",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "AI 도구 권한",
+    "prompt": "재고를 조회해 답하는 AI에 재고 삭제 API 권한도 부여돼 있다. 제거할 위험 요인은?",
+    "options": [
+      "목적에 필요하지 않은 과도한 도구 기능과 권한",
+      "답변의 정상적인 출처 표시",
+      "재고 조회의 읽기 권한 자체 전부",
+      "사용자에게 보이는 질문 기록 기능 전부"
+    ],
+    "answer": 0,
+    "explanation": "조회 목적에 삭제 기능은 필요하지 않아 오작동이나 조작 시 피해를 키운다. 필요한 읽기 기능을 모두 없애기보다 작업 목적에 맞게 기능과 권한을 제한해야 한다.",
+    "syllabus": "3.7.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.3.1 AI 보안"
+    }
+  },
+  {
+    "id": "sys4-290",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "AI 자원 소비",
+    "prompt": "한 요청이 끝없이 도구를 반복 호출해 비용과 처리 자원을 소모한다. 적절한 운영 통제는?",
+    "options": [
+      "모델 응답을 무조건 더 길게 요구한다",
+      "호출 횟수·시간·비용 한도와 중단 조건을 둔다",
+      "사용자별 요청량 기록을 없앤다",
+      "각 도구 호출에 더 큰 관리자 권한을 준다"
+    ],
+    "answer": 1,
+    "explanation": "자원 소비 한도와 중단 조건은 반복 실행의 피해 범위를 제한한다. 출력 확대·기록 삭제·권한 확대는 자원 제어를 제공하지 않는다.",
+    "syllabus": "3.7.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.3.1 AI 보안"
+    }
+  },
+  {
+    "id": "sys4-291",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "공동 책임",
+    "prompt": "IaaS 가상머신으로 서비스를 옮겼다. 일반적인 공동 책임 모델에서 고객이 계속 관리할 항목은?",
+    "options": [
+      "제공자 물리 서버의 직접 교체 작업",
+      "클라우드 데이터센터의 건물 출입문 자체 운영",
+      "게스트 OS 패치와 애플리케이션·접근권한 설정",
+      "제공자 전체 고객용 하이퍼바이저 소스 수정"
+    ],
+    "answer": 2,
+    "explanation": "IaaS 고객은 보통 게스트 OS와 앱 및 설정을 관리한다. 물리 시설·기반 인프라는 제공자 책임 영역이며 세부 경계는 서비스별로 확인해야 한다.",
+    "syllabus": "3.7.3.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.3.2 클라우드 보안"
+    }
+  },
+  {
+    "id": "sys4-292",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "서비스별 책임",
+    "prompt": "IaaS에서 관리형 데이터베이스로 전환하면 보안 책임도 달라진다. 정확한 판단은?",
+    "options": [
+      "서비스 종류가 달라도 운영 책임은 언제나 완전히 같다",
+      "관리형이면 모든 사용자 권한이 자동으로 적절해진다",
+      "데이터 분류와 사용 목적 관리는 제공자에게 모두 이전된다",
+      "제공자가 맡는 운영 범위는 늘 수 있지만 고객의 데이터·계정·설정 책임은 남는다"
+    ],
+    "answer": 3,
+    "explanation": "관리형 서비스는 일부 운영을 제공자가 담당하지만 고객의 이용 방식과 권한·데이터 관리는 여전히 중요하다. 실제 서비스별 책임 경계를 확인해야 한다.",
+    "syllabus": "3.7.3.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.3.2 클라우드 보안"
+    }
+  },
+  {
+    "id": "sys4-293",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "공개 저장소",
+    "prompt": "객체 저장소에 암호화된 고객 파일이 있지만 버킷 읽기가 전체 공개 상태다. 먼저 확인·수정할 것은?",
+    "options": [
+      "공개 접근 정책과 실제 데이터·키 접근 경계를 제한한다",
+      "저장 암호화가 있으므로 공개 읽기 정책은 유지한다",
+      "객체 이름을 무작위로 바꾸고 읽기 권한은 유지한다",
+      "접속 로그만 활성화하고 공개 접근은 유지한다"
+    ],
+    "answer": 0,
+    "explanation": "저장 암호화와 공개 접근정책은 별도다. 서비스가 허용 요청에 평문을 제공할 수 있으므로 암호화·이름 은닉·로그만으로 과도한 읽기 권한을 해결하지 못한다.",
+    "syllabus": "3.7.3.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.3.2 클라우드 보안"
+    }
+  },
+  {
+    "id": "sys4-294",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "클라우드 신원",
+    "prompt": "컨테이너가 객체 저장소에 접근하려고 장기 액세스 키를 이미지에 포함했다. 적절한 대안은?",
+    "options": [
+      "키를 이미지 레이어 여러 곳에 분산 복제한다",
+      "워크로드 역할과 단기 자격증명을 사용한다",
+      "이미지 이름을 비밀로 관리하는 데만 의존한다",
+      "모든 컨테이너가 루트 계정 키를 공유한다"
+    ],
+    "answer": 1,
+    "explanation": "워크로드 신원은 정적 키를 이미지에 박는 위험을 줄인다. 이미지 안 비밀은 복제·유출되기 쉽고 공유 최고권한 키는 피해 범위를 키운다.",
+    "syllabus": "3.7.3.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.3.2 클라우드 보안"
+    }
+  },
+  {
+    "id": "sys4-295",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "메타데이터 보안",
+    "prompt": "웹앱 SSRF가 인스턴스 메타데이터의 자격증명에 접근할 위험이 있다. 적절한 방어 조합은?",
+    "options": [
+      "인스턴스 역할에 더 넓은 권한을 준다",
+      "메타데이터 주소를 문서에서만 숨긴다",
+      "SSRF 목적지 통제와 메타데이터 접근 보호·인스턴스 역할 최소권한을 함께 적용한다",
+      "모든 외부 URL 요청을 관리자 신원으로 실행한다"
+    ],
+    "answer": 2,
+    "explanation": "애플리케이션의 서버 요청과 메타데이터 접근을 제한하고 탈취 시 권한 범위를 줄여야 한다. 주소 은닉과 권한 확대는 실질적 방어가 되지 않는다.",
+    "syllabus": "3.7.3.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.3.2 클라우드 보안"
+    }
+  },
+  {
+    "id": "sys4-296",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "클라우드 감사",
+    "prompt": "누가 보안 그룹을 전체 공개로 바꿨는지 조사하려 한다. 가장 직접적인 자료는?",
+    "options": [
+      "가상머신의 CPU 사용률 추이만",
+      "웹 접근 로그의 사용자 브라우저 종류만",
+      "DB 쿼리 실행 시간 통계만",
+      "제어 영역 API의 행위자·요청·시각이 남은 감사 로그"
+    ],
+    "answer": 3,
+    "explanation": "보안 그룹 변경은 제어 영역 API 기록의 행위자와 요청으로 확인해야 한다. 웹 접근·쿼리 성능·CPU 통계는 그 설정을 누가 바꿨는지 직접 보여 주지 않는다.",
+    "syllabus": "3.7.3.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.3.2 클라우드 보안"
+    }
+  },
+  {
+    "id": "sys4-297",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "설정 드리프트",
+    "prompt": "IaC에서는 관리 포트가 제한되어 있는데 콘솔에서 누군가 전체 공개로 바꿨다. 발견·통제할 대상은?",
+    "options": [
+      "선언된 구성과 실제 구성의 드리프트",
+      "정상 요청량 증가에 따른 오토스케일링 지표",
+      "암호키의 예정된 주기 교체만",
+      "사용자 비밀번호의 복잡도 충족 여부"
+    ],
+    "answer": 0,
+    "explanation": "구성 드리프트는 선언한 상태와 실제 리소스 설정의 차이다. 트래픽·키 수명주기·비밀번호 복잡도와 달리 IaC 밖의 수동 설정 변경을 발견하는 관점이다.",
+    "syllabus": "3.7.3.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.3.2 클라우드 보안"
+    }
+  },
+  {
+    "id": "sys4-298",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "멀티테넌트 격리",
+    "prompt": "SaaS 요청에 고객사 ID를 바꾸자 다른 회사 자료가 반환된다. 필요한 서버 통제는?",
+    "options": [
+      "고객사 식별자를 예측하기 어렵게 바꾸고 서버 검사는 생략한다",
+      "인증된 주체의 테넌트와 요청 자원의 소속·권한을 검증한다",
+      "저장 암호화가 적용됐으므로 테넌트별 인가를 생략한다",
+      "로그인 여부만 확인하고 요청의 테넌트 값은 신뢰한다"
+    ],
+    "answer": 1,
+    "explanation": "테넌트 경계는 인증된 주체와 대상 자원의 소속·권한을 서버에서 검증해야 한다. 식별자 난독화·저장 암호화·로그인만으로 다른 테넌트 접근을 막을 수 없다.",
+    "syllabus": "3.7.3.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.3.2 클라우드 보안"
+    }
+  },
+  {
+    "id": "sys4-299",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "비밀 관리 서비스",
+    "prompt": "여러 애플리케이션이 DB 비밀번호를 각자 설정 파일에 복사해 두었다. 중앙 비밀 관리 도입의 주된 효과는?",
+    "options": [
+      "DB 인가 정책을 전부 없앤다",
+      "각 앱에 무제한 관리자 권한을 자동 부여한다",
+      "접근 통제·조회 감사·교체를 일관되게 관리한다",
+      "한 번 등록한 비밀은 절대 교체하지 않게 한다"
+    ],
+    "answer": 2,
+    "explanation": "중앙 비밀 관리는 복사된 비밀의 수명주기와 접근을 통제하기 쉽게 한다. 앱의 업무 권한 검사를 대신하거나 비밀 교체를 금지하는 기능은 아니다.",
+    "syllabus": "3.7.3.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.3.2 클라우드 보안"
+    }
+  },
+  {
+    "id": "sys4-300",
+    "revision": 1,
+    "area": "systems-security",
+    "topic": "클라우드 복구 분리",
+    "prompt": "운영 계정이 탈취되어도 복구용 사본까지 삭제되지 않도록 하려 한다. 적합한 설계는?",
+    "options": [
+      "가용영역이 다르면 계정 권한 분리가 자동 완성된다고 본다",
+      "운영 관리자에게 모든 백업 삭제 권한도 상시 부여한다",
+      "같은 삭제 권한 아래에 사본 수만 늘린다",
+      "복구 사본의 관리 권한을 분리하고 변경·삭제 제한 및 복구 시험을 적용한다"
+    ],
+    "answer": 3,
+    "explanation": "백업의 장애 영역뿐 아니라 관리 권한과 삭제 경로도 분리해야 한다. 여러 사본이 있어도 같은 침해 계정으로 모두 삭제할 수 있다면 복구 보장이 약해진다.",
+    "syllabus": "3.7.3.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 3.7.3.2 클라우드 보안"
+    }
+  }
+]

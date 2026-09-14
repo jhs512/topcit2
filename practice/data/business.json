@@ -1,0 +1,6002 @@
+[
+  {
+    "id": "biz4-001",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT비즈니스 개념",
+    "prompt": "동네 수리점이 원격 진단을 유료 서비스로 판매한다. 이 변화의 핵심은?",
+    "options": [
+      "IT로 새로운 고객가치를 상품화한다",
+      "내부 수리 접수의 입력비용만 절감한다",
+      "기존 수리 부품의 재고회전율만 높인다",
+      "외주 진단비를 원가계정으로 이전한다"
+    ],
+    "answer": 0,
+    "explanation": "IT비즈니스는 기술 자체보다 고객에게 전달하는 가치와 수익 구조로 판단합니다.",
+    "syllabus": "4.1.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.1.1 IT비즈니스 개념"
+    }
+  },
+  {
+    "id": "biz4-002",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT비즈니스 개념",
+    "prompt": "전자상거래의 검색 비용 감소가 소비자에게 주는 직접 효과는?",
+    "options": [
+      "결제 이후의 반품 처리비를 줄인다",
+      "여러 판매자의 조건을 쉽게 비교한다",
+      "배송 리드타임을 단축한다",
+      "판매자의 생산 고정비를 줄인다"
+    ],
+    "answer": 1,
+    "explanation": "검색 비용은 대안을 찾고 비교하는 비용이며 배송비나 가격 차이와 구별됩니다.",
+    "syllabus": "4.1.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.1.1 IT비즈니스 개념"
+    }
+  },
+  {
+    "id": "biz4-003",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT비즈니스 개념",
+    "prompt": "앱 이용자가 늘자 다른 이용자와 거래할 기회도 늘었다. 해당 특성은?",
+    "options": [
+      "서비스 전환비용",
+      "제품 범위 확대에 따른 범위의 경제",
+      "네트워크 효과",
+      "대량 생산에 따른 규모의 경제"
+    ],
+    "answer": 2,
+    "explanation": "다른 참여자의 증가가 기존 이용자의 효용을 높이면 네트워크 효과입니다.",
+    "syllabus": "4.1.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.1.1 IT비즈니스 개념"
+    }
+  },
+  {
+    "id": "biz4-004",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT비즈니스 개념",
+    "prompt": "디지털 강좌의 최초 제작비는 크지만 추가 수강생 제공비는 작다. 가장 관련 깊은 특성은?",
+    "options": [
+      "사용자가 늘수록 효용이 커지는 네트워크 효과",
+      "전환 과정에서 발생하는 매몰비용",
+      "제품별 공동생산의 범위의 경제",
+      "낮은 한계비용"
+    ],
+    "answer": 3,
+    "explanation": "추가 한 단위를 제공하는 비용이 한계비용입니다. 최초 제작 고정비는 남습니다.",
+    "syllabus": "4.1.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.1.1 IT비즈니스 개념"
+    }
+  },
+  {
+    "id": "biz4-005",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT비즈니스 개념",
+    "prompt": "무료 기본 기능과 유료 고급 기능을 함께 제공하는 수익모델은?",
+    "options": [
+      "프리미엄(Freemium) 모델",
+      "광고 노출 수익 모델",
+      "건당 이용량 과금 모델",
+      "정해진 기간의 무료 체험 후 일괄 유료 전환 모델"
+    ],
+    "answer": 0,
+    "explanation": "프리미엄(freemium)은 무료 사용자를 확보하고 일부 고급 기능을 유료화합니다.",
+    "syllabus": "4.1.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.1.1 IT비즈니스 개념"
+    }
+  },
+  {
+    "id": "biz4-006",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT비즈니스 개념",
+    "prompt": "구독 고객이 다음 달에도 계속 남는 비율을 직접 나타내는 지표는?",
+    "options": [
+      "신규 유료 가입자 수",
+      "구독 유지율",
+      "신규 고객 획득단가",
+      "최초 가입 전환율"
+    ],
+    "answer": 1,
+    "explanation": "반복 매출은 고객 유지와 연결됩니다. 개발량이나 보유 권리는 유지 성과와 다릅니다.",
+    "syllabus": "4.1.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.1.1 IT비즈니스 개념"
+    }
+  },
+  {
+    "id": "biz4-007",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT비즈니스 개념",
+    "prompt": "플랫폼이 구매자와 판매자를 연결하고 거래액 일부를 받는다. 수익원은?",
+    "options": [
+      "판매자용 소프트웨어 정액 이용료",
+      "구매자에게 받는 월 구독료",
+      "거래 수수료",
+      "광고 노출 대가"
+    ],
+    "answer": 2,
+    "explanation": "거래 성사나 거래액에 연동해 받는 대가가 거래 수수료입니다. 광고 노출료나 정액 구독료와는 과금 기준이 다릅니다.",
+    "syllabus": "4.1.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.1.1 IT비즈니스 개념"
+    }
+  },
+  {
+    "id": "biz4-008",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT비즈니스 개념",
+    "prompt": "자동화로 처리시간이 줄었지만 고객 불만은 늘었다. 가치 평가에 필요한 접근은?",
+    "options": [
+      "처리속도를 고객 충성도의 대리지표로 삼는다",
+      "서버 처리량으로 불만의 원인을 추정한다",
+      "단위 처리비만으로 서비스 가치가 증가했다고 판단한다",
+      "효율과 고객 경험을 함께 평가한다"
+    ],
+    "answer": 3,
+    "explanation": "운영 효율 개선이 곧 고객가치 개선을 뜻하지 않으므로 결과를 함께 봅니다.",
+    "syllabus": "4.1.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.1.1 IT비즈니스 개념"
+    }
+  },
+  {
+    "id": "biz4-009",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT비즈니스 개념",
+    "prompt": "기업 간 구매 주문을 온라인으로 교환하는 거래 유형은?",
+    "options": [
+      "B2B",
+      "B2C",
+      "C2C",
+      "G2C"
+    ],
+    "answer": 0,
+    "explanation": "거래 당사자가 모두 기업이면 B2B입니다. 채널이 온라인이라는 사실만으로 B2C가 되지 않습니다.",
+    "syllabus": "4.1.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.1.1 IT비즈니스 개념"
+    }
+  },
+  {
+    "id": "biz4-010",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT비즈니스 개념",
+    "prompt": "비즈니스 모델의 가치제안에 해당하는 질문은?",
+    "options": [
+      "고객에게서 어떤 방식으로 대가를 받는가",
+      "고객의 어떤 문제를 해결하는가",
+      "핵심 활동은 어떤 순서로 수행하는가",
+      "가치 전달에 어떤 파트너가 필요한가"
+    ],
+    "answer": 1,
+    "explanation": "가치제안은 고객이 선택할 이유이며 기술 설정이나 내부 관리번호와 구별됩니다.",
+    "syllabus": "4.1.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.1.1 IT비즈니스 개념"
+    }
+  },
+  {
+    "id": "biz4-011",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT자원과 가치사슬",
+    "prompt": "주문 데이터를 수요 예측에 활용하려 한다. 데이터 외에 함께 필요한 IT 역량은?",
+    "options": [
+      "데이터 정의 없이 분석 도구만 추가 구매",
+      "원천 데이터의 업무 담당자와 분석조직의 분리",
+      "분석 인력과 활용 절차",
+      "분석 결과와 무관한 저장 용량의 확대"
+    ],
+    "answer": 2,
+    "explanation": "데이터는 인력·시스템·절차와 결합해야 의사결정 가치로 이어집니다.",
+    "syllabus": "4.1.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.1.2 IT자원과 가치사슬"
+    }
+  },
+  {
+    "id": "biz4-012",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT자원과 가치사슬",
+    "prompt": "가치사슬에서 입고 자재의 수령과 보관은 어느 본원 활동인가?",
+    "options": [
+      "출고물류",
+      "판매와 마케팅",
+      "서비스",
+      "구매물류"
+    ],
+    "answer": 3,
+    "explanation": "구매물류는 투입물 수령·보관이며 완제품 배송인 출고물류와 다릅니다.",
+    "syllabus": "4.1.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.1.2 IT자원과 가치사슬"
+    }
+  },
+  {
+    "id": "biz4-013",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT자원과 가치사슬",
+    "prompt": "완제품 배송 경로 최적화가 직접 개선하는 본원 활동은?",
+    "options": [
+      "출고물류",
+      "인적자원관리",
+      "기술개발",
+      "기업 하부구조"
+    ],
+    "answer": 0,
+    "explanation": "고객에게 제품을 보내는 활동은 출고물류입니다. 나머지는 지원 활동입니다.",
+    "syllabus": "4.1.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.1.2 IT자원과 가치사슬"
+    }
+  },
+  {
+    "id": "biz4-014",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT자원과 가치사슬",
+    "prompt": "직원 교육 플랫폼은 가치사슬의 어떤 지원 활동과 가장 가깝나?",
+    "options": [
+      "판매 후 서비스",
+      "인적자원관리",
+      "운영",
+      "출고물류"
+    ],
+    "answer": 1,
+    "explanation": "직원의 역량 개발은 인적자원관리이며 제품 생산이나 배송과 구별됩니다.",
+    "syllabus": "4.1.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.1.2 IT자원과 가치사슬"
+    }
+  },
+  {
+    "id": "biz4-015",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT자원과 가치사슬",
+    "prompt": "제품 고장 접수와 수리 이력을 연결한 시스템이 직접 지원하는 활동은?",
+    "options": [
+      "자금 조달",
+      "채용 선발",
+      "판매 후 서비스",
+      "자재 입고"
+    ],
+    "answer": 2,
+    "explanation": "판매 이후 제품의 유지·보수는 가치사슬의 서비스 활동입니다. 입고·자금 조달·채용은 다른 활동입니다.",
+    "syllabus": "4.1.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.1.2 IT자원과 가치사슬"
+    }
+  },
+  {
+    "id": "biz4-016",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT자원과 가치사슬",
+    "prompt": "부서별 주문번호가 달라 전사 주문 분석이 어렵다. 먼저 정비할 자원은?",
+    "options": [
+      "화면 레이아웃 표준",
+      "저장장치 교체주기",
+      "사용자 비밀번호 정책",
+      "공통 데이터 기준"
+    ],
+    "answer": 3,
+    "explanation": "데이터 식별 기준의 불일치는 통합 분석을 막으므로 공통 정의와 기준이 필요합니다.",
+    "syllabus": "4.1.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.1.2 IT자원과 가치사슬"
+    }
+  },
+  {
+    "id": "biz4-017",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT자원과 가치사슬",
+    "prompt": "같은 소프트웨어를 샀는데 경쟁사보다 성과가 낮다. 타당한 해석은?",
+    "options": [
+      "조직의 활용 역량도 성과에 영향을 준다",
+      "사용허락 범위가 같으면 경쟁우위도 동일하다",
+      "도구의 보유 여부만으로 조직 역량이 설명된다",
+      "업무 정착은 IT투자 효과 산정에서 제외한다"
+    ],
+    "answer": 0,
+    "explanation": "동일한 도구라도 업무 정착과 인력 역량에 따라 결과가 달라집니다.",
+    "syllabus": "4.1.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.1.2 IT자원과 가치사슬"
+    }
+  },
+  {
+    "id": "biz4-018",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT자원과 가치사슬",
+    "prompt": "사업 목표와 무관하게 최신 장비만 계속 구매한다. 가장 부족한 것은?",
+    "options": [
+      "자산번호와 회계 계정의 매핑",
+      "IT투자와 업무가치의 연결",
+      "소프트웨어 버전과 제조일의 연결",
+      "구매 담당자와 공급업체의 연락 체계"
+    ],
+    "answer": 1,
+    "explanation": "IT자원 투자는 사업 목표에 어떤 기여를 하는지 연결하여 판단해야 합니다.",
+    "syllabus": "4.1.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.1.2 IT자원과 가치사슬"
+    }
+  },
+  {
+    "id": "biz4-019",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT자원과 가치사슬",
+    "prompt": "가치사슬의 부서별 비용은 감소했지만 전체 납기가 늘었다. 필요한 분석은?",
+    "options": [
+      "기술지원 인력의 자격 보유율만",
+      "사업부별 매출총이익만",
+      "활동 사이의 연계와 대기시간",
+      "구매물류 부서의 내부 원가만"
+    ],
+    "answer": 2,
+    "explanation": "개별 활동의 최적화가 전체 흐름의 최적화는 아니므로 연결 구간을 살펴야 합니다.",
+    "syllabus": "4.1.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.1.2 IT자원과 가치사슬"
+    }
+  },
+  {
+    "id": "biz4-020",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT자원과 가치사슬",
+    "prompt": "IT 인프라를 여러 사업부가 공동 사용한다. 우선 합의할 운영 기준은?",
+    "options": [
+      "회계상 감가상각 내용연수만",
+      "공급업체의 제품 로드맵만",
+      "개별 사업부의 개발 언어만",
+      "서비스 수준과 비용 배분 원칙"
+    ],
+    "answer": 3,
+    "explanation": "공동 자원의 책임과 이용 수준·비용을 명확히 해야 운영 갈등을 줄일 수 있습니다.",
+    "syllabus": "4.1.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.1.2 IT자원과 가치사슬"
+    }
+  },
+  {
+    "id": "biz4-021",
+    "revision": 1,
+    "area": "business",
+    "topic": "전략 환경분석",
+    "prompt": "인구 고령화와 소비 문화 변화를 분석하는 PEST 항목은?",
+    "options": [
+      "사회 요인",
+      "정치 요인",
+      "기술 요인",
+      "내부 역량"
+    ],
+    "answer": 0,
+    "explanation": "인구와 생활양식은 사회 환경입니다. PEST는 기업 외부의 거시환경을 다룹니다.",
+    "syllabus": "4.1.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.1 전략 환경분석"
+    }
+  },
+  {
+    "id": "biz4-022",
+    "revision": 1,
+    "area": "business",
+    "topic": "전략 환경분석",
+    "prompt": "기준금리 상승이 고객 구매력에 미치는 영향을 조사했다. PEST 분류는?",
+    "options": [
+      "내부 강점",
+      "경제 요인",
+      "기술 요인",
+      "사회 요인"
+    ],
+    "answer": 1,
+    "explanation": "금리·물가·경기 등은 경제 환경입니다. 인구나 생활양식의 사회 요인, 기술 발전과 구별됩니다.",
+    "syllabus": "4.1.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.1 전략 환경분석"
+    }
+  },
+  {
+    "id": "biz4-023",
+    "revision": 1,
+    "area": "business",
+    "topic": "전략 환경분석",
+    "prompt": "우수한 자체 특허와 숙련 인력이 SWOT에서 속하는 범주는?",
+    "options": [
+      "위협",
+      "약점",
+      "강점",
+      "기회"
+    ],
+    "answer": 2,
+    "explanation": "기업이 보유한 유리한 내부 자원은 강점이며 외부 기회와 다릅니다.",
+    "syllabus": "4.1.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.1 전략 환경분석"
+    }
+  },
+  {
+    "id": "biz4-024",
+    "revision": 1,
+    "area": "business",
+    "topic": "전략 환경분석",
+    "prompt": "경쟁사의 시장 철수로 신규 고객 확보 가능성이 생겼다. SWOT 분류는?",
+    "options": [
+      "강점",
+      "약점",
+      "내부 통제",
+      "기회"
+    ],
+    "answer": 3,
+    "explanation": "기업 외부에서 생긴 유리한 상황은 기회입니다. 강점은 자사가 이미 가진 유리한 내부 자원이나 역량입니다.",
+    "syllabus": "4.1.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.1 전략 환경분석"
+    }
+  },
+  {
+    "id": "biz4-025",
+    "revision": 1,
+    "area": "business",
+    "topic": "전략 환경분석",
+    "prompt": "풍부한 데이터 분석 역량으로 성장 중인 맞춤추천 시장에 진출한다. 전략은?",
+    "options": [
+      "SO 전략",
+      "WT 전략",
+      "WO 전략",
+      "ST 전략"
+    ],
+    "answer": 0,
+    "explanation": "내부 강점을 외부 기회 활용에 연결하면 SO 전략입니다.",
+    "syllabus": "4.1.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.1 전략 환경분석"
+    }
+  },
+  {
+    "id": "biz4-026",
+    "revision": 1,
+    "area": "business",
+    "topic": "전략 환경분석",
+    "prompt": "기술인력 부족을 외부 교육 지원사업으로 보완한다. SWOT 전략은?",
+    "options": [
+      "WT 전략",
+      "WO 전략",
+      "SO 전략",
+      "ST 전략"
+    ],
+    "answer": 1,
+    "explanation": "외부 기회를 활용해 내부 약점을 보완하는 접근이 WO 전략입니다.",
+    "syllabus": "4.1.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.1 전략 환경분석"
+    }
+  },
+  {
+    "id": "biz4-027",
+    "revision": 1,
+    "area": "business",
+    "topic": "전략 환경분석",
+    "prompt": "한 공급업체만 핵심 부품을 제공하고 대체가 어렵다. 커지는 힘은?",
+    "options": [
+      "구매자의 교섭력",
+      "대체재의 가격경쟁력",
+      "공급자의 교섭력",
+      "신규 진입자의 위협 감소 효과"
+    ],
+    "answer": 2,
+    "explanation": "공급자가 희소하고 전환이 어려우면 구매 기업에 대한 공급자의 교섭력이 높아집니다.",
+    "syllabus": "4.1.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.1 전략 환경분석"
+    }
+  },
+  {
+    "id": "biz4-028",
+    "revision": 1,
+    "area": "business",
+    "topic": "전략 환경분석",
+    "prompt": "영상회의가 출장의 수요를 줄인다. 산업 경쟁 분석에서 해당 관계는?",
+    "options": [
+      "구매자의 후방 통합",
+      "동일 산업 기업 간 가격 경쟁",
+      "핵심 공급자의 교섭력",
+      "대체재 위협"
+    ],
+    "answer": 3,
+    "explanation": "다른 방식으로 같은 필요를 충족하는 서비스는 대체재입니다.",
+    "syllabus": "4.1.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.1 전략 환경분석"
+    }
+  },
+  {
+    "id": "biz4-029",
+    "revision": 1,
+    "area": "business",
+    "topic": "전략 환경분석",
+    "prompt": "대규모 초기 투자와 강한 유통망 장악이 신규 사업자에 미치는 영향은?",
+    "options": [
+      "진입장벽을 높인다",
+      "기존 구매자의 전환비용을 직접 제거한다",
+      "공급자의 수를 자동으로 늘린다",
+      "산업 내 대체재의 기능을 약화한다"
+    ],
+    "answer": 0,
+    "explanation": "자본과 유통 접근의 제약은 새 경쟁자의 시장 진입을 어렵게 합니다.",
+    "syllabus": "4.1.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.1 전략 환경분석"
+    }
+  },
+  {
+    "id": "biz4-030",
+    "revision": 1,
+    "area": "business",
+    "topic": "전략 환경분석",
+    "prompt": "보안 전문인력이라는 강점을 활용해 강화된 외부 보안 규제에 대응한다. SWOT 전략은?",
+    "options": [
+      "WT 전략",
+      "ST 전략",
+      "SO 전략",
+      "WO 전략"
+    ],
+    "answer": 1,
+    "explanation": "내부 강점으로 외부 위협에 대응하므로 ST 전략입니다. SO는 기회 활용, WO는 약점 보완에 초점을 둡니다.",
+    "syllabus": "4.1.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.1 전략 환경분석"
+    }
+  },
+  {
+    "id": "biz4-031",
+    "revision": 1,
+    "area": "business",
+    "topic": "경쟁전략과 정렬",
+    "prompt": "한정된 고객군의 특별한 요구에 집중해 경쟁한다. 포터의 본원적 전략은?",
+    "options": [
+      "차별화",
+      "비관련 다각화",
+      "집중화",
+      "원가우위"
+    ],
+    "answer": 2,
+    "explanation": "집중화는 좁은 표적시장에 역량을 모으는 경쟁전략입니다.",
+    "syllabus": "4.1.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.1 경쟁전략과 정렬"
+    }
+  },
+  {
+    "id": "biz4-032",
+    "revision": 1,
+    "area": "business",
+    "topic": "경쟁전략과 정렬",
+    "prompt": "전사 저원가 전략을 지원하는 IT 과제로 가장 직접적인 것은?",
+    "options": [
+      "고객별 전담 컨시어지 서비스 확대",
+      "구매경험의 독특한 브랜드 연출",
+      "소수 고객을 위한 주문형 기능 확대",
+      "재고와 반복처리 비용 절감"
+    ],
+    "answer": 3,
+    "explanation": "저원가 전략에는 운영 비용을 줄이는 과제가 직접 정렬됩니다.",
+    "syllabus": "4.1.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.1 경쟁전략과 정렬"
+    }
+  },
+  {
+    "id": "biz4-033",
+    "revision": 1,
+    "area": "business",
+    "topic": "경쟁전략과 정렬",
+    "prompt": "차별화 전략의 성패를 더 직접적으로 보여주는 지표는?",
+    "options": [
+      "특화 기능의 고객 선택 기여도",
+      "동일 제품의 최저 단위원가 달성도",
+      "표준 작업 공정의 자동화율",
+      "가격 인하 후 판매량의 증가율"
+    ],
+    "answer": 0,
+    "explanation": "차별화는 고객이 가치 있게 여기는 독특함이 선택으로 이어지는지 평가합니다.",
+    "syllabus": "4.1.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.1 경쟁전략과 정렬"
+    }
+  },
+  {
+    "id": "biz4-034",
+    "revision": 1,
+    "area": "business",
+    "topic": "경쟁전략과 정렬",
+    "prompt": "BCG 분석에서 자사 점유율 20%, 최대 경쟁사 점유율 40%다. 상대적 시장점유율을 자사/최대 경쟁사로 정의하면?",
+    "options": [
+      "0.6",
+      "0.5",
+      "2.0",
+      "0.2"
+    ],
+    "answer": 1,
+    "explanation": "상대적 시장점유율은 경쟁사 대비 비율이므로 20/40=0.5입니다. 시장 성장률이나 자사의 절대 점유율 0.2와 다릅니다.",
+    "syllabus": "4.1.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.1 경쟁전략과 정렬"
+    }
+  },
+  {
+    "id": "biz4-035",
+    "revision": 1,
+    "area": "business",
+    "topic": "경쟁전략과 정렬",
+    "prompt": "BCG에서 성숙한 시장의 선도 사업이 벌어들인 현금을 성장 사업에 투자하려 한다. 자금을 제공하는 사업의 분류는?",
+    "options": [
+      "물음표",
+      "개",
+      "현금젖소",
+      "별"
+    ],
+    "answer": 2,
+    "explanation": "현금젖소는 낮은 성장률과 높은 상대점유율을 가진 사업입니다. 별은 고성장 시장에서의 선도 사업으로 구별합니다.",
+    "syllabus": "4.1.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.1 경쟁전략과 정렬"
+    }
+  },
+  {
+    "id": "biz4-036",
+    "revision": 1,
+    "area": "business",
+    "topic": "경쟁전략과 정렬",
+    "prompt": "IT전략 정렬을 확인하는 가장 적절한 질문은?",
+    "options": [
+      "과제에 적용한 기술의 상대적 최신성은 무엇인가",
+      "경쟁사의 IT예산 대비 지출 비중은 얼마인가",
+      "개발 도구의 표준화 수준은 어느 정도인가",
+      "이 과제가 어떤 사업 목표를 지원하는가"
+    ],
+    "answer": 3,
+    "explanation": "전략 정렬은 기술 유행보다 사업 목표와 IT과제의 관계를 봅니다.",
+    "syllabus": "4.1.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.1 경쟁전략과 정렬"
+    }
+  },
+  {
+    "id": "biz4-037",
+    "revision": 1,
+    "area": "business",
+    "topic": "경쟁전략과 정렬",
+    "prompt": "고객 이탈 원인을 모른 채 CRM 구매부터 결정했다. 보완할 첫 분석은?",
+    "options": [
+      "고객 문제와 전략 목표의 정의",
+      "CRM 제품 간 기능 목록 비교",
+      "벤더의 구축 인력 단가 비교",
+      "전사 라이선스 계약 수량 산정"
+    ],
+    "answer": 0,
+    "explanation": "문제와 목표를 먼저 정의해야 CRM이 필요한 해결수단인지 판단할 수 있습니다.",
+    "syllabus": "4.1.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.1 경쟁전략과 정렬"
+    }
+  },
+  {
+    "id": "biz4-038",
+    "revision": 1,
+    "area": "business",
+    "topic": "경쟁전략과 정렬",
+    "prompt": "외부 환경이 급변했지만 기존 IT 로드맵을 유지한다. 필요한 조치는?",
+    "options": [
+      "투자 후보들의 기술 신선도만 다시 평가한다",
+      "전략 가정과 과제 우선순위를 재검토한다",
+      "이미 지출한 금액이 큰 과제부터 유지한다",
+      "기존 로드맵의 일정 준수율만으로 계속 여부를 정한다"
+    ],
+    "answer": 1,
+    "explanation": "환경 변화는 계획의 가정을 바꿀 수 있으므로 목표와 우선순위를 다시 정렬합니다.",
+    "syllabus": "4.1.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.1 경쟁전략과 정렬"
+    }
+  },
+  {
+    "id": "biz4-039",
+    "revision": 1,
+    "area": "business",
+    "topic": "경쟁전략과 정렬",
+    "prompt": "가치가 높은 고객군을 구분한 뒤 맞춤 서비스를 설계한다. 먼저 한 활동은?",
+    "options": [
+      "포지셔닝",
+      "고객생애가치 계산",
+      "시장 세분화",
+      "목표시장 선정"
+    ],
+    "answer": 2,
+    "explanation": "서로 다른 고객 집단의 특성을 구분하는 것이 시장 세분화입니다.",
+    "syllabus": "4.1.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.1 경쟁전략과 정렬"
+    }
+  },
+  {
+    "id": "biz4-040",
+    "revision": 1,
+    "area": "business",
+    "topic": "경쟁전략과 정렬",
+    "prompt": "경쟁 우위 평가에서 모방이 어려운 조직 역량을 주목하는 이유는?",
+    "options": [
+      "단기 매출을 현금유입과 동일하게 계산하기 위해",
+      "외부 기회를 내부 강점으로 재분류하기 위해",
+      "도입비용이 낮은 기술만 선별하기 위해",
+      "우위가 지속될 가능성과 관련되기 때문이다"
+    ],
+    "answer": 3,
+    "explanation": "쉽게 복제되지 않는 자원과 역량은 경쟁 우위의 지속성에 기여합니다.",
+    "syllabus": "4.1.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.1 경쟁전략과 정렬"
+    }
+  },
+  {
+    "id": "biz4-041",
+    "revision": 1,
+    "area": "business",
+    "topic": "정보화전략계획",
+    "prompt": "ISP의 핵심 산출물로 가장 적합한 것은?",
+    "options": [
+      "사업 목표에 연결된 정보화 과제와 이행계획",
+      "단일 시스템의 인터페이스 상세 명세",
+      "프로젝트의 일일 진도 실적",
+      "운영 장애의 원인과 복구 기록"
+    ],
+    "answer": 0,
+    "explanation": "ISP는 중장기 정보화 방향과 실행 과제·순서를 정하는 계획입니다.",
+    "syllabus": "4.1.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.2 정보화전략계획"
+    }
+  },
+  {
+    "id": "biz4-042",
+    "revision": 1,
+    "area": "business",
+    "topic": "정보화전략계획",
+    "prompt": "현행 시스템과 업무의 문제를 분석하는 ISP 단계의 목적은?",
+    "options": [
+      "준공된 시스템의 유지보수 대금을 확정한다",
+      "목표 상태와의 차이를 파악한다",
+      "업무와 무관한 제품 기능의 우열만 정한다",
+      "개별 프로젝트의 시험 결과를 수용한다"
+    ],
+    "answer": 1,
+    "explanation": "현황 분석은 개선 과제 도출을 위한 기준이며 폐기 자체가 목적은 아닙니다.",
+    "syllabus": "4.1.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.2 정보화전략계획"
+    }
+  },
+  {
+    "id": "biz4-043",
+    "revision": 1,
+    "area": "business",
+    "topic": "정보화전략계획",
+    "prompt": "To-Be 모델의 의미로 적절한 것은?",
+    "options": [
+      "새 시스템의 실제 운영 로그",
+      "이전 프로젝트의 완료 실적",
+      "목표로 하는 미래 업무와 시스템 모습",
+      "운영 중인 업무 절차와 데이터 흐름"
+    ],
+    "answer": 2,
+    "explanation": "To-Be는 지향할 상태이고 As-Is는 현재 상태입니다.",
+    "syllabus": "4.1.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.2 정보화전략계획"
+    }
+  },
+  {
+    "id": "biz4-044",
+    "revision": 1,
+    "area": "business",
+    "topic": "정보화전략계획",
+    "prompt": "ISP에서 과제 간 선후 의존성을 확인하는 이유는?",
+    "options": [
+      "과제를 모두 동시 착수하기 위해",
+      "벤더별 제안가격 순서대로 추진하기 위해",
+      "투자회수기간이 짧은 과제만 남기기 위해",
+      "실행 가능한 이행 순서를 정하기 위해"
+    ],
+    "answer": 3,
+    "explanation": "기초 데이터 구축처럼 먼저 수행해야 할 과제를 고려해야 로드맵이 현실적입니다.",
+    "syllabus": "4.1.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.2 정보화전략계획"
+    }
+  },
+  {
+    "id": "biz4-045",
+    "revision": 1,
+    "area": "business",
+    "topic": "정보화전략계획",
+    "prompt": "고객 통합번호가 없는 상태에서 통합CRM을 계획했다. 우선 과제는?",
+    "options": [
+      "고객 기준정보 정비",
+      "상담원 성과급 산식 조정",
+      "고객 캠페인 채널별 예산 배분",
+      "CRM 보고서의 차트 유형 결정"
+    ],
+    "answer": 0,
+    "explanation": "통합 고객 식별은 통합CRM의 의존 과제이므로 선행 정비가 필요합니다.",
+    "syllabus": "4.1.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.2 정보화전략계획"
+    }
+  },
+  {
+    "id": "biz4-046",
+    "revision": 1,
+    "area": "business",
+    "topic": "정보화전략계획",
+    "prompt": "ISP 과제 우선순위 평가에 함께 넣을 기준은?",
+    "options": [
+      "제안업체의 할인율만",
+      "사업 효과와 실행 가능성",
+      "도입 소프트웨어의 기능 개수만",
+      "유사 기업이 채택한 도입 순서만"
+    ],
+    "answer": 1,
+    "explanation": "사업 효과뿐 아니라 비용·위험·준비도 등 실행 가능성을 고려해야 합니다.",
+    "syllabus": "4.1.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.2 정보화전략계획"
+    }
+  },
+  {
+    "id": "biz4-047",
+    "revision": 1,
+    "area": "business",
+    "topic": "정보화전략계획",
+    "prompt": "ISP 수립에 현업 참여가 필요한 주된 이유는?",
+    "options": [
+      "IT부서의 기술 검토를 대체하기 위해",
+      "투자 승인 없이 현업 요구를 모두 확정하기 위해",
+      "업무 요구와 실제 제약을 반영하기 위해",
+      "현업에게 시스템 상세설계 책임을 넘기기 위해"
+    ],
+    "answer": 2,
+    "explanation": "현업은 업무 목표와 운영 제약을 제공하며 기술 검토 역할과는 구별됩니다.",
+    "syllabus": "4.1.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.2 정보화전략계획"
+    }
+  },
+  {
+    "id": "biz4-048",
+    "revision": 1,
+    "area": "business",
+    "topic": "정보화전략계획",
+    "prompt": "부서마다 비슷한 시스템을 따로 요청했다. ISP 관점의 검토는?",
+    "options": [
+      "각 부서 요청의 도착 순서에 따른 발주",
+      "벤더별 기능 수가 가장 많은 제품의 일괄 선정",
+      "가격만으로 중복 기능을 별도 발주",
+      "공통 기능과 전사 통합 가능성을 분석한다"
+    ],
+    "answer": 3,
+    "explanation": "전사 관점에서는 중복 투자와 데이터 단절을 줄이는 공통화를 검토합니다.",
+    "syllabus": "4.1.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.2 정보화전략계획"
+    }
+  },
+  {
+    "id": "biz4-049",
+    "revision": 1,
+    "area": "business",
+    "topic": "정보화전략계획",
+    "prompt": "3년 로드맵에 과제명만 있고 예산·책임자가 없다. 보완할 내용은?",
+    "options": [
+      "자원 계획과 추진 체계",
+      "개별 화면의 인터페이스 설계",
+      "완료 후 결함 처리의 실제 기록",
+      "개발 산출물의 상세 단위시험 사례만"
+    ],
+    "answer": 0,
+    "explanation": "실행계획은 과제뿐 아니라 책임·예산·일정 등 추진 조건을 포함해야 합니다.",
+    "syllabus": "4.1.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.2 정보화전략계획"
+    }
+  },
+  {
+    "id": "biz4-050",
+    "revision": 1,
+    "area": "business",
+    "topic": "정보화전략계획",
+    "prompt": "ISP와 개별 시스템 상세설계의 차이로 적절한 것은?",
+    "options": [
+      "ISP는 운영 사고의 원인을 확정하는 보고다",
+      "ISP는 전사 정보화 방향과 과제 구성을 다룬다",
+      "ISP는 구현 완료된 소스의 적합성을 검사한다",
+      "상세설계는 전사 투자 포트폴리오를 승인한다"
+    ],
+    "answer": 1,
+    "explanation": "ISP의 범위는 전략·계획 수준이며 상세설계는 개별 시스템 구현을 구체화합니다.",
+    "syllabus": "4.1.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.2.2 정보화전략계획"
+    }
+  },
+  {
+    "id": "biz4-051",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT 도입 방식",
+    "prompt": "여러 지점에 새 시스템을 한 지점씩 확대 도입한다. 방식은?",
+    "options": [
+      "전체 시스템 병행 운영",
+      "한 지점 시험 후 평가만 하는 파일럿",
+      "단계적 전환",
+      "일괄 직접 전환"
+    ],
+    "answer": 2,
+    "explanation": "단계적 전환은 범위나 시점을 나눠 적용하는 방식입니다.",
+    "syllabus": "4.1.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.1 IT 도입 방식"
+    }
+  },
+  {
+    "id": "biz4-052",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT 도입 방식",
+    "prompt": "기존 급여 시스템과 새 시스템의 결과를 한동안 비교한다. 방식은?",
+    "options": [
+      "직접 전환",
+      "기능별 순차 전환",
+      "제한 부서에만 시험 도입",
+      "병행 전환"
+    ],
+    "answer": 3,
+    "explanation": "병행 전환은 기존·신규를 함께 운영해 결과를 검증하지만 운영 부담이 늘어납니다.",
+    "syllabus": "4.1.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.1 IT 도입 방식"
+    }
+  },
+  {
+    "id": "biz4-053",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT 도입 방식",
+    "prompt": "특정 부서에서 먼저 새 시스템을 검증한 후 확대한다. 방식은?",
+    "options": [
+      "파일럿 도입",
+      "전사 직접 전환",
+      "기존·신규 전사 병행 운영",
+      "전체 기능의 일괄 외주화"
+    ],
+    "answer": 0,
+    "explanation": "파일럿은 제한된 범위의 적용으로 문제와 효과를 확인하는 방식입니다.",
+    "syllabus": "4.1.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.1 IT 도입 방식"
+    }
+  },
+  {
+    "id": "biz4-054",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT 도입 방식",
+    "prompt": "자정에 기존 시스템을 끄고 전사 새 시스템으로 즉시 바꾼다. 주요 위험은?",
+    "options": [
+      "지점별 버전 혼재의 장기화",
+      "장애가 전체 업무에 바로 영향을 준다",
+      "병행 운영에 따른 입력 인력 중복",
+      "전환 단계 간 데이터 동기화 부담"
+    ],
+    "answer": 1,
+    "explanation": "일괄 전환은 짧은 전환기간 대신 실패 시 영향 범위가 클 수 있습니다.",
+    "syllabus": "4.1.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.1 IT 도입 방식"
+    }
+  },
+  {
+    "id": "biz4-055",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT 도입 방식",
+    "prompt": "패키지 도입 전 업무 요구와 기본 기능의 차이를 분석한다. 명칭은?",
+    "options": [
+      "기존·신규 데이터 값 대조",
+      "공급자 서비스 수준 평가",
+      "적합성·차이 분석",
+      "도입 후 투자 효과 분석"
+    ],
+    "answer": 2,
+    "explanation": "Fit-Gap 분석은 요구사항이 제품 기능으로 충족되는지와 차이를 확인합니다.",
+    "syllabus": "4.1.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.1 IT 도입 방식"
+    }
+  },
+  {
+    "id": "biz4-056",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT 도입 방식",
+    "prompt": "자체 개발과 패키지 구매를 비교할 때 초기 가격 외에 필요한 것은?",
+    "options": [
+      "최초 라이선스 할인율만",
+      "견적서상의 개발 인건비만",
+      "도입 시점의 장비 단가만",
+      "유지보수와 전환비용을 포함한 총비용"
+    ],
+    "answer": 3,
+    "explanation": "도입 이후 운영·개선·이전 비용까지 포함해야 대안을 공정하게 비교할 수 있습니다.",
+    "syllabus": "4.1.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.1 IT 도입 방식"
+    }
+  },
+  {
+    "id": "biz4-057",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT 도입 방식",
+    "prompt": "벤더 종속을 낮추려는 계약 조건으로 가장 직접적인 것은?",
+    "options": [
+      "데이터 반출 형식과 이전 지원 명시",
+      "장기 계약의 자동 갱신 조건",
+      "전용 형식으로만 데이터 저장 의무화",
+      "단일 공급자의 추가 모듈 우선 구매"
+    ],
+    "answer": 0,
+    "explanation": "이전 가능한 데이터와 지원 조건은 공급자 변경의 장벽을 낮춥니다.",
+    "syllabus": "4.1.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.1 IT 도입 방식"
+    }
+  },
+  {
+    "id": "biz4-058",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT 도입 방식",
+    "prompt": "외주 개발에서도 발주 조직에 남아야 할 역할은?",
+    "options": [
+      "수행사 개발 장비의 자산 등재",
+      "요구사항과 인수 기준에 대한 책임",
+      "수행사 내부의 일일 코드 리뷰 주관",
+      "수행사 인력의 채용·급여 결정"
+    ],
+    "answer": 1,
+    "explanation": "외주화해도 무엇을 받아야 하는지와 수용 여부에 대한 발주 측 책임은 남습니다.",
+    "syllabus": "4.1.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.1 IT 도입 방식"
+    }
+  },
+  {
+    "id": "biz4-059",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT 도입 방식",
+    "prompt": "도입 완료 직전 사용자 교육을 생략하면 가장 직접적인 위험은?",
+    "options": [
+      "신규·기존 결과 대조가 어려워진다",
+      "계약한 데이터 반출 형식이 바뀐다",
+      "기능이 있어도 업무에서 제대로 활용하지 못한다",
+      "자료 이관 정합성 검사가 생략된다"
+    ],
+    "answer": 2,
+    "explanation": "시스템의 기술적 완성과 사용자의 업무 활용 능력은 별개의 조건입니다.",
+    "syllabus": "4.1.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.1 IT 도입 방식"
+    }
+  },
+  {
+    "id": "biz4-060",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT 도입 방식",
+    "prompt": "도입 후 성과가 미흡할 때 필요한 사후 활동은?",
+    "options": [
+      "공급업체 제안서 점수 재산정만",
+      "설치 완료율만으로 투자 효과 확정",
+      "최초 요구사항 수만으로 성과 판정",
+      "목표 대비 활용 성과와 원인을 평가한다"
+    ],
+    "answer": 3,
+    "explanation": "사후 평가는 운영 정착과 목표 효과를 확인하고 개선으로 연결하는 과정입니다.",
+    "syllabus": "4.1.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.1 IT 도입 방식"
+    }
+  },
+  {
+    "id": "biz4-061",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로세스 개선",
+    "prompt": "서류를 전자화했지만 같은 내용을 다섯 번 승인한다. 개선 우선 대상은?",
+    "options": [
+      "승인 단계의 필요성과 중복",
+      "전자서명 처리속도",
+      "문서 검색 색인 방식",
+      "첨부파일 압축 정책"
+    ],
+    "answer": 0,
+    "explanation": "비효율 절차를 그대로 전산화하면 낭비도 유지되므로 절차 자체를 검토합니다.",
+    "syllabus": "4.1.3.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.2 프로세스 개선"
+    }
+  },
+  {
+    "id": "biz4-062",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로세스 개선",
+    "prompt": "BPR의 설명으로 가장 적합한 것은?",
+    "options": [
+      "부서별 업무량을 균등 배분한다",
+      "업무 프로세스를 근본적으로 재설계한다",
+      "단위 작업의 작은 개선을 반복한다",
+      "고정된 절차의 수행만 전산화한다"
+    ],
+    "answer": 1,
+    "explanation": "BPR은 큰 성과 개선을 위해 기존 프로세스의 전제와 구조를 재검토합니다.",
+    "syllabus": "4.1.3.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.2 프로세스 개선"
+    }
+  },
+  {
+    "id": "biz4-063",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로세스 개선",
+    "prompt": "As-Is 분석에서 실제 작업 관찰이 필요한 이유는?",
+    "options": [
+      "인수시험의 성능 결과를 확정하기 위해",
+      "개선안의 운영 성과를 측정하기 위해",
+      "문서 절차와 실제 수행의 차이를 찾기 위해",
+      "To-Be 설계의 투자안을 승인하기 위해"
+    ],
+    "answer": 2,
+    "explanation": "실제 우회 작업이나 대기는 문서에 나타나지 않을 수 있습니다.",
+    "syllabus": "4.1.3.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.2 프로세스 개선"
+    }
+  },
+  {
+    "id": "biz4-064",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로세스 개선",
+    "prompt": "작업시간은 10분인데 전체 처리기간은 3일이다. 먼저 조사할 요소는?",
+    "options": [
+      "활동 담당자의 분당 처리량만",
+      "문서 저장장치의 용량만",
+      "완료된 작업의 단가만",
+      "단계 사이의 대기와 인계"
+    ],
+    "answer": 3,
+    "explanation": "처리시간과 경과시간의 큰 차이는 대기·인계 등 비작업 시간 분석을 요구합니다.",
+    "syllabus": "4.1.3.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.2 프로세스 개선"
+    }
+  },
+  {
+    "id": "biz4-065",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로세스 개선",
+    "prompt": "PDCA에서 개선안을 작은 범위에 적용하는 단계는?",
+    "options": [
+      "Do",
+      "Plan",
+      "Check",
+      "Act"
+    ],
+    "answer": 0,
+    "explanation": "Do는 계획한 개선을 실행하는 단계이며 Check는 결과를 확인합니다.",
+    "syllabus": "4.1.3.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.2 프로세스 개선"
+    }
+  },
+  {
+    "id": "biz4-066",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로세스 개선",
+    "prompt": "PDCA에서 개선 결과를 목표와 비교하는 단계는?",
+    "options": [
+      "Act",
+      "Check",
+      "Plan",
+      "Do"
+    ],
+    "answer": 1,
+    "explanation": "Check는 실행 결과의 확인·평가이고 Act는 표준화나 후속 조치입니다.",
+    "syllabus": "4.1.3.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.2 프로세스 개선"
+    }
+  },
+  {
+    "id": "biz4-067",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로세스 개선",
+    "prompt": "검증된 개선 절차를 표준업무로 정착시켰다. PDCA 단계는?",
+    "options": [
+      "Do",
+      "Check",
+      "Act",
+      "Plan"
+    ],
+    "answer": 2,
+    "explanation": "효과가 확인된 방식을 표준화하거나 보완하는 것은 Act입니다.",
+    "syllabus": "4.1.3.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.2 프로세스 개선"
+    }
+  },
+  {
+    "id": "biz4-068",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로세스 개선",
+    "prompt": "반복 실수의 원인을 사람 탓으로 끝내지 않고 절차에서 찾는다. 적절한 도구는?",
+    "options": [
+      "간트차트",
+      "조직도",
+      "손익계산서",
+      "특성요인도"
+    ],
+    "answer": 3,
+    "explanation": "특성요인도는 결과에 영향을 주는 원인을 체계적으로 분류하는 데 사용합니다.",
+    "syllabus": "4.1.3.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.2 프로세스 개선"
+    }
+  },
+  {
+    "id": "biz4-069",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로세스 개선",
+    "prompt": "불량 원인별 발생 건수를 큰 순서로 정리해 우선 대상을 찾는다. 도구는?",
+    "options": [
+      "파레토 차트",
+      "산점도",
+      "RACI 표",
+      "네트워크 구성도"
+    ],
+    "answer": 0,
+    "explanation": "파레토 차트는 영향이 큰 원인에 개선 노력을 집중하도록 돕습니다.",
+    "syllabus": "4.1.3.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.2 프로세스 개선"
+    }
+  },
+  {
+    "id": "biz4-070",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로세스 개선",
+    "prompt": "부서별 처리속도는 빠르지만 고객 요청 완료가 늦다. 개선 관점은?",
+    "options": [
+      "구매부서의 단가 협상 결과",
+      "고객 요청부터 완료까지 전체 흐름",
+      "각 부서별 최대 처리량",
+      "인적자원 부문의 교육시간"
+    ],
+    "answer": 1,
+    "explanation": "프로세스는 부서 경계를 넘는 전체 가치 흐름으로 분석해야 합니다.",
+    "syllabus": "4.1.3.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.2 프로세스 개선"
+    }
+  },
+  {
+    "id": "biz4-071",
+    "revision": 1,
+    "area": "business",
+    "topic": "성과평가 지표",
+    "prompt": "BSC의 네 관점 조합으로 올바른 것은?",
+    "options": [
+      "개발·테스트·배포·운영",
+      "인사·급여·채용·평가",
+      "재무·고객·내부프로세스·학습과 성장",
+      "매출·원가·이익·현금"
+    ],
+    "answer": 2,
+    "explanation": "BSC는 재무 외 고객·프로세스·미래 역량을 함께 보며 부서 분류가 아닙니다.",
+    "syllabus": "4.1.3.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.3 성과평가 지표"
+    }
+  },
+  {
+    "id": "biz4-072",
+    "revision": 1,
+    "area": "business",
+    "topic": "성과평가 지표",
+    "prompt": "BSC에서 직원의 데이터 분석 역량 향상은 어느 관점과 가장 가깝나?",
+    "options": [
+      "재무",
+      "고객",
+      "내부프로세스",
+      "학습과 성장"
+    ],
+    "answer": 3,
+    "explanation": "직원의 역량과 조직 기반은 장기 성과를 위한 학습과 성장 관점입니다.",
+    "syllabus": "4.1.3.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.3 성과평가 지표"
+    }
+  },
+  {
+    "id": "biz4-073",
+    "revision": 1,
+    "area": "business",
+    "topic": "성과평가 지표",
+    "prompt": "반품 처리기간 단축은 BSC에서 주로 어떤 관점의 목표인가?",
+    "options": [
+      "내부프로세스",
+      "고객 충성도",
+      "학습과 성장",
+      "재무 수익성"
+    ],
+    "answer": 0,
+    "explanation": "업무 처리 흐름의 효율·품질은 내부프로세스 관점에 해당합니다.",
+    "syllabus": "4.1.3.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.3 성과평가 지표"
+    }
+  },
+  {
+    "id": "biz4-074",
+    "revision": 1,
+    "area": "business",
+    "topic": "성과평가 지표",
+    "prompt": "'고객 만족도 90점 달성'에서 90점은 무엇인가?",
+    "options": [
+      "실적값",
+      "목표값",
+      "핵심성공요인",
+      "성과지표명"
+    ],
+    "answer": 1,
+    "explanation": "지표는 만족도이며 달성하려는 수치 90점은 목표값입니다.",
+    "syllabus": "4.1.3.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.3 성과평가 지표"
+    }
+  },
+  {
+    "id": "biz4-075",
+    "revision": 1,
+    "area": "business",
+    "topic": "성과평가 지표",
+    "prompt": "서비스 품질 개선의 선행지표로 더 적합한 것은?",
+    "options": [
+      "지난 분기 이탈률",
+      "연말 고객 불만 총수",
+      "직원 문제해결 교육 이수율",
+      "전월 환불액"
+    ],
+    "answer": 2,
+    "explanation": "교육 이수는 향후 품질에 영향을 줄 수 있는 활동 지표이고 나머지는 결과 성격이 강합니다.",
+    "syllabus": "4.1.3.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.3 성과평가 지표"
+    }
+  },
+  {
+    "id": "biz4-076",
+    "revision": 1,
+    "area": "business",
+    "topic": "성과평가 지표",
+    "prompt": "매출은 올랐지만 신규 시스템 때문인지 불분명하다. 평가에서 고려할 것은?",
+    "options": [
+      "도입 후 매출총액만을 편익으로 계산",
+      "작년 매출과의 차이를 모두 귀속",
+      "시스템 설치비를 매출증가분에서만 차감",
+      "시장 성장 등 다른 영향 요인"
+    ],
+    "answer": 3,
+    "explanation": "효과 평가에는 시장·가격 등 외부 요인의 영향을 구분해야 합니다.",
+    "syllabus": "4.1.3.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.3 성과평가 지표"
+    }
+  },
+  {
+    "id": "biz4-077",
+    "revision": 1,
+    "area": "business",
+    "topic": "성과평가 지표",
+    "prompt": "KPI를 지나치게 많이 두었을 때 발생하기 쉬운 문제는?",
+    "options": [
+      "핵심 목표에 대한 집중이 흐려진다",
+      "지표 간 우선순위를 정할 필요가 줄어든다",
+      "선행·후행 지표의 인과관계가 자동 성립한다",
+      "비재무 성과가 재무성과로 직접 환산된다"
+    ],
+    "answer": 0,
+    "explanation": "핵심성과지표는 전략적으로 중요한 소수 지표에 집중할 필요가 있습니다.",
+    "syllabus": "4.1.3.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.3 성과평가 지표"
+    }
+  },
+  {
+    "id": "biz4-078",
+    "revision": 1,
+    "area": "business",
+    "topic": "성과평가 지표",
+    "prompt": "상담 건수만 평가하자 상담원이 어려운 문의를 회피한다. 보완은?",
+    "options": [
+      "처리한 문의의 난이도와 무관하게 건수만 합산한다",
+      "해결률과 고객 만족도도 함께 본다",
+      "평균 통화시간만 단축 목표로 둔다",
+      "상담 건수 목표를 고객 유형별로 동일하게 높인다"
+    ],
+    "answer": 1,
+    "explanation": "단일 양적 지표의 부작용을 결과 품질 지표로 보완해야 합니다.",
+    "syllabus": "4.1.3.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.3 성과평가 지표"
+    }
+  },
+  {
+    "id": "biz4-079",
+    "revision": 1,
+    "area": "business",
+    "topic": "성과평가 지표",
+    "prompt": "성과지표의 정의가 부서마다 다르다. 비교 전에 할 일은?",
+    "options": [
+      "목표가 높은 부서의 산식만 임의로 선택한다",
+      "지표 이름이 같다는 이유로 그대로 비교한다",
+      "계산식과 집계 범위를 통일한다",
+      "각 부서의 달성률을 먼저 단순 평균한다"
+    ],
+    "answer": 2,
+    "explanation": "같은 이름의 지표라도 산식·범위가 다르면 직접 비교가 어렵습니다.",
+    "syllabus": "4.1.3.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.3 성과평가 지표"
+    }
+  },
+  {
+    "id": "biz4-080",
+    "revision": 1,
+    "area": "business",
+    "topic": "성과평가 지표",
+    "prompt": "IT 투자 효과를 비용 절감만으로 평가할 때 놓치기 쉬운 것은?",
+    "options": [
+      "월별 운영비의 계정별 구성",
+      "연간 유지보수 계약액",
+      "장비의 잔존가치",
+      "고객 경험과 새로운 사업 기회"
+    ],
+    "answer": 3,
+    "explanation": "IT는 비용 절감 외에 서비스 가치와 성장 기회를 만들 수 있습니다.",
+    "syllabus": "4.1.3.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.3 성과평가 지표"
+    }
+  },
+  {
+    "id": "biz4-081",
+    "revision": 1,
+    "area": "business",
+    "topic": "투자 경제성",
+    "prompt": "초기투자 100, 같은 기간 총편익 140이다. ROI를 (편익-투자)/투자로 정의하면?",
+    "options": [
+      "40%",
+      "140%",
+      "71.4%",
+      "28.6%"
+    ],
+    "answer": 0,
+    "explanation": "순편익 40을 투자 100으로 나누므로 ROI는 40%입니다.",
+    "syllabus": "4.1.3.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.3 투자 경제성"
+    }
+  },
+  {
+    "id": "biz4-082",
+    "revision": 1,
+    "area": "business",
+    "topic": "투자 경제성",
+    "prompt": "초기투자 120, 매년 순현금유입 40이며 할인은 무시한다. 회수기간은?",
+    "options": [
+      "6년",
+      "3년",
+      "2년",
+      "4년"
+    ],
+    "answer": 1,
+    "explanation": "누적 순현금유입이 투자액에 도달하는 기간은 120을 40으로 나눈 3년입니다.",
+    "syllabus": "4.1.3.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.3 투자 경제성"
+    }
+  },
+  {
+    "id": "biz4-083",
+    "revision": 1,
+    "area": "business",
+    "topic": "투자 경제성",
+    "prompt": "1년 뒤 받을 110을 할인율 10%로 할인한 현재가치는?",
+    "options": [
+      "110",
+      "90",
+      "100",
+      "121"
+    ],
+    "answer": 2,
+    "explanation": "미래금액을 1.1로 나눕니다. 110에 1.1을 곱하는 것은 미래가치 계산입니다.",
+    "syllabus": "4.1.3.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.3 투자 경제성"
+    }
+  },
+  {
+    "id": "biz4-084",
+    "revision": 1,
+    "area": "business",
+    "topic": "투자 경제성",
+    "prompt": "NPV가 양수라는 의미는 무엇인가?",
+    "options": [
+      "모든 연도의 현금유입이 같다",
+      "원금이 즉시 회수된다",
+      "투자 위험이 없다",
+      "정한 할인율 기준으로 편익의 현재가치가 비용의 현재가치보다 크다"
+    ],
+    "answer": 3,
+    "explanation": "NPV는 할인한 순현금흐름의 합이며 양수여도 불확실성이 없어지는 것은 아닙니다.",
+    "syllabus": "4.1.3.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.3 투자 경제성"
+    }
+  },
+  {
+    "id": "biz4-085",
+    "revision": 1,
+    "area": "business",
+    "topic": "투자 경제성",
+    "prompt": "TCO를 산정할 때 구매비 외에 포함할 항목은?",
+    "options": [
+      "운영·교육·유지보수 비용",
+      "프로젝트 종료 후 경쟁사의 운영비",
+      "이번 선택과 무관한 이미 지급한 연구비",
+      "투자하지 않을 때의 대안 편익만"
+    ],
+    "answer": 0,
+    "explanation": "TCO는 자산의 생애주기 동안 부담하는 총소유비용입니다.",
+    "syllabus": "4.1.3.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.3 투자 경제성"
+    }
+  },
+  {
+    "id": "biz4-086",
+    "revision": 1,
+    "area": "business",
+    "topic": "투자 경제성",
+    "prompt": "같은 편익 조건에서 할인율이 높아지면 미래 현금유입의 현재가치는?",
+    "options": [
+      "명목 유입금액과 같아진다",
+      "작아진다",
+      "커진다",
+      "명목 유입금액과 함께 증가한다"
+    ],
+    "answer": 1,
+    "explanation": "할인율이 커지면 할인 분모가 커져 미래 유입의 현재가치가 낮아집니다.",
+    "syllabus": "4.1.3.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.3 투자 경제성"
+    }
+  },
+  {
+    "id": "biz4-087",
+    "revision": 1,
+    "area": "business",
+    "topic": "투자 경제성",
+    "prompt": "이미 지출해 회수 불가능한 조사비는 추가 투자 판단에서 무엇인가?",
+    "options": [
+      "미래 변동비",
+      "잔존가치",
+      "매몰비용",
+      "기회비용"
+    ],
+    "answer": 2,
+    "explanation": "매몰비용은 앞으로 선택을 바꿔도 회수할 수 없는 과거 비용입니다.",
+    "syllabus": "4.1.3.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.3 투자 경제성"
+    }
+  },
+  {
+    "id": "biz4-088",
+    "revision": 1,
+    "area": "business",
+    "topic": "투자 경제성",
+    "prompt": "A를 선택하면 포기하는 최선 대안 B의 편익은?",
+    "options": [
+      "감가상각비",
+      "매몰비용",
+      "선급금",
+      "기회비용"
+    ],
+    "answer": 3,
+    "explanation": "기회비용은 선택 때문에 포기한 가장 가치 있는 대안의 가치입니다.",
+    "syllabus": "4.1.3.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.3 투자 경제성"
+    }
+  },
+  {
+    "id": "biz4-089",
+    "revision": 1,
+    "area": "business",
+    "topic": "투자 경제성",
+    "prompt": "초기투자 100, 1년 뒤 유입 121, 할인율 10%, 추가 흐름은 없다. NPV는?",
+    "options": [
+      "10",
+      "21",
+      "110",
+      "11"
+    ],
+    "answer": 0,
+    "explanation": "유입 현재가치 121/1.1=110에서 투자 100을 빼면 10입니다.",
+    "syllabus": "4.1.3.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.3 투자 경제성"
+    }
+  },
+  {
+    "id": "biz4-090",
+    "revision": 1,
+    "area": "business",
+    "topic": "투자 경제성",
+    "prompt": "수요 증가율을 달리 넣어 투자 결과 변화를 살펴본다. 분석은?",
+    "options": [
+      "시장점유율로 사업을 분류하는 분석",
+      "민감도 분석",
+      "손익분기점 한 값만 구하는 분석",
+      "비용을 부서별로 배분하는 분석"
+    ],
+    "answer": 1,
+    "explanation": "민감도 분석은 주요 가정의 변화가 결과에 미치는 영향을 확인합니다.",
+    "syllabus": "4.1.3.3",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.3.3 투자 경제성"
+    }
+  },
+  {
+    "id": "biz4-091",
+    "revision": 1,
+    "area": "business",
+    "topic": "경영정보시스템",
+    "prompt": "생산·판매·재무가 같은 거래정보를 공유하도록 통합한다. 대표 시스템은?",
+    "options": [
+      "SCM",
+      "KMS",
+      "ERP",
+      "CRM"
+    ],
+    "answer": 2,
+    "explanation": "ERP는 전사 업무와 자원을 통합 관리하여 정보의 중복과 단절을 줄입니다.",
+    "syllabus": "4.1.4.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.1 경영정보시스템"
+    }
+  },
+  {
+    "id": "biz4-092",
+    "revision": 1,
+    "area": "business",
+    "topic": "경영정보시스템",
+    "prompt": "고객의 구매·상담 이력을 묶어 관계를 관리한다. 시스템은?",
+    "options": [
+      "ERP",
+      "SCM",
+      "KMS",
+      "CRM"
+    ],
+    "answer": 3,
+    "explanation": "CRM은 고객 접점과 관계를 관리하며 SCM은 공급망을 다룹니다.",
+    "syllabus": "4.1.4.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.1 경영정보시스템"
+    }
+  },
+  {
+    "id": "biz4-093",
+    "revision": 1,
+    "area": "business",
+    "topic": "경영정보시스템",
+    "prompt": "공급업체부터 유통까지 수요·재고·납기를 연계한다. 시스템은?",
+    "options": [
+      "SCM",
+      "ERP",
+      "CRM",
+      "KMS"
+    ],
+    "answer": 0,
+    "explanation": "SCM은 공급망의 수요·재고·납기 흐름을 조정합니다. CRM은 고객관계, ERP는 전사 자원 통합에 초점을 둡니다.",
+    "syllabus": "4.1.4.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.1 경영정보시스템"
+    }
+  },
+  {
+    "id": "biz4-094",
+    "revision": 1,
+    "area": "business",
+    "topic": "경영정보시스템",
+    "prompt": "경영진이 매출 추세와 지역별 이익을 대시보드로 분석한다. 목적은?",
+    "options": [
+      "고객 캠페인의 자동 실행",
+      "의사결정 지원",
+      "일상 거래의 실시간 기록",
+      "전사 자원의 기준정보 통합"
+    ],
+    "answer": 1,
+    "explanation": "분석·시각화는 판단을 지원하며 그 자체가 경영자의 결정을 대신하지 않습니다.",
+    "syllabus": "4.1.4.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.1 경영정보시스템"
+    }
+  },
+  {
+    "id": "biz4-095",
+    "revision": 1,
+    "area": "business",
+    "topic": "경영정보시스템",
+    "prompt": "POS의 판매 데이터가 재고와 회계에 자동 반영된다. 주요 효과는?",
+    "options": [
+      "품목코드 차이의 자동 해소",
+      "매출채권 회수의 자동 보장",
+      "중복 입력과 정보 지연 감소",
+      "수요 예측의 불확실성 제거"
+    ],
+    "answer": 2,
+    "explanation": "거래정보 연계는 반복 입력과 시차를 줄이지만 수요 불확실성은 남습니다.",
+    "syllabus": "4.1.4.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.1 경영정보시스템"
+    }
+  },
+  {
+    "id": "biz4-096",
+    "revision": 1,
+    "area": "business",
+    "topic": "경영정보시스템",
+    "prompt": "ERP 도입 시 부서별 동일 품목의 코드가 다르다. 필요한 조치는?",
+    "options": [
+      "사용자 화면 권한의 세분화",
+      "재고 평가방법만 변경",
+      "패키지 기본 보고서의 재배치",
+      "품목 기준정보 표준화"
+    ],
+    "answer": 3,
+    "explanation": "기준정보를 통일해야 부서 간 거래와 재고를 일관되게 연결할 수 있습니다.",
+    "syllabus": "4.1.4.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.1 경영정보시스템"
+    }
+  },
+  {
+    "id": "biz4-097",
+    "revision": 1,
+    "area": "business",
+    "topic": "경영정보시스템",
+    "prompt": "DSS의 역할로 적절한 것은?",
+    "options": [
+      "여러 대안의 결과 분석을 지원한다",
+      "반복 결제 거래의 원장 기록",
+      "고객 접점의 상담이력 통합",
+      "전사 인사·재무 코드의 일원화"
+    ],
+    "answer": 0,
+    "explanation": "DSS는 모델·데이터로 의사결정을 돕는 시스템이지 책임 주체를 대체하지 않습니다.",
+    "syllabus": "4.1.4.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.1 경영정보시스템"
+    }
+  },
+  {
+    "id": "biz4-098",
+    "revision": 1,
+    "area": "business",
+    "topic": "경영정보시스템",
+    "prompt": "반복 거래를 정확히 기록하는 TPS의 사례는?",
+    "options": [
+      "경영진 가치관 수립",
+      "매장 결제 처리",
+      "장기 시장 진출 전략 토론",
+      "기업 인수 방향 결정"
+    ],
+    "answer": 1,
+    "explanation": "TPS는 매장 결제처럼 일상적이고 반복적인 거래를 기록·처리합니다. 장기 전략이나 인수 방향의 비정형 판단과 다릅니다.",
+    "syllabus": "4.1.4.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.1 경영정보시스템"
+    }
+  },
+  {
+    "id": "biz4-099",
+    "revision": 1,
+    "area": "business",
+    "topic": "경영정보시스템",
+    "prompt": "지식관리시스템에 문서가 많아도 활용이 낮다. 개선 방향은?",
+    "options": [
+      "분류 기준 없이 부서별 문서를 통합한다",
+      "자료의 최신성 검토 없이 검색어만 늘린다",
+      "검색·분류와 재사용 절차를 정비한다",
+      "저장 문서 수를 늘리는 것만 평가한다"
+    ],
+    "answer": 2,
+    "explanation": "지식관리는 축적량뿐 아니라 찾기·신뢰·재사용의 흐름이 중요합니다.",
+    "syllabus": "4.1.4.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.1 경영정보시스템"
+    }
+  },
+  {
+    "id": "biz4-100",
+    "revision": 1,
+    "area": "business",
+    "topic": "경영정보시스템",
+    "prompt": "고객 분석 결과를 캠페인에 반영하고 반응을 다시 측정한다. 핵심은?",
+    "options": [
+      "분석용 저장소 구축만 완료",
+      "고객 접점별 이력의 분리 운영",
+      "마케팅 담당자의 직감만으로 캠페인 반복",
+      "분석과 실행의 피드백 연결"
+    ],
+    "answer": 3,
+    "explanation": "CRM의 가치는 분석이 행동과 측정으로 연결될 때 확인됩니다.",
+    "syllabus": "4.1.4.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.1 경영정보시스템"
+    }
+  },
+  {
+    "id": "biz4-101",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT서비스 관리",
+    "prompt": "결제 장애가 발생했다. 인시던트 관리의 우선 목적은?",
+    "options": [
+      "정상 서비스를 신속히 복구한다",
+      "모든 근본 원인을 완전히 규명한다",
+      "차기 시스템 요구사항을 확정한다",
+      "연간 IT예산을 재편성한다"
+    ],
+    "answer": 0,
+    "explanation": "인시던트는 서비스 복구가 우선이고 근본 원인 분석은 문제 관리와 연결됩니다.",
+    "syllabus": "4.1.4.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.2 IT서비스 관리"
+    }
+  },
+  {
+    "id": "biz4-102",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT서비스 관리",
+    "prompt": "매주 같은 장애가 재발한다. 문제 관리의 주된 활동은?",
+    "options": [
+      "신규 버전의 배포 일정을 조정한다",
+      "근본 원인과 재발 방지책을 찾는다",
+      "중단된 서비스의 즉시 복구만 수행한다",
+      "사용자의 표준 신청을 처리한다"
+    ],
+    "answer": 1,
+    "explanation": "문제 관리는 반복되는 인시던트의 원인을 분석해 재발 가능성을 줄입니다.",
+    "syllabus": "4.1.4.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.2 IT서비스 관리"
+    }
+  },
+  {
+    "id": "biz4-103",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT서비스 관리",
+    "prompt": "비밀번호 초기화를 정해진 절차로 요청했다. 일반적인 분류는?",
+    "options": [
+      "사업 위험",
+      "긴급 변경",
+      "서비스 요청",
+      "중대 인시던트"
+    ],
+    "answer": 2,
+    "explanation": "표준화된 사용자 지원 요구는 서비스 요청이며 항상 장애를 뜻하지 않습니다.",
+    "syllabus": "4.1.4.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.2 IT서비스 관리"
+    }
+  },
+  {
+    "id": "biz4-104",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT서비스 관리",
+    "prompt": "SLA에 명시할 내용으로 가장 적절한 것은?",
+    "options": [
+      "프로젝트 일정 활동과 선후관계",
+      "구성항목의 변경 이력",
+      "운영팀 내부의 업무 분장만",
+      "가용성 목표와 측정·보고 기준"
+    ],
+    "answer": 3,
+    "explanation": "SLA는 고객과 서비스 제공자 사이의 서비스 수준과 평가 기준에 대한 합의입니다.",
+    "syllabus": "4.1.4.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.2 IT서비스 관리"
+    }
+  },
+  {
+    "id": "biz4-105",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT서비스 관리",
+    "prompt": "사용자 만족은 낮지만 SLA 가용성은 충족했다. 타당한 해석은?",
+    "options": [
+      "현재 SLA가 사용자 경험을 충분히 반영하지 못할 수 있다",
+      "SLA 충족을 고객 충성도의 충분조건으로 본다",
+      "만족도 대신 장비 사양만 추가 측정한다",
+      "가용성을 사용자별 매출액으로 바꿔 계산한다"
+    ],
+    "answer": 0,
+    "explanation": "기술적 지표의 충족과 고객이 체감하는 가치는 서로 다를 수 있습니다.",
+    "syllabus": "4.1.4.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.2 IT서비스 관리"
+    }
+  },
+  {
+    "id": "biz4-106",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT서비스 관리",
+    "prompt": "서비스 데스크의 주요 역할은?",
+    "options": [
+      "IT자산 감가상각의 회계 처리",
+      "사용자 문의와 장애 접수의 단일 창구",
+      "IT투자 포트폴리오의 사업성 심의",
+      "시스템 설계 표준의 제정"
+    ],
+    "answer": 1,
+    "explanation": "서비스 데스크는 사용자와 IT서비스 조직의 접점이며 모든 문제를 직접 개발하는 조직은 아닙니다.",
+    "syllabus": "4.1.4.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.2 IT서비스 관리"
+    }
+  },
+  {
+    "id": "biz4-107",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT서비스 관리",
+    "prompt": "변경관리에서 사전 영향 분석을 하는 이유는?",
+    "options": [
+      "개발 완료 후 인수 서명만 받는다",
+      "서비스 중단시간을 사후 합산한다",
+      "변경이 다른 서비스에 줄 위험을 파악한다",
+      "변경 요청자의 직급으로 우선순위를 정한다"
+    ],
+    "answer": 2,
+    "explanation": "시스템 간 의존성 때문에 작은 변경도 다른 서비스에 영향을 줄 수 있습니다.",
+    "syllabus": "4.1.4.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.2 IT서비스 관리"
+    }
+  },
+  {
+    "id": "biz4-108",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT서비스 관리",
+    "prompt": "운영 변경의 되돌리기 계획에 담을 내용은?",
+    "options": [
+      "정상 배포가 완료됐을 때의 홍보 절차",
+      "새 버전 기능의 우선순위 목록",
+      "개발 인력의 투입 계획",
+      "실패 판단 조건과 이전 상태 복구 절차"
+    ],
+    "answer": 3,
+    "explanation": "롤백은 실패 시 서비스 회복 방법을 미리 준비하는 것으로 배포 순서만과는 다릅니다.",
+    "syllabus": "4.1.4.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.2 IT서비스 관리"
+    }
+  },
+  {
+    "id": "biz4-109",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT서비스 관리",
+    "prompt": "구성관리에서 서버와 업무 서비스의 관계를 기록하는 이유는?",
+    "options": [
+      "변경·장애의 영향 범위를 추적한다",
+      "자산 취득가액을 계산한다",
+      "고객별 서비스 요금을 산정한다",
+      "사용자의 수용 기준을 확정한다"
+    ],
+    "answer": 0,
+    "explanation": "구성항목의 관계 정보는 의존성과 영향을 분석하는 근거입니다.",
+    "syllabus": "4.1.4.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.2 IT서비스 관리"
+    }
+  },
+  {
+    "id": "biz4-110",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT서비스 관리",
+    "prompt": "새 버전 배포에 여러 변경을 묶어 계획했다. 릴리스 관리의 관심은?",
+    "options": [
+      "서비스 수준 목표를 고객과 합의한다",
+      "구성 요소를 일관된 묶음으로 제공한다",
+      "반복 장애의 근본 원인을 규명한다",
+      "사용자 문의의 단일 창구를 운영한다"
+    ],
+    "answer": 1,
+    "explanation": "릴리스는 함께 제공할 변경과 구성요소를 조정해 일관된 버전을 전달합니다.",
+    "syllabus": "4.1.4.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.2 IT서비스 관리"
+    }
+  },
+  {
+    "id": "biz4-111",
+    "revision": 1,
+    "area": "business",
+    "topic": "서비스 수준과 개선",
+    "prompt": "월 측정시간 1,000분, 비가용시간 5분이다. 가용성은?",
+    "options": [
+      "5%",
+      "99.95%",
+      "99.5%",
+      "95%"
+    ],
+    "answer": 2,
+    "explanation": "가용성은 (1,000-5)/1,000×100이므로 99.5%입니다.",
+    "syllabus": "4.1.4.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.2 서비스 수준과 개선"
+    }
+  },
+  {
+    "id": "biz4-112",
+    "revision": 1,
+    "area": "business",
+    "topic": "서비스 수준과 개선",
+    "prompt": "고장 간 평균시간이 길어지고 평균복구시간이 짧아졌다. 기대 효과는?",
+    "options": [
+      "MTBF 단축과 MTTR 증가",
+      "장애 빈도의 증가와 복구 지연",
+      "고장 간격과 복구시간의 변화가 서로 상쇄됨",
+      "서비스 가용성 향상"
+    ],
+    "answer": 3,
+    "explanation": "장애 간 간격이 길고 복구가 빠르면 일반적으로 이용 가능한 시간이 늘어납니다.",
+    "syllabus": "4.1.4.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.2 서비스 수준과 개선"
+    }
+  },
+  {
+    "id": "biz4-113",
+    "revision": 1,
+    "area": "business",
+    "topic": "서비스 수준과 개선",
+    "prompt": "서비스 응답시간 악화가 예상되는 수요 증가에 대응한다. 관리 영역은?",
+    "options": [
+      "용량 관리",
+      "가용성 측정",
+      "인시던트 분류",
+      "서비스 수준 합의"
+    ],
+    "answer": 0,
+    "explanation": "용량 관리는 수요와 자원의 처리 능력을 맞추는 활동입니다.",
+    "syllabus": "4.1.4.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.2 서비스 수준과 개선"
+    }
+  },
+  {
+    "id": "biz4-114",
+    "revision": 1,
+    "area": "business",
+    "topic": "서비스 수준과 개선",
+    "prompt": "재난 시 핵심 업무를 유지·복구하는 계획과 가장 가까운 것은?",
+    "options": [
+      "단일 인시던트 접수 관리",
+      "서비스 연속성 관리",
+      "용량 관리",
+      "서비스 카탈로그 관리"
+    ],
+    "answer": 1,
+    "explanation": "연속성은 큰 중단 상황에서 필요한 서비스를 유지하거나 복구할 준비를 다룹니다.",
+    "syllabus": "4.1.4.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.2 서비스 수준과 개선"
+    }
+  },
+  {
+    "id": "biz4-115",
+    "revision": 1,
+    "area": "business",
+    "topic": "서비스 수준과 개선",
+    "prompt": "서비스 목록에 업무 담당자가 이해할 설명과 신청 방법을 제공한다. 산출물은?",
+    "options": [
+      "서비스 수준 협약서",
+      "프로젝트 범위기술서",
+      "서비스 카탈로그",
+      "구성관리 데이터베이스"
+    ],
+    "answer": 2,
+    "explanation": "서비스 카탈로그는 제공하는 서비스와 이용 조건을 찾을 수 있게 정리합니다.",
+    "syllabus": "4.1.4.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.2 서비스 수준과 개선"
+    }
+  },
+  {
+    "id": "biz4-116",
+    "revision": 1,
+    "area": "business",
+    "topic": "서비스 수준과 개선",
+    "prompt": "장애 우선순위를 정할 때 영향도와 함께 고려할 요소는?",
+    "options": [
+      "접수 순서",
+      "담당팀의 현재 선호도",
+      "장비의 취득원가",
+      "긴급도"
+    ],
+    "answer": 3,
+    "explanation": "영향은 피해 범위이고 긴급도는 얼마나 빨리 대응해야 하는지를 나타냅니다.",
+    "syllabus": "4.1.4.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.2 서비스 수준과 개선"
+    }
+  },
+  {
+    "id": "biz4-117",
+    "revision": 1,
+    "area": "business",
+    "topic": "서비스 수준과 개선",
+    "prompt": "한 개인 PC 장애와 전사 결제 중단이 동시에 접수됐다. 우선 판단 기준은?",
+    "options": [
+      "업무 영향과 시간 민감성",
+      "접수 순서와 사용자 직급만",
+      "장비 구매가와 보증기간만",
+      "운영팀 처리시간이 짧은 순서만"
+    ],
+    "answer": 0,
+    "explanation": "서비스 관리의 우선순위는 비즈니스 피해와 시급성에 근거해야 합니다.",
+    "syllabus": "4.1.4.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.2 서비스 수준과 개선"
+    }
+  },
+  {
+    "id": "biz4-118",
+    "revision": 1,
+    "area": "business",
+    "topic": "서비스 수준과 개선",
+    "prompt": "고객 SLA 달성을 위해 내부 팀끼리 지원시간을 합의했다. 해당 합의는?",
+    "options": [
+      "ROI",
+      "OLA",
+      "WBS",
+      "RFP"
+    ],
+    "answer": 1,
+    "explanation": "OLA는 서비스 제공 조직 내부의 운영 수준 합의로 외부 고객 SLA를 지원합니다.",
+    "syllabus": "4.1.4.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.2 서비스 수준과 개선"
+    }
+  },
+  {
+    "id": "biz4-119",
+    "revision": 1,
+    "area": "business",
+    "topic": "서비스 수준과 개선",
+    "prompt": "매번 같은 문의가 접수된다. 서비스 효율 개선에 적절한 조치는?",
+    "options": [
+      "사용자별 문의 횟수만 제한한다",
+      "해결 내용을 담당자 개인 메모에만 남긴다",
+      "검증된 해결 방법을 지식 문서로 제공한다",
+      "문의 유형과 무관하게 접수 창구만 늘린다"
+    ],
+    "answer": 2,
+    "explanation": "재사용 가능한 해결 지식은 대응 일관성과 셀프서비스를 높입니다.",
+    "syllabus": "4.1.4.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.2 서비스 수준과 개선"
+    }
+  },
+  {
+    "id": "biz4-120",
+    "revision": 1,
+    "area": "business",
+    "topic": "서비스 수준과 개선",
+    "prompt": "서비스 개선안을 적용한 뒤 효과를 확인하려면 필요한 것은?",
+    "options": [
+      "새 도구의 기능 수 비교",
+      "운영 인원의 투입시간 총합만",
+      "개선 회의 개최 횟수만",
+      "개선 전 기준값과 동일한 측정 기준"
+    ],
+    "answer": 3,
+    "explanation": "일관된 기준의 전후 비교가 있어야 개선 효과를 평가할 수 있습니다.",
+    "syllabus": "4.1.4.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.1.4.2 서비스 수준과 개선"
+    }
+  },
+  {
+    "id": "biz4-121",
+    "revision": 1,
+    "area": "business",
+    "topic": "환경변화와 디지털 전환",
+    "prompt": "종이 신청서를 PDF로 바꾸는 것과 사업 운영방식을 바꾸는 것의 차이는?",
+    "options": [
+      "후자는 디지털 전환의 조직·사업 변화까지 포함한다",
+      "전자는 업무 재설계, 후자는 기록 형식 변환이다",
+      "두 활동 모두 데이터 형식만 바꾸는 것이다",
+      "후자는 기존 승인 절차를 그대로 자동화하는 것에 한정된다"
+    ],
+    "answer": 0,
+    "explanation": "디지털 전환은 단순 형식 변환을 넘어 업무·고객가치·사업모델 변화를 포함합니다.",
+    "syllabus": "4.2.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.1.1 환경변화와 디지털 전환"
+    }
+  },
+  {
+    "id": "biz4-122",
+    "revision": 1,
+    "area": "business",
+    "topic": "환경변화와 디지털 전환",
+    "prompt": "신규 서비스 수요가 불확실할 때 작은 실험을 먼저 하는 이유는?",
+    "options": [
+      "확정된 요구만 상세 문서화한다",
+      "적은 비용으로 핵심 가정을 검증한다",
+      "완성품의 인수 절차를 앞당긴다",
+      "계약 범위의 변경을 금지한다"
+    ],
+    "answer": 1,
+    "explanation": "실험은 불확실한 가정을 학습하는 수단이며 정식 품질검사와 목적이 다릅니다.",
+    "syllabus": "4.2.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.1.1 환경변화와 디지털 전환"
+    }
+  },
+  {
+    "id": "biz4-123",
+    "revision": 1,
+    "area": "business",
+    "topic": "환경변화와 디지털 전환",
+    "prompt": "MVP에 대한 설명으로 가장 적절한 것은?",
+    "options": [
+      "확정된 전체 기능을 한 번에 전달한다",
+      "수용시험을 생략한 시연 화면만 만든다",
+      "학습에 필요한 최소 기능으로 가설을 시험한다",
+      "기존·신규 시스템을 동시에 운영한다"
+    ],
+    "answer": 2,
+    "explanation": "MVP의 최소성은 고객 가설 검증에 필요한 범위를 뜻합니다.",
+    "syllabus": "4.2.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.1.1 환경변화와 디지털 전환"
+    }
+  },
+  {
+    "id": "biz4-124",
+    "revision": 1,
+    "area": "business",
+    "topic": "환경변화와 디지털 전환",
+    "prompt": "레거시 시스템이 변화 대응을 막는다고 할 때 먼저 확인할 것은?",
+    "options": [
+      "도입 이후 경과 연수만",
+      "소프트웨어의 최초 구매가격만",
+      "기존 시스템의 등록 특허 수만",
+      "업무 변화에 필요한 수정의 제약과 비용"
+    ],
+    "answer": 3,
+    "explanation": "레거시의 문제는 오래됨 자체보다 변경과 연계에 생기는 실제 제약입니다.",
+    "syllabus": "4.2.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.1.1 환경변화와 디지털 전환"
+    }
+  },
+  {
+    "id": "biz4-125",
+    "revision": 1,
+    "area": "business",
+    "topic": "환경변화와 디지털 전환",
+    "prompt": "디지털 전환에 대한 직원 저항을 줄이는 활동은?",
+    "options": [
+      "변화 이유 설명과 역할별 교육",
+      "새 도구 설치율만으로 정착을 판단한다",
+      "업무 변화 없이 기능 교육만 일괄 진행한다",
+      "이해관계자 협의 없이 성과평가 기준만 강화한다"
+    ],
+    "answer": 0,
+    "explanation": "조직 변화에는 이해·참여·역량 확보가 필요하며 도구 배포만으로 정착되지 않습니다.",
+    "syllabus": "4.2.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.1.1 환경변화와 디지털 전환"
+    }
+  },
+  {
+    "id": "biz4-126",
+    "revision": 1,
+    "area": "business",
+    "topic": "환경변화와 디지털 전환",
+    "prompt": "온라인 판매가 기존 대리점과 충돌한다. 우선 검토할 것은?",
+    "options": [
+      "지점별 전산장비의 잔존가치",
+      "채널별 역할과 보상 구조",
+      "온라인 판매 기능의 화면 응답시간",
+      "앱 운영체제별 설치율"
+    ],
+    "answer": 1,
+    "explanation": "채널 갈등은 기술 문제가 아니라 고객 접점과 이해관계의 설계 문제도 포함합니다.",
+    "syllabus": "4.2.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.1.1 환경변화와 디지털 전환"
+    }
+  },
+  {
+    "id": "biz4-127",
+    "revision": 1,
+    "area": "business",
+    "topic": "환경변화와 디지털 전환",
+    "prompt": "신기술 도입 후보를 평가할 때 가장 타당한 기준은?",
+    "options": [
+      "가장 낮은 최초 견적",
+      "벤더가 제시한 최대 기능 수",
+      "고객 문제 해결 효과와 적용 준비도",
+      "제품 시장의 화제성 순위"
+    ],
+    "answer": 2,
+    "explanation": "기술의 유행보다 문제 적합성과 조직의 실행 가능성을 함께 확인합니다.",
+    "syllabus": "4.2.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.1.1 환경변화와 디지털 전환"
+    }
+  },
+  {
+    "id": "biz4-128",
+    "revision": 1,
+    "area": "business",
+    "topic": "환경변화와 디지털 전환",
+    "prompt": "경쟁사의 앱을 그대로 따라 만들었지만 이용이 적다. 빠진 검토는?",
+    "options": [
+      "경쟁사 대비 화면 기능 수",
+      "경쟁사의 광고 집행 시점",
+      "경쟁사의 기술 스택 구성",
+      "자사 고객의 요구와 사용 맥락"
+    ],
+    "answer": 3,
+    "explanation": "경쟁사의 해법이 자사 고객에게도 가치 있는지는 별도로 검증해야 합니다.",
+    "syllabus": "4.2.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.1.1 환경변화와 디지털 전환"
+    }
+  },
+  {
+    "id": "biz4-129",
+    "revision": 1,
+    "area": "business",
+    "topic": "환경변화와 디지털 전환",
+    "prompt": "디지털 전환 과제를 전사 확산하기 전 실증에서 볼 것은?",
+    "options": [
+      "효과뿐 아니라 운영·확장 조건",
+      "제한된 데모 환경의 기능 작동만",
+      "발표 참석자의 반응만",
+      "시연에 사용한 샘플의 정확도만"
+    ],
+    "answer": 0,
+    "explanation": "실증 성공이 대규모 운영 성공을 보장하지 않아 확장·운영 제약도 확인해야 합니다.",
+    "syllabus": "4.2.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.1.1 환경변화와 디지털 전환"
+    }
+  },
+  {
+    "id": "biz4-130",
+    "revision": 1,
+    "area": "business",
+    "topic": "환경변화와 디지털 전환",
+    "prompt": "환경 변화에 대한 시나리오 계획의 목적은?",
+    "options": [
+      "모든 대안의 비용을 동일하다고 가정한다",
+      "가능한 미래별 대응을 준비한다",
+      "확률이 가장 높은 미래 하나를 기준선으로 고정한다",
+      "과거 평균값을 미래 확정 수요로 사용한다"
+    ],
+    "answer": 1,
+    "explanation": "시나리오는 불확실한 여러 상황을 가정해 대응의 유연성을 확보합니다.",
+    "syllabus": "4.2.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.1.1 환경변화와 디지털 전환"
+    }
+  },
+  {
+    "id": "biz4-131",
+    "revision": 1,
+    "area": "business",
+    "topic": "최신 서비스 모델",
+    "prompt": "두 고객집단을 연결하는 플랫폼이 초기에 겪는 대표 과제는?",
+    "options": [
+      "플랫폼이 양쪽 거래 주체를 직접 소유해야 한다",
+      "초기에는 거래 연결보다 자체 재고 확대가 필수다",
+      "양쪽 참여자를 함께 확보해야 한다",
+      "하나의 고객집단만 늘려도 양쪽 효용이 보장된다"
+    ],
+    "answer": 2,
+    "explanation": "양면 플랫폼은 한쪽의 가치가 다른 쪽 참여에 영향을 받아 초기 확보가 어렵습니다.",
+    "syllabus": "4.2.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.1 최신 서비스 모델"
+    }
+  },
+  {
+    "id": "biz4-132",
+    "revision": 1,
+    "area": "business",
+    "topic": "최신 서비스 모델",
+    "prompt": "API로 배송조회 기능을 다른 쇼핑몰에 제공한다. 사업적 효과는?",
+    "options": [
+      "제휴사의 데이터 의미가 자동 표준화된다",
+      "이용량 과금 없이 수익이 자동 발생한다",
+      "서비스 수준 합의 없이 연계 품질이 보장된다",
+      "외부 서비스와 기능을 결합하기 쉬워진다"
+    ],
+    "answer": 3,
+    "explanation": "API는 기능 연계의 접점으로 생태계 확장을 돕지만 관리 책임은 남습니다.",
+    "syllabus": "4.2.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.1 최신 서비스 모델"
+    }
+  },
+  {
+    "id": "biz4-133",
+    "revision": 1,
+    "area": "business",
+    "topic": "최신 서비스 모델",
+    "prompt": "월정액 SaaS 도입의 일반적인 비용 특성은?",
+    "options": [
+      "초기 구축비 일부가 반복 이용료로 바뀐다",
+      "소프트웨어 저작권의 매입비로 일괄 처리된다",
+      "자체 운영인력의 인건비로만 구성된다",
+      "최초 구매비 이후 사용량과 무관하게 비용이 고정된다"
+    ],
+    "answer": 0,
+    "explanation": "SaaS는 제공자 운영 서비스를 구독하는 방식으로 지속 이용료 등을 고려해야 합니다.",
+    "syllabus": "4.2.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.1 최신 서비스 모델"
+    }
+  },
+  {
+    "id": "biz4-134",
+    "revision": 1,
+    "area": "business",
+    "topic": "최신 서비스 모델",
+    "prompt": "IoT 센서로 설비 상태를 받아 고장 전에 정비한다. 가치 창출 방식은?",
+    "options": [
+      "계획 주기만을 따른 정기 정비",
+      "상태 데이터 기반 예방적 대응",
+      "고장 접수 후 고객 보상 처리",
+      "생산 완료 제품의 외관 검사"
+    ],
+    "answer": 1,
+    "explanation": "실시간 상태 데이터는 이상 징후 파악과 예측 정비를 지원합니다.",
+    "syllabus": "4.2.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.1 최신 서비스 모델"
+    }
+  },
+  {
+    "id": "biz4-135",
+    "revision": 1,
+    "area": "business",
+    "topic": "최신 서비스 모델",
+    "prompt": "디지털 트윈을 도입하려는 제조업체의 적합한 활용은?",
+    "options": [
+      "완료 거래를 시간순으로 원장에 기록한다",
+      "규칙이 정해진 화면 입력을 그대로 반복한다",
+      "가상 모델로 설비 변경의 영향을 모의 실험한다",
+      "실제 상태와 연결되지 않는 정적 설계도만 보관한다"
+    ],
+    "answer": 2,
+    "explanation": "디지털 트윈은 실제 대상과 연결된 가상 모델로 상태 이해와 시뮬레이션을 돕습니다.",
+    "syllabus": "4.2.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.1 최신 서비스 모델"
+    }
+  },
+  {
+    "id": "biz4-136",
+    "revision": 1,
+    "area": "business",
+    "topic": "최신 서비스 모델",
+    "prompt": "RPA에 먼저 적용하기 좋은 업무는?",
+    "options": [
+      "고객별 복잡한 민원 합의",
+      "새 사업의 가치제안 설계",
+      "불명확한 계약 조건 협상",
+      "규칙이 명확하고 반복되는 시스템 입력"
+    ],
+    "answer": 3,
+    "explanation": "RPA는 정형 규칙 기반 반복 작업에 적합하며 고도의 맥락 판단과 다릅니다.",
+    "syllabus": "4.2.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.1 최신 서비스 모델"
+    }
+  },
+  {
+    "id": "biz4-137",
+    "revision": 1,
+    "area": "business",
+    "topic": "최신 서비스 모델",
+    "prompt": "RPA 대상 화면이 자주 바뀐다. 고려할 운영 위험은?",
+    "options": [
+      "자동화 스크립트 유지보수가 늘 수 있다",
+      "규칙 기반 처리의 예외 비율이 자동 감소한다",
+      "화면 변경이 데이터 이관을 대신한다",
+      "유지보수가 업무 프로세스 분석을 대체한다"
+    ],
+    "answer": 0,
+    "explanation": "화면 의존 자동화는 UI 변경에 민감하므로 유지보수와 예외 대응을 설계해야 합니다.",
+    "syllabus": "4.2.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.1 최신 서비스 모델"
+    }
+  },
+  {
+    "id": "biz4-138",
+    "revision": 1,
+    "area": "business",
+    "topic": "최신 서비스 모델",
+    "prompt": "옴니채널 사례로 가장 적합한 것은?",
+    "options": [
+      "같은 광고를 모든 채널에 보내기만 한다",
+      "앱 장바구니와 매장 상담·구매 이력을 연결한다",
+      "매장과 앱을 따로 운영하며 이력을 연결하지 않는다",
+      "고객별 채널을 하나로 고정한다"
+    ],
+    "answer": 1,
+    "explanation": "옴니채널은 여러 접점을 연결해 연속적인 고객 경험을 제공합니다.",
+    "syllabus": "4.2.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.1 최신 서비스 모델"
+    }
+  },
+  {
+    "id": "biz4-139",
+    "revision": 1,
+    "area": "business",
+    "topic": "최신 서비스 모델",
+    "prompt": "종량제 서비스의 청구 기준으로 적절한 것은?",
+    "options": [
+      "사용권의 일회성 매입가격",
+      "광고 노출과 무관한 후원금",
+      "측정된 사용량",
+      "계약기간의 고정 정액"
+    ],
+    "answer": 2,
+    "explanation": "종량제는 호출 수·처리량 등 사용 단위에 따라 대가를 계산합니다.",
+    "syllabus": "4.2.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.1 최신 서비스 모델"
+    }
+  },
+  {
+    "id": "biz4-140",
+    "revision": 1,
+    "area": "business",
+    "topic": "최신 서비스 모델",
+    "prompt": "서비스 구독 해지가 어렵게 화면을 설계하면 생기는 문제는?",
+    "options": [
+      "고객집단 간 네트워크 효과",
+      "사용권 기반 가격 차별화",
+      "공동생산에 따른 범위의 경제",
+      "고객의 선택을 방해하는 다크패턴이 될 수 있다"
+    ],
+    "answer": 3,
+    "explanation": "선택을 오도하거나 방해하는 설계는 고객의 자율성과 신뢰를 훼손합니다.",
+    "syllabus": "4.2.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.1 최신 서비스 모델"
+    }
+  },
+  {
+    "id": "biz4-141",
+    "revision": 1,
+    "area": "business",
+    "topic": "AI 비즈니스 적용",
+    "prompt": "AI로 해결할 과제를 고르는 첫 기준으로 적절한 것은?",
+    "options": [
+      "업무 문제와 측정할 성과의 명확성",
+      "가장 높은 벤치마크 점수만",
+      "최대 매개변수 수",
+      "학습 데이터의 총용량만"
+    ],
+    "answer": 0,
+    "explanation": "AI도 해결할 문제와 성공 기준을 먼저 정의해야 가치와 적합성을 평가할 수 있습니다.",
+    "syllabus": "4.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.2 AI 비즈니스 적용"
+    }
+  },
+  {
+    "id": "biz4-142",
+    "revision": 1,
+    "area": "business",
+    "topic": "AI 비즈니스 적용",
+    "prompt": "배송 지연을 예측하려 한다. 학습 때 사용하면 누수가 생기는 정보는?",
+    "options": [
+      "출고 예정일",
+      "배송 완료 후 확정된 실제 지연 일수",
+      "주문 시각",
+      "주문 당시 배송 지역"
+    ],
+    "answer": 1,
+    "explanation": "예측 시점에 알 수 없는 결과 정보를 입력하면 실제 운영 성능이 과장됩니다.",
+    "syllabus": "4.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.2 AI 비즈니스 적용"
+    }
+  },
+  {
+    "id": "biz4-143",
+    "revision": 1,
+    "area": "business",
+    "topic": "AI 비즈니스 적용",
+    "prompt": "학습 데이터에서 특정 고객군이 거의 빠졌다. 우선 위험은?",
+    "options": [
+      "희소 고객군의 정밀도가 자동 향상됨",
+      "클래스 비율과 무관한 동일 오류율 보장",
+      "그 고객군에 대한 성능 편차",
+      "전체 정확도가 높으면 집단별 품질도 같다는 보장"
+    ],
+    "answer": 2,
+    "explanation": "대표성이 부족하면 소수 집단에 대한 일반화와 공정성 문제가 생길 수 있습니다.",
+    "syllabus": "4.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.2 AI 비즈니스 적용"
+    }
+  },
+  {
+    "id": "biz4-144",
+    "revision": 1,
+    "area": "business",
+    "topic": "AI 비즈니스 적용",
+    "prompt": "생성형 AI가 존재하지 않는 참고문헌을 제시했다. 적절한 대응은?",
+    "options": [
+      "출력의 유창성으로 정답을 판단한다",
+      "답변 길이를 신뢰도 점수로 사용한다",
+      "같은 질문을 반복해 가장 긴 답변을 택한다",
+      "원문 근거와 대조해 사실을 검증한다"
+    ],
+    "answer": 3,
+    "explanation": "생성 내용은 그럴듯해도 사실이 아닐 수 있어 출처와 근거 확인이 필요합니다.",
+    "syllabus": "4.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.2 AI 비즈니스 적용"
+    }
+  },
+  {
+    "id": "biz4-145",
+    "revision": 1,
+    "area": "business",
+    "topic": "AI 비즈니스 적용",
+    "prompt": "사내 문서를 검색해 답변 근거로 넣는 RAG의 주요 목적은?",
+    "options": [
+      "관련 외부 지식으로 생성 응답을 보완한다",
+      "새 문서를 넣을 때마다 모델 가중치를 전면 재학습한다",
+      "외부 지식 없이 학습된 가중치만으로 답한다",
+      "유사 질문의 응답을 고정 캐시로만 반환한다"
+    ],
+    "answer": 0,
+    "explanation": "RAG는 검색 결과를 맥락으로 제공하지만 검색·생성 오류와 권한 관리는 남습니다.",
+    "syllabus": "4.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.2 AI 비즈니스 적용"
+    }
+  },
+  {
+    "id": "biz4-146",
+    "revision": 1,
+    "area": "business",
+    "topic": "AI 비즈니스 적용",
+    "prompt": "AI 시범서비스의 정확도는 높지만 업무 시간이 늘었다. 평가할 요소는?",
+    "options": [
+      "학습 데이터 크기만",
+      "검토·수정 시간을 포함한 전체 업무 효과",
+      "모델 벤치마크 순위만",
+      "자동 생성 응답 건수만"
+    ],
+    "answer": 1,
+    "explanation": "AI의 사업 효과는 검토와 재작업을 포함한 실제 업무 결과로 평가해야 합니다.",
+    "syllabus": "4.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.2 AI 비즈니스 적용"
+    }
+  },
+  {
+    "id": "biz4-147",
+    "revision": 1,
+    "area": "business",
+    "topic": "AI 비즈니스 적용",
+    "prompt": "위험도가 높은 결정을 AI가 추천한다. 적절한 운영 방식은?",
+    "options": [
+      "과거 평균 정확도만으로 모든 개별 결정을 승인한다",
+      "새로운 예외를 자동화 규칙에 바로 편입한다",
+      "책임 있는 사람이 근거를 검토하고 결정한다",
+      "모델의 신뢰도 점수가 높으면 근거 검토를 생략한다"
+    ],
+    "answer": 2,
+    "explanation": "인간 검토는 영향이 큰 판단의 책임과 예외 대응을 확보하는 장치입니다.",
+    "syllabus": "4.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.2 AI 비즈니스 적용"
+    }
+  },
+  {
+    "id": "biz4-148",
+    "revision": 1,
+    "area": "business",
+    "topic": "AI 비즈니스 적용",
+    "prompt": "AI 모델 배포 후 고객 행동이 달라 성능이 떨어졌다. 필요한 활동은?",
+    "options": [
+      "최초 시험 정확도를 운영 정확도로 유지 보고",
+      "학습 데이터의 개수만 주기적으로 집계",
+      "모델 버전 이름만 정기 변경",
+      "데이터 분포와 성능 변화 모니터링"
+    ],
+    "answer": 3,
+    "explanation": "운영 환경의 변화는 데이터·개념 드리프트로 성능을 낮출 수 있습니다.",
+    "syllabus": "4.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.2 AI 비즈니스 적용"
+    }
+  },
+  {
+    "id": "biz4-149",
+    "revision": 1,
+    "area": "business",
+    "topic": "AI 비즈니스 적용",
+    "prompt": "AI 프로젝트의 데이터 준비도 평가에 포함할 것은?",
+    "options": [
+      "품질·대표성·이용권한",
+      "파일 개수와 저장 용량만",
+      "라벨 수와 모델 크기만",
+      "데이터 취득가격만"
+    ],
+    "answer": 0,
+    "explanation": "많은 데이터라도 오류·편향·권한 문제가 있으면 적합한 학습 자원이 아닙니다.",
+    "syllabus": "4.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.2 AI 비즈니스 적용"
+    }
+  },
+  {
+    "id": "biz4-150",
+    "revision": 1,
+    "area": "business",
+    "topic": "AI 비즈니스 적용",
+    "prompt": "외부 AI 서비스 도입 계약에서 업무 데이터와 관련해 확인할 것은?",
+    "options": [
+      "제공자의 마케팅 도입 사례 수",
+      "보관·재이용·삭제 조건",
+      "모델의 공개 벤치마크 순위",
+      "서비스 화면의 기능 수"
+    ],
+    "answer": 1,
+    "explanation": "입력 데이터가 어떻게 처리되는지 확인해야 조직의 정보관리 요구와 맞출 수 있습니다.",
+    "syllabus": "4.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.2 AI 비즈니스 적용"
+    }
+  },
+  {
+    "id": "biz4-151",
+    "revision": 1,
+    "area": "business",
+    "topic": "AI 성능과 운영 판단",
+    "prompt": "불량 100개 중 90개를 찾아냈다. 이 사실이 직접 나타내는 지표는?",
+    "options": [
+      "정확도 90%",
+      "특이도 90%",
+      "재현율 90%",
+      "정밀도 90%"
+    ],
+    "answer": 2,
+    "explanation": "재현율은 실제 양성 중 찾아낸 비율입니다. 예측 양성 수는 주어지지 않았습니다.",
+    "syllabus": "4.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.2 AI 성능과 운영 판단"
+    }
+  },
+  {
+    "id": "biz4-152",
+    "revision": 1,
+    "area": "business",
+    "topic": "AI 성능과 운영 판단",
+    "prompt": "불량이라고 판정한 50개 중 실제 불량이 40개다. 정밀도는?",
+    "options": [
+      "20%",
+      "125%",
+      "40%",
+      "80%"
+    ],
+    "answer": 3,
+    "explanation": "정밀도는 예측 양성 중 실제 양성의 비율로 40/50입니다.",
+    "syllabus": "4.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.2 AI 성능과 운영 판단"
+    }
+  },
+  {
+    "id": "biz4-153",
+    "revision": 1,
+    "area": "business",
+    "topic": "AI 성능과 운영 판단",
+    "prompt": "사기 거래가 1%인데 모두 정상으로 예측한 모델의 정확도는 99%다. 평가의 문제는?",
+    "options": [
+      "소수인 사기를 놓친 성능이 가려진다",
+      "정밀도와 재현율을 계산할 필요가 없어진다",
+      "사기 재현율이 99%라고 결론 내릴 수 있다",
+      "정상 예측률을 사기 탐지율로 해석할 수 있다"
+    ],
+    "answer": 0,
+    "explanation": "불균형 데이터에서는 높은 정확도만으로 중요한 소수 클래스 탐지 성능을 알 수 없습니다.",
+    "syllabus": "4.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.2 AI 성능과 운영 판단"
+    }
+  },
+  {
+    "id": "biz4-154",
+    "revision": 1,
+    "area": "business",
+    "topic": "AI 성능과 운영 판단",
+    "prompt": "사기 탐지 임계값을 낮춰 더 많은 거래를 사기로 분류한다. 일반적인 변화는?",
+    "options": [
+      "사기 발생의 실제 비율이 낮아진다",
+      "탐지 증가와 오탐 증가의 절충이 생긴다",
+      "오탐과 누락이 모두 반드시 감소한다",
+      "정밀도가 반드시 100%가 된다"
+    ],
+    "answer": 1,
+    "explanation": "임계값을 낮추면 양성 판정이 늘어 놓침은 줄 수 있지만 정상 거래의 오탐이 늘 수 있습니다.",
+    "syllabus": "4.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.2 AI 성능과 운영 판단"
+    }
+  },
+  {
+    "id": "biz4-155",
+    "revision": 1,
+    "area": "business",
+    "topic": "AI 성능과 운영 판단",
+    "prompt": "AI 추천 기능의 매출 영향을 검증하는 A/B 테스트 설계는?",
+    "options": [
+      "실험군에만 할인도 함께 제공한다",
+      "실험 후 유리한 기간만 골라 집계한다",
+      "동등한 조건의 집단에 다른 기능을 적용해 비교한다",
+      "구매의도가 높은 고객을 실험군에 우선 넣는다"
+    ],
+    "answer": 2,
+    "explanation": "다른 조건을 통제해야 차이가 추천 기능 때문인지 판단하기 쉽습니다.",
+    "syllabus": "4.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.2 AI 성능과 운영 판단"
+    }
+  },
+  {
+    "id": "biz4-156",
+    "revision": 1,
+    "area": "business",
+    "topic": "AI 성능과 운영 판단",
+    "prompt": "모델 추론비가 건당 20원이고 월 10만 건을 처리한다. 월 추론비는?",
+    "options": [
+      "20만 원",
+      "2,000만 원",
+      "2만 원",
+      "200만 원"
+    ],
+    "answer": 3,
+    "explanation": "20원×100,000건은 2,000,000원이며 운영·검토 비용은 별도입니다.",
+    "syllabus": "4.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.2 AI 성능과 운영 판단"
+    }
+  },
+  {
+    "id": "biz4-157",
+    "revision": 1,
+    "area": "business",
+    "topic": "AI 성능과 운영 판단",
+    "prompt": "AI가 절약한 시간보다 검토시간이 더 길다. 경제성 개선의 후보는?",
+    "options": [
+      "검토 부담이 적고 효과 큰 작업으로 적용 범위를 조정한다",
+      "검토시간을 효과 산식에서 제외한다",
+      "자동화한 건수만 목표로 관리한다",
+      "모델의 크기를 성과로 직접 환산한다"
+    ],
+    "answer": 0,
+    "explanation": "적용 적합성과 검토 비용을 포함한 순효과를 개선해야 합니다.",
+    "syllabus": "4.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.2 AI 성능과 운영 판단"
+    }
+  },
+  {
+    "id": "biz4-158",
+    "revision": 1,
+    "area": "business",
+    "topic": "AI 성능과 운영 판단",
+    "prompt": "설명가능성이 특히 중요한 상황은?",
+    "options": [
+      "비업무용 이미지 색감 변형",
+      "대출 거절 사유를 고객에게 설명해야 하는 판단",
+      "동일한 출력 형식의 파일명 생성",
+      "임시 장식용 패턴 추천"
+    ],
+    "answer": 1,
+    "explanation": "사람에게 큰 영향을 주는 판단에서는 결과 근거를 이해·검토할 필요가 큽니다.",
+    "syllabus": "4.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.2 AI 성능과 운영 판단"
+    }
+  },
+  {
+    "id": "biz4-159",
+    "revision": 1,
+    "area": "business",
+    "topic": "AI 성능과 운영 판단",
+    "prompt": "AI 운영에서 모델 버전과 입력·결과를 추적하는 이유는?",
+    "options": [
+      "모델 결과의 법적 승인을 대신한다",
+      "정확도와 비용의 절충을 자동 해소한다",
+      "오류 분석과 책임 있는 재현을 지원한다",
+      "새 데이터의 라벨링을 대체한다"
+    ],
+    "answer": 2,
+    "explanation": "추적성은 문제가 난 조건과 사용 버전을 확인하는 근거이며 데이터 최소화는 별도로 지켜야 합니다.",
+    "syllabus": "4.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.2 AI 성능과 운영 판단"
+    }
+  },
+  {
+    "id": "biz4-160",
+    "revision": 1,
+    "area": "business",
+    "topic": "AI 성능과 운영 판단",
+    "prompt": "PoC 성공 후 본운영 전 추가 확인할 항목은?",
+    "options": [
+      "시연 데이터에서의 정답률만",
+      "PoC 발표의 참가자 만족도만",
+      "선정 모델의 공개 순위만",
+      "실제 부하·연계·권한·운영 비용"
+    ],
+    "answer": 3,
+    "explanation": "기술 가능성 검증과 지속 가능한 운영 검증은 범위가 다릅니다.",
+    "syllabus": "4.2.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.2.2.2 AI 성능과 운영 판단"
+    }
+  },
+  {
+    "id": "biz4-161",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT 직업윤리",
+    "prompt": "개발자가 친척 회사의 입찰 평가위원으로 배정됐다. 적절한 행동은?",
+    "options": [
+      "이해충돌을 알리고 평가 참여 조정을 요청한다",
+      "관계 공개 없이 평가점수만 낮춘다",
+      "평가 종료 뒤 이해관계를 알린다",
+      "관계를 밝히되 제척·회피 규정 확인 없이 단독 결정한다"
+    ],
+    "answer": 0,
+    "explanation": "평가의 공정성을 위해 이해관계를 사전에 투명하게 다뤄야 합니다.",
+    "syllabus": "4.3.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.3.1.1 IT 직업윤리"
+    }
+  },
+  {
+    "id": "biz4-162",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT 직업윤리",
+    "prompt": "치명적 결함을 발견했는데 일정 때문에 보고하지 말라는 요청을 받았다. 대응은?",
+    "options": [
+      "고객이 찾을 때까지 공개를 미룬다",
+      "영향을 기록하고 정해진 보고 경로로 알린다",
+      "검사 결과를 성공으로 바꾼다",
+      "오류 로그를 삭제한다"
+    ],
+    "answer": 1,
+    "explanation": "전문가는 위험을 사실대로 전달해 책임 있는 의사결정이 이루어지게 해야 합니다.",
+    "syllabus": "4.3.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.3.1.1 IT 직업윤리"
+    }
+  },
+  {
+    "id": "biz4-163",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT 직업윤리",
+    "prompt": "업무 중 얻은 고객 자료를 개인 사업 영업에 사용하려 한다. 문제는?",
+    "options": [
+      "접근권한이 곧 목적 외 이용권한이라는 해석",
+      "보관기간 안에서는 사적 이용이 허용된다는 해석",
+      "업무 목적과 권한을 벗어난 이용",
+      "익명화 이전 데이터의 자유로운 2차 활용"
+    ],
+    "answer": 2,
+    "explanation": "업무상 접근 가능하다는 사실이 사적 이용 권한을 뜻하지는 않습니다.",
+    "syllabus": "4.3.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.3.1.1 IT 직업윤리"
+    }
+  },
+  {
+    "id": "biz4-164",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT 직업윤리",
+    "prompt": "팀 성과보고에서 동료의 기여를 자신의 성과로만 기록했다. 관련 윤리는?",
+    "options": [
+      "이해충돌의 사전 신고",
+      "업무상 비밀의 보호",
+      "고객 데이터의 목적 제한",
+      "공정한 공로 인정"
+    ],
+    "answer": 3,
+    "explanation": "기여를 정확히 인정하는 것은 전문적 신뢰와 협업의 공정성에 관한 문제입니다.",
+    "syllabus": "4.3.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.3.1.1 IT 직업윤리"
+    }
+  },
+  {
+    "id": "biz4-165",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT 직업윤리",
+    "prompt": "테스트 결과 중 실패 사례를 빼고 성공률을 보고했다. 위반한 원칙은?",
+    "options": [
+      "정직성과 투명성",
+      "비밀유지",
+      "접근권한의 최소화",
+      "공로의 공정한 배분"
+    ],
+    "answer": 0,
+    "explanation": "선별 보고는 이해관계자의 판단을 왜곡하므로 조건과 실패를 함께 전달해야 합니다.",
+    "syllabus": "4.3.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.3.1.1 IT 직업윤리"
+    }
+  },
+  {
+    "id": "biz4-166",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT 직업윤리",
+    "prompt": "장애를 낸 사실을 숨기기 위해 동료 계정의 작업으로 기록한다. 핵심 문제는?",
+    "options": [
+      "사전 이해충돌 신고",
+      "책임 전가와 기록의 조작",
+      "적절한 역할 분담",
+      "정상적 가명처리"
+    ],
+    "answer": 1,
+    "explanation": "책임과 이력을 거짓으로 바꾸는 행위는 신뢰와 감사 가능성을 훼손합니다.",
+    "syllabus": "4.3.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.3.1.1 IT 직업윤리"
+    }
+  },
+  {
+    "id": "biz4-167",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT 직업윤리",
+    "prompt": "사용자 행동을 유도하는 UI 실험의 윤리 검토 항목은?",
+    "options": [
+      "해지에 필요한 단계를 늘릴 수 있는가",
+      "사용자 동의 없이 선택값을 고정할 수 있는가",
+      "사용자의 이해와 자율적 선택을 해치지 않는가",
+      "가입 전환율만 최대화할 수 있는가"
+    ],
+    "answer": 2,
+    "explanation": "성과 지표뿐 아니라 사용자의 자율성과 예측 가능한 영향을 고려해야 합니다.",
+    "syllabus": "4.3.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.3.1.1 IT 직업윤리"
+    }
+  },
+  {
+    "id": "biz4-168",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT 직업윤리",
+    "prompt": "접근성 개선을 검토할 때 적절한 관점은?",
+    "options": [
+      "가장 많은 이용자의 평균 속도만 개선한다",
+      "시각적 강조를 색상 하나로만 전달한다",
+      "입력 장치를 마우스로만 통일한다",
+      "다양한 사용자가 핵심 기능을 이용할 수 있는가"
+    ],
+    "answer": 3,
+    "explanation": "접근성은 장애와 사용 환경 차이를 고려해 이용 장벽을 줄이는 문제입니다.",
+    "syllabus": "4.3.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.3.1.1 IT 직업윤리"
+    }
+  },
+  {
+    "id": "biz4-169",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT 직업윤리",
+    "prompt": "프로젝트 실패 가능성을 알면서 고객에게 성공을 보장했다. 더 적절한 설명은?",
+    "options": [
+      "확인된 근거와 불확실성을 구분해 전달한다",
+      "낙관 시나리오를 확정 결과처럼 제시한다",
+      "위험의 발생확률만 제시하고 영향을 숨긴다",
+      "수행사의 보장 없는 예측을 계약상 확약으로 전달한다"
+    ],
+    "answer": 0,
+    "explanation": "전문적 설명은 사실·가정·위험을 구분해 상대가 판단할 수 있게 합니다.",
+    "syllabus": "4.3.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.3.1.1 IT 직업윤리"
+    }
+  },
+  {
+    "id": "biz4-170",
+    "revision": 1,
+    "area": "business",
+    "topic": "IT 직업윤리",
+    "prompt": "퇴사자가 이전 회사의 비공개 설계서를 새 회사에 가져왔다. 적절한 대응은?",
+    "options": [
+      "파일 형식을 바꾸어 권리 문제를 해소한다",
+      "사용 권한과 비밀유지 의무를 확인하고 무단 활용하지 않는다",
+      "이전 회사 자료는 경력에 포함되므로 자유 이용한다",
+      "비밀표시가 없으면 검토 없이 공개한다"
+    ],
+    "answer": 1,
+    "explanation": "업무 지식과 비공개 자료의 무단 반출·활용은 구별해야 합니다.",
+    "syllabus": "4.3.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.3.1.1 IT 직업윤리"
+    }
+  },
+  {
+    "id": "biz4-171",
+    "revision": 1,
+    "area": "business",
+    "topic": "지식재산권",
+    "prompt": "프로그램의 창작적 표현과 기능 아이디어를 구분하는 이유는?",
+    "options": [
+      "표현은 어떠한 권리도 가질 수 없다",
+      "기능이 같으면 항상 같은 저작물이다",
+      "저작권은 아이디어 자체와 표현을 동일하게 보호하지 않는다",
+      "모든 알고리즘 아이디어가 자동 특허가 된다"
+    ],
+    "answer": 2,
+    "explanation": "저작권의 보호 대상인 표현과 아이디어를 구별해야 무조건적 권리 주장을 피할 수 있습니다.",
+    "syllabus": "4.3.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.3.2.1 지식재산권"
+    }
+  },
+  {
+    "id": "biz4-172",
+    "revision": 1,
+    "area": "business",
+    "topic": "지식재산권",
+    "prompt": "상품의 출처를 구별하는 이름과 로고에 가장 직접 관련된 권리는?",
+    "options": [
+      "특허권",
+      "디자인권",
+      "실용신안권",
+      "상표권"
+    ],
+    "answer": 3,
+    "explanation": "상표는 상품·서비스의 출처 식별과 관련되며 기술 발명과 구별됩니다.",
+    "syllabus": "4.3.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.3.2.1 지식재산권"
+    }
+  },
+  {
+    "id": "biz4-173",
+    "revision": 1,
+    "area": "business",
+    "topic": "지식재산권",
+    "prompt": "기술적 발명에 대한 산업재산권을 검토한다. 가장 관련 깊은 것은?",
+    "options": [
+      "특허권",
+      "상표권",
+      "디자인권",
+      "저작권"
+    ],
+    "answer": 0,
+    "explanation": "특허는 기술적 발명에 관한 권리이고 상표는 출처 표시를 다룹니다.",
+    "syllabus": "4.3.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.3.2.1 지식재산권"
+    }
+  },
+  {
+    "id": "biz4-174",
+    "revision": 1,
+    "area": "business",
+    "topic": "지식재산권",
+    "prompt": "물품 외관의 심미적 형상 보호와 가장 관련 깊은 것은?",
+    "options": [
+      "실용신안권",
+      "디자인권",
+      "특허권",
+      "상표권"
+    ],
+    "answer": 1,
+    "explanation": "디자인권은 물품 등의 외관 디자인 보호에 관한 산업재산권입니다.",
+    "syllabus": "4.3.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.3.2.1 지식재산권"
+    }
+  },
+  {
+    "id": "biz4-175",
+    "revision": 1,
+    "area": "business",
+    "topic": "지식재산권",
+    "prompt": "인터넷에서 무료로 읽을 수 있는 글을 교재에 전부 복제하려 한다. 먼저 할 일은?",
+    "options": [
+      "무료 열람과 무료 재배포를 같은 허락으로 본다",
+      "비상업 목적이면 모든 복제가 허용된다고 본다",
+      "이용허락과 적용 조건을 확인한다",
+      "출처표시만 하면 이용범위 검토를 생략한다"
+    ],
+    "answer": 2,
+    "explanation": "열람 가능성과 복제·배포 허용은 같지 않으며 사용 조건을 확인해야 합니다.",
+    "syllabus": "4.3.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.3.2.1 지식재산권"
+    }
+  },
+  {
+    "id": "biz4-176",
+    "revision": 1,
+    "area": "business",
+    "topic": "지식재산권",
+    "prompt": "오픈소스 구성요소를 제품에 포함할 때 필요한 활동은?",
+    "options": [
+      "유료 배포면 모든 오픈소스를 금지한다",
+      "공개 저장소의 코드는 모두 같은 조건으로 본다",
+      "출처만 적으면 모든 라이선스 의무가 끝난다고 본다",
+      "라이선스별 이용·배포 의무를 검토한다"
+    ],
+    "answer": 3,
+    "explanation": "오픈소스도 라이선스 조건이 있으며 조건은 유형과 배포 방식에 따라 다릅니다.",
+    "syllabus": "4.3.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.3.2.1 지식재산권"
+    }
+  },
+  {
+    "id": "biz4-177",
+    "revision": 1,
+    "area": "business",
+    "topic": "지식재산권",
+    "prompt": "소프트웨어 라이선스 구매의 일반적 의미는?",
+    "options": [
+      "정한 조건에서 이용할 권한을 얻는다",
+      "저작재산권 전체를 양도받는다",
+      "2차 이용과 재배포 권리를 제한 없이 얻는다",
+      "저작자 표시를 변경할 권리를 얻는다"
+    ],
+    "answer": 0,
+    "explanation": "이용허락과 저작권 양도는 구별되며 구체적 권한은 계약에 따릅니다.",
+    "syllabus": "4.3.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.3.2.1 지식재산권"
+    }
+  },
+  {
+    "id": "biz4-178",
+    "revision": 1,
+    "area": "business",
+    "topic": "지식재산권",
+    "prompt": "외주 제작 콘텐츠의 권리 귀속을 분명히 하려면?",
+    "options": [
+      "출처표시만 합의하면 2차 이용권도 확정한다",
+      "이용 범위와 권리 귀속을 계약에 명시한다",
+      "납품 파일의 소지만으로 권리 양도를 추정한다",
+      "외주비 지급만으로 모든 이용범위를 인정한다"
+    ],
+    "answer": 1,
+    "explanation": "납품·대금 지급과 권리 이전 범위는 동일하지 않으므로 계약으로 명확히 합니다.",
+    "syllabus": "4.3.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.3.2.1 지식재산권"
+    }
+  },
+  {
+    "id": "biz4-179",
+    "revision": 1,
+    "area": "business",
+    "topic": "지식재산권",
+    "prompt": "비공개 소스코드를 경쟁사에 제공하려 한다. 저작권 외에 검토할 쟁점은?",
+    "options": [
+      "디자인 외관 유사성",
+      "상호 등록 절차",
+      "영업비밀과 비밀유지 의무",
+      "상표 출처 식별"
+    ],
+    "answer": 2,
+    "explanation": "비공개 기술자료는 보호 요건과 계약에 따라 영업비밀·비밀유지 문제가 함께 생길 수 있습니다.",
+    "syllabus": "4.3.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.3.2.1 지식재산권"
+    }
+  },
+  {
+    "id": "biz4-180",
+    "revision": 1,
+    "area": "business",
+    "topic": "지식재산권",
+    "prompt": "저작물에 출처만 표시하면 모든 이용이 허용된다는 주장에 대한 평가는?",
+    "options": [
+      "상업 이용에서만 언제나 맞다",
+      "출처가 외국이면 언제나 맞다",
+      "저작자 이름을 크게 쓰면 맞다",
+      "출처표시와 이용허락은 별개이므로 틀리다"
+    ],
+    "answer": 3,
+    "explanation": "출처를 밝혀도 허용된 이용 범위를 벗어난 복제·배포가 자동 정당화되지는 않습니다.",
+    "syllabus": "4.3.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.3.2.1 지식재산권"
+    }
+  },
+  {
+    "id": "biz4-181",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트의 특성",
+    "prompt": "매일 반복하는 주문 처리와 새 주문 시스템 구축을 구별하는 기준은?",
+    "options": [
+      "프로젝트는 한시적이며 고유한 결과를 만든다",
+      "프로젝트는 반복 거래량이 안정적으로 유지되는 업무다",
+      "운영은 고유 결과를 만든 뒤 종료되는 업무다",
+      "프로젝트 여부는 사용 기술의 최신성으로만 결정한다"
+    ],
+    "answer": 0,
+    "explanation": "프로젝트는 시작과 끝을 갖고 고유 산출물을 만들며 지속 운영과 구별됩니다.",
+    "syllabus": "4.4.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.1.1 프로젝트의 특성"
+    }
+  },
+  {
+    "id": "biz4-182",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트의 특성",
+    "prompt": "프로젝트 성공을 일정 준수만으로 평가할 때 빠지는 것은?",
+    "options": [
+      "계획 회의의 개최율만",
+      "요구한 결과와 사업가치 달성 여부",
+      "보고서 제출의 정시성만",
+      "예산 집행률만"
+    ],
+    "answer": 1,
+    "explanation": "납기 내 완료해도 요구사항이나 기대효과를 충족하지 못하면 성공을 단정할 수 없습니다.",
+    "syllabus": "4.4.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.1.1 프로젝트의 특성"
+    }
+  },
+  {
+    "id": "biz4-183",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트의 특성",
+    "prompt": "범위를 늘리면서 기간과 인력을 고정했다. 예상되는 관리 쟁점은?",
+    "options": [
+      "범위와 관계없이 품질 기준은 자동 충족된다",
+      "일정이 고정되면 추가 작업의 비용 영향도 사라진다",
+      "제약 간 절충과 위험 증가",
+      "작업 분해 수준만 세분화하면 제약 충돌이 해결된다"
+    ],
+    "answer": 2,
+    "explanation": "범위·일정·비용·품질은 상호 영향을 주므로 변경 효과를 함께 평가해야 합니다.",
+    "syllabus": "4.4.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.1.1 프로젝트의 특성"
+    }
+  },
+  {
+    "id": "biz4-184",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트의 특성",
+    "prompt": "프로젝트와 프로그램의 관계에 대한 설명은?",
+    "options": [
+      "서로 관련 없는 투자 대상을 전략별로 선택하는 것이 프로그램만의 목적이다",
+      "프로그램은 개별 프로젝트의 작업 목록과 동일하다",
+      "프로그램은 일상 운영의 단일 반복 절차만 뜻한다",
+      "관련 프로젝트를 묶어 통합 편익을 관리할 수 있다"
+    ],
+    "answer": 3,
+    "explanation": "프로그램 관리는 관련 프로젝트를 조정해 개별 관리로 얻기 어려운 편익을 추구합니다.",
+    "syllabus": "4.4.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.1.1 프로젝트의 특성"
+    }
+  },
+  {
+    "id": "biz4-185",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트의 특성",
+    "prompt": "포트폴리오 관리의 핵심 판단은?",
+    "options": [
+      "전략에 맞게 투자 대상을 선택·균형화한다",
+      "한 프로젝트의 상세 일정 최적화",
+      "특정 팀의 결함 수정 우선순위 결정",
+      "개별 산출물의 수용 여부 판단"
+    ],
+    "answer": 0,
+    "explanation": "포트폴리오는 전략과 자원 제약에 맞춘 사업·프로젝트 선택과 우선순위를 다룹니다.",
+    "syllabus": "4.4.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.1.1 프로젝트의 특성"
+    }
+  },
+  {
+    "id": "biz4-186",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트의 특성",
+    "prompt": "이해관계자 식별을 착수 때 한 번으로 끝내기 어려운 이유는?",
+    "options": [
+      "계약 당사자만 이해관계자이기 때문이다",
+      "진행 중 영향받는 주체와 관심이 달라질 수 있다",
+      "착수 시 조직도만 알면 이후 이해관계도 확정되기 때문이다",
+      "이해관계자의 영향력은 프로젝트와 무관하게 고정되기 때문이다"
+    ],
+    "answer": 1,
+    "explanation": "이해관계자는 변화할 수 있어 프로젝트 중에도 식별과 참여 방식을 갱신합니다.",
+    "syllabus": "4.4.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.1.1 프로젝트의 특성"
+    }
+  },
+  {
+    "id": "biz4-187",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트의 특성",
+    "prompt": "프로젝트 헌장에 담을 내용으로 적절한 것은?",
+    "options": [
+      "최종 품질시험의 결과",
+      "운영 장애의 해결 이력",
+      "목적·주요 목표·추진 권한",
+      "활동별 실제 투입시간"
+    ],
+    "answer": 2,
+    "explanation": "헌장은 프로젝트의 공식 착수와 상위 수준의 목적·권한을 정하는 문서입니다.",
+    "syllabus": "4.4.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.1.1 프로젝트의 특성"
+    }
+  },
+  {
+    "id": "biz4-188",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트의 특성",
+    "prompt": "사업성 검토에서 더 직접적으로 답할 질문은?",
+    "options": [
+      "시스템 기능을 어떻게 상세 구현할 것인가",
+      "작업 패키지를 누구에게 배정할 것인가",
+      "산출물의 결함을 어떤 순서로 수정할 것인가",
+      "왜 이 프로젝트에 투자해야 하는가"
+    ],
+    "answer": 3,
+    "explanation": "사업성은 비용·편익·대안·위험을 근거로 투자 정당성을 검토합니다.",
+    "syllabus": "4.4.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.1.1 프로젝트의 특성"
+    }
+  },
+  {
+    "id": "biz4-189",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트의 특성",
+    "prompt": "프로젝트 산출물은 완료됐지만 사용자 전환이 안 됐다. 남은 과제는?",
+    "options": [
+      "운영 인계와 활용 정착",
+      "추가 기능을 수용 기준 없이 확장",
+      "설치 완료율만으로 사업편익 확정",
+      "인수 담당자의 승인 절차 생략"
+    ],
+    "answer": 0,
+    "explanation": "산출물 생산 외에도 운영 인계와 실제 사용 준비가 완료되어야 목적을 달성할 수 있습니다.",
+    "syllabus": "4.4.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.1.1 프로젝트의 특성"
+    }
+  },
+  {
+    "id": "biz4-190",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트의 특성",
+    "prompt": "불확실한 조건을 사실처럼 계획에 넣었다. 별도로 관리할 대상은?",
+    "options": [
+      "확정된 결함",
+      "가정",
+      "검증된 실적",
+      "완료된 산출물"
+    ],
+    "answer": 1,
+    "explanation": "가정은 계획의 전제이지만 사실로 검증되지 않았으므로 변화와 유효성을 확인해야 합니다.",
+    "syllabus": "4.4.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.1.1 프로젝트의 특성"
+    }
+  },
+  {
+    "id": "biz4-191",
+    "revision": 1,
+    "area": "business",
+    "topic": "조직과 책임",
+    "prompt": "기능조직과 프로젝트조직의 권한을 함께 갖는 구조는?",
+    "options": [
+      "순수 제품시장",
+      "외부 감사조직",
+      "매트릭스 조직",
+      "단일 기능조직"
+    ],
+    "answer": 2,
+    "explanation": "매트릭스에서는 기능 관리자와 프로젝트 관리자의 권한이 함께 작용합니다.",
+    "syllabus": "4.4.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.1.2 조직과 책임"
+    }
+  },
+  {
+    "id": "biz4-192",
+    "revision": 1,
+    "area": "business",
+    "topic": "조직과 책임",
+    "prompt": "팀원이 두 관리자에게 서로 충돌하는 업무를 받았다. 필요한 것은?",
+    "options": [
+      "PM 요청을 모두 우선한다는 개인 판단",
+      "기능 관리자 요청을 기록 없이 우선",
+      "투입시간을 중복으로 계산하여 두 계획을 충족한 것으로 보고",
+      "우선순위와 자원 권한의 조정"
+    ],
+    "answer": 3,
+    "explanation": "이중 보고 구조에서는 역할·우선순위와 의사결정 권한을 명확히 조정해야 합니다.",
+    "syllabus": "4.4.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.1.2 조직과 책임"
+    }
+  },
+  {
+    "id": "biz4-193",
+    "revision": 1,
+    "area": "business",
+    "topic": "조직과 책임",
+    "prompt": "RACI에서 실제 작업을 수행하는 역할은?",
+    "options": [
+      "Responsible",
+      "Accountable",
+      "Consulted",
+      "Informed"
+    ],
+    "answer": 0,
+    "explanation": "R은 수행 책임이며 A는 결과에 대한 최종 책임입니다.",
+    "syllabus": "4.4.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.1.2 조직과 책임"
+    }
+  },
+  {
+    "id": "biz4-194",
+    "revision": 1,
+    "area": "business",
+    "topic": "조직과 책임",
+    "prompt": "RACI에서 최종 승인과 결과 책임을 맡는 역할은?",
+    "options": [
+      "Informed",
+      "Accountable",
+      "Responsible",
+      "Consulted"
+    ],
+    "answer": 1,
+    "explanation": "A는 최종 책임자로 R의 실제 수행 역할과 구별됩니다.",
+    "syllabus": "4.4.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.1.2 조직과 책임"
+    }
+  },
+  {
+    "id": "biz4-195",
+    "revision": 1,
+    "area": "business",
+    "topic": "조직과 책임",
+    "prompt": "RACI의 Consulted와 Informed 차이는?",
+    "options": [
+      "C는 단방향 통보, I는 양방향 협의이다",
+      "C는 기술 업무, I는 비기술 업무에만 배정한다",
+      "C는 의견을 구하고 I는 진행·결과를 알린다",
+      "C는 최종 책임, I는 실제 수행이다"
+    ],
+    "answer": 2,
+    "explanation": "협의 대상은 의견 교환에 참여하고 통보 대상은 정보를 전달받습니다.",
+    "syllabus": "4.4.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.1.2 조직과 책임"
+    }
+  },
+  {
+    "id": "biz4-196",
+    "revision": 1,
+    "area": "business",
+    "topic": "조직과 책임",
+    "prompt": "프로젝트 후원자의 대표 역할은?",
+    "options": [
+      "모든 작업 패키지의 일일 수행",
+      "개발 산출물의 단위시험 실행",
+      "개별 이슈의 코드 수정",
+      "사업적 지원과 상위 장애 해소"
+    ],
+    "answer": 3,
+    "explanation": "후원자는 자원·조직 지원과 상위 의사결정을 돕는 역할입니다.",
+    "syllabus": "4.4.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.1.2 조직과 책임"
+    }
+  },
+  {
+    "id": "biz4-197",
+    "revision": 1,
+    "area": "business",
+    "topic": "조직과 책임",
+    "prompt": "PMO가 여러 프로젝트에 공통 관리 양식을 제공한다. 기대 효과는?",
+    "options": [
+      "관리 방식과 보고의 일관성 향상",
+      "모든 프로젝트의 범위를 동일하게 만든다",
+      "개별 PM의 사업 목표를 대신 정한다",
+      "모든 위험 대응을 외주 수행사에 이전한다"
+    ],
+    "answer": 0,
+    "explanation": "PMO는 표준·지원·조정을 제공할 수 있지만 개별 목적이 같아지는 것은 아닙니다.",
+    "syllabus": "4.4.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.1.2 조직과 책임"
+    }
+  },
+  {
+    "id": "biz4-198",
+    "revision": 1,
+    "area": "business",
+    "topic": "조직과 책임",
+    "prompt": "애자일 팀에서 제품 가치와 백로그 우선순위를 책임지는 역할은?",
+    "options": [
+      "프로젝트 지원 행정 담당자",
+      "프로덕트 오너",
+      "스크럼 마스터",
+      "개발자 중 코드 작성량이 가장 많은 사람"
+    ],
+    "answer": 1,
+    "explanation": "프로덕트 오너는 제품 가치와 백로그 우선순위의 책임을 맡습니다.",
+    "syllabus": "4.4.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.1.2 조직과 책임"
+    }
+  },
+  {
+    "id": "biz4-199",
+    "revision": 1,
+    "area": "business",
+    "topic": "조직과 책임",
+    "prompt": "팀의 협업 장애를 제거하고 스크럼 이해를 돕는 역할은?",
+    "options": [
+      "기능조직 인사 담당자",
+      "제품의 단독 수용 승인자",
+      "스크럼 마스터",
+      "프로덕트 오너"
+    ],
+    "answer": 2,
+    "explanation": "스크럼 마스터는 스크럼의 효과적 실행과 팀의 개선을 돕습니다.",
+    "syllabus": "4.4.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.1.2 조직과 책임"
+    }
+  },
+  {
+    "id": "biz4-200",
+    "revision": 1,
+    "area": "business",
+    "topic": "조직과 책임",
+    "prompt": "책임자가 없는 산출물이 발견됐다. 우선 정비할 것은?",
+    "options": [
+      "문서별 작성 도구의 통일",
+      "작업 패키지 이름의 표준화만",
+      "보고 주기의 단축만",
+      "산출물별 담당·승인 역할"
+    ],
+    "answer": 3,
+    "explanation": "책임 공백은 역할과 의사결정 권한을 명확히 배정하여 해결합니다.",
+    "syllabus": "4.4.1.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.1.2 조직과 책임"
+    }
+  },
+  {
+    "id": "biz4-201",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 생명주기",
+    "prompt": "요구사항을 먼저 확정하고 설계·구현·시험을 순차 수행한다. 접근은?",
+    "options": [
+      "예측형 생명주기",
+      "적응형 생명주기",
+      "지속 운영",
+      "긴급 변경 관리"
+    ],
+    "answer": 0,
+    "explanation": "예측형은 초기에 범위와 계획을 구체화하는 접근이며 적응형은 변화와 반복 학습을 중시합니다.",
+    "syllabus": "4.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.1 프로젝트 생명주기"
+    }
+  },
+  {
+    "id": "biz4-202",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 생명주기",
+    "prompt": "짧은 주기마다 사용 가능한 기능을 추가해 제품을 확장한다. 핵심 특성은?",
+    "options": [
+      "조직 기능 분리",
+      "점진적 전달",
+      "일괄 전환",
+      "단일 최종 인수"
+    ],
+    "answer": 1,
+    "explanation": "점진적 접근은 부분 기능을 추가하면서 제품을 확장하며 반복 개선과 구분되는 전달 특성입니다.",
+    "syllabus": "4.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.1 프로젝트 생명주기"
+    }
+  },
+  {
+    "id": "biz4-203",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 생명주기",
+    "prompt": "동일한 화면 시안을 사용자 의견으로 여러 번 개선한다. 강조된 접근은?",
+    "options": [
+      "임계경로 계산",
+      "병행 운영",
+      "반복적 개발",
+      "일괄 배포"
+    ],
+    "answer": 2,
+    "explanation": "반복은 같은 대상을 피드백으로 정교화하는 것이며 새 기능의 추가만을 뜻하지 않습니다.",
+    "syllabus": "4.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.1 프로젝트 생명주기"
+    }
+  },
+  {
+    "id": "biz4-204",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 생명주기",
+    "prompt": "규제가 안정적이고 요구가 명확한 시스템에 적용을 우선 검토할 방식은?",
+    "options": [
+      "적응형 접근",
+      "탐색 중심 반복형 접근",
+      "기능별 가설 검증 중심 접근",
+      "예측형 접근"
+    ],
+    "answer": 3,
+    "explanation": "안정된 요구는 사전 계획 중심 접근에 유리합니다. 실제 선택에는 위험과 조직 조건도 봅니다.",
+    "syllabus": "4.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.1 프로젝트 생명주기"
+    }
+  },
+  {
+    "id": "biz4-205",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 생명주기",
+    "prompt": "고객 요구가 불확실하고 빠른 피드백이 가능한 서비스에 적합한 접근은?",
+    "options": [
+      "적응형 접근",
+      "초기에 상세 범위를 고정하고 최종 인수 때 피드백을 받는다",
+      "모든 기능을 한 번에 배포하고 이후에 요구를 수집한다",
+      "최초 추정한 상세 일정을 변경 검토 없이 유지한다"
+    ],
+    "answer": 0,
+    "explanation": "적응형은 짧은 피드백 주기로 요구와 해법을 조정합니다.",
+    "syllabus": "4.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.1 프로젝트 생명주기"
+    }
+  },
+  {
+    "id": "biz4-206",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 생명주기",
+    "prompt": "착수 단계의 상위 추정치가 상세 계획 후 달라졌다. 타당한 해석은?",
+    "options": [
+      "초기 추정을 정교화하는 대신 실제 비용을 바꿔 기록한다",
+      "정보가 구체화되면서 추정이 정교해질 수 있다",
+      "착수 때의 대략 추정을 상세 기준선으로 그대로 유지해야 한다",
+      "추정의 차이를 모두 팀의 생산성 저하로 분류한다"
+    ],
+    "answer": 1,
+    "explanation": "점진적 구체화에서는 정보가 늘며 계획의 상세도와 추정 정확도를 높입니다.",
+    "syllabus": "4.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.1 프로젝트 생명주기"
+    }
+  },
+  {
+    "id": "biz4-207",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 생명주기",
+    "prompt": "단계 종료 시 다음 단계의 추진 여부를 판단한다. 관리 방식은?",
+    "options": [
+      "일일 스크럼",
+      "구성 기준선 비교",
+      "단계 게이트",
+      "스프린트 회고"
+    ],
+    "answer": 2,
+    "explanation": "단계 게이트는 성과·위험·사업성을 확인해 다음 단계 진행을 결정하는 지점입니다.",
+    "syllabus": "4.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.1 프로젝트 생명주기"
+    }
+  },
+  {
+    "id": "biz4-208",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 생명주기",
+    "prompt": "종료 단계에서 계약·인수·교훈을 정리하는 주된 이유는?",
+    "options": [
+      "다음 프로젝트의 모든 요구를 선승인한다",
+      "잔여 이슈의 보고 없이 팀을 먼저 해산한다",
+      "운영 인수 없이 설치 완료만 확인한다",
+      "공식 완료와 지식 이전을 확인한다"
+    ],
+    "answer": 3,
+    "explanation": "종료는 산출물 수용과 행정적 마무리, 조직 학습의 전달을 포함합니다.",
+    "syllabus": "4.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.1 프로젝트 생명주기"
+    }
+  },
+  {
+    "id": "biz4-209",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 생명주기",
+    "prompt": "하드웨어는 사전 설계하고 사용자 앱은 반복 개발한다. 생명주기 선택은?",
+    "options": [
+      "하이브리드 접근",
+      "예측형만을 전 구성요소에 동일 적용",
+      "적응형만을 전 구성요소에 동일 적용",
+      "운영 생명주기만 적용"
+    ],
+    "answer": 0,
+    "explanation": "대상의 불확실성과 특성에 맞게 예측형·적응형 방식을 조합한 접근입니다.",
+    "syllabus": "4.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.1 프로젝트 생명주기"
+    }
+  },
+  {
+    "id": "biz4-210",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 생명주기",
+    "prompt": "반복 주기 말에 동작하는 기능을 시연하는 이유는?",
+    "options": [
+      "문서 분량을 제품 완성도의 대리지표로 사용한다",
+      "결과를 근거로 이해와 우선순위를 조정한다",
+      "투입시간만으로 제품 가치가 실현됐다고 판단한다",
+      "고객의 추가 의견을 최종 인수까지 유보한다"
+    ],
+    "answer": 1,
+    "explanation": "실제 동작하는 결과는 가정과 고객 기대 차이를 확인할 구체적 근거를 제공합니다.",
+    "syllabus": "4.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.1 프로젝트 생명주기"
+    }
+  },
+  {
+    "id": "biz4-211",
+    "revision": 1,
+    "area": "business",
+    "topic": "개발 방법론과 평가",
+    "prompt": "스크럼의 스프린트 리뷰에서 주로 살펴보는 것은?",
+    "options": [
+      "다음 날 개발자별 작업시간 할당",
+      "프로젝트 비용의 회계 마감",
+      "제품 결과와 다음 방향",
+      "팀 내부의 협업 방식 개선만"
+    ],
+    "answer": 2,
+    "explanation": "리뷰는 제품 증분을 이해관계자와 검토하며 팀의 일하는 방식 개선은 회고의 초점입니다.",
+    "syllabus": "4.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.1 개발 방법론과 평가"
+    }
+  },
+  {
+    "id": "biz4-212",
+    "revision": 1,
+    "area": "business",
+    "topic": "개발 방법론과 평가",
+    "prompt": "스프린트 회고의 주된 목적은?",
+    "options": [
+      "사용자에게 제품 증분을 보여주고 방향을 협의한다",
+      "제품 백로그의 모든 요구를 확정 계약으로 전환한다",
+      "다음 스프린트 목표를 후원자가 단독 지정한다",
+      "팀의 협업과 작업 방식을 개선한다"
+    ],
+    "answer": 3,
+    "explanation": "회고는 사람·절차·도구를 돌아보고 다음 주기의 실행 방식을 개선합니다.",
+    "syllabus": "4.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.1 개발 방법론과 평가"
+    }
+  },
+  {
+    "id": "biz4-213",
+    "revision": 1,
+    "area": "business",
+    "topic": "개발 방법론과 평가",
+    "prompt": "칸반에서 진행 중 작업 수를 제한하는 이유는?",
+    "options": [
+      "동시 작업과 병목을 줄여 흐름을 개선한다",
+      "유휴 인력을 줄이려고 새 작업을 계속 착수한다",
+      "완료량 대신 착수량만 높인다",
+      "전문가마다 대기 작업을 최대한 쌓는다"
+    ],
+    "answer": 0,
+    "explanation": "WIP 제한은 과도한 병행과 대기를 줄이며 흐름의 병목을 드러냅니다.",
+    "syllabus": "4.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.1 개발 방법론과 평가"
+    }
+  },
+  {
+    "id": "biz4-214",
+    "revision": 1,
+    "area": "business",
+    "topic": "개발 방법론과 평가",
+    "prompt": "제품 백로그의 정렬 기준으로 더 적절한 것은?",
+    "options": [
+      "모든 요청을 같은 우선순위로 취급한다",
+      "가치·위험·의존성을 종합한다",
+      "가장 먼저 접수된 요청 순서만 따른다",
+      "구현이 쉬운 항목을 가치와 무관하게 앞세운다"
+    ],
+    "answer": 1,
+    "explanation": "백로그는 사업가치와 학습 필요, 위험, 선행 조건을 고려해 우선순위를 조정합니다.",
+    "syllabus": "4.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.1 개발 방법론과 평가"
+    }
+  },
+  {
+    "id": "biz4-215",
+    "revision": 1,
+    "area": "business",
+    "topic": "개발 방법론과 평가",
+    "prompt": "사용자 스토리의 일반적 표현은?",
+    "options": [
+      "담당자·시작일·완료일만 기록",
+      "기능명·코드파일·버전만 기록",
+      "역할·원하는 것·이유",
+      "입력값·예외·응답시간만 열거"
+    ],
+    "answer": 2,
+    "explanation": "사용자 스토리는 누가 무엇을 왜 원하는지 전달하며 세부 수용 기준으로 보완합니다.",
+    "syllabus": "4.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.1 개발 방법론과 평가"
+    }
+  },
+  {
+    "id": "biz4-216",
+    "revision": 1,
+    "area": "business",
+    "topic": "개발 방법론과 평가",
+    "prompt": "스토리 포인트의 용도로 적절한 것은?",
+    "options": [
+      "팀 간 생산성을 동일 척도로 직접 비교한다",
+      "포인트당 고정 시간을 계약으로 환산한다",
+      "개인의 성과급 산정 점수로 사용한다",
+      "팀 내 작업 규모를 상대적으로 추정한다"
+    ],
+    "answer": 3,
+    "explanation": "포인트는 상대적 추정치이므로 시간과 고정 비례하거나 팀 간 비교 단위라고 단정할 수 없습니다.",
+    "syllabus": "4.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.1 개발 방법론과 평가"
+    }
+  },
+  {
+    "id": "biz4-217",
+    "revision": 1,
+    "area": "business",
+    "topic": "개발 방법론과 평가",
+    "prompt": "한 팀의 지난 반복별 완료량을 이용해 향후 범위를 예측한다. 참고 지표는?",
+    "options": [
+      "벨로시티",
+      "서버 가용성",
+      "NPV",
+      "결함 심각도"
+    ],
+    "answer": 0,
+    "explanation": "벨로시티는 팀의 반복별 완료량을 바탕으로 계획을 돕지만 확정 보장치는 아닙니다.",
+    "syllabus": "4.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.1 개발 방법론과 평가"
+    }
+  },
+  {
+    "id": "biz4-218",
+    "revision": 1,
+    "area": "business",
+    "topic": "개발 방법론과 평가",
+    "prompt": "완료 정의(DoD)가 팀에 필요한 이유는?",
+    "options": [
+      "반복별 기능 범위를 고정한다",
+      "완료로 인정할 공통 품질 기준을 맞춘다",
+      "개별 기능의 동작 시나리오만 정의한다",
+      "제품 항목의 투자순위를 결정한다"
+    ],
+    "answer": 1,
+    "explanation": "DoD는 테스트 등 제품 증분에 공통으로 요구하는 완료 조건입니다.",
+    "syllabus": "4.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.1 개발 방법론과 평가"
+    }
+  },
+  {
+    "id": "biz4-219",
+    "revision": 1,
+    "area": "business",
+    "topic": "개발 방법론과 평가",
+    "prompt": "한 기능의 수용 기준과 DoD의 차이는?",
+    "options": [
+      "DoD는 특정 스토리의 업무 행동만 정의한다",
+      "둘은 제품 백로그의 우선순위와 같은 개념이다",
+      "수용 기준은 해당 기능의 기대 행동을 구체화한다",
+      "수용 기준은 전 제품의 공통 시험 절차만 뜻한다"
+    ],
+    "answer": 2,
+    "explanation": "수용 기준은 개별 기능의 충족 조건이고 DoD는 공통 완료·품질 기준입니다.",
+    "syllabus": "4.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.1 개발 방법론과 평가"
+    }
+  },
+  {
+    "id": "biz4-220",
+    "revision": 1,
+    "area": "business",
+    "topic": "개발 방법론과 평가",
+    "prompt": "방법론 도입 효과를 평가할 때 적절한 방식은?",
+    "options": [
+      "회의 형식의 이름이 바뀌었는지만 본다",
+      "사용한 도구의 기능 개수만 비교한다",
+      "산출물 문서 수만으로 성숙도를 판단한다",
+      "예측가능성·품질·가치 전달의 변화를 함께 본다"
+    ],
+    "answer": 3,
+    "explanation": "방법론은 형식 준수보다 실제 전달 흐름과 결과의 개선으로 평가해야 합니다.",
+    "syllabus": "4.4.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.1 개발 방법론과 평가"
+    }
+  },
+  {
+    "id": "biz4-221",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 문서",
+    "prompt": "RFP의 목적에 가장 가까운 것은?",
+    "options": [
+      "공급자가 제안할 요구와 평가 조건을 제시한다",
+      "완료 제품의 인수를 확정한다",
+      "운영 장애의 원인을 기록한다",
+      "개발 소스의 변경 이력을 저장한다"
+    ],
+    "answer": 0,
+    "explanation": "제안요청서는 발주 요구와 제안·선정 조건을 전달하며 최종 인수 문서와 다릅니다.",
+    "syllabus": "4.4.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.2 프로젝트 문서"
+    }
+  },
+  {
+    "id": "biz4-222",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 문서",
+    "prompt": "제안서와 제안요청서의 관계는?",
+    "options": [
+      "두 문서는 작성 주체와 목적이 항상 같다",
+      "제안서는 요청 요구에 대한 수행 방안을 제시한다",
+      "제안서는 발주자가 요구를 최초 정의하는 문서다",
+      "제안요청서는 최종 테스트 결과다"
+    ],
+    "answer": 1,
+    "explanation": "수행 후보자는 RFP에 대응해 해결 방안·일정·비용 등을 제안합니다.",
+    "syllabus": "4.4.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.2 프로젝트 문서"
+    }
+  },
+  {
+    "id": "biz4-223",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 문서",
+    "prompt": "프로젝트 관리계획서가 다룰 내용은?",
+    "options": [
+      "제품 요구와 시험 사례의 연결",
+      "발생한 이슈의 해결 이력만",
+      "범위·일정·품질·위험 등을 어떻게 관리할지",
+      "단일 산출물의 공식 수용 결과"
+    ],
+    "answer": 2,
+    "explanation": "관리계획서는 수행과 통제를 위한 계획들을 통합하며 단일 결과 기록과 다릅니다.",
+    "syllabus": "4.4.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.2 프로젝트 문서"
+    }
+  },
+  {
+    "id": "biz4-224",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 문서",
+    "prompt": "회의록의 의사결정 후 실행력을 높이는 요소는?",
+    "options": [
+      "참석자의 부서와 직급만",
+      "발언 순서와 회의 소요시간만",
+      "공유 자료의 파일명만",
+      "결정사항·담당자·기한"
+    ],
+    "answer": 3,
+    "explanation": "결정의 책임과 실행 시점을 남겨야 후속 조치를 추적할 수 있습니다.",
+    "syllabus": "4.4.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.2 프로젝트 문서"
+    }
+  },
+  {
+    "id": "biz4-225",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 문서",
+    "prompt": "결정한 요구사항이 시험에서 검증됐는지 연결하는 문서는?",
+    "options": [
+      "요구사항 추적표",
+      "WBS 사전",
+      "인수 확인서",
+      "변경 요청서"
+    ],
+    "answer": 0,
+    "explanation": "추적표는 요구와 설계·구현·시험의 연결로 누락과 변경 영향을 확인합니다.",
+    "syllabus": "4.4.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.2 프로젝트 문서"
+    }
+  },
+  {
+    "id": "biz4-226",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 문서",
+    "prompt": "이슈 로그에 위험 등록부와 구별해 기록할 대상은?",
+    "options": [
+      "승인된 범위의 기준 내용",
+      "이미 발생하여 해결이 필요한 문제",
+      "아직 발생하지 않은 불확실 사건",
+      "제품이 충족해야 할 기능 조건"
+    ],
+    "answer": 1,
+    "explanation": "이슈는 발생한 문제이고 위험은 불확실한 미래 사건·조건입니다.",
+    "syllabus": "4.4.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.2 프로젝트 문서"
+    }
+  },
+  {
+    "id": "biz4-227",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 문서",
+    "prompt": "변경 요청서에 필요한 정보는?",
+    "options": [
+      "개발 완료 사실만 적어 사후 통보",
+      "변경과 무관한 전체 회의록 첨부",
+      "변경 사유와 범위·일정·비용 영향",
+      "요청 내용만 적고 영향은 승인 후 확인"
+    ],
+    "answer": 2,
+    "explanation": "변경 요청은 판단할 수 있도록 이유와 영향을 명시해야 승인 절차가 작동합니다.",
+    "syllabus": "4.4.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.2 프로젝트 문서"
+    }
+  },
+  {
+    "id": "biz4-228",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 문서",
+    "prompt": "인수 확인서의 의미로 적절한 것은?",
+    "options": [
+      "프로젝트 착수와 PM 권한을 부여한다",
+      "새 요구의 우선순위를 확정한다",
+      "완료 이후 발생 가능한 모든 결함을 면책한다",
+      "정한 기준에 따른 산출물 수용을 기록한다"
+    ],
+    "answer": 3,
+    "explanation": "인수는 정한 산출물과 기준의 수용을 확인하며 완전한 무결함 보증과 다릅니다.",
+    "syllabus": "4.4.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.2 프로젝트 문서"
+    }
+  },
+  {
+    "id": "biz4-229",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 문서",
+    "prompt": "교훈 문서의 활용도를 높이는 기록은?",
+    "options": [
+      "상황·원인·조치·효과·재사용 조건",
+      "개인 실수의 이름별 순위",
+      "성과가 좋았다는 결과만",
+      "참여자와 회의시간 목록만"
+    ],
+    "answer": 0,
+    "explanation": "재사용하려면 어떤 조건에서 무엇이 효과가 있었는지 설명해야 합니다.",
+    "syllabus": "4.4.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.2 프로젝트 문서"
+    }
+  },
+  {
+    "id": "biz4-230",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 문서",
+    "prompt": "문서 승인본과 작업본이 혼재한다. 우선 적용할 관리는?",
+    "options": [
+      "담당자 개인 메일의 최신 첨부만 기준으로 사용",
+      "버전·승인 상태·배포 위치 관리",
+      "문서 파일명만 매번 임의 변경",
+      "완료된 문서와 초안을 한 위치에 상태 구분 없이 보관"
+    ],
+    "answer": 1,
+    "explanation": "어떤 문서가 유효한지 추적하도록 상태와 버전·접근 위치를 명확히 해야 합니다.",
+    "syllabus": "4.4.2.2",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.4.2.2 프로젝트 문서"
+    }
+  },
+  {
+    "id": "biz4-231",
+    "revision": 1,
+    "area": "business",
+    "topic": "범위와 WBS",
+    "prompt": "WBS를 작성하는 주된 목적은?",
+    "options": [
+      "활동의 선후관계만 계산한다",
+      "결함 발생 빈도를 정렬한다",
+      "전체 작업 범위를 관리 가능한 단위로 분해한다",
+      "팀의 상하 보고선을 표현한다"
+    ],
+    "answer": 2,
+    "explanation": "WBS는 범위의 계층적 분해이며 조직도나 일정 네트워크도와 목적이 다릅니다.",
+    "syllabus": "4.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.1.1 범위와 WBS"
+    }
+  },
+  {
+    "id": "biz4-232",
+    "revision": 1,
+    "area": "business",
+    "topic": "범위와 WBS",
+    "prompt": "WBS의 100% 규칙이 강조하는 것은?",
+    "options": [
+      "모든 하위 항목의 진도율 합이 100이 된다",
+      "하위 항목별 예산을 균등하게 나눈다",
+      "외주 범위는 수행사가 관리하므로 제외한다",
+      "상위 범위의 전체 작업을 하위 항목이 포괄한다"
+    ],
+    "answer": 3,
+    "explanation": "100% 규칙은 범위의 누락·중복을 줄이기 위한 포괄성 원칙입니다.",
+    "syllabus": "4.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.1.1 범위와 WBS"
+    }
+  },
+  {
+    "id": "biz4-233",
+    "revision": 1,
+    "area": "business",
+    "topic": "범위와 WBS",
+    "prompt": "작업 패키지를 너무 크게 두면 생기기 쉬운 문제는?",
+    "options": [
+      "추정·책임 배정·진도 확인이 어려워진다",
+      "작업 패키지가 곧 조직 부서가 된다",
+      "활동 기간의 추정이 불필요해진다",
+      "범위와 일정의 연결이 자동 생성된다"
+    ],
+    "answer": 0,
+    "explanation": "작업 패키지는 관리할 수 있을 정도의 크기여야 추정과 통제가 가능합니다.",
+    "syllabus": "4.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.1.1 범위와 WBS"
+    }
+  },
+  {
+    "id": "biz4-234",
+    "revision": 1,
+    "area": "business",
+    "topic": "범위와 WBS",
+    "prompt": "WBS 사전에서 보완할 정보는?",
+    "options": [
+      "활동별 선후관계만",
+      "작업 설명·산출물·수용 조건",
+      "업무 책임의 조직 보고선만",
+      "프로젝트별 투자 우선순위"
+    ],
+    "answer": 1,
+    "explanation": "WBS 사전은 항목 이름만으로 불명확한 범위와 완료 조건을 구체화합니다.",
+    "syllabus": "4.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.1.1 범위와 WBS"
+    }
+  },
+  {
+    "id": "biz4-235",
+    "revision": 1,
+    "area": "business",
+    "topic": "범위와 WBS",
+    "prompt": "제품 범위와 프로젝트 범위의 구별은?",
+    "options": [
+      "제품 범위는 하드웨어, 프로젝트 범위는 소프트웨어다",
+      "제품 범위는 비용, 프로젝트 범위는 일정이다",
+      "제품 범위는 특성·기능, 프로젝트 범위는 이를 만들 작업",
+      "제품 범위는 수행 작업, 프로젝트 범위는 결과의 기능이다"
+    ],
+    "answer": 2,
+    "explanation": "제품이 무엇이어야 하는지와 그것을 만들기 위해 수행할 작업은 구별됩니다.",
+    "syllabus": "4.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.1.1 범위와 WBS"
+    }
+  },
+  {
+    "id": "biz4-236",
+    "revision": 1,
+    "area": "business",
+    "topic": "범위와 WBS",
+    "prompt": "승인 없이 작은 기능이 계속 추가되어 일정이 늦어진다. 현상은?",
+    "options": [
+      "자원 평준화",
+      "위험 전가",
+      "단계 게이트",
+      "범위 크리프"
+    ],
+    "answer": 3,
+    "explanation": "범위 크리프는 통제되지 않은 범위 확장이 누적되는 현상입니다.",
+    "syllabus": "4.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.1.1 범위와 WBS"
+    }
+  },
+  {
+    "id": "biz4-237",
+    "revision": 1,
+    "area": "business",
+    "topic": "범위와 WBS",
+    "prompt": "고객이 요청하지 않은 고급 기능을 임의로 넣었다. 문제는?",
+    "options": [
+      "불필요한 범위와 위험을 추가할 수 있다",
+      "고객 요청 없이도 변경 승인이 완료된 것으로 본다",
+      "기능이 늘었으므로 수용 기준 충족도 자동 인정된다",
+      "요구 변경 기록 대신 개발자 판단만으로 처리한다"
+    ],
+    "answer": 0,
+    "explanation": "골드 플레이팅은 요구 범위를 넘어 비용·시험·유지보수 부담을 늘릴 수 있습니다.",
+    "syllabus": "4.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.1.1 범위와 WBS"
+    }
+  },
+  {
+    "id": "biz4-238",
+    "revision": 1,
+    "area": "business",
+    "topic": "범위와 WBS",
+    "prompt": "범위 기준선을 바꾸려면 필요한 절차는?",
+    "options": [
+      "담당자가 작업 목록만 바꾸고 기준선은 유지한다",
+      "영향을 분석하고 정한 승인 절차를 따른다",
+      "변경 요청을 개발 후 보고한다",
+      "초기 계획이므로 모든 변경을 무조건 거절한다"
+    ],
+    "answer": 1,
+    "explanation": "기준선은 통제 기준이므로 승인된 변경을 통해 갱신합니다.",
+    "syllabus": "4.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.1.1 범위와 WBS"
+    }
+  },
+  {
+    "id": "biz4-239",
+    "revision": 1,
+    "area": "business",
+    "topic": "범위와 WBS",
+    "prompt": "범위 확인과 품질 통제의 차이는?",
+    "options": [
+      "범위 확인은 일정 수립, 품질 통제는 범위 확장이다",
+      "범위 확인과 품질 통제는 같은 승인 서명만 뜻한다",
+      "범위 확인은 고객의 수용, 품질 통제는 적합성 검증에 초점",
+      "범위 확인은 결함 예방, 품질 통제는 투자승인이다"
+    ],
+    "answer": 2,
+    "explanation": "산출물의 정확성 검증과 이해관계자의 공식 수용은 관련되지만 다른 활동입니다.",
+    "syllabus": "4.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.1.1 범위와 WBS"
+    }
+  },
+  {
+    "id": "biz4-240",
+    "revision": 1,
+    "area": "business",
+    "topic": "범위와 WBS",
+    "prompt": "새 기능을 넣는 대신 기존 기능을 빼기로 합의했다. 먼저 확인할 것은?",
+    "options": [
+      "항목 수가 같으므로 같은 작업량으로 간주한다",
+      "새 기능의 구현 용이성만 확인한다",
+      "변경 요청 순서만 보고 대체 항목을 결정한다",
+      "가치와 의존성·수용 조건에 미치는 영향"
+    ],
+    "answer": 3,
+    "explanation": "항목 수가 같아도 작업량·의존성·목표가 달라질 수 있어 영향 검토가 필요합니다.",
+    "syllabus": "4.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.1.1 범위와 WBS"
+    }
+  },
+  {
+    "id": "biz4-241",
+    "revision": 1,
+    "area": "business",
+    "topic": "요구사항과 범위 합의",
+    "prompt": "'시스템이 빨라야 한다'를 검증 가능하게 보완한 것은?",
+    "options": [
+      "동시 사용자 100명에서 조회의 95%가 2초 이내",
+      "최신 기술을 최대한 사용",
+      "사용자가 만족할 정도로 빠름",
+      "다른 회사보다 느낌이 좋음"
+    ],
+    "answer": 0,
+    "explanation": "부하 조건과 수치 기준을 정해야 성능 요구를 시험하고 수용할 수 있습니다.",
+    "syllabus": "4.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.1.1 요구사항과 범위 합의"
+    }
+  },
+  {
+    "id": "biz4-242",
+    "revision": 1,
+    "area": "business",
+    "topic": "요구사항과 범위 합의",
+    "prompt": "주문을 취소할 수 있다는 기능과 응답시간 2초 요구의 구별은?",
+    "options": [
+      "둘 다 프로젝트 일정 활동",
+      "전자는 기능 요구, 후자는 비기능 요구",
+      "전자는 품질 요구, 후자는 업무 기능",
+      "둘 다 조직 구조 요구"
+    ],
+    "answer": 1,
+    "explanation": "무엇을 하는지는 기능이며 성능 등 어떻게 제공되는지의 품질 속성은 비기능입니다.",
+    "syllabus": "4.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.1.1 요구사항과 범위 합의"
+    }
+  },
+  {
+    "id": "biz4-243",
+    "revision": 1,
+    "area": "business",
+    "topic": "요구사항과 범위 합의",
+    "prompt": "현업 두 부서의 요구가 충돌할 때 우선 할 일은?",
+    "options": [
+      "더 쉽게 구현할 수 있는 요구만 자동 채택한다",
+      "상충 조건을 남긴 채 개발팀이 각각 구현한다",
+      "사업 목표와 제약을 기준으로 조정한다",
+      "먼저 접수된 요구를 별도 검토 없이 우선한다"
+    ],
+    "answer": 2,
+    "explanation": "충돌은 가치와 제약·영향을 명확히 하여 합의할 문제입니다.",
+    "syllabus": "4.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.1.1 요구사항과 범위 합의"
+    }
+  },
+  {
+    "id": "biz4-244",
+    "revision": 1,
+    "area": "business",
+    "topic": "요구사항과 범위 합의",
+    "prompt": "요구사항 추적이 변경 영향 분석에 유용한 이유는?",
+    "options": [
+      "변경 요청을 승인하는 권한을 자동 부여한다",
+      "모든 연결 산출물이 함께 자동 수정된다",
+      "요구를 최초 버전에 고정해 변경을 막는다",
+      "연결된 설계·구현·시험을 찾을 수 있다"
+    ],
+    "answer": 3,
+    "explanation": "추적 관계는 변경이 어디까지 영향을 미치는지 파악하는 근거를 제공합니다.",
+    "syllabus": "4.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.1.1 요구사항과 범위 합의"
+    }
+  },
+  {
+    "id": "biz4-245",
+    "revision": 1,
+    "area": "business",
+    "topic": "요구사항과 범위 합의",
+    "prompt": "MoSCoW의 Must Have를 판단하는 질문은?",
+    "options": [
+      "없으면 이번 결과가 목적을 달성할 수 없는가",
+      "구현 비용이 가장 낮은가",
+      "가장 최근 접수된 요구인가",
+      "다음 릴리스로 미뤄도 되는가"
+    ],
+    "answer": 0,
+    "explanation": "Must Have는 해당 전달 범위에서 필수적인 요구이며 쉽거나 새로운 요구를 뜻하지 않습니다.",
+    "syllabus": "4.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.1.1 요구사항과 범위 합의"
+    }
+  },
+  {
+    "id": "biz4-246",
+    "revision": 1,
+    "area": "business",
+    "topic": "요구사항과 범위 합의",
+    "prompt": "범위 제외사항을 명시하는 주된 효과는?",
+    "options": [
+      "범위 기준선의 갱신을 금지한다",
+      "포함되지 않는 작업에 대한 기대 차이를 줄인다",
+      "요구변경의 승인 절차를 대체한다",
+      "개발자가 고급 기능을 임의로 넣을 근거가 된다"
+    ],
+    "answer": 1,
+    "explanation": "명시적 제외는 경계를 분명히 해 서로 다른 해석과 분쟁을 줄입니다.",
+    "syllabus": "4.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.1.1 요구사항과 범위 합의"
+    }
+  },
+  {
+    "id": "biz4-247",
+    "revision": 1,
+    "area": "business",
+    "topic": "요구사항과 범위 합의",
+    "prompt": "프로토타입을 요구 확인에 쓰는 장점은?",
+    "options": [
+      "운영 보안 적합성을 최종 승인한다",
+      "데이터 이전 정합성을 검증한다",
+      "추상적 설명의 해석 차이를 구체적으로 확인한다",
+      "실제 운영 부하의 성능을 확정한다"
+    ],
+    "answer": 2,
+    "explanation": "시안은 기대를 맞추는 데 유용하지만 운영 품질을 모두 검증하는 것은 아닙니다.",
+    "syllabus": "4.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.1.1 요구사항과 범위 합의"
+    }
+  },
+  {
+    "id": "biz4-248",
+    "revision": 1,
+    "area": "business",
+    "topic": "요구사항과 범위 합의",
+    "prompt": "서로 모순되는 수용 기준이 발견됐다. 개발 전 필요한 것은?",
+    "options": [
+      "구현 후 만족한 기준만 선택한다",
+      "수용 단계에서 시험팀이 단독 결정한다",
+      "두 기준을 기록 없이 기능별로 선택 적용한다",
+      "요구 소유자와 기준을 정합하게 합의한다"
+    ],
+    "answer": 3,
+    "explanation": "검증 기준의 모순은 구현과 인수 분쟁을 초래하므로 사전에 조정합니다.",
+    "syllabus": "4.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.1.1 요구사항과 범위 합의"
+    }
+  },
+  {
+    "id": "biz4-249",
+    "revision": 1,
+    "area": "business",
+    "topic": "요구사항과 범위 합의",
+    "prompt": "요구 변경의 원인이 규제 변경으로 확인됐다. 적절한 처리는?",
+    "options": [
+      "준수 필요성과 영향을 분석해 변경을 관리한다",
+      "외부 원인이므로 변경 영향 분석을 생략한다",
+      "최초 계약 범위 밖이면 검토 없이 거절한다",
+      "규제에 관련 없는 기존 요구까지 일괄 폐기한다"
+    ],
+    "answer": 0,
+    "explanation": "필수 변화라도 범위·비용·일정 영향을 파악하고 승인·추적해야 합니다.",
+    "syllabus": "4.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.1.1 요구사항과 범위 합의"
+    }
+  },
+  {
+    "id": "biz4-250",
+    "revision": 1,
+    "area": "business",
+    "topic": "요구사항과 범위 합의",
+    "prompt": "인수시험 중 처음 성능 기준을 정하자는 의견이 나왔다. 주요 위험은?",
+    "options": [
+      "수용 기준이 없어도 완료의 객관적 판단이 보장된다",
+      "완료에 대한 기대가 서로 달라질 수 있다",
+      "성능 요구가 자동으로 기능 요구로 바뀐다",
+      "시험팀의 사후 판단만으로 계약상 합의가 성립한다"
+    ],
+    "answer": 1,
+    "explanation": "기준을 늦게 정하면 개발 결과의 수용 여부에 대한 합의가 어려워집니다.",
+    "syllabus": "4.5.1.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.1.1 요구사항과 범위 합의"
+    }
+  },
+  {
+    "id": "biz4-251",
+    "revision": 1,
+    "area": "business",
+    "topic": "일정 관리 개념",
+    "prompt": "활동의 선후관계를 표현하는 데 가장 적합한 도구는?",
+    "options": [
+      "파레토 차트",
+      "서비스 카탈로그",
+      "일정 네트워크도",
+      "RACI 표"
+    ],
+    "answer": 2,
+    "explanation": "네트워크도는 의존관계를 드러내고 RACI는 역할과 책임을 표현합니다.",
+    "syllabus": "4.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.2.1 일정 관리 개념"
+    }
+  },
+  {
+    "id": "biz4-252",
+    "revision": 1,
+    "area": "business",
+    "topic": "일정 관리 개념",
+    "prompt": "기간이 0인 주요 완료 지점을 표시한다. 일정 요소는?",
+    "options": [
+      "작업 패키지",
+      "자원 풀",
+      "위험 대응책",
+      "마일스톤"
+    ],
+    "answer": 3,
+    "explanation": "마일스톤은 주요 사건이나 승인 지점이며 그 자체를 수행시간 있는 작업으로 보지 않습니다.",
+    "syllabus": "4.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.2.1 일정 관리 개념"
+    }
+  },
+  {
+    "id": "biz4-253",
+    "revision": 1,
+    "area": "business",
+    "topic": "일정 관리 개념",
+    "prompt": "기초 공사가 끝나야 기둥 작업을 시작한다. 의존관계는?",
+    "options": [
+      "Finish-to-Start",
+      "Start-to-Start",
+      "Finish-to-Finish",
+      "Start-to-Finish"
+    ],
+    "answer": 0,
+    "explanation": "선행 활동의 완료가 후행 활동의 시작 조건이면 FS 관계입니다.",
+    "syllabus": "4.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.2.1 일정 관리 개념"
+    }
+  },
+  {
+    "id": "biz4-254",
+    "revision": 1,
+    "area": "business",
+    "topic": "일정 관리 개념",
+    "prompt": "A 부서 검토가 시작되어야 B 부서 검토도 시작할 수 있다. 이 의존관계는?",
+    "options": [
+      "Start-to-Finish",
+      "Start-to-Start",
+      "Finish-to-Start",
+      "Finish-to-Finish"
+    ],
+    "answer": 1,
+    "explanation": "선행 활동의 시작이 후행 활동의 시작을 제한하면 SS 관계입니다.",
+    "syllabus": "4.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.2.1 일정 관리 개념"
+    }
+  },
+  {
+    "id": "biz4-255",
+    "revision": 1,
+    "area": "business",
+    "topic": "일정 관리 개념",
+    "prompt": "도장 후 2일이 지나야 조립을 시작한다. 2일의 대기 설정은?",
+    "options": [
+      "마일스톤",
+      "총여유",
+      "래그",
+      "리드"
+    ],
+    "answer": 2,
+    "explanation": "래그는 관계에 넣는 지연시간이며 리드는 후행 작업의 앞당김을 나타냅니다.",
+    "syllabus": "4.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.2.1 일정 관리 개념"
+    }
+  },
+  {
+    "id": "biz4-256",
+    "revision": 1,
+    "area": "business",
+    "topic": "일정 관리 개념",
+    "prompt": "설계가 완전히 끝나기 전 구현 일부를 시작하게 한다. 일정 조정은?",
+    "options": [
+      "크래싱",
+      "기준선 동결",
+      "범위 확인",
+      "패스트 트래킹"
+    ],
+    "answer": 3,
+    "explanation": "패스트 트래킹은 순차 활동을 겹쳐 진행하므로 재작업 위험이 늘 수 있습니다.",
+    "syllabus": "4.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.2.1 일정 관리 개념"
+    }
+  },
+  {
+    "id": "biz4-257",
+    "revision": 1,
+    "area": "business",
+    "topic": "일정 관리 개념",
+    "prompt": "추가 비용으로 핵심 작업 인력을 늘려 기간을 줄인다. 기법은?",
+    "options": [
+      "크래싱",
+      "패스트 트래킹",
+      "위험 수용",
+      "자원 평활화만"
+    ],
+    "answer": 0,
+    "explanation": "크래싱은 자원·비용을 추가해 기간을 단축하는 방식입니다.",
+    "syllabus": "4.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.2.1 일정 관리 개념"
+    }
+  },
+  {
+    "id": "biz4-258",
+    "revision": 1,
+    "area": "business",
+    "topic": "일정 관리 개념",
+    "prompt": "인력 사용량이 공급 한도를 넘지 않게 활동 시점을 조정한다. 기법은?",
+    "options": [
+      "범위 크리프",
+      "자원 평준화",
+      "패스트 트래킹",
+      "임계경로 단축"
+    ],
+    "answer": 1,
+    "explanation": "자원 평준화는 자원 제약을 해소하며 임계경로나 전체 기간이 바뀔 수 있습니다.",
+    "syllabus": "4.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.2.1 일정 관리 개념"
+    }
+  },
+  {
+    "id": "biz4-259",
+    "revision": 1,
+    "area": "business",
+    "topic": "일정 관리 개념",
+    "prompt": "전체 완료일을 바꾸지 않고 여유시간 내에서 자원 부하를 조정한다. 기법은?",
+    "options": [
+      "크래싱",
+      "패스트 트래킹",
+      "자원 평활화",
+      "자원 평준화"
+    ],
+    "answer": 2,
+    "explanation": "평활화는 일정의 여유 범위 안에서 자원을 조정하여 기준 완료일을 유지합니다.",
+    "syllabus": "4.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.2.1 일정 관리 개념"
+    }
+  },
+  {
+    "id": "biz4-260",
+    "revision": 1,
+    "area": "business",
+    "topic": "일정 관리 개념",
+    "prompt": "기간 추정과 노력 추정이 다른 이유는?",
+    "options": [
+      "작업량은 인원이 달라져도 경과시간과 항상 같다",
+      "기간에는 대기시간이 포함되지 않는다",
+      "노력 추정만 있으면 의존관계 검토가 필요 없다",
+      "같은 노력도 투입 자원과 대기에 따라 기간이 달라진다"
+    ],
+    "answer": 3,
+    "explanation": "노력은 작업량이고 기간은 경과시간으로 인력·작업 가능 시간·대기 영향을 받습니다.",
+    "syllabus": "4.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.2.1 일정 관리 개념"
+    }
+  },
+  {
+    "id": "biz4-261",
+    "revision": 1,
+    "area": "business",
+    "topic": "일정 계산과 판단",
+    "prompt": "A 3일 후 B 4일을 순차 수행한다. 다른 제약이 없을 때 총기간은?",
+    "options": [
+      "7일",
+      "4일",
+      "3일",
+      "12일"
+    ],
+    "answer": 0,
+    "explanation": "선행 A가 끝나야 B를 시작하므로 기간은 3+4=7일입니다. 병렬 관계일 때처럼 큰 값 하나만 고르면 안 됩니다.",
+    "syllabus": "4.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.2.1 일정 계산과 판단"
+    }
+  },
+  {
+    "id": "biz4-262",
+    "revision": 1,
+    "area": "business",
+    "topic": "일정 계산과 판단",
+    "prompt": "A 3일 후 B 4일과 C 6일을 병렬 수행하고 모두 끝나야 종료한다. 총기간은?",
+    "options": [
+      "6일",
+      "9일",
+      "13일",
+      "7일"
+    ],
+    "answer": 1,
+    "explanation": "선행 A 이후 더 긴 병렬 경로 C가 종료를 결정하므로 3+6=9일입니다.",
+    "syllabus": "4.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.2.1 일정 계산과 판단"
+    }
+  },
+  {
+    "id": "biz4-263",
+    "revision": 1,
+    "area": "business",
+    "topic": "일정 계산과 판단",
+    "prompt": "두 독립 경로의 기간이 12일과 9일이다. 9일 경로에 다른 제약이 없을 때 총여유는?",
+    "options": [
+      "12일",
+      "21일",
+      "3일",
+      "9일"
+    ],
+    "answer": 2,
+    "explanation": "프로젝트 종료 12일을 늦추지 않는 범위는 12-9=3일입니다.",
+    "syllabus": "4.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.2.1 일정 계산과 판단"
+    }
+  },
+  {
+    "id": "biz4-264",
+    "revision": 1,
+    "area": "business",
+    "topic": "일정 계산과 판단",
+    "prompt": "임계경로의 활동이 2일 지연됐고 만회나 경로 변화가 없다. 완료일 영향은?",
+    "options": [
+      "영향 없음",
+      "1일 지연",
+      "2일 단축",
+      "2일 지연"
+    ],
+    "answer": 3,
+    "explanation": "여유가 없는 임계 활동의 지연은 이 조건에서 전체 완료 지연으로 이어집니다.",
+    "syllabus": "4.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.2.1 일정 계산과 판단"
+    }
+  },
+  {
+    "id": "biz4-265",
+    "revision": 1,
+    "area": "business",
+    "topic": "일정 계산과 판단",
+    "prompt": "총여유 4일인 활동이 3일 지연됐다. 다른 변화가 없다면 남은 총여유는?",
+    "options": [
+      "1일",
+      "3일",
+      "4일",
+      "7일"
+    ],
+    "answer": 0,
+    "explanation": "지연이 기존 여유를 소모하므로 4-3=1일이 남습니다. 주어진 조건에서는 아직 프로젝트 완료를 늦추지 않습니다.",
+    "syllabus": "4.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.2.1 일정 계산과 판단"
+    }
+  },
+  {
+    "id": "biz4-266",
+    "revision": 1,
+    "area": "business",
+    "topic": "일정 계산과 판단",
+    "prompt": "낙관 3일·최빈 6일·비관 15일이다. PERT=(낙관+4×최빈+비관)/6과 단순평균을 비교하면?",
+    "options": [
+      "PERT가 단순평균보다 3일 작다",
+      "PERT가 단순평균보다 1일 작다",
+      "PERT가 단순평균보다 1일 크다",
+      "두 추정치는 같다"
+    ],
+    "answer": 1,
+    "explanation": "PERT는 (3+24+15)/6=7일이고 단순평균은 (3+6+15)/3=8일입니다. 최빈값을 더 반영하므로 이 사례에서 1일 작습니다.",
+    "syllabus": "4.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.2.1 일정 계산과 판단"
+    }
+  },
+  {
+    "id": "biz4-267",
+    "revision": 1,
+    "area": "business",
+    "topic": "일정 계산과 판단",
+    "prompt": "작업량 20인일을 4명이 독립적으로 균등 수행한다. 손실과 대기가 없을 때 기간은?",
+    "options": [
+      "4일",
+      "80일",
+      "5일",
+      "20일"
+    ],
+    "answer": 2,
+    "explanation": "주어진 이상적 조건에서는 작업량을 인원수로 나누어 20/4=5일입니다.",
+    "syllabus": "4.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.2.1 일정 계산과 판단"
+    }
+  },
+  {
+    "id": "biz4-268",
+    "revision": 1,
+    "area": "business",
+    "topic": "일정 계산과 판단",
+    "prompt": "A-B 경로 10일, A-C 경로 12일이다. B만 2일 단축하면 전체 기간은?",
+    "options": [
+      "10일",
+      "8일",
+      "14일",
+      "12일"
+    ],
+    "answer": 3,
+    "explanation": "비임계 경로 B를 줄여도 더 긴 A-C가 그대로라 전체 12일은 바뀌지 않습니다.",
+    "syllabus": "4.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.2.1 일정 계산과 판단"
+    }
+  },
+  {
+    "id": "biz4-269",
+    "revision": 1,
+    "area": "business",
+    "topic": "일정 계산과 판단",
+    "prompt": "임계경로가 두 개이고 각각 다른 마지막 활동을 가진다. 한 경로만 1일 줄이면?",
+    "options": [
+      "다른 임계경로 때문에 전체 기간이 그대로일 수 있다",
+      "전체 기간이 반드시 1일 줄어든다",
+      "다른 임계경로도 자동으로 1일 줄어든다",
+      "모든 비임계 활동의 여유가 1일 감소한다"
+    ],
+    "answer": 0,
+    "explanation": "여러 임계경로가 있으면 하나만 줄여도 다른 경로가 종료일을 지배할 수 있습니다.",
+    "syllabus": "4.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.2.1 일정 계산과 판단"
+    }
+  },
+  {
+    "id": "biz4-270",
+    "revision": 1,
+    "area": "business",
+    "topic": "일정 계산과 판단",
+    "prompt": "활동 ES=4, EF=9, LS=6, LF=11이다. 총여유는?",
+    "options": [
+      "11",
+      "2",
+      "5",
+      "7"
+    ],
+    "answer": 1,
+    "explanation": "총여유는 LS-ES 또는 LF-EF로 계산하여 2입니다.",
+    "syllabus": "4.5.2.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.2.1 일정 계산과 판단"
+    }
+  },
+  {
+    "id": "biz4-271",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 품질",
+    "prompt": "결함이 발생하지 않도록 개발 절차를 개선한다. 품질 활동의 초점은?",
+    "options": [
+      "고객의 산출물 수용",
+      "실제 비용의 성과 분석",
+      "예방과 프로세스 개선",
+      "완성품의 결함 판별"
+    ],
+    "answer": 2,
+    "explanation": "품질 관리는 완성품 검사뿐 아니라 오류를 줄이는 절차 설계와 예방을 포함합니다.",
+    "syllabus": "4.5.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.3.1 프로젝트 품질"
+    }
+  },
+  {
+    "id": "biz4-272",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 품질",
+    "prompt": "완성된 산출물을 시험해 기준 충족 여부를 확인한다. 초점은?",
+    "options": [
+      "품질 보증을 위한 프로세스 감사",
+      "고객의 범위 인수 승인",
+      "프로젝트 투자 우선순위 평가",
+      "품질 통제"
+    ],
+    "answer": 3,
+    "explanation": "품질 통제는 산출물의 결과를 측정하고 부적합을 확인하는 활동입니다.",
+    "syllabus": "4.5.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.3.1 프로젝트 품질"
+    }
+  },
+  {
+    "id": "biz4-273",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 품질",
+    "prompt": "결함 예방을 위한 품질 교육과 품질계획 수립에 쓴 비용의 분류는?",
+    "options": [
+      "예방비용",
+      "평가비용",
+      "내부 실패비용",
+      "외부 실패비용"
+    ],
+    "answer": 0,
+    "explanation": "결함 발생을 미리 줄이기 위한 품질계획·교육은 예방비용입니다. 완성 산출물의 검사·시험은 평가비용입니다.",
+    "syllabus": "4.5.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.3.1 프로젝트 품질"
+    }
+  },
+  {
+    "id": "biz4-274",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 품질",
+    "prompt": "출하 전 테스트 실행 비용의 품질비용 분류는?",
+    "options": [
+      "기회비용",
+      "평가비용",
+      "예방비용",
+      "외부 실패비용"
+    ],
+    "answer": 1,
+    "explanation": "검사·시험으로 적합성을 평가하는 비용이며 불량 수리비와 구별됩니다.",
+    "syllabus": "4.5.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.3.1 프로젝트 품질"
+    }
+  },
+  {
+    "id": "biz4-275",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 품질",
+    "prompt": "고객에게 전달하기 전 발견한 결함의 수정비는?",
+    "options": [
+      "예방비용",
+      "평가비용",
+      "내부 실패비용",
+      "외부 실패비용"
+    ],
+    "answer": 2,
+    "explanation": "고객 전달 전 발견한 불량을 수정하는 재작업은 내부 실패비용입니다. 발견을 위한 시험 비용은 평가비용과 구별됩니다.",
+    "syllabus": "4.5.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.3.1 프로젝트 품질"
+    }
+  },
+  {
+    "id": "biz4-276",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 품질",
+    "prompt": "출시 후 고객 보상과 장애 수습에 쓴 비용은?",
+    "options": [
+      "내부 실패비용",
+      "예방비용",
+      "평가비용",
+      "외부 실패비용"
+    ],
+    "answer": 3,
+    "explanation": "고객에게 전달된 뒤 발생한 품질 실패 비용은 외부 실패비용입니다.",
+    "syllabus": "4.5.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.3.1 프로젝트 품질"
+    }
+  },
+  {
+    "id": "biz4-277",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 품질",
+    "prompt": "품질과 등급의 차이로 적절한 것은?",
+    "options": [
+      "기능이 적어도 요구를 충족하면 품질이 높을 수 있다",
+      "기능이 많으면 요구 미충족이어도 고품질이다",
+      "등급과 품질은 같은 척도이므로 항상 비례한다",
+      "가격이 낮은 등급은 요구 충족 여부와 무관하게 불량이다"
+    ],
+    "answer": 0,
+    "explanation": "등급은 기능·특성의 수준 차이이며 품질은 요구 충족 정도입니다.",
+    "syllabus": "4.5.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.3.1 프로젝트 품질"
+    }
+  },
+  {
+    "id": "biz4-278",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 품질",
+    "prompt": "결함 20개를 10KLOC에서 발견했다. 결함밀도를 개/KLOC로 계산하면?",
+    "options": [
+      "200",
+      "2",
+      "0.5",
+      "20"
+    ],
+    "answer": 1,
+    "explanation": "결함 수를 코드 규모로 나누므로 20/10=2개/KLOC입니다.",
+    "syllabus": "4.5.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.3.1 프로젝트 품질"
+    }
+  },
+  {
+    "id": "biz4-279",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 품질",
+    "prompt": "측정값을 시간순으로 그리고 관리한계를 사용해 공정 이상을 본다. 도구는?",
+    "options": [
+      "조직도",
+      "RACI 표",
+      "관리도",
+      "파레토 차트"
+    ],
+    "answer": 2,
+    "explanation": "관리도는 시간에 따른 변동과 통계적 관리한계로 이상 징후를 살펴봅니다.",
+    "syllabus": "4.5.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.3.1 프로젝트 품질"
+    }
+  },
+  {
+    "id": "biz4-280",
+    "revision": 1,
+    "area": "business",
+    "topic": "프로젝트 품질",
+    "prompt": "관리한계와 규격한계의 차이는?",
+    "options": [
+      "두 한계는 모두 고객 계약에서 같은 값으로 정한다",
+      "규격한계는 공정의 과거 산포만으로 정한다",
+      "관리한계 충족이 곧 모든 고객 규격 충족을 뜻한다",
+      "관리한계는 공정 변동, 규격한계는 요구 허용범위와 관련된다"
+    ],
+    "answer": 3,
+    "explanation": "안정된 공정이라도 요구 규격을 만족하지 못할 수 있어 두 한계를 구별합니다.",
+    "syllabus": "4.5.3.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.3.1 프로젝트 품질"
+    }
+  },
+  {
+    "id": "biz4-281",
+    "revision": 1,
+    "area": "business",
+    "topic": "위험 관리",
+    "prompt": "공급자의 납품 지연 가능성을 사전에 기록한다. 관리 대상은?",
+    "options": [
+      "위험",
+      "이슈",
+      "완료 산출물",
+      "기준선"
+    ],
+    "answer": 0,
+    "explanation": "아직 발생하지 않은 불확실한 사건은 위험이며 이미 지연됐다면 이슈로도 관리합니다.",
+    "syllabus": "4.5.4.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.4.1 위험 관리"
+    }
+  },
+  {
+    "id": "biz4-282",
+    "revision": 1,
+    "area": "business",
+    "topic": "위험 관리",
+    "prompt": "발생확률 20%, 발생 시 손실 500만 원이다. 기대금전손실은?",
+    "options": [
+      "400만 원",
+      "100만 원",
+      "500만 원",
+      "2,500만 원"
+    ],
+    "answer": 1,
+    "explanation": "기대금전손실은 확률 0.2에 손실 500만 원을 곱한 값입니다.",
+    "syllabus": "4.5.4.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.4.1 위험 관리"
+    }
+  },
+  {
+    "id": "biz4-283",
+    "revision": 1,
+    "area": "business",
+    "topic": "위험 관리",
+    "prompt": "불안정한 기술을 쓰는 기능을 범위에서 빼 위협 원인을 없앴다. 대응은?",
+    "options": [
+      "수용",
+      "완화",
+      "회피",
+      "전가"
+    ],
+    "answer": 2,
+    "explanation": "회피는 위협의 원인이나 노출을 제거하고 완화는 확률·영향을 낮춥니다.",
+    "syllabus": "4.5.4.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.4.1 위험 관리"
+    }
+  },
+  {
+    "id": "biz4-284",
+    "revision": 1,
+    "area": "business",
+    "topic": "위험 관리",
+    "prompt": "공급자 납기 위험을 줄이려고 사전 시험생산을 수행했다. 대응은?",
+    "options": [
+      "회피",
+      "전가",
+      "무조건 수용",
+      "완화"
+    ],
+    "answer": 3,
+    "explanation": "시험생산은 위험을 완전히 없애기보다 발생확률이나 영향을 줄이는 조치입니다.",
+    "syllabus": "4.5.4.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.4.1 위험 관리"
+    }
+  },
+  {
+    "id": "biz4-285",
+    "revision": 1,
+    "area": "business",
+    "topic": "위험 관리",
+    "prompt": "장비 파손 위험의 재무 부담을 보험 계약으로 이전했다. 대응은?",
+    "options": [
+      "전가",
+      "회피",
+      "활용",
+      "강화"
+    ],
+    "answer": 0,
+    "explanation": "전가는 위험의 일부 영향이나 책임을 제3자와 나누는 것이며 위험 발생 자체를 없애지는 않습니다.",
+    "syllabus": "4.5.4.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.4.1 위험 관리"
+    }
+  },
+  {
+    "id": "biz4-286",
+    "revision": 1,
+    "area": "business",
+    "topic": "위험 관리",
+    "prompt": "위험에 대한 '적극적 수용'에 해당하는 조치는?",
+    "options": [
+      "보험으로 재무적 부담을 제3자에게 넘긴다",
+      "발생 시 쓸 예비비와 대응 절차를 미리 준비한다",
+      "위험 원인이 되는 기능을 범위에서 제거한다",
+      "발생확률을 낮추기 위한 추가 시험을 수행한다"
+    ],
+    "answer": 1,
+    "explanation": "적극적 수용은 발생 가능성을 감수하면서 대응 여력을 준비합니다. 원인 제거는 회피, 확률 감소는 완화, 보험은 전가입니다.",
+    "syllabus": "4.5.4.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.4.1 위험 관리"
+    }
+  },
+  {
+    "id": "biz4-287",
+    "revision": 1,
+    "area": "business",
+    "topic": "위험 관리",
+    "prompt": "새 공급망으로 비용을 절감할 기회를 확실히 얻도록 전담 자원을 배치했다. 기회 대응은?",
+    "options": [
+      "공유",
+      "수용",
+      "활용",
+      "강화"
+    ],
+    "answer": 2,
+    "explanation": "긍정적 위험의 활용은 기회가 실현되도록 행동하는 전략입니다.",
+    "syllabus": "4.5.4.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.4.1 위험 관리"
+    }
+  },
+  {
+    "id": "biz4-288",
+    "revision": 1,
+    "area": "business",
+    "topic": "위험 관리",
+    "prompt": "대응 후에도 남아 있는 위험을 부르는 말은?",
+    "options": [
+      "2차 위험",
+      "발생한 이슈",
+      "위험 트리거",
+      "잔여 위험"
+    ],
+    "answer": 3,
+    "explanation": "잔여 위험은 대응 이후 남은 것이고 2차 위험은 대응 때문에 새로 생긴 위험입니다.",
+    "syllabus": "4.5.4.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.4.1 위험 관리"
+    }
+  },
+  {
+    "id": "biz4-289",
+    "revision": 1,
+    "area": "business",
+    "topic": "위험 관리",
+    "prompt": "외주화로 인력 부족을 해결했지만 공급자 종속이 새로 생겼다. 새 위험은?",
+    "options": [
+      "2차 위험",
+      "잔여 위험",
+      "원래 위험의 트리거",
+      "이미 수용한 기회"
+    ],
+    "answer": 0,
+    "explanation": "위험 대응 자체가 새롭게 만든 위험은 2차 위험입니다.",
+    "syllabus": "4.5.4.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.4.1 위험 관리"
+    }
+  },
+  {
+    "id": "biz4-290",
+    "revision": 1,
+    "area": "business",
+    "topic": "위험 관리",
+    "prompt": "위험 등록부에 담당자와 발동 조건을 적는 이유는?",
+    "options": [
+      "모든 위험의 예비비를 동일하게 배정한다",
+      "누가 어떤 신호에서 대응할지 명확히 한다",
+      "위험 발생을 확정 이슈로 전환한다",
+      "대응 결과의 잔여 위험을 자동 제거한다"
+    ],
+    "answer": 1,
+    "explanation": "소유자와 트리거는 감시 결과를 실제 조치와 연결하는 운영 기준입니다.",
+    "syllabus": "4.5.4.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.4.1 위험 관리"
+    }
+  },
+  {
+    "id": "biz4-291",
+    "revision": 1,
+    "area": "business",
+    "topic": "통합 모니터링",
+    "prompt": "계획가치 PV=100, 획득가치 EV=80이다. 일정차이 SV=EV-PV는?",
+    "options": [
+      "80",
+      "180",
+      "-20",
+      "20"
+    ],
+    "answer": 2,
+    "explanation": "SV는 80-100=-20이며 계획 대비 완료된 가치가 부족함을 뜻합니다.",
+    "syllabus": "4.5.5.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.5.1 통합 모니터링"
+    }
+  },
+  {
+    "id": "biz4-292",
+    "revision": 1,
+    "area": "business",
+    "topic": "통합 모니터링",
+    "prompt": "EV=80, 실제원가 AC=100이다. 비용성과지수 CPI=EV/AC는?",
+    "options": [
+      "1.25",
+      "20",
+      "180",
+      "0.8"
+    ],
+    "answer": 3,
+    "explanation": "CPI는 비용 1당 얻은 계획 기준 가치로 80/100=0.8입니다.",
+    "syllabus": "4.5.5.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.5.1 통합 모니터링"
+    }
+  },
+  {
+    "id": "biz4-293",
+    "revision": 1,
+    "area": "business",
+    "topic": "통합 모니터링",
+    "prompt": "EV=120, PV=100이다. 일정성과지수 SPI=EV/PV는?",
+    "options": [
+      "1.2",
+      "0.833",
+      "20",
+      "220"
+    ],
+    "answer": 0,
+    "explanation": "SPI는 120/100=1.2로 가치 기준 진도가 계획보다 앞섰음을 나타냅니다.",
+    "syllabus": "4.5.5.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.5.1 통합 모니터링"
+    }
+  },
+  {
+    "id": "biz4-294",
+    "revision": 1,
+    "area": "business",
+    "topic": "통합 모니터링",
+    "prompt": "CPI가 1보다 작다는 일반적 해석은?",
+    "options": [
+      "산출물의 품질 기준이 충족됐다",
+      "얻은 가치에 비해 실제 비용이 많이 들었다",
+      "가치 기준 일정이 반드시 지연됐다",
+      "최종 비용이 최초 예산보다 반드시 작다"
+    ],
+    "answer": 1,
+    "explanation": "CPI는 비용 효율 지표이며 일정 상태는 SPI 등과 별도로 봅니다.",
+    "syllabus": "4.5.5.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.5.1 통합 모니터링"
+    }
+  },
+  {
+    "id": "biz4-295",
+    "revision": 1,
+    "area": "business",
+    "topic": "통합 모니터링",
+    "prompt": "SPI=0.9, CPI=1.1이다. 적절한 해석은?",
+    "options": [
+      "일정은 앞서고 비용은 초과했다",
+      "프로젝트가 이미 종료됐다",
+      "가치 기준 일정은 뒤처지고 비용 효율은 양호하다",
+      "일정과 비용이 모두 계획보다 나쁘다"
+    ],
+    "answer": 2,
+    "explanation": "1보다 작은 SPI는 진도 부족, 1보다 큰 CPI는 비용 효율의 유리함을 나타냅니다.",
+    "syllabus": "4.5.5.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.5.1 통합 모니터링"
+    }
+  },
+  {
+    "id": "biz4-296",
+    "revision": 1,
+    "area": "business",
+    "topic": "통합 모니터링",
+    "prompt": "완료예산 BAC=1,000, CPI=0.8이며 비용 효율이 유지된다고 가정한다. EAC=BAC/CPI는?",
+    "options": [
+      "800",
+      "1,000",
+      "200",
+      "1,250"
+    ],
+    "answer": 3,
+    "explanation": "주어진 가정에서 예상완료원가는 1,000/0.8=1,250입니다.",
+    "syllabus": "4.5.5.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.5.1 통합 모니터링"
+    }
+  },
+  {
+    "id": "biz4-297",
+    "revision": 1,
+    "area": "business",
+    "topic": "통합 모니터링",
+    "prompt": "프로젝트 대시보드가 초록인데 중요한 인수시험이 실패했다. 보완할 지표는?",
+    "options": [
+      "수용 기준 충족과 미해결 핵심 결함",
+      "회의 개최율",
+      "장비 발주 완료율",
+      "관리 문서 제출률"
+    ],
+    "answer": 0,
+    "explanation": "활동량이나 일정 색상만으로 실제 산출물의 수용 가능성을 알 수 없습니다.",
+    "syllabus": "4.5.5.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.5.1 통합 모니터링"
+    }
+  },
+  {
+    "id": "biz4-298",
+    "revision": 1,
+    "area": "business",
+    "topic": "통합 모니터링",
+    "prompt": "문제가 팀의 권한 밖에서 해결을 기다린다. 적절한 관리 행동은?",
+    "options": [
+      "기한 경과만으로 이슈를 종료 처리한다",
+      "영향과 선택안을 정리해 상위 의사결정자에게 에스컬레이션한다",
+      "팀 권한 범위를 넘겨 계약을 임의 변경한다",
+      "결정이 날 때까지 영향 보고를 보류한다"
+    ],
+    "answer": 1,
+    "explanation": "에스컬레이션은 권한 있는 수준에서 결정을 받도록 정보를 전달하는 절차입니다.",
+    "syllabus": "4.5.5.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.5.1 통합 모니터링"
+    }
+  },
+  {
+    "id": "biz4-299",
+    "revision": 1,
+    "area": "business",
+    "topic": "통합 모니터링",
+    "prompt": "승인된 변경 후 일정 기준선과 보고서 값이 서로 다르다. 필요한 조치는?",
+    "options": [
+      "보고서만 갱신하고 연관 계획은 이전 값으로 둔다",
+      "승인 이력을 삭제해 기준선을 하나만 남긴다",
+      "관련 계획·기준선·보고를 일관되게 갱신한다",
+      "새 기준선으로 과거 실적까지 다시 작성한다"
+    ],
+    "answer": 2,
+    "explanation": "통합 변경관리는 승인 결과를 연관 문서와 통제 기준에 일관되게 반영합니다.",
+    "syllabus": "4.5.5.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.5.1 통합 모니터링"
+    }
+  },
+  {
+    "id": "biz4-300",
+    "revision": 1,
+    "area": "business",
+    "topic": "통합 모니터링",
+    "prompt": "경영진에게 지연을 보고하는 내용으로 가장 유용한 것은?",
+    "options": [
+      "완료 활동 수와 회의 횟수만",
+      "기술 로그 전체를 해석 없이 나열",
+      "담당자별 투입시간만 보고",
+      "현재 편차·영향·원인·대응안·필요 결정"
+    ],
+    "answer": 3,
+    "explanation": "모니터링 보고는 상태 정보가 판단과 조치로 연결되도록 핵심 영향과 결정을 제시합니다.",
+    "syllabus": "4.5.5.1",
+    "source": {
+      "url": "https://www.topcit.or.kr/introduction/syllabus.do",
+      "section": "V4.0K 4.5.5.1 통합 모니터링"
+    }
+  }
+]
