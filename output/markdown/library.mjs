@@ -10,8 +10,10 @@ for (const book of books) {
   const card = document.createElement('article'); card.className = `book-card ${book.status}`;
   const top = document.createElement('div'); top.className = 'card-top';
   const number = document.createElement('span'); number.className = 'book-number'; number.textContent = book.id;
-  const badge = document.createElement('span'); badge.className = 'badge'; badge.textContent = book.status === 'ready' ? '읽을 수 있어요' : '변환 준비 중';
-  top.append(number, badge);
+  top.append(number);
+  if (book.status !== 'ready') {
+    const badge = document.createElement('span'); badge.className = 'badge'; badge.textContent = '변환 준비 중'; top.append(badge);
+  }
   const area = document.createElement('p'); area.className = 'eyebrow'; area.textContent = book.area;
   const title = document.createElement('h2'); title.textContent = book.title;
   const description = document.createElement('p'); description.className = 'description'; description.textContent = book.description;
