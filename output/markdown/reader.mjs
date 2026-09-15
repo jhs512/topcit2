@@ -265,6 +265,8 @@ async function load() {
     for (const [, pageId, markdown] of segments) {
       const section = document.createElement('section'); section.className = 'book-page'; section.id = `page-${pageId}`;
       section.innerHTML = purifier.sanitize(renderer.parse(markdown, { gfm: true, breaks: false }), { USE_PROFILES: { html: true }, FORBID_TAGS: ['img', 'style'], FORBID_ATTR: ['style'] });
+      // Opt in only book content; reader controls and navigation are not marked.
+      section.querySelectorAll('h1,h2,h3,h4,h5,h6,p,li,td,th').forEach(node => node.classList.add('tts-readable'));
       const label = document.createElement('div'); label.className = 'page-label';
       const a = document.createElement('a'); a.href = `#${section.id}`; a.textContent = `PDF ${Number(pageId)} / ${totalPages}`; label.append(a); section.prepend(label);
       let index = 0;

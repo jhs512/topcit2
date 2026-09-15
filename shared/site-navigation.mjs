@@ -1,4 +1,5 @@
 import { books } from '../output/markdown/books.mjs';
+import './speech-loader.mjs';
 
 const root = new URL('../', import.meta.url);
 const url = path => new URL(path, root).href;

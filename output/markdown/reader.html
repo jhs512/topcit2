@@ -23,9 +23,9 @@
   <div class="progress-track"><div id="progress"></div></div>
   <button id="scrim" aria-label="목차 닫기" hidden></button>
   <aside id="sidebar">
-    <div class="sidebar-heading"><span class="eyebrow">CONTENTS</span><h2>책의 흐름</h2></div>
+    <div class="sidebar-heading"><span class="eyebrow">CONTENTS</span><h2 class="tts-readable">책의 흐름</h2></div>
     <label class="search-box"><span class="sr-only">목차와 본문 검색</span><input id="search" type="search" placeholder="목차 · 본문 검색" autocomplete="off"><span aria-hidden="true">⌕</span></label>
-    <p id="search-status" class="muted" role="status"></p>
+    <p id="search-status" class="muted tts-readable" role="status"></p>
     <nav id="toc" aria-label="장과 절 목차"></nav>
     <div id="results" hidden></div>
     <div class="sidebar-footer"><span>IT 비즈니스와 윤리</span><small>TOPCIT ESSENCE Ver. 3</small></div>
@@ -33,8 +33,8 @@
   <main id="main">
     <section class="intro">
       <div class="eyebrow">THE READING ROOM</div>
-      <h1>IT 비즈니스와 윤리</h1>
-      <p>개념에서 전략으로, 기술에서 책임으로.</p>
+      <h1 class="tts-readable">IT 비즈니스와 윤리</h1>
+      <p class="tts-readable">개념에서 전략으로, 기술에서 책임으로.</p>
       <div class="book-meta"><span>비즈니스 영역</span><span>213쪽</span><span>표 · 도식 확대 보기</span></div>
       <div class="intro-actions"><a class="primary" href="#page-016">본문부터 읽기 <span>↓</span></a><button id="resume" hidden>이어서 읽기 →</button></div>
     </section>
@@ -45,7 +45,7 @@
   </main>
   <div class="location-bar"><span id="current-chapter">IT 비즈니스와 윤리</span><form id="page-form"><label for="page-number">PDF 쪽</label><input id="page-number" type="number" min="1" max="213" value="1"><span>/ 213</span><button>이동</button></form><span id="percent">0%</span></div>
   <dialog id="zoom-dialog" aria-labelledby="zoom-title">
-    <header><h2 id="zoom-title">확대 보기</h2><div><button id="zoom-out" aria-label="축소">−</button><output id="zoom-label">100%</output><button id="zoom-in" aria-label="확대">+</button><button id="zoom-fit">화면 맞춤</button><button id="zoom-close" aria-label="확대 보기 닫기">닫기 ×</button></div></header>
+    <header><h2 id="zoom-title" class="tts-readable">확대 보기</h2><div><button id="zoom-out" aria-label="축소">−</button><output id="zoom-label">100%</output><button id="zoom-in" aria-label="확대">+</button><button id="zoom-fit">화면 맞춤</button><button id="zoom-close" aria-label="확대 보기 닫기">닫기 ×</button></div></header>
     <div id="zoom-viewport"><div id="zoom-content" class="prose"></div></div>
   </dialog>
   <noscript>이 뷰어를 이용하려면 JavaScript를 켜 주세요.</noscript>

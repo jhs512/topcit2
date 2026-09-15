@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { splitSpeech, koreanVoice, StorySpeech } from '../cases/speech-engine.mjs';
+import { splitSpeech, koreanVoice, StorySpeech } from '../shared/speech-engine.mjs';
 
 const ko = { name: '한국어', lang: 'ko-KR', localService: true };
 function setup(voices = [ko]) {
