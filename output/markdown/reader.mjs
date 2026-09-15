@@ -293,7 +293,7 @@ if (book) {
  $('.reading-title').textContent = book.title;
  $('.intro h1').textContent = book.title;
  $('.intro > p').textContent = book.description;
- $('.brand span').textContent = `ESSENCE / ${book.id}`;
+
  $('.book-meta').children[0].textContent = book.area;
  $('.book-meta').children[1].textContent = `${totalPages}쪽`;
  $('.sidebar-footer > span').textContent = book.title;

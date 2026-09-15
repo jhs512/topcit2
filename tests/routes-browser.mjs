@@ -5,7 +5,7 @@ const page=await browser.newPage();
 const errors=[];page.on('pageerror',e=>errors.push(e.message));
 for(const route of ['','textbook/','info/',...['01','02','03','04','05','06'].map(n=>`textbook/${n}/`)]){
  const response=await page.goto(`http://localhost:4183/${route}`);assert.equal(response.status(),200);
- if(route.match(/textbook\/\d/))await page.waitForSelector('.book-navigation');
+ if(route.match(/textbook\/\d/))await page.waitForSelector('#site-navigation');
 }
 for(const n of ['01','02','03','04','05','06']){
  await page.goto(`http://localhost:4183/practice/${n}/`);
