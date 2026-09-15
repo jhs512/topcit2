@@ -1,3 +1,4 @@
+import { linkContents } from './contents-links.mjs';
 import { mountBookNavigation } from '../../shared/book-navigation.mjs';
 import { books } from './books.mjs';
 const bookId = location.pathname.match(/\/textbook\/(0[1-6])(?:\/|$)/)?.[1] || new URLSearchParams(location.search).get('book') || '05';
@@ -123,7 +124,7 @@ function enrich(section) {
     diagramObserver.observe(surface);
   }
   for (const a of $$('a[href]', section)) {
-    if (/^https?:/.test(a.href)) { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+    if (/^https?:/.test(a.getAttribute('href'))) { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
   }
 }
 
@@ -189,8 +190,8 @@ function go(id, replace = false) {
 }
 document.addEventListener('click', event => {
   const a = event.target.closest('a[href^="#"]');
-  if (!a || event.defaultPrevented) return;
-  const id = a.hash.slice(1); if (document.getElementById(id)) { event.preventDefault(); go(id); }
+  if (!a || event.defaultPrevented || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0) return;
+  const id = a.hash.slice(1); if (document.getElementById(id)) { event.preventDefault(); if ($('#zoom-dialog').open) $('#zoom-dialog').close(); go(id); if (a.classList.contains('contents-link')) { const target = document.getElementById(id); target.tabIndex = -1; target.focus({ preventScroll: true }); } }
 });
 addEventListener('hashchange', () => { if (ready) go(location.hash.slice(1), true); });
 addEventListener('popstate', () => { if (ready) { if (location.hash) go(location.hash.slice(1), true); else scrollTo(0, 0); } });
@@ -275,7 +276,7 @@ async function load() {
       pages.push({ node: section, number: Number(pageId), text, searchText: text.toLocaleLowerCase().replace(/\s/g, ''), title: $('h2,h3,h4', section)?.textContent || '' });
       enrich(section); fragment.append(section);
     }
-    $('#book').append(fragment); buildToc(); ready = true;
+    $('#book').append(fragment); linkContents(pages, book); buildToc(); ready = true;
     $('#status').hidden = true; $('#endnote').hidden = false;
     document.body.dataset.ready = 'true';
     if (location.hash) go(location.hash.slice(1), true);
