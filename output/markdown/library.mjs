@@ -8,7 +8,7 @@ redirectLegacyLink();
 addEventListener('hashchange', redirectLegacyLink);
 const grid = document.querySelector('#library');
 for (const book of books) {
-  const card = document.createElement('article'); card.className = `book-card ${book.status}`;
+  const card = document.createElement(book.status === 'ready' ? 'a' : 'article'); card.className = `book-card ${book.status}`;
   const top = document.createElement('div'); top.className = 'card-top';
   const number = document.createElement('span'); number.className = 'book-number'; number.textContent = book.id;
   top.append(number);
@@ -22,11 +22,13 @@ for (const book of books) {
   const bottom = document.createElement('div'); bottom.className = 'card-bottom';
   const count = document.createElement('span'); count.textContent = `PDF ${book.pages}쪽`; bottom.append(count);
   if (book.status === 'ready') {
-    const a = document.createElement('a'); a.href = new URL(`../../textbook/${book.id}/#page-${String(book.startPage).padStart(3, '0')}`, import.meta.url).href; a.textContent = '책 펼치기 ↗'; bottom.append(a);
+    card.href = new URL(`../../textbook/${book.id}/#page-${String(book.startPage).padStart(3, '0')}`, import.meta.url).href;
+    card.setAttribute('aria-label', `${book.id} ${book.title} 읽기`);
+    const action = document.createElement('span'); action.className = 'card-action'; action.textContent = '책 펼치기 ↗'; bottom.append(action);
     try {
       const saved = Number(localStorage.getItem(`topcit-reader-${book.id}-page`) || (book.id === '05' ? localStorage.getItem('topcit-reader-page') : null));
       if (saved >= 1 && saved <= book.pages) {
-        const resume = document.createElement('a'); resume.className = 'continue'; resume.href = new URL(`../../textbook/${book.id}/#page-${String(saved).padStart(3, '0')}`, import.meta.url).href; resume.textContent = `${saved}쪽 이어서 읽기 →`; card.append(resume);
+        const resume = document.createElement('span'); resume.className = 'continue'; card.href = new URL(`../../textbook/${book.id}/#page-${String(saved).padStart(3, '0')}`, import.meta.url).href; resume.textContent = `${saved}쪽 이어서 읽기 →`; card.append(resume);
       }
     } catch {}
   } else {
