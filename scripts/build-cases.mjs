@@ -4,6 +4,9 @@ import { marked } from 'marked';
 
 const root = new URL('../', import.meta.url);
 const source = await readFile(new URL('reading/it-business-stories.md', root), 'utf8');
+if (/https:\/\/jhs512\.github\.io\/topcit2?\/(?:viewer\/|sources\/)/.test(source)) {
+  throw new Error('Textbook references must use the HTML reader: /topcit2/textbook/NN/#page-NNN');
+}
 const headings = [...source.matchAll(/^## (BIZ-\d{2}) · (.+)$/gm)];
 const esc = text => text.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const cases = headings.map((match, i) => {

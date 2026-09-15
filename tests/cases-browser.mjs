@@ -28,7 +28,8 @@ try {
         assert.ok(text.includes('실제 성공 사례'));
       }
       const links = await page.locator('article a').evaluateAll(nodes => nodes.map(a => a.href));
-      assert.ok(links.some(url => url.startsWith('https://jhs512.github.io/topcit/viewer/index.html?book=05&page=')));
+      assert.ok(links.some(url => url.startsWith('https://jhs512.github.io/topcit2/textbook/05/#page-')));
+      assert.ok(links.every(url => !/jhs512\.github\.io\/topcit2?\/(viewer|sources)\//.test(url)));
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
       assert.equal(await page.locator('#site-links > a[aria-current="page"]').innerText(), '사례 모음');
       await page.reload();

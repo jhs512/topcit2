@@ -26,14 +26,14 @@
 
 | 번호 | 교재 | PDF 쪽수 | 열기 |
 | --- | --- | ---: | --- |
-| 01 | 소프트웨어 개발 | 139 | [PDF 뷰어](https://jhs512.github.io/topcit/viewer/index.html?book=01&page=1) · [텍스트](textbook/01/) |
-| 02 | 데이터 이해와 활용 | 159 | [PDF 뷰어](https://jhs512.github.io/topcit/viewer/index.html?book=02&page=1) · [텍스트](textbook/02/) |
-| 03 | 시스템아키텍처 이해와 활용 | 221 | [PDF 뷰어](https://jhs512.github.io/topcit/viewer/index.html?book=03&page=1) · [텍스트](textbook/03/) |
-| 04 | 정보보안 이해와 활용 | 124 | [PDF 뷰어](https://jhs512.github.io/topcit/viewer/index.html?book=04&page=1) · [텍스트](textbook/04/) |
-| 05 | IT비즈니스와 윤리 | 213 | [PDF 뷰어](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=1) · [텍스트](textbook/05/) |
-| 06 | 프로젝트 관리 및 테크니컬 커뮤니케이션 | 139 | [PDF 뷰어](https://jhs512.github.io/topcit/viewer/index.html?book=06&page=1) · [텍스트](textbook/06/) |
+| 01 | 소프트웨어 개발 | 139 | [교재 읽기](https://jhs512.github.io/topcit2/textbook/01/) |
+| 02 | 데이터 이해와 활용 | 159 | [교재 읽기](https://jhs512.github.io/topcit2/textbook/02/) |
+| 03 | 시스템아키텍처 이해와 활용 | 221 | [교재 읽기](https://jhs512.github.io/topcit2/textbook/03/) |
+| 04 | 정보보안 이해와 활용 | 124 | [교재 읽기](https://jhs512.github.io/topcit2/textbook/04/) |
+| 05 | IT비즈니스와 윤리 | 213 | [교재 읽기](https://jhs512.github.io/topcit2/textbook/05/) |
+| 06 | 프로젝트 관리 및 테크니컬 커뮤니케이션 | 139 | [교재 읽기](https://jhs512.github.io/topcit2/textbook/06/) |
 
-PDF 페이지와 책의 인쇄 쪽수는 다릅니다. 텍스트 변환본은 인식·전사 오류가 있을 수 있으므로 PDF 뷰어에서 대조하세요.
+PDF 페이지와 책의 인쇄 쪽수는 다릅니다. 자체 교재의 페이지 번호는 원본 PDF 페이지에 대응합니다. 텍스트 변환본에는 인식·전사 오류가 있을 수 있습니다.
 
 ## 시험 영역과 교재 이동
 
@@ -51,7 +51,7 @@ PDF 뷰어는 포함된 파일로 동작합니다. 텍스트 서재는 Markdown�
 
 `viewer/`는 PDF 뷰어, `sources/`는 PDF 6권, `output/markdown/`은 전사본·공통 서재·대조 기록입니다. 원본 `jhs512/topcit`에서 교재 관련 파일만 복사했습니다. 원본 저장소는 변경하지 않았습니다.
 
-`npm install` 후 `npm test`로 6권의 페이지 순서를, `npx playwright install chromium` 후 `npm run test:viewer`로 PDF 뷰어를 확인합니다. 교재 참고 링크는 이 저장소의 `https://jhs512.github.io/topcit/viewer/index.html?book=번호&page=PDF페이지`를 사용합니다.
+`npm install` 후 `npm test`로 6권의 페이지 순서를, `npx playwright install chromium` 후 `npm run test:viewer`로 PDF 뷰어를 확인합니다. 교재 참고 링크는 자체 HTML/Markdown 교재인 `https://jhs512.github.io/topcit2/textbook/교재번호/#page-세자리페이지`를 사용합니다.
 
 `npm run serve`로 서버를 실행한 상태에서 `npm run test:navigation`으로 PC·모바일의 6권 이동과 시험 영역 표시를 확인합니다.
 
@@ -73,3 +73,5 @@ GitHub Pages 정적 디렉터리 경로를 사용하므로 끝의 슬래시가 �
 `reading/it-business-stories.md`가 게시할 본문의 원본이며 `reading/it-business-stories-plan.md`는 구성 계획입니다. 최초 원본은 `jhs512/topcit` 작업 폴더의 동명 파일에서 내용 변경 없이 가져왔습니다. 본문을 수정할 때 계획과 Markdown을 먼저 수정하고 `npm run build:cases`로 `cases/`의 정적 페이지를 다시 생성합니다. 생성 HTML은 직접 편집하지 않습니다.
 
 `cases/`는 과목 선택, `cases/05/`는 사례 목록, `cases/05/BIZ-01/`–`BIZ-10/`은 각 본문입니다. 로컬 서버 4186 포트에서 `npm run test:cases`로 PC·모바일 이동과 본문을 확인합니다. 배포본 검사는 `CASES_BASE_URL`을 공개 허브 주소로 지정합니다.
+
+교재 링크를 바꾼 뒤에는 `node tests/textbook-references.mjs`로 6권의 페이지 앵커와 사례에서 교재로 이동하는 동작을 확인합니다(기본 서버 4186, 공개 검사는 `SITE_BASE` 지정). 예: [비즈니스와 IT의 연계](https://jhs512.github.io/topcit2/textbook/05/#page-020). 확인하지 못한 위치는 교재 시작 화면으로 연결합니다. 사례 생성기는 PDF 교재 링크가 들어오면 생성을 중단합니다.

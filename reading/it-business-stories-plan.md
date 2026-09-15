@@ -37,7 +37,7 @@
 
 - **교훈:** IT를 기존 업무 방식에만 맞추면, 회사가 추구하는 고객 가치를 오히려 제한할 수 있다.
 - **개념·선정 이유:** 비즈니스–IT 전략 연계. 전략 연계를 기존 업무의 전산화와 구분한다.
-- **교재 근거:** [비즈니스와 IT의 연계 · PDF 20쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=20)
+- **교재 근거:** [비즈니스와 IT의 연계 · PDF 20쪽](https://jhs512.github.io/topcit2/textbook/05/#page-020)
 - **유형·사례 출처:** 실제 성공 사례 · Amazon Marketplace(2000–2001), 2016년 주주서한의 회고. A1·A2
 - **잘못된 판단 또는 선택의 갈등:** 기존 직접판매 보호를 우선하면 고객 선택 확대와 충돌할 수 있다. 이는 선택의 갈등에 대한 해석이며 당시 모든 반대자의 동기를 단정하지 않는다.
 - **인과와 결과:** 외부 판매자의 상품을 자사 상품과 같은 상세페이지에 배치 → 고객의 구매 선택 확대. 초기 거래 증가가 발표됐으나 배치 하나의 인과 효과는 분리되지 않았다.
@@ -54,7 +54,7 @@
 
 - **교훈:** 성장하는 시장도 자사의 역량과 비용 구조에 맞지 않으면 수익성 있는 기회가 되지 않는다.
 - **개념·선정 이유:** 환경분석·SWOT·전략수립. 외부 시장 성장과 우리 회사의 실행 가능성을 구분한다.
-- **교재 근거:** [전략수립 · PDF 31쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=31) · [환경분석 · PDF 35쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=35) · [SWOT · PDF 38쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=38)
+- **교재 근거:** [전략수립 · PDF 31쪽](https://jhs512.github.io/topcit2/textbook/05/#page-031) · [환경분석 · PDF 35쪽](https://jhs512.github.io/topcit2/textbook/05/#page-035) · [SWOT · PDF 38쪽](https://jhs512.github.io/topcit2/textbook/05/#page-038)
 - **유형·사례 출처:** 가상 이야기. 해당 없음
 - **잘못된 판단 또는 선택의 갈등:** 온라인 시장 성장과 경쟁사의 진출을 자사 전국 진출의 충분한 근거로 삼았다.
 - **인과와 결과:** 전국몰을 기획 → 장거리 포장·운송 견적을 반영하자 예상 이익 소멸 → 기존 SWOT의 기회 판단을 수정.
@@ -65,7 +65,7 @@
 
 - **교훈:** 부서별 승인만 있고 공동 자원의 우선순위를 정할 권한이 없으면, 회사의 IT 투자는 서로의 실행을 방해한다.
 - **개념·선정 이유:** IT 거버넌스. 요구 승인과 전사 의사결정의 차이를 드러낸다.
-- **교재 근거:** [IT 거버넌스 · PDF 42쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=42)
+- **교재 근거:** [IT 거버넌스 · PDF 42쪽](https://jhs512.github.io/topcit2/textbook/05/#page-042)
 - **유형·사례 출처:** 가상 이야기. 해당 없음
 - **잘못된 판단 또는 선택의 갈등:** 각 본부의 승인으로 공동 개발 인력의 배분까지 결정됐다고 보았다.
 - **인과와 결과:** 동일 예약 기능에 상충하는 변경 요구 → 결정 반복 번복·진행 작업 수정 → 세 기능이 모두 미완성.
@@ -76,7 +76,7 @@
 
 - **교훈:** 목표 시스템의 선행조건을 빠뜨린 정보화 계획은, 장비를 도입하고도 업무를 시작하지 못하게 만들 수 있다.
 - **개념·선정 이유:** 정보화 전략계획(ISP). 구매 목록과 현행→목표→이행계획의 차이를 이해한다.
-- **교재 근거:** [ISP 개요 · PDF 47쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=47) · [구축절차 · PDF 48쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=48) · [주요 산출물 · PDF 49쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=49)
+- **교재 근거:** [ISP 개요 · PDF 47쪽](https://jhs512.github.io/topcit2/textbook/05/#page-047) · [구축절차 · PDF 48쪽](https://jhs512.github.io/topcit2/textbook/05/#page-048) · [주요 산출물 · PDF 49쪽](https://jhs512.github.io/topcit2/textbook/05/#page-049)
 - **유형·사례 출처:** 가상 이야기. 해당 없음
 - **잘못된 판단 또는 선택의 갈등:** 자동 분류기 설치를 업무 가동 준비와 같게 보고 기준정보·연계·담당자 정리를 누락.
 - **인과와 결과:** 실제 주문으로 도입 전 시연 → 단위 불명확으로 자동 분류 불가 → 필요한 선행 작업 발견.
@@ -87,7 +87,7 @@
 
 - **교훈:** 외부 업체의 실적을 우리 업무에 대한 수행 능력으로 간주하면, 위탁한 일의 위험을 제대로 판단할 수 없다.
 - **개념·선정 이유:** IT 아웃소싱·공급자 역량 평가·지속적 관리. 아웃소싱의 전문성 활용과 발주자의 검증·관리 책임을 구분한다.
-- **교재 근거:** [아웃소싱 · PDF 57쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=57) · [도입 프로세스 · PDF 58쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=58) · [관리 고려사항 · PDF 59쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=59)
+- **교재 근거:** [아웃소싱 · PDF 57쪽](https://jhs512.github.io/topcit2/textbook/05/#page-057) · [도입 프로세스 · PDF 58쪽](https://jhs512.github.io/topcit2/textbook/05/#page-058) · [관리 고려사항 · PDF 59쪽](https://jhs512.github.io/topcit2/textbook/05/#page-059)
 - **유형·사례 출처:** 실제 사례 · TSB(2018), FCA 조사결과(2022). T1·T2
 - **잘못된 판단 또는 선택의 갈등:** FCA는 과거 경험을 고려했지만 해당 플랫폼 제공·운영 능력에 대한 공식 평가가 충분하지 않았다고 판단했다.
 - **인과와 결과:** 구체적 수행 능력 평가의 공백 → 외주 위험이 충분히 파악되지 않은 채 전환 → 기술·계획·시험 등 복합 실패와 은행 서비스 장애.
@@ -98,7 +98,7 @@
 
 - **교훈:** 업무 절차의 필요성을 검토하지 않고 전산화하면, 없앨 수 있었던 대기와 중복까지 시스템의 규칙으로 굳어진다.
 - **개념·선정 이유:** BPR·PI·변화관리. 전자화 효과와 업무 재설계 효과를 구분한다.
-- **교재 근거:** [사람·조직·프로세스 · PDF 63쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=63) · [BPR · PDF 69쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=69) · [PI · PDF 70쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=70) · [변화관리 · PDF 72쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=72)
+- **교재 근거:** [사람·조직·프로세스 · PDF 63쪽](https://jhs512.github.io/topcit2/textbook/05/#page-063) · [BPR · PDF 69쪽](https://jhs512.github.io/topcit2/textbook/05/#page-069) · [PI · PDF 70쪽](https://jhs512.github.io/topcit2/textbook/05/#page-070) · [변화관리 · PDF 72쪽](https://jhs512.github.io/topcit2/textbook/05/#page-072)
 - **유형·사례 출처:** 가상 이야기. 해당 없음
 - **잘못된 판단 또는 선택의 갈등:** 기존 다섯 확인의 순서를 그대로 유지하면서 전자화만으로 환불 대기를 줄일 수 있다고 보았다.
 - **인과와 결과:** 이동은 감소 → 주간 품질 분석 완료가 모든 환불의 선행조건으로 고정 → 통상 반품도 불필요하게 대기.
@@ -109,7 +109,7 @@
 
 - **교훈:** 전사 시스템의 도입 성과는 기능의 설치 여부가 아니라 주문부터 출하까지 업무가 이어지는지로 판단해야 한다.
 - **개념·선정 이유:** ERP·전사 업무 통합. ERP 통합을 전사 업무 전환으로 이해한다.
-- **교재 근거:** [ERP 정의 · PDF 82쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=82) · [ERP 구성·구축 · PDF 83쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=83) · [구축 프로세스 · PDF 84쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=84)
+- **교재 근거:** [ERP 정의 · PDF 82쪽](https://jhs512.github.io/topcit2/textbook/05/#page-082) · [ERP 구성·구축 · PDF 83쪽](https://jhs512.github.io/topcit2/textbook/05/#page-083) · [구축 프로세스 · PDF 84쪽](https://jhs512.github.io/topcit2/textbook/05/#page-084)
 - **유형·사례 출처:** 실제 사례 · Hershey(1999–2000). H1·H2
 - **잘못된 판단 또는 선택의 갈등:** 부서별 기능 가동만을 성공 기준으로 삼는 판단의 한계를 검토한다. 허쉬가 실제로 그 기준만 사용했다고 공시가 입증하는 것은 아니다.
 - **인과와 결과:** 통합 시스템·업무 전환 뒤 고객서비스·창고·출하 곤란 → 출하 감소. 하역 공간 부족도 악화 요인. 이후 시스템 보완·시설 개선과 서비스 회복.
@@ -120,7 +120,7 @@
 
 - **교훈:** 공급망의 각 기업이 자기 위험만 줄이려 하면, 같은 불확실성에 대한 대비가 중복되어 전체 위험은 커질 수 있다.
 - **개념·선정 이유:** SCM·채찍효과. 개별 안전 판단과 전체 최적화의 충돌을 이해한다.
-- **교재 근거:** [SCM·채찍효과 · PDF 85쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=85) · [협업·공급망 기능 · PDF 86쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=86)
+- **교재 근거:** [SCM·채찍효과 · PDF 85쪽](https://jhs512.github.io/topcit2/textbook/05/#page-085) · [협업·공급망 기능 · PDF 86쪽](https://jhs512.github.io/topcit2/textbook/05/#page-086)
 - **유형·사례 출처:** 가상 이야기. 해당 없음
 - **잘못된 판단 또는 선택의 갈등:** 바로 아래 업체의 주문량을 최종 수요로 읽고 단계마다 여유분을 추가했다.
 - **인과와 결과:** 행사 판매 12 → 매장 주문 16 → 도매 발주 22 → 공장 계획 30 → 행사 종료 후 발주 급감·과잉재고.
@@ -131,7 +131,7 @@
 
 - **교훈:** 고객 정보를 부서별로 끊어 쓰면, 각 부서의 정상적인 대응이 한 고객에게는 모순된 서비스가 될 수 있다.
 - **개념·선정 이유:** CRM·고객 접점 통합·고객 평생가치. 고객 중심 통합과 개별 캠페인의 차이를 이해한다.
-- **교재 근거:** [CRM · PDF 87쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=87) · [정의·분류 · PDF 88쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=88) · [고객 접점 · PDF 89쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=89)
+- **교재 근거:** [CRM · PDF 87쪽](https://jhs512.github.io/topcit2/textbook/05/#page-087) · [정의·분류 · PDF 88쪽](https://jhs512.github.io/topcit2/textbook/05/#page-088) · [고객 접점 · PDF 89쪽](https://jhs512.github.io/topcit2/textbook/05/#page-089)
 - **유형·사례 출처:** 가상 이야기. 해당 없음
 - **잘못된 판단 또는 선택의 갈등:** 구매 이력만으로 이탈 고객을 분류하고 미해결 교환 정보를 캠페인·응대에 연결하지 않았다.
 - **인과와 결과:** 마케팅은 재구매 안내, 상담은 해결 대기 → 고객은 반복 설명과 부적절한 메시지를 경험 → 약속 이행과 관계 회복 지연.
@@ -142,7 +142,7 @@
 
 - **교훈:** 잘못된 성과지표는 사람들이 일을 잘할수록 회사의 목표에서 멀어지게 만들 수 있다.
 - **개념·선정 이유:** KPI·BSC·PDCA. 측정 대상이 사람의 행동과 수요 자체를 바꾸는 과정을 이해한다.
-- **교재 근거:** [BSC · PDF 108쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=108) · [네 관점 · PDF 109쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=109) · [KPI와 구성원 행동 · PDF 111쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=111) · [PDCA · PDF 25쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=25)
+- **교재 근거:** [BSC · PDF 108쪽](https://jhs512.github.io/topcit2/textbook/05/#page-108) · [네 관점 · PDF 109쪽](https://jhs512.github.io/topcit2/textbook/05/#page-109) · [KPI와 구성원 행동 · PDF 111쪽](https://jhs512.github.io/topcit2/textbook/05/#page-111) · [PDCA · PDF 25쪽](https://jhs512.github.io/topcit2/textbook/05/#page-025)
 - **유형·사례 출처:** 가상 이야기. 해당 없음
 - **잘못된 판단 또는 선택의 갈등:** 대기시간 감소를 위해 평균 통화시간을 핵심 평가기준으로 삼고 문제 해결 여부를 누락.
 - **인과와 결과:** 복잡한 문의를 넘겨 짧게 종결 → 미해결 고객 재통화 → 전화량 증가 → 원래 목표인 대기시간 악화.
