@@ -4,7 +4,7 @@
 
 ## 객관식 문제 연습
 
-[문제은행 열기](practice/index.html) · [IT비즈니스 300문항](practice/index.html?area=business) · [시스템아키텍처 및 정보보안 300문항](practice/index.html?area=systems-security)
+[문제은행 열기](practice/) · [교재 05 문제](practice/05/) · [교재 03 문제](practice/03/)
 
 공식 V4.0K 출제기준의 두 평가영역을 대상으로 새로 작성한 자체 연습문제입니다. 공식 기출문제가 아닙니다.
 
@@ -18,16 +18,16 @@
 
 ## 시험 안내
 
-[2026년 개정 시험 안내](exam/index.html)에서 시험 기본정보, 평가영역, 유형별 비중, 영역별 문항·배점, 교재 대응, 역량 수준을 표로 확인하세요. 서재와 PDF·텍스트 뷰어 상단에서도 이동할 수 있습니다. [공식 2026년 변경 공지](https://www.topcit.or.kr/board/notice/detail.do?seq=842)를 기준으로 정리했습니다.
+[2026년 개정 시험 안내](info/)에서 시험 기본정보, 평가영역, 유형별 비중, 영역별 문항·배점, 교재 대응, 역량 수준을 표로 확인하세요. 서재와 PDF·텍스트 뷰어 상단에서도 이동할 수 있습니다. [공식 2026년 변경 공지](https://www.topcit.or.kr/board/notice/detail.do?seq=842)를 기준으로 정리했습니다.
 
 | 번호 | 교재 | PDF 쪽수 | 열기 |
 | --- | --- | ---: | --- |
-| 01 | 소프트웨어 개발 | 139 | [PDF 뷰어](viewer/index.html?book=01&page=1) · [텍스트](output/markdown/reader.html?book=01) |
-| 02 | 데이터 이해와 활용 | 159 | [PDF 뷰어](viewer/index.html?book=02&page=1) · [텍스트](output/markdown/reader.html?book=02) |
-| 03 | 시스템아키텍처 이해와 활용 | 221 | [PDF 뷰어](viewer/index.html?book=03&page=1) · [텍스트](output/markdown/reader.html?book=03) |
-| 04 | 정보보안 이해와 활용 | 124 | [PDF 뷰어](viewer/index.html?book=04&page=1) · [텍스트](output/markdown/reader.html?book=04) |
-| 05 | IT비즈니스와 윤리 | 213 | [PDF 뷰어](viewer/index.html?book=05&page=1) · [텍스트](output/markdown/reader.html?book=05) |
-| 06 | 프로젝트 관리 및 테크니컬 커뮤니케이션 | 139 | [PDF 뷰어](viewer/index.html?book=06&page=1) · [텍스트](output/markdown/reader.html?book=06) |
+| 01 | 소프트웨어 개발 | 139 | [PDF 뷰어](https://jhs512.github.io/topcit/viewer/index.html?book=01&page=1) · [텍스트](textbook/01/) |
+| 02 | 데이터 이해와 활용 | 159 | [PDF 뷰어](https://jhs512.github.io/topcit/viewer/index.html?book=02&page=1) · [텍스트](textbook/02/) |
+| 03 | 시스템아키텍처 이해와 활용 | 221 | [PDF 뷰어](https://jhs512.github.io/topcit/viewer/index.html?book=03&page=1) · [텍스트](textbook/03/) |
+| 04 | 정보보안 이해와 활용 | 124 | [PDF 뷰어](https://jhs512.github.io/topcit/viewer/index.html?book=04&page=1) · [텍스트](textbook/04/) |
+| 05 | IT비즈니스와 윤리 | 213 | [PDF 뷰어](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=1) · [텍스트](textbook/05/) |
+| 06 | 프로젝트 관리 및 테크니컬 커뮤니케이션 | 139 | [PDF 뷰어](https://jhs512.github.io/topcit/viewer/index.html?book=06&page=1) · [텍스트](textbook/06/) |
 
 PDF 페이지와 책의 인쇄 쪽수는 다릅니다. 텍스트 변환본은 인식·전사 오류가 있을 수 있으므로 PDF 뷰어에서 대조하세요.
 
@@ -47,6 +47,19 @@ PDF 뷰어는 포함된 파일로 동작합니다. 텍스트 서재는 Markdown�
 
 `viewer/`는 PDF 뷰어, `sources/`는 PDF 6권, `output/markdown/`은 전사본·공통 서재·대조 기록입니다. 원본 `jhs512/topcit`에서 교재 관련 파일만 복사했습니다. 원본 저장소는 변경하지 않았습니다.
 
-`npm install` 후 `npm test`로 6권의 페이지 순서를, `npx playwright install chromium` 후 `npm run test:viewer`로 PDF 뷰어를 확인합니다. 교재 참고 링크는 이 저장소의 `viewer/index.html?book=번호&page=PDF페이지`를 사용합니다.
+`npm install` 후 `npm test`로 6권의 페이지 순서를, `npx playwright install chromium` 후 `npm run test:viewer`로 PDF 뷰어를 확인합니다. 교재 참고 링크는 이 저장소의 `https://jhs512.github.io/topcit/viewer/index.html?book=번호&page=PDF페이지`를 사용합니다.
 
 `npm run serve`로 서버를 실행한 상태에서 `npm run test:navigation`으로 PC·모바일의 6권 이동과 시험 영역 표시를 확인합니다.
+
+## 사이트 경로
+
+- `/topcit2/`: 메인 허브
+- `/topcit2/textbook/`: 교재 목록
+- `/topcit2/textbook/01/`–`06/`: 교재별 읽기
+- `/topcit2/info/`: 시험 안내
+- `/topcit2/practice/`: 교재별 문제 목록
+- `/topcit2/practice/01/`–`06/`: 교재별 문제
+
+GitHub Pages 정적 디렉터리 경로를 사용하므로 끝의 슬래시가 없으면 슬래시가 붙은 주소로 이동합니다. 01·02는 문제 준비 중입니다. 기존 600문항을 출제기준 번호로 분류합니다. 3.1.1.3 및 3.6–3.7은 04, 나머지 기술영역은 03, 4.4–4.5는 06, 나머지 비즈니스영역은 05입니다. 출제기준은 기존 학습목표 요약 텍스트로 표시합니다. 문항 ID와 개정 번호는 유지하여 학습기록을 이어갑니다.
+
+로컬 서버 4183 포트에서 `node tests/routes-browser.mjs`로 새 경로와 표시를 검사합니다.

@@ -22,11 +22,11 @@ for (const book of books) {
   const bottom = document.createElement('div'); bottom.className = 'card-bottom';
   const count = document.createElement('span'); count.textContent = `PDF ${book.pages}쪽`; bottom.append(count);
   if (book.status === 'ready') {
-    const a = document.createElement('a'); a.href = `./reader.html?book=${book.id}#page-${String(book.startPage).padStart(3, '0')}`; a.textContent = '책 펼치기 ↗'; bottom.append(a);
+    const a = document.createElement('a'); a.href = new URL(`../../textbook/${book.id}/#page-${String(book.startPage).padStart(3, '0')}`, import.meta.url).href; a.textContent = '책 펼치기 ↗'; bottom.append(a);
     try {
       const saved = Number(localStorage.getItem(`topcit-reader-${book.id}-page`) || (book.id === '05' ? localStorage.getItem('topcit-reader-page') : null));
       if (saved >= 1 && saved <= book.pages) {
-        const resume = document.createElement('a'); resume.className = 'continue'; resume.href = `./reader.html?book=${book.id}#page-${String(saved).padStart(3, '0')}`; resume.textContent = `${saved}쪽 이어서 읽기 →`; card.append(resume);
+        const resume = document.createElement('a'); resume.className = 'continue'; resume.href = new URL(`../../textbook/${book.id}/#page-${String(saved).padStart(3, '0')}`, import.meta.url).href; resume.textContent = `${saved}쪽 이어서 읽기 →`; card.append(resume);
       }
     } catch {}
   } else {

@@ -1,6 +1,6 @@
 import { mountBookNavigation } from '../../shared/book-navigation.mjs';
 import { books } from './books.mjs';
-const bookId = new URLSearchParams(location.search).get('book') || '05';
+const bookId = location.pathname.match(/\/textbook\/(0[1-6])(?:\/|$)/)?.[1] || new URLSearchParams(location.search).get('book') || '05';
 const book = books.find(item => item.id === bookId && item.status === 'ready');
 if (!book) location.replace('./index.html');
 if (book) mountBookNavigation(bookId, 'text');

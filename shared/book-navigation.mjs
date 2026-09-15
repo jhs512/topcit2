@@ -7,7 +7,7 @@ export function mountBookNavigation(bookId, mode) {
   const nav = document.createElement('nav'); nav.setAttribute('aria-label', '다른 교재로 바로 이동');
   for (const [i, book] of books.entries()) {
     const link = document.createElement('a');
-    const path = mode === 'pdf' ? `../viewer/index.html?book=${book.id}&page=1` : `../output/markdown/reader.html?book=${book.id}#page-${String(book.startPage).padStart(3, '0')}`;
+    const path = mode === 'pdf' ? `../viewer/index.html?book=${book.id}&page=1` : `../textbook/${book.id}/#page-${String(book.startPage).padStart(3, '0')}`;
     link.href = new URL(path, import.meta.url).href;
     link.textContent = `${book.id} ${shortTitles[i]}`;
     link.title = book.title;
@@ -17,8 +17,8 @@ export function mountBookNavigation(bookId, mode) {
   const summary = document.createElement('div'); summary.className = 'exam-summary';
   const label = document.createElement('span'); label.textContent = examSummary(bookId);
   const source = document.createElement('a'); source.href = examSource; source.textContent = '2026 공식 기준'; source.target = '_blank'; source.rel = 'noopener';
-  const guide = document.createElement('a'); guide.href = new URL('../exam/index.html', import.meta.url).href; guide.textContent = '시험 안내';
-  const practice = document.createElement('a'); practice.href = new URL('../practice/index.html', import.meta.url).href; practice.textContent = '문제 연습';
+  const guide = document.createElement('a'); guide.href = new URL('../info/', import.meta.url).href; guide.textContent = '시험 안내';
+  const practice = document.createElement('a'); practice.href = new URL('../practice/', import.meta.url).href; practice.textContent = '문제 연습';
   summary.append(label, guide, practice, source); panel.append(nav, summary); document.body.prepend(panel);
   const resize = () => document.documentElement.style.setProperty('--books-height', `${Math.ceil(panel.getBoundingClientRect().height)}px`);
   new ResizeObserver(resize).observe(panel); resize();
