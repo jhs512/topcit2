@@ -11,6 +11,9 @@
 .story h1{font-size:34px;letter-spacing:-1px;word-break:keep-all;overflow-wrap:anywhere}
 .story p{font-size:17px;line-height:1.95;margin:24px 0}
 .story blockquote{margin:24px 0;padding:1px 22px;border-left:4px solid #3f7961;background:#eef4e8}
+.story .prerequisites{margin:32px 0;padding:22px;background:#f0f4ef;border:1px solid #cbd8ca;border-radius:12px}
+.story .prerequisites p:first-child{margin-top:0}
+.story .prerequisites p:last-child{margin-bottom:0}
 .story a{overflow-wrap:anywhere}.story hr{border:0;border-top:1px solid var(--line);margin:32px 0}
 .story-navigation{display:flex;justify-content:space-between;align-items:start;gap:20px;max-width:740px;margin:24px auto}
 .story-navigation>a,.story-navigation>span{flex:1;padding:12px 0;font-size:14px}

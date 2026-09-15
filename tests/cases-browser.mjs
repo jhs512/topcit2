@@ -23,9 +23,20 @@ try {
       const text = await page.locator('article').innerText();
       assert.ok(text.includes('이 글에서 배울 교훈'));
       assert.ok(text.includes('교재 개념:'));
+      assert.ok(!text.includes('수업에서 도출할 판단'));
+      if ([0, 6].includes(index)) assert.ok(text.includes('최종 판단.'));
+      assert.equal(await page.locator('.prerequisites').count(), index === 0 ? 1 : 0);
       if (index === 0) {
         assert.ok(text.includes('이야기를 읽기 전에'));
         assert.ok(text.includes('실제 성공 사례'));
+        const intro = page.getByRole('region', { name: '이야기를 읽기 전에' });
+        assert.equal(await intro.locator('p').count(), 3);
+        assert.ok((await intro.innerText()).endsWith('실제 성공 사례를 다룬다.'));
+        assert.ok((await page.locator('.prerequisites + p').innerText()).startsWith('상품을 사러 온 고객에게'));
+        assert.ok(await intro.evaluate(el => {
+          const style = getComputedStyle(el);
+          return style.backgroundColor !== getComputedStyle(el.parentElement).backgroundColor && parseFloat(style.borderTopWidth) > 0 && parseFloat(style.marginBottom) >= 24;
+        }));
       }
       const links = await page.locator('article a').evaluateAll(nodes => nodes.map(a => a.href));
       assert.ok(links.some(url => url.startsWith('https://jhs512.github.io/topcit2/textbook/05/#page-')));
