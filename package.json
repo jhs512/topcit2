@@ -9,9 +9,7 @@
     "test:navigation": "node tests/book-navigation.mjs",
     "test:practice": "node tests/practice-browser.mjs",
     "build:cases": "node scripts/build-cases.mjs",
-    "test:cases": "node tests/cases-browser.mjs",
-    "test:speech": "node --test tests/speech.test.mjs",
-    "test:speech-browser": "node tests/speech-browser.mjs"
+    "test:cases": "node tests/cases-browser.mjs"
   },
   "devDependencies": {
     "marked": "^18.0.12",

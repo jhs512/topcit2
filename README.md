@@ -75,11 +75,3 @@ GitHub Pages 정적 디렉터리 경로를 사용하므로 끝의 슬래시가 �
 `cases/`는 과목 선택, `cases/05/`는 사례 목록, `cases/05/BIZ-01/`–`BIZ-10/`은 각 본문입니다. 로컬 서버 4186 포트에서 `npm run test:cases`로 PC·모바일 이동과 본문을 확인합니다. 배포본 검사는 `CASES_BASE_URL`을 공개 허브 주소로 지정합니다.
 
 교재 링크를 바꾼 뒤에는 `node tests/textbook-references.mjs`로 6권의 페이지 앵커와 사례에서 교재로 이동하는 동작을 확인합니다(기본 서버 4186, 공개 검사는 `SITE_BASE` 지정). 예: [비즈니스와 IT의 연계](https://jhs512.github.io/topcit2/textbook/05/#page-020). 확인하지 못한 위치는 교재 시작 화면으로 연결합니다. 사례 생성기는 PDF 교재 링크가 들어오면 생성을 중단합니다.
-
-## 사례 문단 읽어주기
-
-사례 10편의 제목·문단 옆 ▶ 버튼을 누르면 해당 블록만 읽습니다. 다른 블록을 누르면 기존 재생이 정지됩니다. 공통 조작부에서 일시정지·이어읽기·정지·0.75–1.5배 속도를 선택합니다. 이어읽기는 멈춘 짧은 문장부터 다시 읽고, 속도 변경은 다음 문장부터 적용합니다. 다른 화면이나 탭으로 이동하면 정지합니다. 본문은 그대로 두고 출처 링크의 표시 문구와 URL, 메뉴·조작부는 낭독에서 제외합니다.
-
-기기에서 한국어 음성을 제공해야 사용할 수 있습니다. 음성 목록의 비동기 로딩을 기다리며, 미지원·한국어 음성 없음·재생 오류는 조작부에 표시합니다. 브라우저 내장 Web Speech API를 사용하며 별도 유료 서비스는 연결하지 않습니다. 음성의 제공 방식은 기기와 브라우저에 따라 다릅니다.
-
-구현 참고: [SpeechSynthesis](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis), [SpeechSynthesisUtterance](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance). `npm run test:speech`는 분할·상태·취소 경쟁·오류 복구를 검사합니다. 로컬 4186 서버에서 `npm run test:speech-browser`는 모의 음성으로 PC·모바일 10편의 조작을 검사하며 `SITE_BASE`로 공개 주소를 지정할 수 있습니다. 모의 검사 통과는 실제 오디오 청취를 보장하지 않습니다.
