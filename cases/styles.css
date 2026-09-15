@@ -20,3 +20,13 @@
 .story-navigation>a:nth-child(2){flex:0 0 auto}.story-navigation>a:last-child{text-align:right}
 .story-navigation span{display:block;font-size:12px;color:var(--muted)}
 @media(max-width:600px){.case-list{grid-template-columns:1fr}.story{padding:24px 20px;margin:24px -4px}.story h1{font-size:27px}.story p{font-size:16px}.story-navigation{gap:12px}.story-navigation span{display:none}}
+.story .speech-controls{margin:24px 0;padding:16px;background:#f5f5ee;border:1px solid var(--line);border-radius:12px}
+.speech-buttons{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.speech-buttons button,.speech-buttons select{font:inherit;color:var(--green);background:white;border:1px solid #a5b7a8;border-radius:6px;padding:8px 12px;min-height:44px}
+.speech-buttons button:disabled{opacity:.45;cursor:default}.speech-buttons label{display:flex;align-items:center;gap:8px}
+.story .speech-status,.story .speech-help{font-size:13px;line-height:1.6;margin:12px 0 0}.story .speech-help{color:var(--muted)}
+.speech-buttons select:focus-visible{outline:3px solid #75943a;outline-offset:3px}
+.story .speech-block{position:relative;padding-right:38px}
+.block-speech-button{position:absolute;right:-4px;top:0;width:36px;height:44px;padding:0;border:0;border-radius:6px;background:transparent;color:#37644e;cursor:pointer}
+.block-speech-button::before{content:'▶';font-size:13px}.block-speech-button:hover{background:#e5eddf}
+.story .speech-active{background:#f0f6e8;outline:2px solid #71976b;outline-offset:6px;border-radius:3px}
