@@ -70,7 +70,7 @@ GitHub Pages 정적 디렉터리 경로를 사용하므로 끝의 슬래시가 �
 
 ## 사례 원본과 생성
 
-`reading/it-business-stories.md`가 게시할 본문의 원본이며 `reading/it-business-stories-plan.md`는 구성 계획입니다. 최초 원본은 `jhs512/topcit` 작업 폴더의 동명 파일에서 내용 변경 없이 가져왔습니다. 본문을 수정할 때 계획과 Markdown을 먼저 수정하고 `npm run build:cases`로 `cases/`의 정적 페이지를 다시 생성합니다. 생성 HTML은 직접 편집하지 않습니다.
+`reading/it-business-stories.md`가 게시할 본문의 원본이며 `reading/it-business-stories-plan.md`는 구성 계획입니다. 최초 원본은 `jhs512/topcit` 작업 폴더의 동명 파일에서 내용 변경 없이 가져왔습니다. 본문을 수정할 때 계획과 Markdown을 먼저 수정하고 `npm run build:cases`로 `cases/`의 정적 페이지를 다시 생성합니다. 생성 HTML은 직접 편집하지 않습니다. [사례 작성 형식](reading/CASE-AUTHORING.md)의 필수 구획과 순서를 따르며 `npm run test:case-schema`로 검증기를 검사합니다. 교훈·본문·결론 누락, 순서 위반·중복은 파일명과 사례 ID를 포함한 오류로 빌드를 중단합니다.
 
 `cases/`는 과목 선택, `cases/05/`는 사례 목록, `cases/05/BIZ-01/`–`BIZ-10/`은 각 본문입니다. 로컬 서버 4186 포트에서 `npm run test:cases`로 PC·모바일 이동과 본문을 확인합니다. 배포본 검사는 `CASES_BASE_URL`을 공개 허브 주소로 지정합니다.
 

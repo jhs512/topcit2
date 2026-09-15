@@ -37,7 +37,7 @@ try {
       }
     }
     await page.goto(new URL('cases/05/BIZ-01/', base).href);
-    const link = page.locator('article a[href*="/textbook/05/#page-020"]').first();
+    const link = page.locator('.case-references a[href*="/textbook/05/#page-020"]').first();
     const href = await link.getAttribute('href');
     assert.equal(href, 'https://jhs512.github.io/topcit2/textbook/05/#page-020');
     // Route to the same deployment being tested when running locally.
