@@ -7,7 +7,9 @@
     "serve": "python -m http.server 4173",
     "test:viewer": "node tests/viewer.mjs",
     "test:navigation": "node tests/book-navigation.mjs",
-    "test:practice": "node tests/practice-browser.mjs"
+    "test:practice": "node tests/practice-browser.mjs",
+    "build:cases": "node scripts/build-cases.mjs",
+    "test:cases": "node tests/cases-browser.mjs"
   },
   "devDependencies": {
     "marked": "^18.0.12",
