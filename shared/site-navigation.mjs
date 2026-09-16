@@ -1,6 +1,6 @@
 import { caseSubjects } from './case-catalog.mjs';
 import { books } from '../output/markdown/books.mjs';
-import { initializeTts } from './speech-loader.mjs?v=20260916-sentence-context';
+import { initializeTts } from './speech-loader.mjs?v=20260916-saved-rate';
 
 const root = new URL('../', import.meta.url);
 const url = path => new URL(path, root).href;
