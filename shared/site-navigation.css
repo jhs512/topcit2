@@ -10,7 +10,7 @@ body{padding-top:var(--site-height)}
 #site-navigation .site-group{position:relative}
 #site-navigation .site-submenu{position:absolute;right:0;top:calc(100% + 9px);width:330px;max-width:calc(100vw - 32px);max-height:calc(100dvh - 90px);overflow:auto;padding:8px;background:var(--paper,#fbfaf7);border:1px solid var(--line,#d9dfd7);border-radius:10px;box-shadow:0 12px 35px #19342626}
 #site-navigation .site-submenu a{display:block;padding:11px 12px;min-height:44px;border-radius:6px;white-space:normal}
-#site-navigation a:hover,#site-navigation button:hover,#site-navigation [aria-current=page],#site-navigation .site-active{background:var(--wash,#edf3ed);color:var(--accent,#285d43)}
+#site-navigation a:hover,#site-navigation button:hover,#site-navigation [aria-current=page],#site-navigation .site-active{background:var(--wash,#edf3ed);color:var(--ink,#263e32)}
 #site-navigation [aria-current=page]{font-weight:750}
 #site-navigation :focus-visible{outline:3px solid #ad7337;outline-offset:2px}
 #site-navigation [hidden]{display:none!important}
