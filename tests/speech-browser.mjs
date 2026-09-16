@@ -26,9 +26,9 @@ try {
    await page.waitForSelector('.speech-controls[data-state="speaking"]');await bottomRight();
    await page.evaluate(()=>scrollBy(0,250));await bottomRight();
    await page.getByRole('button',{name:'일시정지',exact:true}).click();
-   await page.getByRole('combobox',{name:'읽기 속도'}).selectOption('2.5');
+   await page.getByRole('combobox',{name:'읽기 속도'}).selectOption('3');
    await page.getByRole('button',{name:'이어읽기',exact:true}).click();
-   assert.equal(await page.evaluate(()=>speechSynthesis.spoken.at(-1).rate),2.5);
+   assert.equal(await page.evaluate(()=>speechSynthesis.spoken.at(-1).rate),3);
    await page.getByRole('button',{name:'읽어주기 닫기 및 정지'}).focus();await page.keyboard.press('Escape');
    assert.ok(await button.evaluate(el=>el===document.activeElement));
    assert.equal(await page.locator('nav .block-speech-button').count(),0);
@@ -40,26 +40,26 @@ try {
   await page.evaluate(()=>{const p=document.createElement('p');p.id='rate-fixture';p.dataset.ttsContent='';p.className='tts-readable';p.textContent='첫 문장입니다. 다음 문장입니다. 마지막 문장입니다.';document.querySelector('main').append(p)});
   await page.locator('#rate-fixture button').click();
   const speed=page.getByRole('combobox',{name:'읽기 속도'});
-  assert.deepEqual(await speed.locator('option').evaluateAll(nodes=>nodes.map(n=>Number(n.value))),[0.75,1,1.25,1.5,1.75,2,2.25,2.5]);
+  assert.deepEqual(await speed.locator('option').evaluateAll(nodes=>nodes.map(n=>Number(n.value))),[0.75,1,1.25,1.5,1.75,2,2.25,2.5,2.75,3]);
   await speed.selectOption('1');
   await page.evaluate(()=>speechSynthesis.spoken.at(-1).onend());
   assert.equal(await page.evaluate(()=>speechSynthesis.spoken.at(-1).rate),1);
-  await speed.selectOption('2.5');
+  await speed.selectOption('3');
   assert.equal(await page.evaluate(()=>speechSynthesis.spoken.at(-1).rate),1);
   await page.evaluate(()=>speechSynthesis.spoken.at(-1).onend());
-  assert.equal(await page.evaluate(()=>speechSynthesis.spoken.at(-1).rate),2.5);
+  assert.equal(await page.evaluate(()=>speechSynthesis.spoken.at(-1).rate),3);
   await page.getByRole('button',{name:'일시정지',exact:true}).click();
   await page.getByRole('button',{name:'이어읽기',exact:true}).click();
-  assert.equal(await page.evaluate(()=>speechSynthesis.spoken.at(-1).rate),2.5);
+  assert.equal(await page.evaluate(()=>speechSynthesis.spoken.at(-1).rate),3);
   assert.equal(await page.evaluate(()=>speechSynthesis.spoken.at(-1).text),'마지막 문장입니다.');
   await bottomRight();
   await page.getByRole('button',{name:'정지',exact:true}).click();
-  assert.equal(await page.evaluate(()=>localStorage.getItem('topcit2:tts-rate')),'2.5');
+  assert.equal(await page.evaluate(()=>localStorage.getItem('topcit2:tts-rate')),'3');
   await page.reload();await page.waitForSelector('.speech-controls',{state:'attached'});
-  assert.equal(await page.locator('.speech-controls select').inputValue(),'2.5');
+  assert.equal(await page.locator('.speech-controls select').inputValue(),'3');
   await page.locator('#site-tts-toggle').click();await page.locator('.speech-controls').waitFor({state:'detached'});
   await page.locator('#site-tts-toggle').click();await page.locator('.speech-controls').waitFor({state:'attached'});
-  assert.equal(await page.locator('.speech-controls select').inputValue(),'2.5');
+  assert.equal(await page.locator('.speech-controls select').inputValue(),'3');
   // A second book uses the same shared module after navigation.
   await page.goto(new URL('textbook/02/#page-147',base).href);await page.waitForSelector('body[data-ready="true"]',{timeout:60000});await page.locator('#page-147 .block-speech-button').first().waitFor();
   // Options remain selectable; no feedback exists until grading.
@@ -67,7 +67,7 @@ try {
   assert.equal(await page.locator('.feedback').count(),0);
   assert.equal(await page.locator('.selection-tag .block-speech-button').count(),0);
   const option=page.locator('.tts-option').first();await option.locator('.block-speech-button').click();
-  assert.equal(await page.evaluate(()=>speechSynthesis.spoken.at(-1).rate),2.5);
+  assert.equal(await page.evaluate(()=>speechSynthesis.spoken.at(-1).rate),3);
   assert.equal(await page.locator('input[name="answer"]:checked').count(),0);
   assert.equal(await page.locator('#submit').isDisabled(),true);
   await option.locator('input').focus();await page.keyboard.press('Space');await page.locator('#submit').focus();await page.keyboard.press('Enter');

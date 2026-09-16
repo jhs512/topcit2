@@ -1,4 +1,5 @@
-export const speechRates = Object.freeze([0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5]);
+import { pronunciationText } from './speech-pronunciation.mjs';
+export const speechRates = Object.freeze([0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3]);
 
 // Segment sentences before bounded utterances, retaining both sets of offsets.
 export function speechSentences(text) {
@@ -64,7 +65,7 @@ export class StorySpeech {
   next() {
     if (this.index >= this.chunks.length) { this.state = 'ended'; this.emit('모두 읽었습니다.'); return; }
     const token = ++this.generation;
-    const utterance = new this.Utterance(this.chunks[this.index]);
+    const utterance = new this.Utterance(pronunciationText(this.chunks[this.index]));
     this.utterance = utterance; // Keep a strong reference until the utterance finishes.
     utterance.lang = 'ko-KR'; utterance.voice = this.voice; utterance.rate = this.rate;
     const valid = () => token === this.generation;

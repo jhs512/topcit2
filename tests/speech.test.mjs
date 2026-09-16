@@ -41,12 +41,12 @@ test('end, failure, watchdog recovery and switching content', () => {
   engine.stop();
 });
 
-test('quarter-step rates through 2.5 apply to the next sentence or paused restart', () => {
+test('quarter-step rates through 3.0 apply to the next sentence or paused restart', () => {
   const { engine, spoken } = setup();
-  for (const rate of [0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5]) {
+  for (const rate of [0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3]) {
     engine.setRate(rate); engine.start(); assert.equal(spoken.at(-1).rate, rate); engine.stop();
   }
-  for (const rate of [0, 2.75, 3, NaN, '2.5']) { engine.setRate(rate); assert.equal(engine.rate, 2.5); }
+  for (const rate of [0, 3.25, 4, NaN, '3']) { engine.setRate(rate); assert.equal(engine.rate, 3); }
   engine.setRate(1); engine.start(); const first = spoken.at(-1); first.onstart();
   engine.setRate(2.5); assert.equal(first.rate, 1);
   first.onend(); assert.equal(spoken.at(-1).rate, 2.5);

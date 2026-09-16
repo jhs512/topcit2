@@ -13,7 +13,7 @@ try {
       Object.defineProperty(window, 'SpeechSynthesisUtterance', { value: class { constructor(text) { this.text = text; } } });
     });
     await page.goto(new URL('textbook/01/#page-022', base).href); await page.waitForSelector('body[data-ready="true"]');
-    const first = 'Dr. Kim은 API v2.5를 설명합니다.';
+    const first = 'IT는 API v2.5를 설명합니다.';
     const long = '긴 문장의 문맥을 유지합니다 '.repeat(40) + '끝입니다.';
     await page.evaluate(({ first, long, theme }) => {
       document.documentElement.dataset.theme = theme;
@@ -27,7 +27,7 @@ try {
     const start = () => page.evaluate(() => speechSynthesis.spoken.at(-1).onstart());
     const end = () => page.evaluate(() => speechSynthesis.spoken.at(-1).onend());
     await buttons.first().click(); assert.equal(await page.locator('.speech-context').isVisible(), false);
-    await start(); assert.deepEqual(await lines(), ['없음', first, long]); assert.equal(await highlighted(), first);
+    await start(); assert.equal(await page.evaluate(() => speechSynthesis.spoken.at(-1).text), '아이티는 에이피아이 v2.5를 설명합니다.'); assert.deepEqual(await lines(), ['없음', first, long]); assert.equal(await highlighted(), first);
     await end(); await start(); assert.deepEqual(await lines(), [first, long, '같은 문장.']); assert.equal(await highlighted(), long);
     assert.ok(await page.locator('.speech-context').evaluate(c => [...c.querySelectorAll('p')].some(p => p.scrollHeight > p.clientHeight)));
     const beforePause = await lines();

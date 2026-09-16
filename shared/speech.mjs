@@ -1,4 +1,4 @@
-import { splitSpeechRanges, speechSentences, koreanVoice, StorySpeech, speechRates } from './speech-engine.mjs?v=20260916-sentence-context';
+import { splitSpeechRanges, speechSentences, koreanVoice, StorySpeech, speechRates } from './speech-engine.mjs?v=20260917-pronunciation';
 import { excluded, visible, readableText, mapSpeechText, speechRanges } from './speech-text.mjs';
 import { createSpeechHighlight } from './speech-highlight.mjs';
 export { visible, readableText } from './speech-text.mjs';

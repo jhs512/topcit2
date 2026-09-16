@@ -23,11 +23,11 @@ export function initializeTts(button) {
     }
     if (cleanup) return;
     try {
-      modulePromise ||= import('./speech.mjs?v=20260916-saved-rate').catch(error => { modulePromise = undefined; throw error; });
+      modulePromise ||= import('./speech.mjs?v=20260917-pronunciation').catch(error => { modulePromise = undefined; throw error; });
       const speech = await modulePromise;
       if (!enabled || token !== revision) return;
       style = document.createElement('link');
-      style.rel = 'stylesheet'; style.href = new URL('./speech.css?v=20260916-saved-rate', import.meta.url).href;
+      style.rel = 'stylesheet'; style.href = new URL('./speech.css?v=20260917-pronunciation', import.meta.url).href;
       document.head.append(style);
       cleanup = speech.mountSpeech(document.body);
     } catch {
