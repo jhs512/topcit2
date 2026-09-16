@@ -35,7 +35,7 @@ try {
     await page.reload(); await page.locator('.reading-list article').first().waitFor();
     assert.match(await page.locator('.quiz-heading .progress-label').innerText(), /완료 2개/);
     assert.equal(await page.locator('.feedback').count(),0);
-    await page.getByRole('button',{name:'문제풀기모드',exact:true}).click();
+    await page.getByRole('button',{name:'랜덤모드',exact:true}).click();
     assert.ok(![a.id,b.id].includes(await page.locator('[data-question-id]').getAttribute('data-question-id')));
     await page.getByRole('button',{name:'설명모드',exact:true}).click();
     assert.equal(await page.locator('.pagination').count(),0); assert.equal(await page.locator('.reading-explanation').count(),questions.length);
