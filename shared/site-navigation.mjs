@@ -9,6 +9,13 @@ const subjectMenu = section => learningSubjects.map(s => `<a href="${url(section
 const bar = document.createElement('div');
 bar.id = 'site-navigation';
 bar.innerHTML = `<a class="site-brand" href="${url('')}">TOPCIT</a><button type="button" id="site-tts-toggle" aria-pressed="false">TTS 꺼짐</button><button class="site-toggle" aria-expanded="false" aria-controls="site-links">메뉴 <span aria-hidden="true">☰</span></button><nav id="site-links" aria-label="사이트 주 메뉴"><div class="site-group"><button aria-expanded="false" aria-controls="site-textbooks"><span>교재</span>${arrow}</button><div id="site-textbooks" class="site-submenu" hidden><a href="${url('textbook/')}">전체 교재</a>${books.map(b => `<a href="${url(`textbook/${b.id}/`)}">${b.id} ${b.title}</a>`).join('')}</div></div><div class="site-group"><button aria-expanded="false" aria-controls="site-practice"><span>문제</span>${arrow}</button><div id="site-practice" class="site-submenu" hidden><a href="${url('practice/')}">전체 문제</a>${subjectMenu('practice')}</div></div><a href="${url('info/')}">시험 안내</a><a href="${url('syllabus/')}">출제기준</a><div class="site-group"><button aria-expanded="false" aria-controls="site-practical"><span>핵심노트</span>${arrow}</button><div id="site-practical" class="site-submenu" hidden><a href="${url('practical/')}">전체 핵심노트</a>${subjectMenu('practical')}</div></div><div class="site-group"><button aria-expanded="false" aria-controls="site-cases"><span>사례 모음</span>${arrow}</button><div id="site-cases" class="site-submenu" hidden><a href="${url('cases/')}">전체 사례</a>${subjectMenu('cases')}</div></div><a href="${url('study/')}">학습방법</a><a href="${url('instructor/')}">강사소개</a></nav>`;
+// Only pages that explicitly opt in open navigation destinations in a new tab.
+if (document.body.dataset.pageLinks === 'new-tab') {
+  for (const link of bar.querySelectorAll('a[href]')) {
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+  }
+}
 document.body.prepend(bar);
 initializeTts(bar.querySelector('#site-tts-toggle'));
 const toggle = bar.querySelector('.site-toggle');
