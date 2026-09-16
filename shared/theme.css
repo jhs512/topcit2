@@ -19,7 +19,7 @@
 :root[data-theme=dark] #canvas-wrap{background:var(--bg)}
 :root[data-theme=dark] :is(.story,.question-grid article,.lesson-block,.github-comment){background:var(--paper);color:var(--ink);border-color:var(--line)}
 :root[data-theme=dark] :is(.story blockquote,.prerequisites,.case-lesson,.case-references li:target,details,.question){background:var(--wash);color:var(--ink);border-color:var(--line)}
-:root[data-theme=dark] #toc details{background:transparent}
+:root[data-theme=dark] :is(#toc details,#comments-fallback){background:transparent}
 :root[data-theme=dark] :is(.speech-current-sentence,.option:has(input:checked) .selection-tag){background:#a9d9bc;color:#17201c}
 :root[data-theme=dark] .primary:disabled{background:#3c4d43;color:#bccdc1}
 @media print{:root[data-theme=dark]{--paper:white;--bg:white;--ink:black;--text:black;--muted:#333;--wash:#eee;color-scheme:light}}
