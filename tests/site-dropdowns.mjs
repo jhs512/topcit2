@@ -52,12 +52,12 @@ try {
       for (const story of stories) {
         const response = await page.goto(story); assert.equal(response.status(), 200);
         await page.locator('[aria-controls="site-cases"].site-active').waitFor({ state: 'attached' });
-        assert.equal(await page.locator('#site-cases [aria-current="page"]').getAttribute('href'), subject);
+        assert.equal(await page.locator('#site-cases .site-parent-active').getAttribute('href'), subject);
         assert.equal(await page.locator('.story .case-lesson').count(), 1);
       }
     }
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
     await page.close();
   }
-  console.log('PASS dropdowns: 1440/390/320px centered labels/icons, all three keyboard menus, Escape/outside click, catalog-only case links, all ten stories and current location');
+  console.log('PASS dropdowns: 1440/390/320px centered labels/icons, all three keyboard menus, Escape/outside click, catalog-only case links, all stories and current location');
 } finally { await browser.close(); }

@@ -2,7 +2,7 @@
 body{padding-top:var(--site-height)}
 #site-navigation{box-sizing:border-box;position:fixed;inset:0 0 auto;z-index:80;height:var(--site-height);display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 max(24px,calc((100vw - 1200px)/2));background:var(--paper,#fbfaf7);color:var(--ink,#263e32);border-bottom:1px solid var(--line,#d9dfd7);font:14px/1.5 system-ui,'Malgun Gothic',sans-serif}
 #site-navigation *{box-sizing:border-box}
-#site-navigation a{color:inherit;text-decoration:none}
+#site-navigation a{color:inherit;text-decoration:none;background:transparent}
 #site-navigation .site-brand{font-size:22px;font-weight:800;letter-spacing:1px}
 #site-navigation button{font:inherit;color:inherit;background:transparent;border:0;border-radius:6px;padding:10px 14px;min-height:44px;cursor:pointer}
 #site-navigation nav{display:flex;align-items:center;gap:12px;margin:0;padding:0;border:0;background:none}
@@ -12,8 +12,8 @@ body{padding-top:var(--site-height)}
 #site-navigation .site-group{position:relative}
 #site-navigation .site-submenu{position:absolute;right:0;top:calc(100% + 9px);width:330px;max-width:calc(100vw - 32px);max-height:calc(100dvh - 90px);overflow:auto;padding:8px;background:var(--paper,#fbfaf7);border:1px solid var(--line,#d9dfd7);border-radius:10px;box-shadow:0 12px 35px #19342626}
 #site-navigation .site-submenu a{display:block;padding:11px 12px;min-height:44px;border-radius:6px;white-space:normal}
-#site-navigation a:hover,#site-navigation button:hover,#site-navigation [aria-current=page],#site-navigation .site-active{background:var(--wash,#edf3ed);color:var(--ink,#263e32)}
-#site-navigation [aria-current=page]{font-weight:750}
+#site-navigation nav a:hover,#site-navigation nav button:hover,#site-navigation nav [aria-current=page],#site-navigation .site-active{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px}
+#site-navigation nav [aria-current=page],#site-navigation .site-active{font-weight:750}
 #site-navigation :focus-visible{outline:3px solid #ad7337;outline-offset:2px}
 #site-navigation [hidden]{display:none!important}
 #site-navigation .site-toggle{display:none}
