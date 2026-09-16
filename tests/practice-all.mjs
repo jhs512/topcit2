@@ -38,8 +38,8 @@ try {
     await page.getByRole('button',{name:'문제풀기모드',exact:true}).click();
     assert.ok(![a.id,b.id].includes(await page.locator('[data-question-id]').getAttribute('data-question-id')));
     await page.getByRole('button',{name:'설명모드',exact:true}).click();
-    assert.equal(await page.locator('.pagination').count(),1); assert.equal(await page.locator('.reading-explanation').count(),20);
-    await page.locator('#next-page').click(); assert.match(await page.locator('.reading-intro p').innerText(),/21–40/);
+    assert.equal(await page.locator('.pagination').count(),0); assert.equal(await page.locator('.reading-explanation').count(),questions.length);
+    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
     await page.getByRole('button',{name:'전체모드',exact:true}).click();
     assert.equal(await page.locator('.reading-list article').count(),questions.length);
     // TTS still reads educational options after grading, not hidden answer text beforehand.
