@@ -7,6 +7,9 @@ import { caseSubjects } from '../reading/case-subjects.mjs';
 import { redirectPage } from './page-redirect.mjs';
 import { expandedCaseSources } from './expanded-case-source.mjs';
 import { subjects } from '../practical/content.mjs';
+import { validateTextbookAlignment } from '../shared/textbook-alignment.mjs';
+
+validateTextbookAlignment();
 
 const root = new URL('../', import.meta.url);
 const source = await readFile(new URL('reading/it-business-stories.md', root), 'utf8');
@@ -29,7 +32,10 @@ for (const c of cases) {
     if (id !== classification[c.id] || !subjects.find(s => s.id === id)?.items[Number(number)-1]) throw new Error(`${c.id}: 핵심노트 근거를 찾을 수 없습니다.`);
     continue;
   }
-  const [, id, page] = c.lesson.basis.url.match(/textbook\/(\d{2})\/#page-(\d{3})$/);
+  const target = new URL(c.lesson.basis.url);
+  const [, id, page] = target.pathname.includes('/viewer/')
+    ? [null, target.searchParams.get('book'), target.searchParams.get('page').padStart(3, '0')]
+    : c.lesson.basis.url.match(/textbook\/(\d{2})\/#page-(\d{3})$/);
   const book = books.find(b => b.id === id);
   if (!bookSources.has(id)) bookSources.set(id, await readFile(new URL(book.source, new URL('output/markdown/', root)), 'utf8'));
   const content = bookSources.get(id).split(`<!-- PDF page: ${page} -->`)[1]?.split('<!-- PDF page:')[0];

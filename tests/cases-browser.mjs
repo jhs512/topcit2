@@ -65,24 +65,20 @@ try {
         }));
       }
       const links = await page.locator('.case-references a').evaluateAll(nodes => nodes.map(a => a.href));
-      assert.ok(links.some(url => url.startsWith('https://jhs512.github.io/topcit2/textbook/05/#page-')));
-      assert.ok(links.every(url => !/jhs512\.github\.io\/topcit2?\/(viewer|sources)\//.test(url)));
+      assert.ok(links.some(url => url.startsWith('https://jhs512.github.io/topcit/viewer/index.html?book=05&page=')));
+      assert.ok(links.every(url => !/jhs512\.github\.io\/topcit2?\/sources\//.test(url)));
+      assert.equal(await page.locator('.textbook-connection').count(), 1);
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
       assert.equal(await page.locator('[aria-controls="site-cases"].site-active').innerText(), '사례 모음');
       assert.ok((await page.locator('#site-cases a.site-parent-active').getAttribute('href')).endsWith('/cases/05-01/'));
       await page.reload();
       await page.locator('article h1').waitFor();
-      // Follow each newly added basis link to its actual rendered textbook page.
-      const target = cases[index].lesson.basis.url.split('/topcit2/')[1];
-      if (base.startsWith('http://localhost')) await basis.evaluate((a, url) => { a.href = url; }, new URL(target, base).href);
+      // Verify all eleven lesson links render their exact PDF page locally.
+      const target = new URL(cases[index].lesson.basis.url);
+      const number = Number(target.searchParams.get('page'));
+      if (base.startsWith('http://localhost')) await basis.evaluate((a, url) => { a.href = url; }, new URL(`viewer/index.html${target.search}`, base).href);
       await basis.click();
-      await page.waitForSelector('body[data-ready="true"]', { timeout: 60000 });
-      const hash = new URL(cases[index].lesson.basis.url).hash;
-      await page.waitForFunction(hash => {
-        const box = document.querySelector(hash)?.getBoundingClientRect();
-        return box && box.top < innerHeight && box.bottom > 100;
-      }, hash);
-      assert.ok((await page.locator(hash).innerText()).length > 30);
+      await page.waitForFunction(number => document.querySelector('#pages canvas')?.getAttribute('aria-label') === `PDF ${number}쪽`, number, { timeout: 60000 });
       await page.goto(new URL(`cases/05/${cases[index].id}/`, base).href);
       if (index === 0) {
         await page.getByRole('link', { name: /다음 사례/ }).click();
@@ -98,7 +94,7 @@ try {
     await page.close();
   }
   assert.deepEqual(errors, []);
-  console.log('PASS: desktop/mobile 11 stories, both lesson sentences, all basis link clicks/anchors, prerequisites, sources, navigation');
+  console.log('PASS: desktop/mobile 11 stories, both lesson sentences, all basis PDF link clicks, prerequisites, sources, navigation');
 } finally {
   await browser.close();
 }

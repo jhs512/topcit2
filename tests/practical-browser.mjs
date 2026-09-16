@@ -15,8 +15,8 @@ try {
       await page.locator(`.area-card[href="${s.id}/"]`).click();
       await page.locator('#site-tts-toggle').waitFor();
       assert.equal(await page.locator('.concept').count(), 20);
-      assert.equal(await page.locator('.concept .tts-readable').count(), 80);
-      assert.match(await page.locator('.editor-note').innerText(), /자체 선정/);
+      assert.equal(await page.locator('.concept > h2.tts-readable, .concept > p.tts-readable, .concept > .example > p.tts-readable').count(), 80);
+      assert.match(await page.locator('.editor-note').innerText(), /교재 개념을 먼저 설명/);
       assert.equal(await page.locator('body').evaluate(el => el.scrollWidth <= innerWidth), true, `${s.id} overflow at ${width}`);
       await page.locator('.contents a').last().click();
       assert.equal(new URL(page.url()).hash, '#concept-20');

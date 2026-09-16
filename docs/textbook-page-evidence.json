@@ -1,0 +1,780 @@
+{
+  "sourceCatalog": "topcit/output/markdown/books.mjs",
+  "comparisonCommit": "8bb03fdf4e03229ffac6d9de1a48f77523b0b549",
+  "pages": [
+    {
+      "book": "01",
+      "page": 23,
+      "source": "./book-01/book.md",
+      "sha256": "2c4020da9ce77b871fa11cba74738deb8fb53ab885c97de74eacae79edac189b"
+    },
+    {
+      "book": "01",
+      "page": 33,
+      "source": "./book-01/book.md",
+      "sha256": "0ae64d940da3858a6f8337602ed2c1ddae5f3d592bd36ceb21c068fb3a93591d"
+    },
+    {
+      "book": "01",
+      "page": 39,
+      "source": "./book-01/book.md",
+      "sha256": "2f2d0c6723fe5bc1cb1af5b86fa7716fad64ba3faef0a4bcc6e5886874fc1251"
+    },
+    {
+      "book": "01",
+      "page": 49,
+      "source": "./book-01/book.md",
+      "sha256": "b821ae540951bca30ab63e0f9e5c33f900685554bb58bcbcf39b177a1975271f"
+    },
+    {
+      "book": "01",
+      "page": 55,
+      "source": "./book-01/book.md",
+      "sha256": "744a68830e60b0adc2e004875d697aa7fd9c202a23ed36a8a5459ecf4aa33a00"
+    },
+    {
+      "book": "01",
+      "page": 73,
+      "source": "./book-01/book.md",
+      "sha256": "454f87f4848633312631da0ef9a53b66b8033e35c93e0ffd96093f00983cfd61"
+    },
+    {
+      "book": "01",
+      "page": 85,
+      "source": "./book-01/book.md",
+      "sha256": "870eb2db6c034384d582ab42186998e6aee320f871727a88a10cbc902f4978dd"
+    },
+    {
+      "book": "01",
+      "page": 86,
+      "source": "./book-01/book.md",
+      "sha256": "3f569f9010d30a8803ced012106bfc22dff393ed8be334fb83dd6d7bb0d00b75"
+    },
+    {
+      "book": "01",
+      "page": 90,
+      "source": "./book-01/book.md",
+      "sha256": "21d2e3a962bfe403fb17cd2ea572fdae4d04fd993e427c8127ebd9d645421854"
+    },
+    {
+      "book": "01",
+      "page": 97,
+      "source": "./book-01/book.md",
+      "sha256": "79594120dd3158b3fde7cb355a94034c8992e3267d0058410eccc7880d4095d8"
+    },
+    {
+      "book": "01",
+      "page": 102,
+      "source": "./book-01/book.md",
+      "sha256": "8cb93f482e3796b08ef39b0fd8d24eeb7ef2ff490f73321180f79d4a23c5ac61"
+    },
+    {
+      "book": "01",
+      "page": 103,
+      "source": "./book-01/book.md",
+      "sha256": "290719d0f62a90a8a2040897d0124370e2651e50d966755cdcf7562589d2e8a3"
+    },
+    {
+      "book": "01",
+      "page": 104,
+      "source": "./book-01/book.md",
+      "sha256": "1bcce5eef0364eb63e3358ba3cdfbb32fc0eace30b85500ccf6836e612f1d005"
+    },
+    {
+      "book": "01",
+      "page": 105,
+      "source": "./book-01/book.md",
+      "sha256": "946977dbde3bee955974e19a341ab18d84fa8ec396ea0cb17876f8b5bd96c4f3"
+    },
+    {
+      "book": "01",
+      "page": 110,
+      "source": "./book-01/book.md",
+      "sha256": "4cdc85733893fcc4b5ac3204e71cc618cbe98a96a170b5f2a4fa52a73732ea00"
+    },
+    {
+      "book": "01",
+      "page": 111,
+      "source": "./book-01/book.md",
+      "sha256": "8c6547e412f82214ddfb0562b493dbb187522e550b0d1edc3e15e34bc3e510d2"
+    },
+    {
+      "book": "01",
+      "page": 119,
+      "source": "./book-01/book.md",
+      "sha256": "c23a0b500f141232599c1a3eaf95ed0a3c452b35ac8e67290f5dcf5ac177a771"
+    },
+    {
+      "book": "01",
+      "page": 124,
+      "source": "./book-01/book.md",
+      "sha256": "e59d1147fea79c188095bce5b6bc76714c61c85de9f04c38719fe5fca6995450"
+    },
+    {
+      "book": "02",
+      "page": 46,
+      "source": "./book-02/book.md",
+      "sha256": "fedad75c8f05d219e4b909c0f148f445137c06cf14d7ff1298bfe4ebb8a0fccd"
+    },
+    {
+      "book": "02",
+      "page": 52,
+      "source": "./book-02/book.md",
+      "sha256": "4a7ec471b484ebf7a2dfa9ec0c4688832d9dcf6d7b19f3d55116382903642a71"
+    },
+    {
+      "book": "02",
+      "page": 65,
+      "source": "./book-02/book.md",
+      "sha256": "c5df3e1b93f21f9d57a3cf3054fb17e08d51efc77777cfbf2ecdc61f907eb718"
+    },
+    {
+      "book": "02",
+      "page": 66,
+      "source": "./book-02/book.md",
+      "sha256": "7a1b5f717ab34f1a22c54113d3334ef3a7ab7015b3eb927face214dc95e39b0c"
+    },
+    {
+      "book": "02",
+      "page": 72,
+      "source": "./book-02/book.md",
+      "sha256": "3739b0f2d4180a838df0f265b3cce0446621555b540032b2b890c30a78a5a1e1"
+    },
+    {
+      "book": "02",
+      "page": 96,
+      "source": "./book-02/book.md",
+      "sha256": "8fffcda92cb30c594e3b57130ec58ca81e060d8c3475792707ba6e9bbb925bf6"
+    },
+    {
+      "book": "02",
+      "page": 97,
+      "source": "./book-02/book.md",
+      "sha256": "539edbd39c8d1600c7800b56b2554cb2ff7007eda4bdc0f404b0bc3e22874a9b"
+    },
+    {
+      "book": "02",
+      "page": 107,
+      "source": "./book-02/book.md",
+      "sha256": "0c4eae71fc0bed5da70fb0b85e89bd39ec87d4009147bc2d2db7806654614361"
+    },
+    {
+      "book": "02",
+      "page": 115,
+      "source": "./book-02/book.md",
+      "sha256": "67f90e0cce9c2afd16aedd5663cd76e213745c178cb95fcffeea72b0f3d0d928"
+    },
+    {
+      "book": "02",
+      "page": 121,
+      "source": "./book-02/book.md",
+      "sha256": "1b18fcef6f6d295db0e088fcb25d4872914c0f0441b01109469743bec4c9b3bd"
+    },
+    {
+      "book": "02",
+      "page": 122,
+      "source": "./book-02/book.md",
+      "sha256": "f9972cebff9b7c5d959d2d17da0b8defb1d33e279a9ec10656034aa5f5657b37"
+    },
+    {
+      "book": "02",
+      "page": 136,
+      "source": "./book-02/book.md",
+      "sha256": "e192cf593c3db585585a960496aebeeffc1d6e35c5e48f5b72652f2bf2501828"
+    },
+    {
+      "book": "02",
+      "page": 138,
+      "source": "./book-02/book.md",
+      "sha256": "8a79a6c9a6c58a78f4f2432312134b5b7c02bf56369d8306a610a6f41c7a7c27"
+    },
+    {
+      "book": "02",
+      "page": 145,
+      "source": "./book-02/book.md",
+      "sha256": "73313038047f28d0e98f32688f81b15e5ea34f02a516e97978dfe3551c18eae3"
+    },
+    {
+      "book": "02",
+      "page": 147,
+      "source": "./book-02/book.md",
+      "sha256": "34fa9422e67b6408c381185bcbbbadb1167cd3b1852b16d623bd6dee7b0e6b69"
+    },
+    {
+      "book": "02",
+      "page": 153,
+      "source": "./book-02/book.md",
+      "sha256": "e45c1f3f93a0387c7e64c1ef240f674ae559906f1ef266a3aaa09dd353501cab"
+    },
+    {
+      "book": "03",
+      "page": 24,
+      "source": "./book-03/book.md",
+      "sha256": "87a193b29d8c0dd2238c48b425e1c1388b0179fddebd75b61c673ec1e023dca7"
+    },
+    {
+      "book": "03",
+      "page": 25,
+      "source": "./book-03/book.md",
+      "sha256": "f58a7ea0061e375a43a802ae748927ead66dd663c7d610c5d38cfd2258b1efe6"
+    },
+    {
+      "book": "03",
+      "page": 30,
+      "source": "./book-03/book.md",
+      "sha256": "3fc7370b376035738a2d4a87b3e2c12f21ceb03a4c5518e3cbac227d24f0d8b3"
+    },
+    {
+      "book": "03",
+      "page": 48,
+      "source": "./book-03/book.md",
+      "sha256": "bf0d461c17aad27ad74a84205c0aaa28cf461be467b236f9657e0bb58c692a0b"
+    },
+    {
+      "book": "03",
+      "page": 51,
+      "source": "./book-03/book.md",
+      "sha256": "240adfde37cb90258f699198a9eea5315f81310cfa33818c4ebe147163857c92"
+    },
+    {
+      "book": "03",
+      "page": 66,
+      "source": "./book-03/book.md",
+      "sha256": "8b51eb0c42a76ca1edcef8f7d5a14ddafaeb139584fc7dc664ca7a663671e05c"
+    },
+    {
+      "book": "03",
+      "page": 69,
+      "source": "./book-03/book.md",
+      "sha256": "2b4829a7a04c709630ab3844a057cf799b57b8e400042fb3b541971c38085af6"
+    },
+    {
+      "book": "03",
+      "page": 115,
+      "source": "./book-03/book.md",
+      "sha256": "a49e2689f9fe23fb16657e9d20bfaaf3575814130408736aaf1fe91210eb3733"
+    },
+    {
+      "book": "03",
+      "page": 117,
+      "source": "./book-03/book.md",
+      "sha256": "2c32318031574aeb6f0916e10c2a9eeda42fa39050b21da2c8258e2089e82c0d"
+    },
+    {
+      "book": "03",
+      "page": 123,
+      "source": "./book-03/book.md",
+      "sha256": "f5c526e05e3335c8447e152abda3e3ce7ce1609f3bda795eb16bbdeac697dae4"
+    },
+    {
+      "book": "03",
+      "page": 125,
+      "source": "./book-03/book.md",
+      "sha256": "5f0238f06cf8127b13683ab82d79b5852d7d2bf10bab5d94044509ec9831a7a8"
+    },
+    {
+      "book": "03",
+      "page": 126,
+      "source": "./book-03/book.md",
+      "sha256": "9e07254fa2e0fd496dd8dbb29c5263bf469d29d15788318f84add674788a8a40"
+    },
+    {
+      "book": "03",
+      "page": 163,
+      "source": "./book-03/book.md",
+      "sha256": "6543f80452ec921581b173c0d9830751bb413e6bb71d0d28c3dcd6d8cf01f464"
+    },
+    {
+      "book": "03",
+      "page": 164,
+      "source": "./book-03/book.md",
+      "sha256": "5c6bdfe7fd48ce2e52059b2ab2e1ac4b318b240419d57d4429433de205adf7a0"
+    },
+    {
+      "book": "03",
+      "page": 180,
+      "source": "./book-03/book.md",
+      "sha256": "d9ef2b90f28155cbc360a0ae548e64a482c17fcb4038b6460dd794ee58440696"
+    },
+    {
+      "book": "04",
+      "page": 15,
+      "source": "./book-04/book.md",
+      "sha256": "4faa308f39f35a6937eb804c1f34ca3743d254bf6c3714dafc9a2ab457e14533"
+    },
+    {
+      "book": "04",
+      "page": 29,
+      "source": "./book-04/book.md",
+      "sha256": "d29531e3aae645e95dc762c14b94637fd24310278e4d5f74af0d64f3b0e3503f"
+    },
+    {
+      "book": "04",
+      "page": 37,
+      "source": "./book-04/book.md",
+      "sha256": "0c221bed073b608d36340a5d07f0ee5ac7ea96564a6ee9d8fb3e7abb03533d9e"
+    },
+    {
+      "book": "04",
+      "page": 38,
+      "source": "./book-04/book.md",
+      "sha256": "b9f02ad6ce2a48ada8b238c3eef31ba55a168d3ba6fd3d40c3ff6ca1dd6faff7"
+    },
+    {
+      "book": "04",
+      "page": 39,
+      "source": "./book-04/book.md",
+      "sha256": "88a94060b16554d9aa90c741ea4f87b6c8e48c2abe10edec163ebc6fcdf45d98"
+    },
+    {
+      "book": "04",
+      "page": 42,
+      "source": "./book-04/book.md",
+      "sha256": "7a1d5baf5440c49351b845336e1e96cbd7a5974d0bff79f857533a1aada362b3"
+    },
+    {
+      "book": "04",
+      "page": 43,
+      "source": "./book-04/book.md",
+      "sha256": "7ae95f3d6c99ff5b483e4634c893bc2fa7d0275d17699ef494ee117e652bec5c"
+    },
+    {
+      "book": "04",
+      "page": 50,
+      "source": "./book-04/book.md",
+      "sha256": "6a2ea65f5a610652499a334f7d54a2069c0cc2cace929e022818919184688e92"
+    },
+    {
+      "book": "04",
+      "page": 60,
+      "source": "./book-04/book.md",
+      "sha256": "b07e976fea3bf223dc649429d30c2eaa4b5f465e1d7a49e59608374ded4b99f5"
+    },
+    {
+      "book": "04",
+      "page": 61,
+      "source": "./book-04/book.md",
+      "sha256": "10071e4b4798e645545ebea53b8628532cae460d77a8ed970e237cbcd1f54e08"
+    },
+    {
+      "book": "04",
+      "page": 64,
+      "source": "./book-04/book.md",
+      "sha256": "c4f0f1f4bf2080db82f39002da10332821ed42e5c329f4f8297c1278fa3a18c0"
+    },
+    {
+      "book": "04",
+      "page": 66,
+      "source": "./book-04/book.md",
+      "sha256": "1072f5b5a16702a4153617d5d0b960b60ec23cc50a948cbaa72fddea72dad89c"
+    },
+    {
+      "book": "04",
+      "page": 70,
+      "source": "./book-04/book.md",
+      "sha256": "63d4f1eb8f0c3f4c6b83f69724d401817b307ddba1c7d934be1ed56d3da462a6"
+    },
+    {
+      "book": "04",
+      "page": 71,
+      "source": "./book-04/book.md",
+      "sha256": "d56bb189fae3f492983880070f146a95fe944dde64accbc43f3d34f920a003ec"
+    },
+    {
+      "book": "04",
+      "page": 72,
+      "source": "./book-04/book.md",
+      "sha256": "db19a90dc480b8108a9f5ec589d9376d97065f4aa9feecf3294445dda7d2dd24"
+    },
+    {
+      "book": "04",
+      "page": 83,
+      "source": "./book-04/book.md",
+      "sha256": "8abf0041c959a64aab6f16e536e22a6af6f310094866a368b467348c9abbd2d5"
+    },
+    {
+      "book": "04",
+      "page": 91,
+      "source": "./book-04/book.md",
+      "sha256": "4273a45670865636d9b20618af0b703a3f13722d0d3761a05ecba19f56eae5d9"
+    },
+    {
+      "book": "04",
+      "page": 95,
+      "source": "./book-04/book.md",
+      "sha256": "bea68153324e60f0b975eb03fdec4736dd6db169da754ff44d98a6f521816aa2"
+    },
+    {
+      "book": "04",
+      "page": 96,
+      "source": "./book-04/book.md",
+      "sha256": "a1a68b347de2b19e147a19bd93183c2a1e8eaf09b1bcd8498f99b85a5343e262"
+    },
+    {
+      "book": "05",
+      "page": 20,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "7f59118d870d630d10a65f6b4f211730a0316638a87238569336c0e1947f8c3f"
+    },
+    {
+      "book": "05",
+      "page": 25,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "c2616e299d1bc7fd5e7a8a204347e61d87fa9f1860e4e9cfeee2fbd9517e96ab"
+    },
+    {
+      "book": "05",
+      "page": 26,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "faea18813d4b9c405838850b5ce902c329b12f38adb08209ddb6685c24510482"
+    },
+    {
+      "book": "05",
+      "page": 32,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "7777f7005e1faacbf10f79b8073dda1a78d3b66850d2b496caebb5a3605b508d"
+    },
+    {
+      "book": "05",
+      "page": 38,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "9785e7b3a14fcb4e8069db1ec22d900da74cbf013458e51034094be74b3412a5"
+    },
+    {
+      "book": "05",
+      "page": 42,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "22ccc08eac2b3e63e97fda3f01163be5fbf643818c2db450ee58c89e0337034e"
+    },
+    {
+      "book": "05",
+      "page": 48,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "21aaf8256d874816adca4ad6a3424837c2ceb6adeb707cf37b875978be10c47b"
+    },
+    {
+      "book": "05",
+      "page": 53,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "3a905395055a5f8adc07d1c7d5f4cd7b721e3e2056630a60501151c9eb4e5041"
+    },
+    {
+      "book": "05",
+      "page": 56,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "17e8d522555657a5904557db063cbf52b862907a28964f2d6a1357558ccab4a9"
+    },
+    {
+      "book": "05",
+      "page": 58,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "103b175585457a70ae10f7e6b99d26802c10c8449a5fcba68451f7ed8e5b9729"
+    },
+    {
+      "book": "05",
+      "page": 64,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "3dbfa6c34475e707f803bef2bbbd8a0cb03580c77058f45b67201db5cb69a926"
+    },
+    {
+      "book": "05",
+      "page": 65,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "275d2a5b74bef98a96357c8b7c07098fae055b68864013ad9f98820ea68c48b5"
+    },
+    {
+      "book": "05",
+      "page": 70,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "22a891b77aa9d223eb27194643d7ab334bf88e86be3946c220c0eada3849e027"
+    },
+    {
+      "book": "05",
+      "page": 71,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "bf99db883225c4a7e9032320501ba9d17435e57a65ab70ee835b502d4a9e458e"
+    },
+    {
+      "book": "05",
+      "page": 83,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "81f25d55c42646c8992d2bd703c71603c76a4a33519358b00f0012de56cf693e"
+    },
+    {
+      "book": "05",
+      "page": 86,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "5c4a371ac654ea2069d1c1f6174b1f0f9f2817df256b765895a79210ed52959d"
+    },
+    {
+      "book": "05",
+      "page": 89,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "304d6e7c7ad2114cc45cd57fa33c2fa3e44823e748f9f6ec1dd63ead81e0197f"
+    },
+    {
+      "book": "05",
+      "page": 98,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "0d2e80d98f8002e0a2fdde7cc084ebee6917318471d1fcba01d3804d8e0899bd"
+    },
+    {
+      "book": "05",
+      "page": 102,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "2d24c37b0a74d272837c5214da3e97483f81e3cd666a60461b6bac4fd7ebc4d1"
+    },
+    {
+      "book": "05",
+      "page": 107,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "1f5c376150ca2925faf0b7f6113dda628270de2dc11009d2cc080ab5d4ca2f3a"
+    },
+    {
+      "book": "05",
+      "page": 109,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "009903fcf53307cf659a50db8766053b398b886d48607e1e54a33149a5535276"
+    },
+    {
+      "book": "05",
+      "page": 111,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "4ea2e567540194898bc41d53f71e34bceabccb4a403cd0786fe669d1b3a8e525"
+    },
+    {
+      "book": "05",
+      "page": 170,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "20835a23a00d16be65f4fd9b882d53ba1ba1a5b5aa8d1a53680916857e789841"
+    },
+    {
+      "book": "05",
+      "page": 171,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "96f780e26ba7c14d149e25e0aeb9e72212a9baf7d7108041ea7ba2f2a8a3cecb"
+    },
+    {
+      "book": "05",
+      "page": 172,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "4bbcf9246a2d4c73326156cf1e78ec41faa2af64cfefa6d4af109d4c92bf12b3"
+    },
+    {
+      "book": "05",
+      "page": 177,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "0a6085811718cceedb8b6bbd2814f766305b35d73682a46f5bcb9613282763a9"
+    },
+    {
+      "book": "05",
+      "page": 179,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "376e03484bda98cf4c6a4ca4fed4d9e2b77da64efe38a92aa9f6342670854d67"
+    },
+    {
+      "book": "05",
+      "page": 180,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "cf96b16e7d0282695e2e252e60e1ff1f9adf39701fab7547850bc5c475beb200"
+    },
+    {
+      "book": "05",
+      "page": 193,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "5ba60b214d7e47b22add8fec1fb6d4845bd0875ae16dce9bd1368251d145cda5"
+    },
+    {
+      "book": "05",
+      "page": 207,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "e5cd7fb00f4c291352aba902c8907682fc4f7fe031fe105e34e7d9333bcd626a"
+    },
+    {
+      "book": "05",
+      "page": 209,
+      "source": "./IT비즈니스와윤리.md",
+      "sha256": "189d5e88464f179c82e66fc132560b954a1f1aacace3f87b6283a89093be1665"
+    },
+    {
+      "book": "06",
+      "page": 18,
+      "source": "./book-06/book.md",
+      "sha256": "8e3445aa95b061853fdecfce2ce7cc68efe9504e9c53ad5e7b5b5473173e30bf"
+    },
+    {
+      "book": "06",
+      "page": 21,
+      "source": "./book-06/book.md",
+      "sha256": "e992b025489a574e19ec34eecf1d967f81651e5323e2af36fdeb300e3f6186d3"
+    },
+    {
+      "book": "06",
+      "page": 22,
+      "source": "./book-06/book.md",
+      "sha256": "e357470b043782f0794e89b9a67a90af61451f89fc775794ef5ec3e5df406b1d"
+    },
+    {
+      "book": "06",
+      "page": 25,
+      "source": "./book-06/book.md",
+      "sha256": "dd2de1f61ae6f33aa9c1fb07bf7797084e134db196a77c734473a8e7e25cd8ab"
+    },
+    {
+      "book": "06",
+      "page": 33,
+      "source": "./book-06/book.md",
+      "sha256": "7b02f2c5f65901ff63ae98a51ee6314f3456afaeb4c83332db4ed6d31500282b"
+    },
+    {
+      "book": "06",
+      "page": 34,
+      "source": "./book-06/book.md",
+      "sha256": "487f94c07418e6e1b0807313c08547e4418c5221c79d87f601d09acbfa9a8366"
+    },
+    {
+      "book": "06",
+      "page": 35,
+      "source": "./book-06/book.md",
+      "sha256": "1ab31237fee7a7bc9ac16ed4929959864b682cc69a0a2427cae24c236908dfae"
+    },
+    {
+      "book": "06",
+      "page": 36,
+      "source": "./book-06/book.md",
+      "sha256": "b6b6c5531356b122f81ef5cb9833ddf81f29b5a584021cb7461b1115c716e6e7"
+    },
+    {
+      "book": "06",
+      "page": 40,
+      "source": "./book-06/book.md",
+      "sha256": "b9f05ee3b9f5c77411c37c9821fd5043995bfe68a376cda56b402aa1f12c373a"
+    },
+    {
+      "book": "06",
+      "page": 41,
+      "source": "./book-06/book.md",
+      "sha256": "d8d844f165ac5bc8b117b963f492b33ffd1156b06b4c9da1a6d6005d8a801c95"
+    },
+    {
+      "book": "06",
+      "page": 47,
+      "source": "./book-06/book.md",
+      "sha256": "b07a3fdf852e345eb69cb0afe3ba1f2cf425d61c184b80540580eb26f6d41ad4"
+    },
+    {
+      "book": "06",
+      "page": 49,
+      "source": "./book-06/book.md",
+      "sha256": "663823bebe2c53efe2797bc431179a86a498f2805288eccc9ac0a69ee99f9b46"
+    },
+    {
+      "book": "06",
+      "page": 54,
+      "source": "./book-06/book.md",
+      "sha256": "113ac0b7efa3897880f01c9706ce66105601c65dc8ae922343d955c0cad34fd0"
+    },
+    {
+      "book": "06",
+      "page": 55,
+      "source": "./book-06/book.md",
+      "sha256": "e06ceb32b5e5166a0577fb63234edb729d860c14d51f1f29e03c6ecef8210c9a"
+    },
+    {
+      "book": "06",
+      "page": 57,
+      "source": "./book-06/book.md",
+      "sha256": "5349a55f87d97bf56913b80064bfa356d7f03a17525f7654251bce1b0112d1b5"
+    },
+    {
+      "book": "06",
+      "page": 71,
+      "source": "./book-06/book.md",
+      "sha256": "98efd7beacc229b72965604c38793ceed1083e62ed6fe786eaa151349dfd9776"
+    },
+    {
+      "book": "06",
+      "page": 80,
+      "source": "./book-06/book.md",
+      "sha256": "74de64215f6e06845d540e7451349952138ae0039b8db486352ed89cd56286cd"
+    },
+    {
+      "book": "06",
+      "page": 85,
+      "source": "./book-06/book.md",
+      "sha256": "e75df20ff9aed117b5ab7630bbb32c97d9baa1876d707fbe0b6855e790ba72ca"
+    },
+    {
+      "book": "06",
+      "page": 86,
+      "source": "./book-06/book.md",
+      "sha256": "0f76852086891f7bc8e308bd08c566e5c2b4eda7bc46e7ace2ba585368982a60"
+    },
+    {
+      "book": "06",
+      "page": 87,
+      "source": "./book-06/book.md",
+      "sha256": "a68a7018caefb274c9d354d84897604d2963cd4dc6fcc3a68ca98cca17819095"
+    },
+    {
+      "book": "06",
+      "page": 93,
+      "source": "./book-06/book.md",
+      "sha256": "591cac73b1cd39c1a269f028c2959cd0246a9ce13cd3e6212a9783edf4cdb77d"
+    },
+    {
+      "book": "06",
+      "page": 94,
+      "source": "./book-06/book.md",
+      "sha256": "3f5a4680d66cea7117588e8f9c8cd87bc5ccbaa5885d3a209896629bc8033f48"
+    },
+    {
+      "book": "06",
+      "page": 98,
+      "source": "./book-06/book.md",
+      "sha256": "944f8e7fa3c7bfb045372f18d5f0c369e12473d1e6d0867269477adeab07663c"
+    },
+    {
+      "book": "06",
+      "page": 99,
+      "source": "./book-06/book.md",
+      "sha256": "ad6a8e6823fbe5d68aff98002db271daa8e390246956288998a045101c4516ec"
+    },
+    {
+      "book": "06",
+      "page": 103,
+      "source": "./book-06/book.md",
+      "sha256": "fdd532c0d24a8e90ab88d33fa379cb1cb58e144fb6dcac5643655c0581e391ff"
+    },
+    {
+      "book": "06",
+      "page": 109,
+      "source": "./book-06/book.md",
+      "sha256": "94f220c7d6754ae1c5a7826966a277b0df0784faf6e88068e3c3bd85b7fdd7c1"
+    },
+    {
+      "book": "06",
+      "page": 110,
+      "source": "./book-06/book.md",
+      "sha256": "447c72abb5bd2442256209c1f9d3c59948de5a199733b67393b969024ac995cf"
+    },
+    {
+      "book": "06",
+      "page": 116,
+      "source": "./book-06/book.md",
+      "sha256": "51a0561e53bc2b9a7f66d7d6c087257a279e07dd824b4ed50c1f86c2a6444f18"
+    },
+    {
+      "book": "06",
+      "page": 126,
+      "source": "./book-06/book.md",
+      "sha256": "f3e5d8921326005b8501a20a1054715e8fe52fb1e2c6ae9933047ce3066084ab"
+    },
+    {
+      "book": "06",
+      "page": 134,
+      "source": "./book-06/book.md",
+      "sha256": "be03b81744a9ccf6ec84d734e14fd661abbef809a6160a3d6c473a631f10ee99"
+    }
+  ]
+}

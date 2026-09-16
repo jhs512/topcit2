@@ -6,9 +6,9 @@
 
 교재 02 PDF 19쪽 목차와 PDF 147쪽 본문은 원본을 렌더링하여 시각적으로 확인했습니다.
 
-- [교재 02 PDF 19쪽 목차](https://jhs512.github.io/topcit2/textbook/02/#page-019): NoSQL의 BASE 속성 145쪽, 인공지능 이해 148쪽.
-- [교재 02 PDF 147쪽 본문](https://jhs512.github.io/topcit2/textbook/02/#page-147): NoSQL의 BASE 속성 제목, 하단 인쇄 쪽수 145.
-- [교재 02 PDF 150쪽](https://jhs512.github.io/topcit2/textbook/02/#page-150): 변환본의 `XV. 인공지능 이해` 제목 위치.
+- [교재 02 PDF 19쪽 목차](https://jhs512.github.io/topcit/viewer/index.html?book=02&page=19): NoSQL의 BASE 속성 145쪽, 인공지능 이해 148쪽.
+- [교재 02 PDF 147쪽 본문](https://jhs512.github.io/topcit/viewer/index.html?book=02&page=147): NoSQL의 BASE 속성 제목, 하단 인쇄 쪽수 145.
+- [교재 02 PDF 150쪽](https://jhs512.github.io/topcit/viewer/index.html?book=02&page=150): 변환본의 `XV. 인공지능 이해` 제목 위치.
 
 ## 적용 범위
 

@@ -11,7 +11,7 @@ try {
     await page.goto(url('instructor/'));
     assert.equal(await page.locator('h1').innerText(),'장희성');
     assert.equal(await page.locator('#site-navigation a[aria-current="page"]').innerText(),'강사소개');
-    assert.ok((await page.locator('.profile-source').innerText()).includes('이력서'));
+    assert.ok(!(await page.locator('.profile-source').innerText()).includes('이력서'));
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
     if(width<=960)await page.locator('.site-toggle').click();
     await page.getByRole('button',{name:'핵심노트',exact:true}).click();

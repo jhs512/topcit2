@@ -4,7 +4,7 @@
 
 ## 학습방법
 
-[학습방법 열기](study/)에서 TOPCIT 3수준 이상을 목표로 교재·Gemini 음성 질문·회상·직접 풀이를 연결하는 방법을 확인합니다. 하루 60분, 기본 10주의 자체 학습 계획과 복습 방법을 제공합니다.
+[학습방법 열기](study/)에서 TOPCIT 3수준 이상을 목표로 교재·Gemini 음성 질문·회상·직접 풀이를 연결하는 방법을 확인합니다. 하루 60분, 기본 3주의 자체 학습 계획과 복습 방법을 제공합니다.
 
 ## 객관식 문제 연습
 
@@ -32,7 +32,7 @@
 
 ## 강사소개
 
-[장희성 강사소개](instructor/)에서 교육·개발 경험과 공개 활동 자료를 확인합니다. 경력과 자격은 제공 이력서 기준이며 소개 페이지에 확인 범위를 표시했습니다.
+[장희성 강사소개](instructor/)에서 교육·개발 경험과 공개 활동 자료를 확인합니다.
 
 ## 시험 안내
 
@@ -40,12 +40,12 @@
 
 | 번호 | 교재 | PDF 쪽수 | 열기 |
 | --- | --- | ---: | --- |
-| 01 | 소프트웨어 개발 | 139 | [교재 읽기](https://jhs512.github.io/topcit2/textbook/01/) |
-| 02 | 데이터 이해와 활용 | 159 | [교재 읽기](https://jhs512.github.io/topcit2/textbook/02/) |
-| 03 | 시스템아키텍처 이해와 활용 | 221 | [교재 읽기](https://jhs512.github.io/topcit2/textbook/03/) |
-| 04 | 정보보안 이해와 활용 | 124 | [교재 읽기](https://jhs512.github.io/topcit2/textbook/04/) |
-| 05 | IT비즈니스와 윤리 | 213 | [교재 읽기](https://jhs512.github.io/topcit2/textbook/05/) |
-| 06 | 프로젝트 관리 및 테크니컬 커뮤니케이션 | 139 | [교재 읽기](https://jhs512.github.io/topcit2/textbook/06/) |
+| 01 | 소프트웨어 개발 | 139 | [교재 읽기](https://jhs512.github.io/topcit/viewer/index.html?book=01&page=1) |
+| 02 | 데이터 이해와 활용 | 159 | [교재 읽기](https://jhs512.github.io/topcit/viewer/index.html?book=02&page=1) |
+| 03 | 시스템아키텍처 이해와 활용 | 221 | [교재 읽기](https://jhs512.github.io/topcit/viewer/index.html?book=03&page=1) |
+| 04 | 정보보안 이해와 활용 | 124 | [교재 읽기](https://jhs512.github.io/topcit/viewer/index.html?book=04&page=1) |
+| 05 | IT비즈니스와 윤리 | 213 | [교재 읽기](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=1) |
+| 06 | 프로젝트 관리 및 테크니컬 커뮤니케이션 | 139 | [교재 읽기](https://jhs512.github.io/topcit/viewer/index.html?book=06&page=1) |
 
 PDF 페이지와 책의 인쇄 쪽수는 다릅니다. 자체 교재의 페이지 번호는 원본 PDF 페이지에 대응합니다. 텍스트 변환본에는 인식·전사 오류가 있을 수 있습니다.
 
@@ -65,7 +65,7 @@ PDF 뷰어는 포함된 파일로 동작합니다. 텍스트 서재는 Markdown�
 
 `viewer/`는 PDF 뷰어, `sources/`는 PDF 6권, `output/markdown/`은 전사본·공통 서재·대조 기록입니다. 원본 `jhs512/topcit`에서 교재 관련 파일만 복사했습니다. 원본 저장소는 변경하지 않았습니다.
 
-`npm install` 후 `npm test`로 6권의 페이지 순서를, `npx playwright install chromium` 후 `npm run test:viewer`로 PDF 뷰어를 확인합니다. 교재 참고 링크는 자체 HTML/Markdown 교재인 `https://jhs512.github.io/topcit2/textbook/교재번호/#page-세자리페이지`를 사용합니다.
+`npm install` 후 `npm test`로 6권의 페이지 순서를, `npx playwright install chromium` 후 `npm run test:viewer`로 PDF 뷰어를 확인합니다. 교재 참고 링크는 자체 PDF 뷰어인 `https://jhs512.github.io/topcit/viewer/index.html?book=교재번호&page=PDF페이지`를 사용합니다.
 
 `npm run serve`로 서버를 실행한 상태에서 `npm run test:navigation`으로 PC·모바일의 6권 이동과 시험 영역 표시를 확인합니다.
 
@@ -94,7 +94,7 @@ GitHub Pages 정적 디렉터리 경로를 사용하므로 끝의 슬래시가 �
 
 `cases/`는 여덟 주제 선택, `cases/05-01/`은 IT 비즈니스 사례 목록, 그 아래 `BIZ-11/`과 `BIZ-01/`–`BIZ-10/`은 각 본문입니다. 로컬 서버 4186 포트에서 `npm run test:cases`로 PC·모바일 이동과 본문을 확인합니다. 배포본 검사는 `CASES_BASE_URL`을 공개 허브 주소로 지정합니다.
 
-교재 링크를 바꾼 뒤에는 `node tests/textbook-references.mjs`로 6권의 페이지 앵커와 사례에서 교재로 이동하는 동작을 확인합니다(기본 서버 4186, 공개 검사는 `SITE_BASE` 지정). 예: [비즈니스와 IT의 연계](https://jhs512.github.io/topcit2/textbook/05/#page-020). 확인하지 못한 위치는 교재 시작 화면으로 연결합니다. 사례 생성기는 PDF 교재 링크가 들어오면 생성을 중단합니다.
+교재 링크를 바꾼 뒤에는 `node tests/textbook-references.mjs`로 6권의 근거 페이지와 사례의 PDF 뷰어 링크를 확인합니다(기본 서버 4186, 공개 검사는 `SITE_BASE` 지정). 예: [비즈니스와 IT의 연계](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=20). 확인하지 못한 위치는 PDF 1쪽으로 연결합니다. 사례 생성기는 지정한 자체 PDF 뷰어와 확인한 페이지를 허용하며 원본 PDF 파일 직접 링크는 허용하지 않습니다.
 
 ## 선택 기능: 사이트 공통 TTS (기본 꺼짐)
 
@@ -127,3 +127,10 @@ GitHub Pages 정적 디렉터리 경로를 사용하므로 끝의 슬래시가 �
 [출제기준 V4.0K](syllabus/)는 2026-09-16 공식 사이트에서 가져온 4개 평가영역 전체입니다. 번호와 문장은 `syllabus/data.json`에 보관하고 `node scripts/build-syllabus.mjs`로 페이지를 생성합니다. 이후 개정은 자동 반영되지 않습니다. 출제기준을 링크할 때는 자체 복사본을 사용하며, 특정 항목은 `https://jhs512.github.io/topcit2/syllabus/#ref-4.2.2.2`처럼 연결합니다. 원본 출처는 복사본 페이지에서 확인할 수 있습니다.
 
 핵심노트 기반 새 사례의 편집 원본은 `reading/expanded-cases.mjs`입니다. `npm run build:cases`가 `reading/cases/`의 Markdown과 `cases/`의 페이지를 함께 생성합니다. 기존 11편의 원본은 `reading/it-business-stories.md`로 유지합니다.
+
+
+## 핵심노트·사례의 교재 근거
+
+핵심노트의 교재 원개념과 항목별 근거는 `shared/textbook-alignment.json`, 기존 비즈니스 11편의 개별 근거는 `shared/textbook-case-alignment.json`, 추가 학습 설명·질문은 `shared/textbook-study-paths.json`에서 관리합니다. 기존 제목·예시·질문 원본과 결합해 `practical/content.mjs`가 최종 노트를 구성합니다. 대응 내용을 수정한 뒤 `npm run build:practical`과 `npm run build:cases`를 모두 실행합니다. 생성기는 모든 근거 페이지의 실제 존재와 대응 누락을 먼저 검사합니다.
+
+[320개 항목 점검표](docs/textbook-alignment-audit.md)에 단원·쪽·연결 이유·본문 보강과 대표 수정 전후를 기록했습니다. 기준 원본의 목차·학습목표·관련 본문을 읽어 대조했으며, 20개 노트를 교재 전체 요약이나 시험 중요도 순위로 보지 않습니다. `node --test tests/textbook-alignment.test.mjs`로 대응·원문 페이지·학생용 생성 내용을 검사하고 `node tests/textbook-references.mjs`로 PC·모바일 전체 항목 표시와 공개 PDF 링크를 확인합니다. 점검표를 다시 만들 때는 기준 교재 저장소와 비교 커밋을 확인한 뒤 `node scripts/build-textbook-audit.mjs`를 실행합니다.
