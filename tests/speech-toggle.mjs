@@ -73,7 +73,7 @@ try {
   await page.goto(new URL('cases/05/BIZ-01/', base).href);
   await page.locator('#site-tts-toggle').click(); await started;
   await page.locator('#site-tts-toggle').click(); release();
-  await page.waitForResponse('**/shared/speech-engine.mjs'); await tick(page);
+  await page.waitForResponse('**/shared/speech-engine.mjs*'); await tick(page);
   assert.equal(await page.locator('.speech-controls,.block-speech-button').count(), 0);
   assert.equal(await page.evaluate(() => speechSynthesis.reads), 0);
   await page.locator('#site-tts-toggle').click(); await page.locator('.block-speech-button').first().waitFor();

@@ -1,18 +1,23 @@
 export const speechRates = Object.freeze([0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5]);
 
-export function splitSpeech(text, limit = 180) {
+export function splitSpeechRanges(text, limit = 180) {
   const result = [];
-  for (const sentence of text.replace(/\s+/g, ' ').trim().match(/[^.!?。！？]+[.!?。！？]*\s*/gu) || []) {
-    let rest = sentence.trim();
-    while (rest.length > limit) {
-      const space = rest.lastIndexOf(' ', limit);
-      const end = space > limit / 2 ? space : limit;
-      result.push(rest.slice(0, end));
-      rest = rest.slice(end).trim();
+  for (const match of text.matchAll(/[^.!?。！？]+[.!?。！？]*|[.!?。！？]+/gu)) {
+    let start = match.index, end = start + match[0].length;
+    while (start < end && /\s/.test(text[start])) start++;
+    while (end > start && /\s/.test(text[end - 1])) end--;
+    while (start < end) {
+      let stop = Math.min(start + limit, end);
+      if (stop < end) { const space = text.lastIndexOf(' ', stop); if (space > start + limit / 2) stop = space; }
+      if (stop < end && /[\uDC00-\uDFFF]/.test(text[stop]) && /[\uD800-\uDBFF]/.test(text[stop - 1])) stop--;
+      result.push({ text: text.slice(start, stop), start, end: stop });
+      start = stop; while (start < end && /\s/.test(text[start])) start++;
     }
-    if (rest) result.push(rest);
   }
   return result;
+}
+export function splitSpeech(text, limit = 180) {
+  return splitSpeechRanges(text.replace(/\s+/g, ' ').trim(), limit).map(chunk => chunk.text);
 }
 
 export function koreanVoice(voices) {

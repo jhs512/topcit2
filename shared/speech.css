@@ -12,7 +12,11 @@
 .speech-heading{display:flex;align-items:center;gap:8px}
 .speech-heading-text{min-width:0;flex:0 1 auto;overflow-wrap:anywhere}
 .speech-heading>.block-speech-button{margin:0}
-.speech-active{background:#f0f6e8;outline:2px solid #71976b;outline-offset:6px;border-radius:3px}
+.speech-active{outline:2px solid #71976b;outline-offset:6px;border-radius:3px}
+::highlight(speech-sentence){background-color:#ffe08a;color:#17271e;text-decoration:underline;text-decoration-color:#765317}
+.speech-range-overlay{position:fixed;inset:0;pointer-events:none;z-index:79}
+.speech-range-overlay>span{position:fixed;background:#e8af002e;outline:2px solid #b77d00;border-radius:2px;pointer-events:none}
+[data-theme=dark] .speech-range-overlay>span{background:#ffe08a26;outline-color:#ffe08a}
 .speech-controls{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:100;margin:0;width:min(420px,calc(100vw - 32px));max-height:calc(100dvh - 32px);overflow:auto;box-shadow:0 8px 40px #17362f33;color:#17362f;font:14px/1.6 system-ui,sans-serif}
 .speech-controls[hidden]{display:none}.speech-close{display:block;margin:0 0 12px auto;background:transparent;border:0;min-height:44px;color:inherit;font:inherit;cursor:pointer}
 .speech-close:focus-visible{outline:3px solid #75943a;outline-offset:2px}

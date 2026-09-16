@@ -1,24 +1,7 @@
-import { splitSpeech, koreanVoice, StorySpeech, speechRates } from './speech-engine.mjs';
-
-const excluded = 'nav,button,input,select,textarea,svg,script,style,[role="button"],[data-speech-controls],[data-tts-exclude],.speech-notice,.sr-only,.selection-tag';
-export function visible(element) {
-  if (!element.isConnected || element.closest('[hidden],[aria-hidden="true"]')) return false;
-  for (let node = element; node instanceof Element; node = node.parentElement) {
-    const style = getComputedStyle(node);
-    if (style.display === 'none' || style.visibility === 'hidden' || style.visibility === 'collapse' || style.opacity === '0') return false;
-  }
-  return element.getClientRects().length > 0;
-}
-export function readableText(element) {
-  if (!visible(element)) return '';
-  const copy = element.cloneNode(true);
-  const originals = [element, ...element.querySelectorAll('*')];
-  const clones = [copy, ...copy.querySelectorAll('*')];
-  for (let i = 1; i < originals.length; i++) {
-    if (originals[i].matches(excluded + ',a,label,form,fieldset,legend') || !visible(originals[i])) clones[i].remove();
-  }
-  return copy.textContent.replace(/https?:\/\/\S+/g, '').replace(/\s+/g, ' ').replace(/(?:\s*·\s*)+$/g, '').trim();
-}
+import { splitSpeechRanges, koreanVoice, StorySpeech, speechRates } from './speech-engine.mjs?v=20260916-sentence-highlight';
+import { excluded, visible, readableText, mapSpeechText, speechRanges } from './speech-text.mjs';
+import { createSpeechHighlight } from './speech-highlight.mjs';
+export { visible, readableText } from './speech-text.mjs';
 
 export function mountSpeech(main) {
   let disposed = false, frame;
@@ -37,9 +20,12 @@ export function mountSpeech(main) {
   }
   const synth = window.speechSynthesis, entries = new Map();
   const play = panel.querySelector('[data-action="play"]'), pause = panel.querySelector('[data-action="pause"]'), stop = panel.querySelector('[data-action="stop"]'), close = panel.querySelector('.speech-close');
-  let active, origin, spokenText, observer;
-  const controller = new StorySpeech(synth, window.SpeechSynthesisUtterance, [], ({ state, message }) => {
+  let active, origin, spokenText, observer, mapping, chunks;
+  const highlight = createSpeechHighlight();
+  const controller = new StorySpeech(synth, window.SpeechSynthesisUtterance, [], ({ state, message, index }) => {
     if (disposed) return;
+    if (state === 'speaking' && mapping && chunks?.[index]) highlight.show(speechRanges(mapping, chunks[index].start, chunks[index].end));
+    else if (state !== 'paused') highlight.clear();
     const wasHidden = panel.hidden, focusInside = panel.contains(document.activeElement);
     panel.hidden = !['starting', 'speaking', 'paused', 'error'].includes(state);
     panel.dataset.state = state; play.disabled = state !== 'paused';
@@ -106,7 +92,7 @@ export function mountSpeech(main) {
           button.onclick = event => {
             event.preventDefault(); event.stopPropagation();
             const current = readableText(node); if (disposed || !eligible(node) || !current) return;
-            if (active !== node || current !== spokenText) { dismiss(); active?.classList.remove('speech-active'); active = node; spokenText = current; controller.chunks = splitSpeech(current); }
+            if (active !== node || current !== spokenText) { dismiss(); active?.classList.remove('speech-active'); active = node; spokenText = current; mapping = mapSpeechText(node); chunks = splitSpeechRanges(mapping.text); controller.chunks = chunks.map(chunk => chunk.text); }
             origin = button; controller.start();
           };
         }
@@ -123,7 +109,7 @@ export function mountSpeech(main) {
     if (!scheduled) { scheduled = true; frame = requestAnimationFrame(() => { scheduled = false; const roots = [...dirty]; dirty.clear(); reconcile(roots); }); }
   }
   observer = new MutationObserver(records => {
-    if (active && (!active.isConnected || !eligible(active) || readableText(active) !== spokenText)) { dismiss(); active?.classList.remove('speech-active'); active = null; }
+    if (active && (!active.isConnected || !eligible(active) || readableText(active) !== spokenText || [...(mapping?.nodes || [])].some(([node, text]) => !node.isConnected || node.data !== text))) { dismiss(); active?.classList.remove('speech-active'); active = null; }
     for (const record of records) {
       const target = record.target.nodeType === 1 ? record.target : record.target.parentElement;
       if (target?.closest('[data-tts-exclude]')) { schedule(target.closest('[data-tts-exclude]')); continue; }
@@ -150,7 +136,7 @@ export function mountSpeech(main) {
     if (disposed) return;
     disposed = true;
     observer.disconnect(); cancelAnimationFrame(frame); dirty.clear(); listeners.abort();
-    controller.stop();
+    controller.stop(); highlight.dispose();
     for (const node of [...entries.keys()]) remove(node);
     active = origin = null;
     panel.remove(); notice.remove();

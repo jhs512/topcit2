@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { splitSpeech, koreanVoice, StorySpeech } from '../shared/speech-engine.mjs';
+import { splitSpeech, splitSpeechRanges, koreanVoice, StorySpeech } from '../shared/speech-engine.mjs';
 
 const ko = { name: '한국어', lang: 'ko-KR', localService: true };
 function setup(voices = [ko]) {
@@ -52,4 +52,16 @@ test('quarter-step rates through 2.5 apply to the next sentence or paused restar
   first.onend(); assert.equal(spoken.at(-1).rate, 2.5);
   engine.pause(); engine.start(); assert.equal(spoken.at(-1).text, '다음 문장.'); assert.equal(spoken.at(-1).rate, 2.5);
   engine.stop();
+});
+
+test('speech offsets distinguish repeats, abbreviations, newlines and long Korean chunks', () => {
+  const text = '같은 문장. 같은 문장. API v2.5입니다.\nDr. Kim 설명! ' + '긴한글😀 '.repeat(90) + '끝.';
+  const chunks = splitSpeechRanges(text);
+  assert.equal(chunks[0].start, 0); assert.equal(chunks[1].start, 7);
+  for (const [i, chunk] of chunks.entries()) {
+    assert.equal(text.slice(chunk.start, chunk.end), chunk.text);
+    assert.ok(chunk.text.length <= 180);
+    if (i) assert.ok(chunk.start >= chunks[i - 1].end);
+  }
+  assert.equal(chunks.map(c => c.text).join('').replace(/\s/g, ''), text.replace(/\s/g, ''));
 });
