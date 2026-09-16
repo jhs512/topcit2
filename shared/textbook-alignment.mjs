@@ -39,7 +39,7 @@ export function strengthenNote(subjectId, item, index) {
 const esc = text => String(text).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 export function renderTextbookConnection(record, id, kind = 'note') {
   if (!record || !textbookTitle(record.book)) throw new Error(`${id}: 교재 대응이 없습니다.`);
-  return `<section class="textbook-connection" aria-labelledby="${esc(id)}-textbook"><h3 id="${esc(id)}-textbook" class="tts-readable">관련 교재 내용</h3><p><strong>${esc(textbookTitle(record.book))}</strong> · ${esc(record.concept)}</p><p class="tts-readable">${esc(record.summary)}</p>${kind === 'case' ? `<p class="tts-readable"><strong>이 사례와의 연결:</strong> ${esc(record.caseReason)}</p>` : ''}<p><a href="${esc(textbookUrl(record))}">교재 PDF ${record.page}쪽 확인 →</a></p><p>${esc(record.relation)} · 교재 원문 인용이 아닌 자체 설명입니다.</p></section>`;
+  return `<section class="textbook-connection" aria-labelledby="${esc(id)}-textbook"><h3 id="${esc(id)}-textbook" class="tts-readable">관련 교재 내용</h3><p><strong>${esc(textbookTitle(record.book))}</strong> · ${esc(record.concept)}</p><p class="tts-readable">${esc(record.summary)}</p>${kind === 'case' ? `<p class="tts-readable"><strong>이 사례에 적용한 내용:</strong> ${esc(record.caseReason)}</p>` : ''}<p><a href="${esc(textbookUrl(record))}">교재 PDF ${record.page}쪽 확인 →</a></p><p>${esc(record.relation)} · 교재 원문 인용이 아닌 자체 설명입니다.</p></section>`;
 }
 export function renderStudyPaths(subjectId) {
   const paths = studyPaths[subjectId];
