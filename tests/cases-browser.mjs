@@ -68,7 +68,8 @@ try {
       assert.ok(links.some(url => url.startsWith('https://jhs512.github.io/topcit2/textbook/05/#page-')));
       assert.ok(links.every(url => !/jhs512\.github\.io\/topcit2?\/(viewer|sources)\//.test(url)));
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
-      assert.equal(await page.locator('#site-links > a[aria-current="page"]').innerText(), '사례 모음');
+      assert.equal(await page.locator('[aria-controls="site-cases"].site-active').innerText(), '사례 모음');
+      assert.ok((await page.locator('#site-cases a[aria-current="page"]').getAttribute('href')).endsWith('/cases/05/'));
       await page.reload();
       await page.locator('article h1').waitFor();
       // Follow each newly added basis link to its actual rendered textbook page.
@@ -91,7 +92,8 @@ try {
       await page.getByRole('navigation', { name: '사례 이동' }).getByRole('link', { name: '사례 목록', exact: true }).click();
     }
     if (viewport.width < 760) await page.getByRole('button', { name: /메뉴/ }).click();
-    await page.locator('#site-links').getByRole('link', { name: '사례 모음', exact: true }).click();
+    await page.locator('[aria-controls="site-cases"]').click();
+    await page.locator('#site-cases').getByRole('link', { name: '전체 사례', exact: true }).click();
     await page.getByRole('heading', { name: '어떤 과목을 읽을까요?' }).waitFor();
     await page.close();
   }
