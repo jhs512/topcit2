@@ -24,9 +24,12 @@ try {
       assert.equal(await page.locator('article h1').innerText(), match[2]);
       const text = await page.locator('article').innerText();
       assert.ok(text.includes('이 글에서 배우는 교훈'));
-      assert.deepEqual(await page.locator('.case-lesson h3').allTextContents(), ['추상적인 문장', '구체적인 문장']);
+      assert.ok(!text.includes('추상적인 문장'));
+      assert.ok(!text.includes('구체적인 문장'));
+      assert.equal(await page.locator('.lesson-concrete strong').innerText(), '구체적으로는');
       assert.equal(await page.locator('.lesson-abstract > p').first().innerText(), cases[index].lesson.abstract);
-      assert.equal(await page.locator('.lesson-concrete > p').innerText(), cases[index].lesson.concrete);
+      assert.equal(await page.locator('.lesson-application').innerText(), cases[index].lesson.concrete);
+      assert.equal(await page.locator('.lesson-concrete > p').innerText(), `구체적으로는 ${cases[index].lesson.concrete}`);
       const basis = page.locator('.lesson-basis a');
       assert.equal(await basis.getAttribute('href'), cases[index].lesson.basis.url);
       assert.equal(await basis.innerText(), cases[index].lesson.basis.label);
@@ -35,7 +38,7 @@ try {
         const bounds = box.getBoundingClientRect();
         const style = getComputedStyle(box);
         const content = [...box.querySelectorAll('h2, h3, p, .lesson-basis a')];
-        return content.length === 7 && parseFloat(style.borderTopWidth) > 0
+        return content.length === 5 && parseFloat(style.borderTopWidth) > 0
           && style.backgroundColor !== getComputedStyle(box.parentElement).backgroundColor
           && content.every(el => {
             const rect = el.getBoundingClientRect();

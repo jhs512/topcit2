@@ -79,8 +79,10 @@ test('both lesson sentences and textbook basis are mandatory, distinct and order
   assert.equal(c.lesson.abstract, '전략은 환경을 분석하여 정한다.');
   assert.equal(c.lesson.concrete, '판단의 근거를 확인한다.');
   const html = renderCase(c).story;
-  assert.ok(html.indexOf('추상적인 문장') < html.indexOf('구체적인 문장'));
+  assert.ok(!html.includes('추상적인 문장'));
+  assert.ok(!html.includes('구체적인 문장'));
+  assert.ok(html.indexOf(c.lesson.abstract) < html.indexOf('구체적으로는'));
   assert.ok(html.includes('원문 인용은 아닙니다.'));
   const lessonBox = html.match(/<section class="case-lesson"[\s\S]*?<\/section>/)?.[0];
-  for (const content of ['이 글에서 배우는 교훈', '추상적인 문장', c.lesson.abstract, '구체적인 문장', c.lesson.concrete, c.lesson.basis.url]) assert.ok(lessonBox?.includes(content));
+  for (const content of ['이 글에서 배우는 교훈', c.lesson.abstract, '구체적으로는', c.lesson.concrete, c.lesson.basis.url]) assert.ok(lessonBox?.includes(content));
 });
