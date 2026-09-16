@@ -103,6 +103,7 @@ const bookReferences = {
   '06': [['작동하는 결과의 전달과 회고: 애자일 선언의 원칙', 'https://agilemanifesto.org/principles.html']]
 };
 
+import { expandedNotes } from './expanded-notes.mjs';
 export const subjects = learningSubjects.map(subject => {
   const draft = drafts.find(d => d.id === subject.bookId);
   let content = { intro: draft.intro, items: draft.items };
@@ -110,7 +111,7 @@ export const subjects = learningSubjects.map(subject => {
   if (subject.id === '05-02') content = ethics;
   if (subject.id === '06-01') content.items = [...draft.items.slice(0, 8), projectQuality, draft.items[9]];
   if (subject.id === '06-02') content = communication;
-  return { ...content, ...subject, intro: content.intro };
+  return { ...content, ...subject, intro: content.intro, items: [...content.items, ...expandedNotes[subject.id]] };
 });
 export const references = Object.fromEntries(learningSubjects.map(s => [s.id, bookReferences[s.bookId]]));
 references['05-02'] = [['피해 예방·정직성·공정성과 책임: ACM 윤리 강령', 'https://www.acm.org/binaries/content/assets/about/acm-code-of-ethics-and-professional-conduct.pdf']];

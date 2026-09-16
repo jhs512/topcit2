@@ -18,7 +18,7 @@ try {
     await page.locator('main').getByRole('link', { name: /사례 모음/ }).click();
     await page.getByRole('heading', { name: '어떤 주제를 읽을까요?' }).waitFor();
     await page.locator('main').getByRole('link', { name: /IT 비즈니스/ }).click();
-    assert.equal(await page.locator('.case-list > a').count(), stories.length);
+    assert.equal(await page.locator('.case-list > a').count(), 20);
     for (const [index, match] of stories.entries()) {
       await page.locator('.case-list > a').nth(index).click();
       assert.equal(await page.locator('article h1').innerText(), match[2]);
@@ -91,7 +91,7 @@ try {
       }
       await page.getByRole('navigation', { name: '사례 이동' }).getByRole('link', { name: '사례 목록', exact: true }).click();
     }
-    if (viewport.width < 760) await page.getByRole('button', { name: /메뉴/ }).click();
+    if (viewport.width <= 960) await page.getByRole('button', { name: /메뉴/ }).click();
     await page.locator('[aria-controls="site-cases"]').click();
     await page.locator('#site-cases').getByRole('link', { name: '전체 사례', exact: true }).click();
     await page.getByRole('heading', { name: '어떤 주제를 읽을까요?' }).waitFor();

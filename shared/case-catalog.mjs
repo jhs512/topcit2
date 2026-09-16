@@ -3,41 +3,41 @@ export const caseSubjects = [
   {
     "id": "01",
     "title": "소프트웨어 개발",
-    "count": 0
+    "count": 20
   },
   {
     "id": "02",
     "title": "데이터 이해와 활용",
-    "count": 0
+    "count": 20
   },
   {
     "id": "03",
     "title": "시스템아키텍처 이해와 활용",
-    "count": 0
+    "count": 20
   },
   {
     "id": "04",
     "title": "정보보안 이해와 활용",
-    "count": 0
+    "count": 20
   },
   {
     "id": "05-01",
     "title": "IT 비즈니스",
-    "count": 11
+    "count": 20
   },
   {
     "id": "05-02",
     "title": "윤리",
-    "count": 0
+    "count": 20
   },
   {
     "id": "06-01",
     "title": "프로젝트 관리",
-    "count": 0
+    "count": 20
   },
   {
     "id": "06-02",
     "title": "테크니컬 커뮤니케이션",
-    "count": 0
+    "count": 20
   }
 ];

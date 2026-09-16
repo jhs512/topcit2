@@ -14,29 +14,29 @@ try {
     for (const s of subjects) {
       await page.locator(`.area-card[href="${s.id}/"]`).click();
       await page.locator('#site-tts-toggle').waitFor();
-      assert.equal(await page.locator('.concept').count(), 10);
-      assert.equal(await page.locator('.concept .tts-readable').count(), 40);
+      assert.equal(await page.locator('.concept').count(), 20);
+      assert.equal(await page.locator('.concept .tts-readable').count(), 80);
       assert.match(await page.locator('.editor-note').innerText(), /자체 선정/);
       assert.equal(await page.locator('body').evaluate(el => el.scrollWidth <= innerWidth), true, `${s.id} overflow at ${width}`);
       await page.locator('.contents a').last().click();
-      assert.equal(new URL(page.url()).hash, '#concept-10');
-      const top = await page.locator('#concept-10').evaluate(el => el.getBoundingClientRect().top);
+      assert.equal(new URL(page.url()).hash, '#concept-20');
+      const top = await page.locator('#concept-20').evaluate(el => el.getBoundingClientRect().top);
       assert.ok(top >= 0 && top < 200, `anchor ${s.id}: ${top}`);
-      await page.locator('#concept-10 .to-contents').click();
+      await page.locator('#concept-20 .to-contents').click();
       assert.equal(new URL(page.url()).hash, '#contents');
       await page.goto(new URL('practical/', base).href);
     }
     await page.goto(new URL('practical/05-01/', base).href);
     await page.locator('#site-tts-toggle').click();
     await page.locator('.block-speech-button').first().waitFor({ timeout: 10000 });
-    assert.ok(await page.locator('.concept .block-speech-button').count() >= 40);
+    assert.ok(await page.locator('.concept .block-speech-button').count() >= 80);
     await page.reload();
     await page.locator('.block-speech-button').first().waitFor({ timeout: 10000 });
     assert.equal(await page.locator('#site-tts-toggle').getAttribute('aria-pressed'), 'true');
     await page.locator('#site-tts-toggle').click();
     await page.waitForFunction(() => !document.querySelector('.block-speech-button'));
     assert.deepEqual(errors, []);
-    console.log(`practical ${width}px: 8 subjects, 80 concepts, anchors, overflow, TTS passed`);
+    console.log(`practical ${width}px: 8 subjects, 160 concepts, anchors, overflow, TTS passed`);
     await page.close();
   }
 } finally {

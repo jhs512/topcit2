@@ -5,13 +5,30 @@ import { books } from '../output/markdown/books.mjs';
 import { learningSubjects } from '../shared/learning-subjects.mjs';
 import { caseSubjects } from '../reading/case-subjects.mjs';
 import { redirectPage } from './page-redirect.mjs';
+import { expandedCaseSources } from './expanded-case-source.mjs';
+import { subjects } from '../practical/content.mjs';
 
 const root = new URL('../', import.meta.url);
 const source = await readFile(new URL('reading/it-business-stories.md', root), 'utf8');
 const { cases, closing } = parseCases(source, 'reading/it-business-stories.md');
+const originalIds = new Set(cases.map(c => c.id));
+const classification = { ...caseSubjects };
+const expansions = expandedCaseSources();
+for (const expansion of expansions) {
+  for (const c of expansion.cases) {
+    if (classification[c.id]) throw new Error(`중복 사례 ID: ${c.id}`);
+    classification[c.id] = expansion.subjectId;
+    cases.push(c);
+  }
+}
 const bookSources = new Map();
 for (const c of cases) {
-  if (!learningSubjects.some(s => s.id === caseSubjects[c.id])) throw new Error(`${c.id}: reading/case-subjects.mjs의 주제 분류가 필요합니다.`);
+  if (!learningSubjects.some(s => s.id === classification[c.id])) throw new Error(`${c.id}: 주제 분류가 필요합니다.`);
+  if (c.lesson.basis.kind === 'note') {
+    const [, id, number] = c.lesson.basis.url.match(/practical\/([^/]+)\/#concept-(\d+)$/);
+    if (id !== classification[c.id] || !subjects.find(s => s.id === id)?.items[Number(number)-1]) throw new Error(`${c.id}: 핵심노트 근거를 찾을 수 없습니다.`);
+    continue;
+  }
   const [, id, page] = c.lesson.basis.url.match(/textbook\/(\d{2})\/#page-(\d{3})$/);
   const book = books.find(b => b.id === id);
   if (!bookSources.has(id)) bookSources.set(id, await readFile(new URL(book.source, new URL('output/markdown/', root)), 'utf8'));
@@ -33,15 +50,17 @@ async function save(path, html) {
   await mkdir(fileURLToPath(new URL('./', url)), { recursive: true });
   await writeFile(url, html);
 }
-const grouped = new Map(learningSubjects.map(s => [s.id, cases.filter(c => caseSubjects[c.id] === s.id)]));
+const grouped = new Map(learningSubjects.map(s => [s.id, cases.filter(c => classification[c.id] === s.id)]));
+for (const [id, items] of grouped) if (items.length < 20) throw new Error(`${id}: 사례 20편 이상이 필요합니다.`);
+for (const expansion of expansions) await save(expansion.path, expansion.source);
 await save('cases/index.html', page('주제 선택', 1, `<nav class="breadcrumbs" aria-label="현재 위치"><a href="../">홈</a><span>사례 모음</span></nav><section class="intro"><div class="eyebrow">TOPCIT · 사례 모음</div><h1>어떤 주제를 읽을까요?</h1><p>여덟 주제의 사례와 교훈을 살펴보세요.</p></section><div class="area-grid">${learningSubjects.map(s => `<a class="area-card" href="${s.id}/"><div class="card-top">${s.id} · ${grouped.get(s.id).length ? counts(grouped.get(s.id)) : '사례 준비 중'}</div><h2>${s.title}</h2><p>${s.description}</p><span class="card-action">사례 목록 보기 →</span></a>`).join('')}</div>`));
 for (const s of learningSubjects) {
   const items = grouped.get(s.id);
-  await save(`cases/${s.id}/index.html`, page(s.title, 2, `<nav class="breadcrumbs" aria-label="현재 위치"><a href="../../">홈</a><a href="../">사례 모음</a><span>${s.id} ${s.title}</span></nav><section class="intro"><div class="eyebrow">${s.id} · ${counts(items)}</div><h1>${s.title}</h1><p>${items.length ? '실제 사례는 공개 기록을 바탕으로, 가상 사례는 개념을 설명하기 위한 설정으로 작성했습니다.' : '이 주제의 사례를 준비 중입니다.'}</p></section><div class="case-list">${items.map(c => `<a class="area-card" href="${c.id}/"><div class="card-top">${c.id} · ${esc(c.type)}</div><h2>${esc(c.title)}</h2><p class="concept">${esc(c.concept)}</p><p class="lesson">${esc(c.lesson.concrete)}</p><span class="card-action">이야기 읽기 →</span></a>`).join('')}</div>${s.id === '05-01' && closing ? '<section class="series-closing">' + renderMarkdown(closing) + '</section>' : ''}`));
+  await save(`cases/${s.id}/index.html`, page(s.title, 2, `<nav class="breadcrumbs" aria-label="현재 위치"><a href="../../">홈</a><a href="../">사례 모음</a><span>${s.id} ${s.title}</span></nav><section class="intro"><div class="eyebrow">${s.id} · ${counts(items)}</div><h1>${s.title}</h1><p>${items.length ? '실제 사례는 공개 기록을 바탕으로, 가상 사례는 개념을 설명하기 위한 설정으로 작성했습니다.' : '이 주제의 사례를 준비 중입니다.'}</p></section><div class="case-list">${items.map(c => `<a class="area-card" href="${c.id}/"><div class="card-top">${c.id} · ${esc(c.type)}</div><h2>${esc(c.title)}</h2><p class="concept">${esc(c.concept)}</p><p class="lesson">${esc(c.lesson.concrete)}</p><span class="card-action">이야기 읽기 →</span></a>`).join('')}</div>${s.id === '05-01' && closing ? '<section class="series-closing"><h2>기존 11편을 함께 돌아보기</h2>' + renderMarkdown(closing) + '</section>' : ''}`));
   for (const [i, c] of items.entries()) {
     const rendered = renderCase(c);
     await save(`cases/${s.id}/${c.id}/index.html`, page(c.title, 3, `<nav class="breadcrumbs" aria-label="현재 위치"><a href="../../../">홈</a><a href="../../">사례 모음</a><a href="../">${s.id} ${s.title}</a><span>${c.id}</span></nav><article class="story" data-tts-content><header><div class="eyebrow">${s.title} · ${c.id}</div><h1 class="tts-readable">${esc(c.title)}</h1></header>${rendered.story}</article>${rendered.references}<nav class="story-navigation" aria-label="사례 이동">${i > 0 ? `<a href="../${items[i - 1].id}/">← 이전 사례<span>${esc(items[i - 1].title)}</span></a>` : '<span></span>'}<a href="../">사례 목록</a>${i < items.length - 1 ? `<a href="../${items[i + 1].id}/">다음 사례 →<span>${esc(items[i + 1].title)}</span></a>` : '<span></span>'}</nav>`));
-    await save(`cases/05/${c.id}/index.html`, redirectPage(`../../${s.id}/${c.id}/`, esc(c.title)));
+    if (originalIds.has(c.id)) await save(`cases/05/${c.id}/index.html`, redirectPage(`../../${s.id}/${c.id}/`, esc(c.title)));
   }
 }
 await save('cases/05/index.html', redirectPage('../05-01/', 'IT 비즈니스 사례 모음'));

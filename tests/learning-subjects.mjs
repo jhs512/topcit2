@@ -9,7 +9,7 @@ const questions=(await Promise.all(['business','systems-security'].map(id=>readF
 const expected={'01':0,'02':0,'03':160,'04':140,'05-01':160,'05-02':20,'06-01':110,'06-02':10};
 assert.equal(questions.length,600);
 assert.deepEqual(Object.fromEntries(learningSubjects.map(s=>[s.id,questions.filter(q=>questionSubject(q)===s.id).length])),expected);
-assert.equal(subjects.reduce((n,s)=>n+s.items.length,0),80);
+assert.equal(subjects.reduce((n,s)=>n+s.items.length,0),160);
 assert.deepEqual(subjects.map(s=>s.id),learningSubjects.map(s=>s.id));
 const browser=await chromium.launch();
 try{
@@ -27,11 +27,11 @@ try{
         await page.locator('main h1').waitFor();
         assert.equal(await page.locator('main h1').innerText(),s.title);
         assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,`${section}/${s.id} ${width}`);
-        if(section==='cases'&&s.id!=='05-01')assert.match(await page.locator('main').innerText(),/준비 중/);
+        if(section==='cases')assert.equal(await page.locator('.case-list>a').count(),20);
       }
     }
     await page.goto(url('practice/'));
-    if(width<=760)await page.locator('.site-toggle').click();
+    if(width<=960)await page.locator('.site-toggle').click();
     const trigger=page.locator('[aria-controls="site-practice"]');await trigger.focus();await page.keyboard.press('ArrowDown');
     assert.equal(await page.locator('#site-practice>a').first().evaluate(el=>el===document.activeElement),true);
     await page.keyboard.press('Escape');assert.equal(await trigger.evaluate(el=>el===document.activeElement),true);

@@ -19,7 +19,9 @@
     "test:case-schema": "node --test tests/case-schema.test.mjs",
     "test:practice-all": "node tests/practice-all.mjs",
     "build:syllabus": "node scripts/build-syllabus.mjs",
-    "test:syllabus": "node tests/syllabus-browser.mjs"
+    "test:syllabus": "node tests/syllabus-browser.mjs",
+    "test:core": "node --test tests/core-expansion.test.mjs",
+    "test:core-browser": "node tests/core-expansion-browser.mjs"
   },
   "devDependencies": {
     "marked": "^18.0.12",
