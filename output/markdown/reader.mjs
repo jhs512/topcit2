@@ -1,3 +1,4 @@
+import { bindThemeButton } from '../../shared/theme.mjs';
 import { linkContents } from './contents-links.mjs';
 import { mountBookNavigation } from '../../shared/book-navigation.mjs';
 import { books } from './books.mjs';
@@ -15,7 +16,7 @@ const storage = {
 };
 let fontSize = Math.max(14, Math.min(23, Number(storage.get('font')) || 17));
 document.documentElement.style.setProperty('--font-size', `${fontSize}px`);
-document.documentElement.dataset.theme = storage.get('theme') === 'dark' ? 'dark' : 'light';
+
 const savedPage = Number(storage.get('page'));
 let pages = [], headings = [], tocLinks = new Map(), ready = false, scrolling = false;
 let renderer, purifier, mermaidPromise, diagramObserver;
@@ -44,14 +45,7 @@ for (const [id, delta] of [['smaller', -1], ['larger', 1]]) {
     storage.set('font', fontSize);
   };
 }
-function themeLabel() {
-  $('#theme').setAttribute('aria-label', document.documentElement.dataset.theme === 'dark' ? '밝은 화면으로 전환' : '어두운 화면으로 전환');
-}
-$('#theme').onclick = () => {
-  const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-  document.documentElement.dataset.theme = next; storage.set('theme', next); themeLabel();
-};
-themeLabel();
+bindThemeButton($('#theme'));
 $('#page-form').onsubmit = event => {
   event.preventDefault();
   const n = Number($('#page-number').value);

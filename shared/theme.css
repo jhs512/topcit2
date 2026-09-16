@@ -1,0 +1,23 @@
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark;--paper:#202925;--bg:#17201c;--card:#25332b;--surface:#25332b;--ink:#e5eee7;--text:#cdd8d1;--muted:#b2c4b8;--line:#4b6053;--accent:#a9d9bc;--green:#a9d9bc;--wash:#2b3b31;background:var(--bg);color:var(--ink)}
+:root[data-theme=dark] body{background:var(--bg);color:var(--ink)}
+:root[data-theme=dark] body:not([data-reader-kind=text]) :is(h1,h2,h3,h4,p,li,td,th,span,a,strong,small,label,summary,dt,dd,figcaption){color:inherit}
+:root[data-theme=dark] :is(.area-card,.question-card,.complete,dialog,.criterion,.concept,.references,.subject-overview,.contents,.case-list>a,.case-body,.profile-summary,.experience-grid>article,.experience-grid>a,.speech-controls,.speech-notice){background:var(--paper);color:var(--ink);border-color:var(--line)}
+:root[data-theme=dark] :is(.guide,.example,.note,.lesson-abstract,.lesson-concrete,.case-conclusion,.question-context,.reading-intro,.book,.option-number,.question-code pre,.speech-context-item,.speech-help){background:var(--wash);color:var(--ink);border-color:var(--line)}
+:root[data-theme=dark] :is(button,input,select,textarea,.option){background:var(--paper);color:var(--ink);border-color:var(--line)}
+:root[data-theme=dark] :is(.primary,.mode-tabs button[aria-pressed=true],.ready .badge){background:#a9d9bc;color:#17201c;border-color:#a9d9bc}
+:root[data-theme=dark] .option:has(input:checked):not(.correct):not(.wrong){background:#233f59;border-color:#91bfff}
+:root[data-theme=dark] :is(.option.correct,.reading-correct){background:#21432e;color:#e4ffe9;border-color:#86d79a}
+:root[data-theme=dark] .option.wrong{background:#512e25;color:#ffe5dc;border-color:#edac96}
+:root[data-theme=dark] :is(.result,.answer-tag){color:#aeeac0}
+:root[data-theme=dark] .result.incorrect{color:#ffbca6}
+:root[data-theme=dark] thead{background:var(--wash);color:var(--ink)}
+:root[data-theme=dark] :is(tbody tr:nth-child(even),tfoot){background:var(--wash)}
+:root[data-theme=dark] #site-navigation :is(a,button){color:var(--ink)}
+:root[data-theme=dark] body[data-reader-kind=pdf] :is(header,nav,footer,#setup){background:var(--paper);color:var(--ink)}
+:root[data-theme=dark] #canvas-wrap{background:var(--bg)}
+:root[data-theme=dark] :is(.story,.question-grid article,.lesson-block,.github-comment){background:var(--paper);color:var(--ink);border-color:var(--line)}
+:root[data-theme=dark] :is(.story blockquote,.prerequisites,.case-lesson,.case-references li:target,details,.question){background:var(--wash);color:var(--ink);border-color:var(--line)}
+:root[data-theme=dark] :is(.speech-current-sentence,.option:has(input:checked) .selection-tag){background:#a9d9bc;color:#17201c}
+:root[data-theme=dark] .primary:disabled{background:#3c4d43;color:#bccdc1}
+@media print{:root[data-theme=dark]{--paper:white;--bg:white;--ink:black;--text:black;--muted:#333;--wash:#eee;color-scheme:light}}
