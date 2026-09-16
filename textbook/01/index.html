@@ -10,16 +10,6 @@
 <link rel="stylesheet" href="../../shared/book-navigation.css"><link rel="stylesheet" href="../../shared/site-navigation.css"><script type="module" src="../../shared/site-navigation.mjs?v=20260916-contents-exclusion"></script></head>
 <body>
   <a class="skip" href="#book">본문으로 건너뛰기</a>
-  <header class="topbar">
-    <button id="menu" class="icon-button" aria-label="목차 열기" aria-controls="sidebar" aria-expanded="false">☰</button>
-
-    <div class="reading-title">IT 비즈니스와 윤리</div>
-    <div class="tools">
-      <button id="smaller" aria-label="본문 글자 작게">가−</button>
-      <button id="larger" aria-label="본문 글자 크게">가+</button>
-      <button id="theme" aria-label="어두운 화면으로 전환">◐</button>
-    </div>
-  </header>
   <div class="progress-track"><div id="progress"></div></div>
   <button id="scrim" aria-label="목차 닫기" hidden></button>
   <aside id="sidebar">
@@ -43,7 +33,7 @@
     <article id="book" class="prose" tabindex="-1" aria-label="교재 본문"></article>
     <footer class="endnote" hidden id="endnote">책의 마지막 페이지입니다.<a href="#page-016">본문 처음으로 ↑</a></footer>
   </main>
-  <div class="location-bar"><span id="current-chapter">IT 비즈니스와 윤리</span><form id="page-form"><label for="page-number">PDF 쪽</label><input id="page-number" type="number" min="1" max="213" value="1"><span>/ 213</span><button>이동</button></form><span id="percent">0%</span></div>
+  <div class="location-bar"><button id="menu" class="icon-button" aria-label="목차 열기" aria-controls="sidebar" aria-expanded="false">목차</button><span id="current-chapter">IT 비즈니스와 윤리</span><form id="page-form"><label for="page-number">PDF 쪽</label><input id="page-number" type="number" min="1" max="213" value="1"><span>/ 213</span><button>이동</button></form><span id="percent">0%</span></div>
   <dialog id="zoom-dialog" aria-labelledby="zoom-title">
     <header><h2 id="zoom-title" >확대 보기</h2><div><button id="zoom-out" aria-label="축소">−</button><output id="zoom-label">100%</output><button id="zoom-in" aria-label="확대">+</button><button id="zoom-fit">화면 맞춤</button><button id="zoom-close" aria-label="확대 보기 닫기">닫기 ×</button></div></header>
     <div id="zoom-viewport"><div id="zoom-content" class="prose" data-tts-content></div></div>

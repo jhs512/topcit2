@@ -1,4 +1,3 @@
-import { bindThemeButton } from '../../shared/theme.mjs';
 import { linkContents } from './contents-links.mjs';
 import { mountBookNavigation } from '../../shared/book-navigation.mjs';
 import { books } from './books.mjs';
@@ -14,7 +13,7 @@ const storage = {
   get(key) { try { return localStorage.getItem(`topcit-reader-${bookId}-${key}`) || (bookId === '05' ? localStorage.getItem(`topcit-reader-${key}`) : null); } catch { return null; } },
   set(key, value) { try { localStorage.setItem(`topcit-reader-${bookId}-${key}`, value); } catch {} },
 };
-let fontSize = Math.max(14, Math.min(23, Number(storage.get('font')) || 17));
+const fontSize = Math.max(14, Math.min(23, Number(storage.get('font')) || 17));
 document.documentElement.style.setProperty('--font-size', `${fontSize}px`);
 
 const savedPage = Number(storage.get('page'));
@@ -38,14 +37,6 @@ document.addEventListener('keydown', event => {
     $('#search').focus();
   }
 });
-for (const [id, delta] of [['smaller', -1], ['larger', 1]]) {
-  $(`#${id}`).onclick = () => {
-    fontSize = Math.max(14, Math.min(23, fontSize + delta));
-    document.documentElement.style.setProperty('--font-size', `${fontSize}px`);
-    storage.set('font', fontSize);
-  };
-}
-bindThemeButton($('#theme'));
 $('#page-form').onsubmit = event => {
   event.preventDefault();
   const n = Number($('#page-number').value);
@@ -288,7 +279,6 @@ if (book) load();
 
 if (book) {
  document.title = `${book.title} · TOPCIT 읽기`;
- $('.reading-title').textContent = book.title;
  $('.intro h1').textContent = book.title;
  $('.intro > p').textContent = book.description;
 
