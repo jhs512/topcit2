@@ -3,8 +3,9 @@
 :root[data-theme=dark] body{background:var(--bg);color:var(--ink)}
 :root[data-theme=dark] body:not([data-reader-kind=text]) :is(h1,h2,h3,h4,p,li,td,th,span,a,strong,small,label,summary,dt,dd,figcaption){color:inherit}
 :root[data-theme=dark] :is(.area-card,.question-card,.complete,dialog,.criterion,.concept,.references,.subject-overview,.contents,.case-list>a,.case-body,.profile-summary,.experience-grid>article,.experience-grid>a,.speech-controls,.speech-notice){background:var(--paper);color:var(--ink);border-color:var(--line)}
-:root[data-theme=dark] :is(.guide,.example,.note,.lesson-abstract,.lesson-concrete,.case-conclusion,.question-context,.reading-intro,.book,.option-number,.question-code pre,.speech-context-item,.speech-help){background:var(--wash);color:var(--ink);border-color:var(--line)}
+:root[data-theme=dark] :is(.guide,.example,.note,.lesson-abstract,.lesson-concrete,.case-conclusion,.question-context,.book,.option-number,.question-code pre,.speech-context-item,.speech-help){background:var(--wash);color:var(--ink);border-color:var(--line)}
 :root[data-theme=dark] :is(button,input,select,textarea,.option){background:var(--paper);color:var(--ink);border-color:var(--line)}
+:root[data-theme=dark] :is(.text-button,.history-trigger){background:transparent}
 :root[data-theme=dark] :is(.primary,.mode-tabs button[aria-pressed=true],.ready .badge){background:#a9d9bc;color:#17201c;border-color:#a9d9bc}
 :root[data-theme=dark] .option:has(input:checked):not(.correct):not(.wrong){background:#233f59;border-color:#91bfff}
 :root[data-theme=dark] :is(.option.correct,.reading-correct){background:#21432e;color:#e4ffe9;border-color:#86d79a}
