@@ -18,6 +18,12 @@
 .story .case-conclusion h2,.story .prerequisites h2{margin-top:0}
 .story .case-conclusion p:last-child{margin-bottom:0}
 .story .case-body{margin-top:36px}
+.story .case-lesson{margin:28px 0;padding:24px 22px;border:1px solid #afc5aa;border-left:4px solid #3f7961;border-radius:12px;background:#eef4e8}
+.story .case-lesson h2{margin:0 0 24px}
+.story .case-lesson h3{font-size:16px;margin:0 0 10px;color:var(--green)}
+.story .lesson-concrete{margin-top:22px;padding-top:22px;border-top:1px solid #cbd8ca}
+.story .case-lesson p{margin:0}
+.story .case-lesson .lesson-basis{margin-top:14px;font-size:13px;line-height:1.7;color:var(--muted)}
 .story .case-type,.story .case-concept{font-size:14px;color:var(--muted)}
 .case-references,.series-closing{max-width:740px;margin:28px auto;padding:0 20px;font-size:14px;line-height:1.8;color:var(--muted)}
 .case-references li{margin:10px 0;overflow-wrap:anywhere;scroll-margin-top:90px}

@@ -1,11 +1,21 @@
 import { readFile, mkdir, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { parseCases, renderCase, renderMarkdown } from './case-schema.mjs';
+import { books } from '../output/markdown/books.mjs';
 
 
 const root = new URL('../', import.meta.url);
 const source = await readFile(new URL('reading/it-business-stories.md', root), 'utf8');
 const { cases, closing } = parseCases(source, 'reading/it-business-stories.md');
+// Validate every basis before writing any generated page.
+const bookSources = new Map();
+for (const c of cases) {
+  const [, id, page] = c.lesson.basis.url.match(/textbook\/(\d{2})\/#page-(\d{3})$/);
+  const book = books.find(b => b.id === id);
+  if (!bookSources.has(id)) bookSources.set(id, await readFile(new URL(book.source, new URL('output/markdown/', root)), 'utf8'));
+  const content = bookSources.get(id).split(`<!-- PDF page: ${page} -->`)[1]?.split('<!-- PDF page:')[0];
+  if (!content?.trim()) throw new Error(`reading/it-business-stories.md [${c.id}]: 근거 페이지 ${id}/${page}가 교재 원본에 없습니다`);
+}
 const esc = text => text.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const actual = cases.filter(c => c.type.startsWith('실제')).length;
 const counts = `총 ${cases.length}편 · 실제 ${actual}편 · 가상 ${cases.length - actual}편`;
@@ -21,7 +31,7 @@ async function save(path, html) {
   await writeFile(url, html);
 }
 await save('cases/index.html', page('과목 선택', 1, `<nav class="breadcrumbs" aria-label="현재 위치"><a href="../">홈</a><span>사례 모음</span></nav><section class="intro"><div class="eyebrow">TOPCIT · 사례 모음</div><h1 class="tts-readable">어떤 과목을 읽을까요?</h1><p class="tts-readable">사례 속 결정과 결과를 따라가며 교재 개념을 이해하세요.</p></section><div class="area-grid"><a class="area-card" href="05/"><div class="card-top">교재 05 · ${counts}</div><h2 class="tts-readable">${subject}</h2><p class="tts-readable">프로그램이 잘 돌아가는데, 회사는 왜 힘들까?</p><span class="card-action">사례 목록 보기 →</span></a></div><p class="availability tts-readable">현재 읽을 수 있는 과목은 ${subject}입니다.</p>`));
-await save('cases/05/index.html', page(subject, 2, `<nav class="breadcrumbs" aria-label="현재 위치"><a href="../../">홈</a><a href="../">사례 모음</a><span>${subject}</span></nav><section class="intro"><div class="eyebrow">교재 05 · ${counts}</div><h1 class="tts-readable">${subject}</h1><p class="tts-readable">프로그램이 잘 돌아가는데, 회사는 왜 힘들까?</p><p class="tts-readable">실제 사례는 공개 기록을 바탕으로, 가상 사례는 개념을 설명하기 위한 설정으로 작성했습니다.</p></section><div class="case-list">${cases.map(c => `<a class="area-card" href="${c.id}/"><div class="card-top">${c.id} · ${esc(c.type)}</div><h2 class="tts-readable">${esc(c.title)}</h2><p class="concept tts-readable">${esc(c.concept)}</p><p class="lesson tts-readable">${esc(c.lesson)}</p><span class="card-action">이야기 읽기 →</span></a>`).join('')}</div>${closing ? '<section class="series-closing">' + renderMarkdown(closing) + '</section>' : ''}`));
+await save('cases/05/index.html', page(subject, 2, `<nav class="breadcrumbs" aria-label="현재 위치"><a href="../../">홈</a><a href="../">사례 모음</a><span>${subject}</span></nav><section class="intro"><div class="eyebrow">교재 05 · ${counts}</div><h1 class="tts-readable">${subject}</h1><p class="tts-readable">프로그램이 잘 돌아가는데, 회사는 왜 힘들까?</p><p class="tts-readable">실제 사례는 공개 기록을 바탕으로, 가상 사례는 개념을 설명하기 위한 설정으로 작성했습니다.</p></section><div class="case-list">${cases.map(c => `<a class="area-card" href="${c.id}/"><div class="card-top">${c.id} · ${esc(c.type)}</div><h2 class="tts-readable">${esc(c.title)}</h2><p class="concept tts-readable">${esc(c.concept)}</p><p class="lesson tts-readable">${esc(c.lesson.concrete)}</p><span class="card-action">이야기 읽기 →</span></a>`).join('')}</div>${closing ? '<section class="series-closing">' + renderMarkdown(closing) + '</section>' : ''}`));
 for (const [i, c] of cases.entries()) {
   const rendered = renderCase(c);
   await save(`cases/05/${c.id}/index.html`, page(c.title, 3, `<nav class="breadcrumbs" aria-label="현재 위치"><a href="../../../">홈</a><a href="../../">사례 모음</a><a href="../">${subject}</a><span>${c.id}</span></nav><article class="story"><header><div class="eyebrow">${subject} · ${c.id}</div><h1 class="tts-readable">${esc(c.title)}</h1></header>${rendered.story}</article>${rendered.references}<nav class="story-navigation" aria-label="사례 이동">${i > 0 ? `<a href="../${cases[i - 1].id}/">← 이전 사례<span>${esc(cases[i - 1].title)}</span></a>` : '<span></span>'}<a href="../">사례 목록</a>${i < cases.length - 1 ? `<a href="../${cases[i + 1].id}/">다음 사례 →<span>${esc(cases[i + 1].title)}</span></a>` : '<span></span>'}</nav>`));

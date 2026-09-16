@@ -1,6 +1,6 @@
 import { marked } from 'marked';
 
-export const caseSchema = Object.freeze({ version: 1, sections: [
+export const caseSchema = Object.freeze({ version: 2, sections: [
   { key: 'lesson', title: '이 글에서 배우는 교훈', required: true },
   { key: 'introduction', title: '들어가기 전에', required: false },
   { key: 'body', title: '본문', required: true },
@@ -10,7 +10,7 @@ export const caseSchema = Object.freeze({ version: 1, sections: [
 export function parseCases(source, file = 'reading/it-business-stories.md') {
   const fail = (id, message) => { throw new Error(`${file} [${id}]: ${message}`); };
   const text = source.replace(/\r\n/g, '\n');
-  if ((text.match(/<!-- case-schema:/g) || []).length !== 1 || !text.startsWith('<!-- case-schema: 1 -->')) fail('문서', 'case-schema: 1 선언이 맨 처음 한 번 필요합니다');
+  if ((text.match(/<!-- case-schema:/g) || []).length !== 1 || !text.startsWith(`<!-- case-schema: ${caseSchema.version} -->`)) fail('문서', `case-schema: ${caseSchema.version} 선언이 맨 처음 한 번 필요합니다`);
   const boundaries = [...text.matchAll(/^## (.+)$/gm)];
   const cases = [], ids = new Set(); let closing = '';
   for (const [index, heading] of boundaries.entries()) {
@@ -40,10 +40,17 @@ export function parseCases(source, file = 'reading/it-business-stories.md') {
       result[schema.key] = content;
     }
     for (const s of caseSchema.sections) if (s.required && !result[s.key]) fail(id, `필수 구획 누락: ${s.title}`);
-    const lesson = result.lesson.match(/^> \*\*([^\n]+)\*\*$/);
-    if (!lesson) fail(id, '교훈은 > **핵심 한 문장** 형식이어야 합니다');
-    result.lesson = lesson[1];
-    if (result.lesson === result.conclusion) fail(id, '결론을 교훈과 똑같이 반복할 수 없습니다');
+    const lesson = result.lesson.match(/^추상적인 문장: ([^\n]+)\n근거: \[([^\]\n]+)\]\((https:\/\/jhs512\.github\.io\/topcit2\/textbook\/0[1-6]\/#page-\d{3})\)\n구체적인 문장: ([^\n]+)$/);
+    if (!lesson) fail(id, '교훈은 추상적인 문장, 근거(자체 HTML 교재 페이지 링크), 구체적인 문장 순서로 각각 한 번 필요합니다');
+    const [, abstract, label, url, concrete] = lesson;
+    for (const sentence of [abstract, concrete]) {
+      if (!sentence.trim() || /[\[\]<>*_`]/.test(sentence)) fail(id, '교훈의 두 문장은 비어 있지 않은 일반 텍스트여야 합니다');
+    }
+    const basisPage = label.match(/ · PDF (\d+)쪽$/);
+    if (!basisPage || !label.slice(0, basisPage.index).trim() || Number(basisPage[1]) !== Number(url.slice(-3))) fail(id, '근거는 단원명 · PDF N쪽이며 링크의 페이지와 일치해야 합니다');
+    if (abstract.trim() === concrete.trim()) fail(id, '추상적인 문장과 구체적인 문장은 서로 달라야 합니다');
+    result.lesson = { abstract: abstract.trim(), concrete: concrete.trim(), basis: { label, url } };
+    if ([abstract, concrete].includes(result.conclusion)) fail(id, '결론을 교훈과 똑같이 반복할 수 없습니다');
     if (/https:\/\/jhs512\.github\.io\/topcit2?\/(viewer|sources)\//.test(segment)) fail(id, '교재 링크는 자체 HTML 교재를 사용해야 합니다');
     result.referenceItems = [];
     if (result.references) {
@@ -64,7 +71,7 @@ export function parseCases(source, file = 'reading/it-business-stories.md') {
       const target = ref[1].match(new RegExp(`^${id}-ref-(\\d+)$`));
       if (!target || Number(target[1]) < 1 || Number(target[1]) > result.referenceItems.length) fail(id, `없는 참고 대상: ${ref[1]}`);
     }
-    for (const key of ['lesson', 'introduction', 'body', 'conclusion']) if (/\]\(https?:/.test(result[key] || '')) fail(id, `${key}: 외부 링크는 참고 구획에 두고 번호로 연결하세요`);
+    for (const key of ['introduction', 'body', 'conclusion']) if (/\]\(https?:/.test(result[key] || '')) fail(id, `${key}: 외부 링크는 참고 구획에 두고 번호로 연결하세요`);
     cases.push(result);
   }
   if (!cases.length) fail('문서', '사례가 없습니다');
@@ -79,7 +86,7 @@ export function renderMarkdown(text) {
 export function renderCase(c) {
   const section = (key, title, content, style = '') => `<section class="case-${key} ${style}" aria-labelledby="${c.id}-${key}"><h2 id="${c.id}-${key}" class="tts-readable">${title}</h2>${renderMarkdown(content)}</section>`;
   const story = `<header><p class="case-type tts-readable">${esc(c.type)}</p><p class="case-concept tts-readable">교재 개념: <strong>${esc(c.concept)}</strong></p></header>`
-    + section('lesson', '이 글에서 배우는 교훈', `> **${c.lesson}**`)
+    + `<section class="case-lesson" aria-labelledby="${c.id}-lesson"><h2 id="${c.id}-lesson" class="tts-readable">이 글에서 배우는 교훈</h2><div class="lesson-abstract"><h3 class="tts-readable">추상적인 문장</h3><p class="tts-readable">${esc(c.lesson.abstract)}</p><p class="lesson-basis"><span class="tts-readable">교재 개념을 풀어 쓴 원리이며, 원문 인용은 아닙니다.</span><br>근거: <a href="${esc(c.lesson.basis.url)}">${esc(c.lesson.basis.label)}</a></p></div><div class="lesson-concrete"><h3 class="tts-readable">구체적인 문장</h3><p class="tts-readable">${esc(c.lesson.concrete)}</p></div></section>`
     + (c.introduction ? section('introduction', '들어가기 전에', c.introduction, 'prerequisites') : '')
     + section('body', '본문', c.body)
     + section('conclusion', '결론', c.conclusion);

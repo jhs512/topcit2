@@ -1,10 +1,12 @@
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
+import { parseCases } from '../scripts/case-schema.mjs';
 
 const base = process.env.CASES_BASE_URL || 'http://localhost:4186/';
 const source = await readFile(new URL('../reading/it-business-stories.md', import.meta.url), 'utf8');
 const stories = [...source.matchAll(/^## (BIZ-\d{2}) · (.+)$/gm)];
+const { cases } = parseCases(source);
 assert.equal(stories.length, 10);
 const browser = await chromium.launch({ headless: true });
 const errors = [];
@@ -22,6 +24,24 @@ try {
       assert.equal(await page.locator('article h1').innerText(), match[2]);
       const text = await page.locator('article').innerText();
       assert.ok(text.includes('이 글에서 배우는 교훈'));
+      assert.deepEqual(await page.locator('.case-lesson h3').allTextContents(), ['추상적인 문장', '구체적인 문장']);
+      assert.equal(await page.locator('.lesson-abstract > p').first().innerText(), cases[index].lesson.abstract);
+      assert.equal(await page.locator('.lesson-concrete > p').innerText(), cases[index].lesson.concrete);
+      const basis = page.locator('.lesson-basis a');
+      assert.equal(await basis.getAttribute('href'), cases[index].lesson.basis.url);
+      assert.equal(await basis.innerText(), cases[index].lesson.basis.label);
+      assert.equal(await page.locator('.case-lesson').count(), 1);
+      assert.ok(await page.locator('.case-lesson').evaluate(box => {
+        const bounds = box.getBoundingClientRect();
+        const style = getComputedStyle(box);
+        const content = [...box.querySelectorAll('h2, h3, p, .lesson-basis a')];
+        return content.length === 7 && parseFloat(style.borderTopWidth) > 0
+          && style.backgroundColor !== getComputedStyle(box.parentElement).backgroundColor
+          && content.every(el => {
+            const rect = el.getBoundingClientRect();
+            return rect.left >= bounds.left && rect.right <= bounds.right && rect.top >= bounds.top && rect.bottom <= bounds.bottom;
+          });
+      }), 'title, both labels/sentences and basis stay inside one visible lesson box');
       assert.ok(text.includes('교재 개념:'));
       assert.ok(!text.includes('수업에서 도출할 판단'));
       assert.ok(!text.includes('최종 판단'));
@@ -48,6 +68,18 @@ try {
       assert.equal(await page.locator('#site-links > a[aria-current="page"]').innerText(), '사례 모음');
       await page.reload();
       await page.locator('article h1').waitFor();
+      // Follow each newly added basis link to its actual rendered textbook page.
+      const target = cases[index].lesson.basis.url.split('/topcit2/')[1];
+      if (base.startsWith('http://localhost')) await basis.evaluate((a, url) => { a.href = url; }, new URL(target, base).href);
+      await basis.click();
+      await page.waitForSelector('body[data-ready="true"]', { timeout: 60000 });
+      const hash = new URL(cases[index].lesson.basis.url).hash;
+      await page.waitForFunction(hash => {
+        const box = document.querySelector(hash)?.getBoundingClientRect();
+        return box && box.top < innerHeight && box.bottom > 100;
+      }, hash);
+      assert.ok((await page.locator(hash).innerText()).length > 30);
+      await page.goto(new URL(`cases/05/${cases[index].id}/`, base).href);
       if (index === 0) {
         await page.getByRole('link', { name: /다음 사례/ }).click();
         await page.getByRole('heading', { name: stories[1][2], exact: true }).waitFor();
@@ -61,7 +93,7 @@ try {
     await page.close();
   }
   assert.deepEqual(errors, []);
-  console.log('PASS: desktop/mobile hub → subject → 10 stories, prerequisites, sources, reload, previous/next and shared menu');
+  console.log('PASS: desktop/mobile 10 stories, both lesson sentences, all basis link clicks/anchors, prerequisites, sources, navigation');
 } finally {
   await browser.close();
 }
