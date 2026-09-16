@@ -43,20 +43,20 @@ test('missing, empty, wrong order, duplicated or unknown sections fail with file
   ];
   for (const source of invalid) assert.throws(() => parseCases(source, 'draft.md'), /draft\.md \[BIZ-01\]/);
 });
-test('all ten originals have the schema and resolvable numbered references', async () => {
+test('all eleven cases have the schema and resolvable numbered references', async () => {
   const source = await readFile(new URL('../reading/it-business-stories.md', import.meta.url), 'utf8');
   const { cases, closing } = parseCases(source);
-  assert.equal(cases.length, 10);
+  assert.equal(cases.length, 11);
   assert.equal(cases.filter(c => c.introduction).length, 1);
-  assert.equal(cases.filter(c => c.type.startsWith('실제')).length, 3);
-  assert.ok(closing.startsWith('열 편에서'));
+  assert.equal(cases.filter(c => c.type.startsWith('실제')).length, 4);
+  assert.ok(closing.startsWith('열한 편에서'));
   for (const c of cases) {
     assert.ok(c.referenceItems.length);
     const rendered = renderCase(c);
     for (const ref of rendered.story.matchAll(/href="#([^"]+)"/g)) assert.ok(rendered.references.includes(`id="${ref[1]}"`));
   }
   assert.throws(() => parseCases(source.replace('#BIZ-01-ref-1', '#BIZ-01-ref-999'), 'draft.md'), /draft\.md \[BIZ-01\].*없는 참고/);
-  assert.throws(() => parseCases(source.replace('\n2. [', '\n1. ['), 'draft.md'), /draft\.md \[BIZ-01\].*참고 번호/);
+  assert.throws(() => parseCases(source.replace('\n2. [', '\n1. ['), 'draft.md'), /draft\.md \[BIZ-11\].*참고 번호/);
 });
 
 test('both lesson sentences and textbook basis are mandatory, distinct and ordered', () => {

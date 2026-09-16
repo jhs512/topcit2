@@ -7,7 +7,7 @@ const base = process.env.CASES_BASE_URL || 'http://localhost:4186/';
 const source = await readFile(new URL('../reading/it-business-stories.md', import.meta.url), 'utf8');
 const stories = [...source.matchAll(/^## (BIZ-\d{2}) · (.+)$/gm)];
 const { cases } = parseCases(source);
-assert.equal(stories.length, 10);
+assert.equal(stories.length, 11);
 const browser = await chromium.launch({ headless: true });
 const errors = [];
 try {
@@ -50,9 +50,9 @@ try {
       assert.ok(!text.includes('최종 판단'));
       assert.equal(await page.locator('.case-conclusion h2').innerText(), '결론');
       assert.ok(await page.locator('.case-conclusion').evaluate(el => el === el.parentElement.lastElementChild && parseFloat(getComputedStyle(el).borderTopWidth) > 0 && getComputedStyle(el).backgroundColor !== getComputedStyle(el.parentElement).backgroundColor));
-      assert.deepEqual(await page.locator('article > section > h2').allTextContents(), index === 0 ? ['이 글에서 배우는 교훈', '들어가기 전에', '본문', '결론'] : ['이 글에서 배우는 교훈', '본문', '결론']);
-      assert.equal(await page.locator('.prerequisites').count(), index === 0 ? 1 : 0);
-      if (index === 0) {
+      assert.deepEqual(await page.locator('article > section > h2').allTextContents(), match[1] === 'BIZ-01' ? ['이 글에서 배우는 교훈', '들어가기 전에', '본문', '결론'] : ['이 글에서 배우는 교훈', '본문', '결론']);
+      assert.equal(await page.locator('.prerequisites').count(), match[1] === 'BIZ-01' ? 1 : 0);
+      if (match[1] === 'BIZ-01') {
         assert.ok(text.includes('들어가기 전에'));
         assert.ok(text.includes('실제 성공 사례'));
         const intro = page.getByRole('region', { name: '들어가기 전에' });
@@ -98,7 +98,7 @@ try {
     await page.close();
   }
   assert.deepEqual(errors, []);
-  console.log('PASS: desktop/mobile 10 stories, both lesson sentences, all basis link clicks/anchors, prerequisites, sources, navigation');
+  console.log('PASS: desktop/mobile 11 stories, both lesson sentences, all basis link clicks/anchors, prerequisites, sources, navigation');
 } finally {
   await browser.close();
 }
