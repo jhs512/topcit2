@@ -24,7 +24,7 @@
 
 [핵심노트 열기](practical/)에서 여덟 주제별 핵심 개념 스무 개씩, 총 160개를 읽습니다. 교재 요약이나 공식 중요도 순위가 아닌 자체 실무 해설이며, 각 개념에 설명·가상 업무 예시·확인 질문을 제공합니다. 본문은 TTS로 읽을 수 있습니다.
 
-원본은 `practical/content.mjs`, `practical/additional-content.mjs`, `practical/expanded-notes.mjs`입니다. 수정 후 `npm run build:practical`로 목록과 여덟 주제의 정적 페이지를 생성합니다.
+과목별 도입 설명은 `practical/subject-introductions.mjs`입니다. 핵심 개념 원본은 `practical/content.mjs`, `practical/additional-content.mjs`, `practical/expanded-notes.mjs`입니다. 수정 후 `npm run build:practical`로 목록과 여덟 주제의 정적 페이지를 생성합니다.
 
 ## 사례 모음
 
