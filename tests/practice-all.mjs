@@ -1,0 +1,71 @@
+import { chromium } from 'playwright';
+import { readFile } from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const base = process.env.PRACTICE_BASE || 'http://localhost:4186/';
+const questions = JSON.parse(await readFile(new URL('../practice/data/business.json', import.meta.url), 'utf8')).filter(q => Number(q.syllabus.split('.')[1]) < 4);
+const browser = await chromium.launch();
+try {
+  for (const width of [1440, 390]) {
+    const page = await browser.newPage({ viewport: { width, height: 950 } });
+    const errors = []; page.on('pageerror', e => errors.push(e.message));
+    await page.goto(new URL('practice/05/?mode=all', base).href);
+    await page.locator('.reading-list article').first().waitFor();
+    assert.equal(await page.locator('.reading-list article').count(), questions.length);
+    assert.equal(await page.locator('.pagination,#page,#prev-page,#next-page').count(), 0);
+    assert.equal(await page.locator('.feedback,.reading-explanation').count(), 0);
+    const [a,b] = questions;
+    const card = q => page.locator(`[data-question-id="${q.id}"]`);
+    const select = async (q, value) => card(q).locator(`label:has(input[value="${value}"])`).click();
+    const submit = async q => { await card(q).getByRole('button', { name: '정답 확인', exact: true }).click(); await card(q).locator('.feedback').waitFor(); };
+    await select(a,(a.answer+1)%4); await select(b,b.answer);
+    assert.equal(await card(a).locator('input:checked').count(), 1);
+    assert.equal(await card(b).locator('input:checked').count(), 1);
+    await submit(a); assert.match(await card(a).locator('.result').innerText(), /오답/);
+    assert.match(await card(a).locator('.wrong').innerText(), /내 선택 · 오답/);
+    assert.match(await card(a).locator('.correct').innerText(), /✓ 정답/);
+    await submit(b); assert.match(await card(b).locator('.correct').innerText(), /내 선택 · 정답/);
+    assert.match(await page.locator('.quiz-heading .progress-label').innerText(), /완료 1개/);
+    assert.equal(await card(a).locator('.feedback').count(), 1);
+    await card(a).getByRole('button',{name:'다시 풀기',exact:true}).click();
+    await select(a,a.answer); await submit(a);
+    assert.match(await page.locator('.quiz-heading .progress-label').innerText(), /완료 2개/);
+    await page.locator('#topic').selectOption({label:a.topic});
+    assert.equal(await page.locator('.reading-list article').count(), questions.filter(q=>q.topic===a.topic).length);
+    await page.locator('#topic').selectOption(''); assert.equal(await card(a).locator('.feedback').count(),1);
+    await page.reload(); await page.locator('.reading-list article').first().waitFor();
+    assert.match(await page.locator('.quiz-heading .progress-label').innerText(), /완료 2개/);
+    assert.equal(await page.locator('.feedback').count(),0);
+    await page.getByRole('button',{name:'문제풀기모드',exact:true}).click();
+    assert.ok(![a.id,b.id].includes(await page.locator('[data-question-id]').getAttribute('data-question-id')));
+    await page.getByRole('button',{name:'설명모드',exact:true}).click();
+    assert.equal(await page.locator('.pagination').count(),1); assert.equal(await page.locator('.reading-explanation').count(),20);
+    await page.locator('#next-page').click(); assert.match(await page.locator('.reading-intro p').innerText(),/21–40/);
+    await page.getByRole('button',{name:'전체모드',exact:true}).click();
+    assert.equal(await page.locator('.reading-list article').count(),questions.length);
+    // TTS still reads educational options after grading, not hidden answer text beforehand.
+    await page.locator('#site-tts-toggle').click(); await card(a).locator('.tts-option .block-speech-button').first().waitFor();
+    await select(a,a.answer); await submit(a);
+    assert.equal(await card(a).locator('.tts-option .block-speech-button').first().isEnabled(),true);
+    assert.ok(await card(a).locator('.feedback .block-speech-button').count());
+    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+    await page.goto(new URL('practice/01/?mode=all',base).href); await page.locator('.reading-intro').waitFor();
+    assert.equal(await page.locator('.question-card,.pagination').count(),0);
+    assert.deepEqual(errors,[]); await page.close();
+  }
+  // A delayed shared-progress write survives filtering and does not leave a disabled card behind.
+  const context=await browser.newContext(),page=await context.newPage(),holder=await context.newPage();
+  await page.goto(new URL('practice/05/?mode=all',base).href); await page.locator('.question-card').first().waitFor();
+  await holder.goto(new URL('practice/',base).href);
+  await holder.evaluate(()=>{navigator.locks.request('topcit2-practice-v1',async()=>{window.held=true;await new Promise(r=>window.release=r);});});await holder.waitForFunction(()=>window.held);
+  const q=questions[0]; await page.locator(`[data-question-id="${q.id}"] label:has(input[value="${q.answer}"])`).click();
+  await page.locator(`[data-question-id="${q.id}"] [type="submit"]`).click();
+  await page.locator('#topic').selectOption({label:q.topic}); await holder.evaluate(()=>window.release());
+  await page.locator(`[data-question-id="${q.id}"] .feedback`).waitFor();
+  assert.match(await page.locator('.quiz-heading .progress-label').innerText(),/완료 1개/);await context.close();
+  const blocked=await browser.newPage(); await blocked.addInitScript(()=>{Storage.prototype.getItem=()=>{throw Error('blocked');};});
+  await blocked.goto(new URL('practice/05/?mode=all',base).href);await blocked.locator('.question-card').first().waitFor();
+  await blocked.locator(`[data-question-id="${q.id}"] label:has(input[value="${q.answer}"])`).click();
+  await blocked.locator(`[data-question-id="${q.id}"] [type="submit"]`).click();await blocked.locator('.feedback').waitFor();
+  assert.match(await blocked.locator('[role="alert"]').innerText(),/임시/);await blocked.close();
+  console.log('PASS all mode: full unpaginated list, independent answers/feedback/retry, shared progress, filter/reload/quiz/explain, TTS, delayed save and unavailable storage, PC/mobile');
+} finally { await browser.close(); }

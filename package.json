@@ -13,7 +13,8 @@
     "test:speech": "node --test tests/speech.test.mjs",
     "test:speech-feature": "node tests/speech-feature.mjs",
     "test:speech-disabled": "node tests/speech-disabled.mjs",
-    "test:case-schema": "node --test tests/case-schema.test.mjs"
+    "test:case-schema": "node --test tests/case-schema.test.mjs",
+    "test:practice-all": "node tests/practice-all.mjs"
   },
   "devDependencies": {
     "marked": "^18.0.12",
