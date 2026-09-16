@@ -5,6 +5,7 @@
 .speech-status,.speech-help{font-size:13px;line-height:1.6;margin:12px 0 0}.speech-help{color:var(--muted)}
 .speech-buttons select:focus-visible{outline:3px solid #75943a;outline-offset:3px}
 .speech-block{position:relative;padding-right:38px}
+span.speech-block{display:inline-block}
 .block-speech-button{position:absolute;right:-4px;top:0;width:36px;height:44px;padding:0;border:0;border-radius:6px;background:transparent;color:#37644e;cursor:pointer}
 .block-speech-button::before{content:'▶';font-size:13px}.block-speech-button:hover{background:#e5eddf}
 .speech-active{background:#f0f6e8;outline:2px solid #71976b;outline-offset:6px;border-radius:3px}

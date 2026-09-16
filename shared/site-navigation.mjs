@@ -1,12 +1,13 @@
 import { books } from '../output/markdown/books.mjs';
-import './speech-loader.mjs';
+import { initializeTts } from './speech-loader.mjs';
 
 const root = new URL('../', import.meta.url);
 const url = path => new URL(path, root).href;
 const bar = document.createElement('div');
 bar.id = 'site-navigation';
-bar.innerHTML = `<a class="site-brand" href="${url('')}">TOPCIT</a><button class="site-toggle" aria-expanded="false" aria-controls="site-links">메뉴 <span aria-hidden="true">☰</span></button><nav id="site-links" aria-label="사이트 주 메뉴"><div class="site-group"><button aria-expanded="false" aria-controls="site-textbooks">교재 <span aria-hidden="true">⌄</span></button><div id="site-textbooks" class="site-submenu" hidden><a href="${url('textbook/')}">전체 교재</a>${books.map(b => `<a href="${url(`textbook/${b.id}/`)}">${b.id} ${b.title}</a>`).join('')}</div></div><div class="site-group"><button aria-expanded="false" aria-controls="site-practice">문제 <span aria-hidden="true">⌄</span></button><div id="site-practice" class="site-submenu" hidden><a href="${url('practice/')}">전체 문제</a>${books.map(b => `<a href="${url(`practice/${b.id}/`)}">${b.id} ${b.title}</a>`).join('')}</div></div><a href="${url('info/')}">시험 안내</a><a href="${url('cases/')}">사례 모음</a></nav>`;
+bar.innerHTML = `<a class="site-brand" href="${url('')}">TOPCIT</a><button type="button" id="site-tts-toggle" aria-pressed="false">TTS 꺼짐</button><button class="site-toggle" aria-expanded="false" aria-controls="site-links">메뉴 <span aria-hidden="true">☰</span></button><nav id="site-links" aria-label="사이트 주 메뉴"><div class="site-group"><button aria-expanded="false" aria-controls="site-textbooks">교재 <span aria-hidden="true">⌄</span></button><div id="site-textbooks" class="site-submenu" hidden><a href="${url('textbook/')}">전체 교재</a>${books.map(b => `<a href="${url(`textbook/${b.id}/`)}">${b.id} ${b.title}</a>`).join('')}</div></div><div class="site-group"><button aria-expanded="false" aria-controls="site-practice">문제 <span aria-hidden="true">⌄</span></button><div id="site-practice" class="site-submenu" hidden><a href="${url('practice/')}">전체 문제</a>${books.map(b => `<a href="${url(`practice/${b.id}/`)}">${b.id} ${b.title}</a>`).join('')}</div></div><a href="${url('info/')}">시험 안내</a><a href="${url('cases/')}">사례 모음</a></nav>`;
 document.body.prepend(bar);
+initializeTts(bar.querySelector('#site-tts-toggle'));
 const toggle = bar.querySelector('.site-toggle');
 const groups = [...bar.querySelectorAll('.site-group > button')];
 function closeGroups() {

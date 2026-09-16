@@ -15,6 +15,9 @@ try {
   const center = async () => assert.ok(await page.locator('.speech-controls').evaluate(el=>{const r=el.getBoundingClientRect();return getComputedStyle(el).position==='fixed'&&Math.abs(r.x+r.width/2-innerWidth/2)<2&&Math.abs(r.y+r.height/2-innerHeight/2)<2&&r.left>=0&&r.right<=innerWidth&&r.top>=0&&r.bottom<=innerHeight}));
   for (const route of ['', 'info/', 'practice/', 'cases/05/BIZ-01/', 'textbook/05/#page-020']) {
    await page.goto(new URL(route,base).href);
+   const toggle=page.locator('#site-tts-toggle');await toggle.waitFor();
+   if(await toggle.getAttribute('aria-pressed')==='false')await toggle.click();
+   assert.equal(await page.evaluate(()=>speechSynthesis.spoken.length),0);
    if(route.startsWith('textbook/'))await page.waitForSelector('body[data-ready="true"]',{timeout:60000});
    const button=route.startsWith('textbook/')?page.locator('#page-020 .block-speech-button').first():page.locator('main .block-speech-button').first();
    await button.waitFor();await button.evaluate(el=>scrollTo(0,scrollY+el.getBoundingClientRect().top-100));

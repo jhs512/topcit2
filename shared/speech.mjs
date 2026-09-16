@@ -1,5 +1,4 @@
 import { splitSpeech, koreanVoice, StorySpeech } from './speech-engine.mjs';
-import { enableTts } from './site-features.mjs';
 
 const excluded = 'nav,button,input,select,textarea,svg,script,style,[role="button"],[data-speech-controls],.speech-notice,.sr-only,.selection-tag';
 export function visible(element) {
@@ -21,10 +20,9 @@ export function readableText(element) {
   return copy.textContent.replace(/https?:\/\/\S+/g, '').replace(/\s+/g, ' ').replace(/(?:\s*·\s*)+$/g, '').trim();
 }
 
-if (enableTts && !document.querySelector('[data-speech-controls]')) {
-  mount(document.body);
-}
-function mount(main) {
+export function mountSpeech(main) {
+  let disposed = false, frame;
+  const listeners = new AbortController();
   const panel = document.createElement('section');
   panel.className = 'speech-controls'; panel.dataset.speechControls = ''; panel.hidden = true;
   panel.setAttribute('aria-label', '텍스트 읽어주기');
@@ -34,12 +32,14 @@ function mount(main) {
   const content = document.querySelector('main');
   if (content) content.before(notice); else main.append(notice);
   if (!('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)) {
-    notice.hidden = false; notice.textContent = '이 브라우저는 읽어주기를 지원하지 않습니다.'; return;
+    notice.hidden = false; notice.textContent = '이 브라우저는 읽어주기를 지원하지 않습니다.';
+    return () => { panel.remove(); notice.remove(); };
   }
   const synth = window.speechSynthesis, entries = new Map();
   const play = panel.querySelector('[data-action="play"]'), pause = panel.querySelector('[data-action="pause"]'), stop = panel.querySelector('[data-action="stop"]'), close = panel.querySelector('.speech-close');
   let active, origin, spokenText, observer;
   const controller = new StorySpeech(synth, window.SpeechSynthesisUtterance, [], ({ state, message }) => {
+    if (disposed) return;
     const wasHidden = panel.hidden, focusInside = panel.contains(document.activeElement);
     panel.hidden = !['starting', 'speaking', 'paused', 'error'].includes(state);
     panel.dataset.state = state; play.disabled = state !== 'paused';
@@ -57,13 +57,18 @@ function mount(main) {
   panel.querySelector('select').onchange = event => controller.setRate(Number(event.target.value));
   panel.onkeydown = event => { if (event.key === 'Escape') { event.preventDefault(); dismiss(); } };
   function remove(node) {
-    entries.get(node)?.button.remove(); entries.get(node)?.host.classList.remove('speech-block'); entries.delete(node); node.classList.remove('speech-block', 'speech-active');
-    if (/^H[1-6]$/.test(node.tagName)) node.removeAttribute('aria-label');
+    const entry = entries.get(node);
+    entry?.button.remove(); entry?.host.classList.remove('speech-block'); entries.delete(node); node.classList.remove('speech-block', 'speech-active');
+    if (/^H[1-6]$/.test(node.tagName)) {
+      if (entry?.originalLabel !== null && entry?.originalLabel !== undefined) node.setAttribute('aria-label', entry.originalLabel);
+      else node.removeAttribute('aria-label');
+    }
   }
   function eligible(node) {
     return node.matches('.tts-readable') && visible(node) && !node.closest(excluded) && !node.parentElement?.closest('.tts-readable') && !node.closest('a,button') && (!node.closest('label,form') || node.closest('.tts-option'));
   }
   function reconcile(roots) {
+    if (disposed) return;
     observer.disconnect();
     try {
       // Only changed branches need visibility checks; book diagrams/progress updates must not rescan every paragraph.
@@ -85,10 +90,10 @@ function mount(main) {
           const button = document.createElement('button'); button.type = 'button'; button.className = 'block-speech-button'; button.title = '이 텍스트 읽기';
           const host = node.closest('.tts-option') || node;
           host.classList.add('speech-block'); host.append(button);
-          entry = { button, host }; entries.set(node, entry);
+          entry = { button, host, originalLabel: node.getAttribute('aria-label') }; entries.set(node, entry);
           button.onclick = event => {
             event.preventDefault(); event.stopPropagation();
-            const current = readableText(node); if (!eligible(node) || !current) return;
+            const current = readableText(node); if (disposed || !eligible(node) || !current) return;
             if (active !== node || current !== spokenText) { dismiss(); active?.classList.remove('speech-active'); active = node; spokenText = current; controller.chunks = splitSpeech(current); }
             origin = button; controller.start();
           };
@@ -101,8 +106,9 @@ function mount(main) {
   }
   let scheduled = false; const dirty = new Set();
   function schedule(root) {
+    if (disposed) return;
     dirty.add(root);
-    if (!scheduled) { scheduled = true; requestAnimationFrame(() => { scheduled = false; const roots = [...dirty]; dirty.clear(); reconcile(roots); }); }
+    if (!scheduled) { scheduled = true; frame = requestAnimationFrame(() => { scheduled = false; const roots = [...dirty]; dirty.clear(); reconcile(roots); }); }
   }
   observer = new MutationObserver(records => {
     if (active && (!active.isConnected || !eligible(active) || readableText(active) !== spokenText)) { dismiss(); active?.classList.remove('speech-active'); active = null; }
@@ -119,12 +125,21 @@ function mount(main) {
       } else schedule(target);
     }
   });
-  function observe() { observer.observe(main, { subtree: true, childList: true, characterData: true, attributes: true, attributeOldValue: true, attributeFilter: ['hidden', 'aria-hidden', 'style', 'class', 'open'] }); }
+  function observe() { if (!disposed) observer.observe(main, { subtree: true, childList: true, characterData: true, attributes: true, attributeOldValue: true, attributeFilter: ['hidden', 'aria-hidden', 'style', 'class', 'open'] }); }
   reconcile([main]);
-  synth.addEventListener('voiceschanged', () => { if (koreanVoice(synth.getVoices()) && panel.hidden) { notice.hidden = true; } });
+  synth.addEventListener('voiceschanged', () => { if (!disposed && koreanVoice(synth.getVoices()) && panel.hidden) { notice.hidden = true; } }, { signal: listeners.signal });
   // Warm only the voice list; actual playback always requires a text button click.
   synth.getVoices();
-  for (const event of ['site-route-change', 'popstate', 'pagehide']) addEventListener(event, dismiss);
-  addEventListener('resize', () => { if (active && !visible(active)) dismiss(); schedule(main); });
-  document.addEventListener('visibilitychange', () => { if (document.hidden) dismiss(); });
+  for (const event of ['site-route-change', 'popstate', 'pagehide']) addEventListener(event, dismiss, { signal: listeners.signal });
+  addEventListener('resize', () => { if (active && !visible(active)) dismiss(); schedule(main); }, { signal: listeners.signal });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) dismiss(); }, { signal: listeners.signal });
+  return () => {
+    if (disposed) return;
+    disposed = true;
+    observer.disconnect(); cancelAnimationFrame(frame); dirty.clear(); listeners.abort();
+    controller.stop();
+    for (const node of [...entries.keys()]) remove(node);
+    active = origin = null;
+    panel.remove(); notice.remove();
+  };
 }

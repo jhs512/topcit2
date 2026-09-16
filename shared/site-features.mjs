@@ -1,2 +1,3 @@
-// One switch for every TOPCIT2 page. Keep disabled until activation is requested.
-export const enableTts = false;
+// First-visit preference, not an operational block. Visitors can enable TTS.
+export const defaultTtsEnabled = false;
+export const ttsPreferenceKey = 'topcit2:tts-enabled';
