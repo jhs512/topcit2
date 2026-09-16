@@ -4,6 +4,8 @@
 
 ## 적용 원칙
 
+- 후속 발음 보정: `Engineering`, `engineering`, `ENGINEERING` → `엔지니어링`. 사용자 제보와 교재 01의 `Concurrent Engineering`, `Software Engineering` 문맥을 확인했다. 합성 단어·변수명 내부는 바꾸지 않는다.
+
 - 속도는 0.75~3.0배, 0.25 간격이다. 기존 저장값을 유지하며 새 속도도 페이지 이동 후 유지한다.
 - 화면·원본 파일·문장 분할·하이라이트 좌표는 변경하지 않고 SpeechSynthesisUtterance에 전달하는 문자열만 바꾼다.
 - 대소문자를 구분한 명시적 목록만 적용한다. 한국어 조사가 붙어도 처리하되 영문 단어·변수명 내부와 URL은 치환하지 않는다.

@@ -4,6 +4,8 @@ import {pronunciationText,pronunciations} from '../shared/speech-pronunciation.m
 import {StorySpeech} from '../shared/speech-engine.mjs';
 
 test('technical terms allow Korean particles and prefer full terms',()=>{
+  assert.equal(pronunciationText('Software Engineering, engineering, ENGINEERING'), 'Software 엔지니어링, 엔지니어링, 엔지니어링');
+  assert.equal(pronunciationText('EngineeringTool reengineering'), 'EngineeringTool reengineering');
   assert.equal(pronunciationText('IT는 IT비즈니스와 ITSM, API를 다룬다.'),'아이티는 아이티비즈니스와 아이티에스엠, 에이피아이를 다룬다.');
   assert.equal(pronunciationText('TCP/IP, DBMS, NoSQL, SQL문, C++, C#'),'티씨피/아이피, 디비엠에스, 노에스큐엘, 에스큐엘문, 씨 플러스 플러스, C#');
   assert.equal(pronunciationText('CPU와 RAM, IPv6, NULL'),'씨피유와 램, 아이피 버전 육, 널');

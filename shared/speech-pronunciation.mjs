@@ -46,6 +46,7 @@ export const pronunciations = Object.freeze({
   PDF:'피디에프', ISO:'아이에스오', IEEE:'아이 트리플 이',
   FBI:'에프비아이', VCF:'브이씨에프', TOPCIT:'탑싯',
   Java:'자바', JavaScript:'자바스크립트', Python:'파이썬',
+  Engineering:'엔지니어링', engineering:'엔지니어링', ENGINEERING:'엔지니어링',
   'C++':'씨 플러스 플러스',
 });
 
