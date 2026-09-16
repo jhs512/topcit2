@@ -23,6 +23,7 @@ body[data-reader-kind=text]{padding-top:0;--topbar-height:0px;--reader-offset:va
 body[data-reader-kind=pdf] main{margin-top:0;height:calc(100dvh - var(--site-height));width:100%;max-width:none}
 body[data-reader-kind=pdf] #menu{top:calc(var(--site-height) + 12px)}
 html{scroll-padding-top:calc(var(--site-height) + 16px)}
+html:has(body[data-reader-kind=text]){scroll-padding-top:0}
 @media(max-width:1240px){
  #site-navigation{padding:0 18px;gap:8px}
  #site-navigation .site-toggle{display:block}

@@ -144,7 +144,9 @@ function buildToc() {
 function updateLocation() {
   scrolling = false;
   if (!ready || $('#zoom-dialog').open) return;
-  const point = 145;
+  // Use the same CSS offsets as scrollIntoView, including fractional-pixel rounding.
+  const point = (parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0)
+    + (parseFloat(getComputedStyle(pages[0].node).scrollMarginTop) || 0) + 1;
   let current = pages[0];
   for (const page of pages) { if (page.node.getBoundingClientRect().top <= point) current = page; else break; }
   let heading;
