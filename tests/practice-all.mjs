@@ -1,6 +1,7 @@
 import { chromium } from 'playwright';
 import { readFile } from 'node:fs/promises';
 import assert from 'node:assert/strict';
+import {distribution} from '../practice/distribution.mjs';
 const base = process.env.PRACTICE_BASE || 'http://localhost:4186/';
 const questions = JSON.parse(await readFile(new URL('../practice/data/business.json', import.meta.url), 'utf8')).filter(q => Number(q.syllabus.split('.')[1]) < 4);
 const browser = await chromium.launch();
@@ -49,7 +50,8 @@ try {
     assert.ok(await card(a).locator('.feedback .block-speech-button').count());
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
     await page.goto(new URL('practice/01/?mode=all',base).href); await page.locator('.reading-intro').waitFor();
-    assert.equal(await page.locator('.question-card,.pagination').count(),0);
+    assert.equal(await page.locator('.question-card').count(),distribution.subjects['01']);
+    assert.equal(await page.locator('.pagination').count(),0);
     assert.deepEqual(errors,[]); await page.close();
   }
   // A delayed shared-progress write survives filtering and does not leave a disabled card behind.

@@ -10,6 +10,8 @@ export const learningSubjects = [
   { id: '06-02', bookId: '06', title: '테크니컬 커뮤니케이션', description: '상대가 이해하고 행동할 수 있게 기술을 전달합니다.' }
 ];
 export function questionSubject(q) {
+  if (q.area === 'software') return '01';
+  if (q.area === 'data') return '02';
   if (q.area === 'business') {
     const section = Number(q.syllabus.split('.')[1]);
     if (section === 3) return '05-02';

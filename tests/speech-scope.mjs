@@ -7,13 +7,17 @@ try {
   for (const width of [1440, 390]) {
     const page = await browser.newPage({ viewport: { width, height: 950 } });
     await page.addInitScript(() => localStorage.setItem('topcit2:tts-enabled', 'true'));
-    for (const route of ['', 'textbook/', 'output/markdown/', 'info/', 'exam/', 'practice/', 'cases/', 'cases/05/', 'practice/01/']) {
+    for (const route of ['', 'textbook/', 'output/markdown/', 'info/', 'exam/', 'practice/', 'cases/', 'cases/05/']) {
       await page.goto(new URL(route, base).href);
       await page.waitForSelector('.speech-controls', { state: 'attached' });
       if (route.startsWith('practice/')) await page.locator('.intro,.complete').first().waitFor();
       assert.equal(await page.locator('.tts-readable,.block-speech-button').count(), 0, route + ': UI only');
       assert.equal(await page.locator('#site-tts-toggle').getAttribute('aria-pressed'), 'true');
     }
+    // Software is now a populated subject, so its educational text is readable.
+    await page.goto(new URL('practice/01/',base).href);
+    await page.locator('.question-card .block-speech-button').first().waitFor();
+    assert.equal(await page.locator('.quiz-heading .block-speech-button').count(),0);
     for (const book of books) {
       await page.goto(new URL(`textbook/${book.id}/#page-${String(book.startPage).padStart(3, '0')}`, base).href);
       await page.waitForSelector('body[data-ready="true"]', { timeout: 60000 });

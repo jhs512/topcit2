@@ -1,5 +1,7 @@
 export const KEY = 'topcit2-practice-v1';
 export const AREAS = [
+  {id:'software', title:'소프트웨어 개발', description:'개발·설계·구현·테스트', code:'M1'},
+  {id:'data', title:'데이터 관리', description:'모델링·SQL·트랜잭션·분석', code:'M2'},
   {id:'business', title:'IT비즈니스', description:'전략·서비스·윤리·프로젝트 관리', code:'M4'},
   {id:'systems-security', title:'시스템아키텍처 및 정보보안', description:'컴퓨터 구조·운영체제·네트워크·보안', code:'M3'},
 ];

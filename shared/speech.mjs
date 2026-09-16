@@ -91,10 +91,17 @@ export function mountSpeech(main) {
         const parent = root.closest('.tts-readable'); if (parent) candidates.add(parent);
         root.querySelectorAll('.tts-readable').forEach(node => candidates.add(node));
       }
-      for (const node of candidates) {
-        if (node.closest('[data-tts-exclude]')) { remove(node); node.classList.remove('tts-readable'); continue; }
-        if (!eligible(node)) continue;
-        const text = readableText(node); if (!text) { remove(node); continue; }
+      // Measure before inserting buttons. Interleaving visibility reads and DOM
+      // writes forces a full layout for each item in a large question list.
+      const measured = [...candidates].map(node => {
+        const excluded = !!node.closest('[data-tts-exclude]');
+        const allowed = !excluded && eligible(node);
+        return {node, excluded, allowed, text: allowed ? readableText(node) : ''};
+      });
+      for (const {node, excluded, allowed, text} of measured) {
+        if (excluded) { remove(node); node.classList.remove('tts-readable'); continue; }
+        if (!allowed) continue;
+        if (!text) { remove(node); continue; }
         let entry = entries.get(node);
         if (entry && !node.contains(entry.button)) { remove(node); entry = undefined; }
         if (!entry) {
