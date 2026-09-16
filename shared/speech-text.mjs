@@ -9,7 +9,7 @@ export function visible(element) {
 }
 
 // Each normalized UTF-16 character retains its original node/offset. Skipped
-// links and controls never become part of a highlighted Range.
+// controls never become part of a highlighted Range; inline link labels do.
 export function mapSpeechText(element) {
   const raw = [], allowed = new Map();
   if (!visible(element)) return { text: '', points: [] };
@@ -19,7 +19,7 @@ export function mapSpeechText(element) {
     if (!allowed.has(parent)) {
       let blocked = false;
       for (let ancestor = parent; ancestor && ancestor !== element; ancestor = ancestor.parentElement) {
-        if (ancestor.matches(excluded + ',a,label,form,fieldset,legend')) { blocked = true; break; }
+        if (ancestor.matches(excluded + ',label,form,fieldset,legend')) { blocked = true; break; }
       }
       allowed.set(parent, !blocked && visible(parent));
     }

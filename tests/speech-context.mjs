@@ -18,7 +18,7 @@ try {
     await page.evaluate(({ first, long, theme }) => {
       document.documentElement.dataset.theme = theme;
       const box = document.createElement('section'); box.id = 'context-fixture'; box.dataset.ttsContent = '';
-      box.innerHTML = `<p class="tts-readable">${first} ${long} 같은 문장. 같은 문장.</p><p class="tts-readable">부호 없는 제목 <a href="#">제외링크</a><span hidden>숨김정답</span> https://secret.test</p>`;
+      box.innerHTML = `<p class="tts-readable">${first} ${long} 같은 문장. 같은 문장.</p><p class="tts-readable">부호 없는 제목 <a href="#">본문링크</a><a href="#" data-tts-exclude>제외링크</a><button>제외버튼</button><span hidden>숨김정답</span> https://secret.test</p>`;
       document.querySelector('main').append(box);
     }, { first, long, theme });
     const buttons = page.locator('#context-fixture button'); await buttons.first().waitFor();
@@ -49,7 +49,7 @@ try {
     });
     assert.ok(geometry.inside && Math.abs(geometry.right - 16) < 1 && Math.abs(geometry.bottom - 16) < 1 && geometry.contextHeight <= 280);
     await end(); assert.equal(await page.locator('.speech-context').isVisible(), false); assert.deepEqual(await lines(), ['', '', '']);
-    await buttons.nth(1).click(); await start(); assert.deepEqual(await lines(), ['없음', '부호 없는 제목', '없음']);
+    await page.locator('#context-fixture p').nth(1).locator('button').last().click(); await start(); assert.deepEqual(await lines(), ['없음', '부호 없는 제목 본문링크', '없음']);
     await page.getByRole('button', { name: '정지', exact: true }).click(); assert.deepEqual(await lines(), ['', '', '']);
     await buttons.first().click(); await start();
     await page.locator('#context-fixture p').first().evaluate(p => p.firstChild.data = '내용 교체.');
