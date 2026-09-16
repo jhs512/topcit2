@@ -15,8 +15,28 @@ try{
    assert.equal(await page.locator('meta[name=robots]').getAttribute('content'),'noindex, nofollow, noarchive');
    assert.equal(await page.locator('tbody tr').count(),7);
    assert.equal(await page.locator('#site-navigation a[href*="/lec/"]').count(),0);
+   const linkProblems=await page.locator('a[href]').evaluateAll(links=>links.flatMap(link=>{
+    const destination=new URL(link.href),current=new URL(location.href);
+    const internal=destination.origin===current.origin&&destination.pathname===current.pathname&&destination.search===current.search&&!!destination.hash;
+    return internal
+     ? (link.target==='_blank'?[`anchor opens new tab: ${link.href}`]:[])
+     : (link.target!=='_blank'||!link.relList.contains('noopener')?[`missing new tab: ${link.href}`]:[]);
+   }));
+   assert.deepEqual(linkProblems,[]);
+   for(const href of await page.locator('.resource-links a[href*="/cases/"]').evaluateAll(links=>links.map(link=>link.getAttribute('href')))){
+    assert.match(href,/^\.\.\/\.\.\/cases\/(03|04|05-01|05-02|06-01|06-02)\/$/);
+   }
+   if(width===1440){
+    const resource=page.locator('.resource-links a[href*="/cases/"]').first();
+    const destination=await resource.getAttribute('href');
+    const popupPromise=page.waitForEvent('popup');
+    await resource.click();
+    const popup=await popupPromise;await popup.waitForLoadState('domcontentloaded');
+    assert.equal(popup.url(),new URL(destination,page.url()).href);await popup.close();
+   }
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
    await page.locator('.contents a[href="#comments"]').click();
+   assert.equal(new URL(page.url()).hash,'#comments');
    await page.waitForFunction(()=>!document.querySelector('#comments').hasAttribute('aria-busy'));
    assert.match(await page.locator('.comment-write').getAttribute('href'),/^https:\/\/github.com\/jhs512\/topcit2\/issues\/[123]#new_comment_field$/);
    if(base.includes('localhost')){
