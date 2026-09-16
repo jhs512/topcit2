@@ -33,7 +33,7 @@ try{
    const next=new URL(route.request().url()).searchParams.get('page')==='2';
    return route.fulfill({status:200,contentType:'application/json',headers:next?{'access-control-allow-origin':'*'}:{'access-control-allow-origin':'*','access-control-expose-headers':'link',link:'<https://api.github.com/?page=2>; rel="next"'},body:JSON.stringify([{id:next?2:1,user:{login:'test-user'},created_at:'2026-09-16T09:00:00Z',body_text:next?'두 번째 댓글':'<img src=x onerror=alert(1)> 안전한 일반 텍스트'}])});
   });
-  await page.goto(new URL('lec/2026-09-16/',base).href);await page.locator('.github-comment').waitFor();
+  await page.goto(new URL('lec/2026-09-16/',base).href);await page.locator('#comments-fallback summary').click();await page.locator('.github-comment').waitFor();
   assert.equal(await page.locator('.github-comment img').count(),0);
   assert.match(await page.locator('.comment-body').innerText(),/<img/);
   await page.locator('#comments-more').click();await page.waitForFunction(()=>document.querySelectorAll('.github-comment').length===2);

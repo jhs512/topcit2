@@ -33,3 +33,26 @@ async function load(reset=false){
  finally{busy=false;refresh.disabled=false;more.disabled=false;section.removeAttribute('aria-busy');}
 }
 refresh.addEventListener('click',()=>load(true));more.addEventListener('click',()=>load());load(true);
+
+// 기존 회차별 이슈에 연결하므로 이미 작성한 댓글도 같은 창에 표시한다.
+const widget=document.querySelector('#comments-widget');
+const widgetStatus=document.querySelector('#comments-widget-status');
+const fallback=document.querySelector('#comments-fallback');
+const embed=document.createElement('script');
+embed.src='https://utteranc.es/client.js';
+embed.setAttribute('repo','jhs512/topcit2');
+embed.setAttribute('issue-number',String(issue));
+embed.setAttribute('theme','github-light');
+embed.crossOrigin='anonymous';embed.async=true;
+const onUnavailable=()=>{
+ widgetStatus.textContent='댓글 작성창을 불러오지 못했습니다. 아래에서 기존 댓글을 확인하거나 GitHub에서 작성할 수 있습니다.';
+ fallback.open=true;
+};
+const timeout=setTimeout(onUnavailable,20000);
+window.addEventListener('message',event=>{
+ const frame=widget.querySelector('iframe');
+ if(event.origin!=='https://utteranc.es'||event.source!==frame?.contentWindow)return;
+ if(event.data?.type==='resize'&&Number(event.data.height)>0){clearTimeout(timeout);widgetStatus.hidden=true;}
+});
+embed.addEventListener('error',()=>{clearTimeout(timeout);onUnavailable();});
+widget.append(embed);
