@@ -69,7 +69,7 @@ try {
   let release, requested;
   const gate = new Promise(resolve => { release = resolve; });
   const started = new Promise(resolve => { requested = resolve; });
-  await page.route('**/shared/speech.mjs', async route => { requested(); await gate; await route.continue(); });
+  await page.route('**/shared/speech.mjs*', async route => { requested(); await gate; await route.continue(); });
   await page.goto(new URL('cases/05/BIZ-01/', base).href);
   await page.locator('#site-tts-toggle').click(); await started;
   await page.locator('#site-tts-toggle').click(); release();

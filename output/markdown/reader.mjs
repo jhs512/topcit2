@@ -1,6 +1,7 @@
 import { linkContents } from './contents-links.mjs';
 import { mountBookNavigation } from '../../shared/book-navigation.mjs';
 import { books } from './books.mjs';
+import { applyBookSpeechPolicy } from './book-speech-policy.mjs';
 const bookId = location.pathname.match(/\/textbook\/(0[1-6])(?:\/|$)/)?.[1] || new URLSearchParams(location.search).get('book') || '05';
 const book = books.find(item => item.id === bookId && item.status === 'ready');
 if (!book) location.replace('./index.html');
@@ -265,12 +266,9 @@ async function load() {
     for (const [, pageId, markdown] of segments) {
       const section = document.createElement('section'); section.className = 'book-page'; section.id = `page-${pageId}`;
       section.innerHTML = purifier.sanitize(renderer.parse(markdown, { gfm: true, breaks: false }), { USE_PROFILES: { html: true }, FORBID_TAGS: ['img', 'style'], FORBID_ATTR: ['style'] });
-      // Educational body only: front matter/contents and reader UI are not speech content.
-      if (Number(pageId) >= book.startPage) {
-        section.dataset.ttsContent = '';
-        section.querySelectorAll('h1,h2,h3,h4,h5,h6,p,li,td,th').forEach(node => node.classList.add('tts-readable'));
-      }
+      applyBookSpeechPolicy(section, book, Number(pageId));
       const label = document.createElement('div'); label.className = 'page-label';
+      label.dataset.ttsExclude = '';
       const a = document.createElement('a'); a.href = `#${section.id}`; a.textContent = `PDF ${Number(pageId)} / ${totalPages}`; label.append(a); section.prepend(label);
       let index = 0;
       for (const node of $$('h1,h2,h3,h4,h5,h6', section)) {

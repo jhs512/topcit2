@@ -1,4 +1,5 @@
 // The six archived PDFs include two pages before printed page 1.
+import { isContentsTable } from './book-speech-policy.mjs';
 // Source checks and the reader-page mapping are recorded in notes/contents-links.md.
 export const printedPageOffsets = { '01': 2, '02': 2, '03': 2, '04': 2, '05': 2, '06': 2 };
 const normalize = text => text.replace(/^(?:[IVXLCDM]+\.|\d+\.?|[가-힣]\))\s*/i, '').replace(/[^\p{L}\p{N}]/gu, '').toLowerCase();
@@ -8,8 +9,7 @@ export function linkContents(pages, book) {
   if (offset === undefined) return;
   for (const page of pages.filter(p => p.number < book.startPage)) {
     for (const table of page.node.querySelectorAll('table')) {
-      const headers = [...(table.rows[0]?.cells || [])].map(c => c.textContent.trim());
-      if (headers.length !== 2 || headers[0] !== '목차' || !['교재 쪽수', '책 쪽수', '쪽'].includes(headers[1])) continue;
+      if (!isContentsTable(table)) continue;
       for (const row of [...table.rows].slice(1)) {
         if (row.cells.length !== 2 || !/^\d+$/.test(row.cells[1].textContent.trim())) continue;
         const printed = Number(row.cells[1].textContent.trim());

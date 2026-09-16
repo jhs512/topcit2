@@ -1,6 +1,6 @@
 import { splitSpeech, koreanVoice, StorySpeech } from './speech-engine.mjs';
 
-const excluded = 'nav,button,input,select,textarea,svg,script,style,[role="button"],[data-speech-controls],.speech-notice,.sr-only,.selection-tag';
+const excluded = 'nav,button,input,select,textarea,svg,script,style,[role="button"],[data-speech-controls],[data-tts-exclude],.speech-notice,.sr-only,.selection-tag';
 export function visible(element) {
   if (!element.isConnected || element.closest('[hidden],[aria-hidden="true"]')) return false;
   for (let node = element; node instanceof Element; node = node.parentElement) {
@@ -61,7 +61,7 @@ export function mountSpeech(main) {
     entry?.button.remove(); entry?.host.classList.remove('speech-block'); entries.delete(node); node.classList.remove('speech-block', 'speech-active');
     if (entry?.headingText?.parentElement === node) entry.headingText.replaceWith(...entry.headingText.childNodes);
     node.classList.remove('speech-heading');
-    if (/^H[1-6]$/.test(node.tagName)) {
+    if (entry && /^H[1-6]$/.test(node.tagName)) {
       if (entry?.originalLabel !== null && entry?.originalLabel !== undefined) node.setAttribute('aria-label', entry.originalLabel);
       else node.removeAttribute('aria-label');
     }
@@ -85,6 +85,7 @@ export function mountSpeech(main) {
         root.querySelectorAll('.tts-readable').forEach(node => candidates.add(node));
       }
       for (const node of candidates) {
+        if (node.closest('[data-tts-exclude]')) { remove(node); node.classList.remove('tts-readable'); continue; }
         if (!eligible(node)) continue;
         const text = readableText(node); if (!text) { remove(node); continue; }
         let entry = entries.get(node);
@@ -123,6 +124,7 @@ export function mountSpeech(main) {
     if (active && (!active.isConnected || !eligible(active) || readableText(active) !== spokenText)) { dismiss(); active?.classList.remove('speech-active'); active = null; }
     for (const record of records) {
       const target = record.target.nodeType === 1 ? record.target : record.target.parentElement;
+      if (target?.closest('[data-tts-exclude]')) { schedule(target.closest('[data-tts-exclude]')); continue; }
       if (!target || target.closest(excluded)) continue;
       if (record.type === 'attributes' && record.attributeName === 'class') {
         const clean = value => (value || '').replace(/\bspeech-(active|block)\b/g, '').trim();
@@ -134,7 +136,7 @@ export function mountSpeech(main) {
       } else schedule(target);
     }
   });
-  function observe() { if (!disposed) observer.observe(main, { subtree: true, childList: true, characterData: true, attributes: true, attributeOldValue: true, attributeFilter: ['hidden', 'aria-hidden', 'style', 'class', 'open'] }); }
+  function observe() { if (!disposed) observer.observe(main, { subtree: true, childList: true, characterData: true, attributes: true, attributeOldValue: true, attributeFilter: ['hidden', 'aria-hidden', 'style', 'class', 'open', 'data-tts-exclude', 'data-tts-content'] }); }
   reconcile([main]);
   synth.addEventListener('voiceschanged', () => { if (!disposed && koreanVoice(synth.getVoices()) && panel.hidden) { notice.hidden = true; } }, { signal: listeners.signal });
   // Warm only the voice list; actual playback always requires a text button click.
