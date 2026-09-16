@@ -1,3 +1,4 @@
+import {singleSubjects} from './single-subject.mjs';
 // 수업 전용 자료. 기존 학습 페이지나 공통 메뉴에서는 이 목록을 참조하지 않는다.
 export const lectures = [
  {date:'2026-09-16',day:'수',number:1,title:'오리엔테이션 · IT 비즈니스와 윤리 · 프로젝트 관리와 기술 커뮤니케이션',intro:'시험의 구조와 공부 방법을 먼저 살펴본 뒤, 업무에서 해결할 문제를 정하고, 필요한 시스템 기능을 구체화한 뒤, 역할과 일정을 나누어 실행하는 방법을 배웁니다.',
@@ -29,3 +30,14 @@ export const lectures = [
  ['사고를 예방하고 발견·대응·복구하는 운영','최소 권한과 업데이트로 피해 가능성을 줄이고, 기록과 경보로 이상을 발견합니다. 사고가 의심되면 담당자와 절차에 따라 대응하고, 보호된 백업과 복구 시험으로 업무를 다시 이어 갑니다. 보안 제품을 설치한 뒤에도 경보를 누가 확인하는지, 피해를 차단할 권한이 있는지, 백업으로 업무를 복구할 수 있는지 확인합니다.','판단해 보기: 경보가 울렸지만 담당자가 없거나, 백업을 공격자가 함께 지울 수 있다면 무엇을 보완해야 합니까?',[['핵심노트 · 탐지와 대응','practical/04/#concept-8'],['정보보안 사례 목록','cases/04/'],['정보보안 문제','practice/04/'],['전체 핵심노트','practical/04/']]]
  ],homework:'보호할 자산 하나를 정하고 위협, 약점, 예방 조치, 사고 확인 방법, 복구 방법을 한 줄씩 적으세요. 정보보안 문제 5개를 푼 뒤 정답 근거와 오답의 차이를 설명하고 하루 1시간 복습을 이어 가세요.'}
 ];
+
+for(const lecture of lectures){
+ const study=singleSubjects[lecture.date];if(!study)continue;
+ lecture.study=study;lecture.intro=study.intro;lecture.homework=study.homework;
+ lecture.sections=lecture.sections.map(([title,body,,resources],i)=>[
+  title,body,study.questions[i],[...study.references[i],...resources.filter(([name,path])=>path.startsWith('practical/')&&path.includes('#'))]
+ ]);
+ if(lecture.date==='2026-09-17')lecture.sections[2][1]='서비스가 느리다면 요청 경로의 어느 부분에서 시간이 걸리는지 측정합니다. CPU·메모리·저장장치·통신 중 한 부분만 늘려서는 다른 부분의 병목이 해결되지 않을 수 있습니다. 서버가 멈추는 상황에는 처리 속도뿐 아니라 다른 서버가 예약 요청을 이어받을 수 있는지도 확인합니다. 성능 요구사항과 장애 때의 서비스 연속성을 구분해 구성합니다.';
+ lecture.agenda[0][2]='가상 예약 서비스의 상황과 오늘 완성할 결과물 확인';
+ lecture.agenda[5][2]='작성한 계획을 사례와 비교하고 관련 문제 5개 풀이';
+}
