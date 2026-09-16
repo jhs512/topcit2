@@ -12,7 +12,7 @@ try {
    Object.defineProperty(window,'speechSynthesis',{value:fake});
    Object.defineProperty(window,'SpeechSynthesisUtterance',{value:class{constructor(text){this.text=text}}});
   });
-  const center = async () => assert.ok(await page.locator('.speech-controls').evaluate(el=>{const r=el.getBoundingClientRect();return getComputedStyle(el).position==='fixed'&&Math.abs(r.x+r.width/2-innerWidth/2)<2&&Math.abs(r.y+r.height/2-innerHeight/2)<2&&r.left>=0&&r.right<=innerWidth&&r.top>=0&&r.bottom<=innerHeight}));
+  const bottomRight = async () => assert.ok(await page.locator('.speech-controls').evaluate(el=>{const r=el.getBoundingClientRect();return getComputedStyle(el).position==='fixed'&&Math.abs(innerWidth-r.right-16)<2&&Math.abs(innerHeight-r.bottom-16)<2&&r.left>=0&&r.right<=innerWidth&&r.top>=0&&r.bottom<=innerHeight}));
   for (const route of ['', 'textbook/', 'info/', 'practice/', 'cases/', 'cases/05/', 'cases/05/BIZ-01/', 'textbook/05/#page-020']) {
    await page.goto(new URL(route,base).href);
    const toggle=page.locator('#site-tts-toggle');await toggle.waitFor();
@@ -23,8 +23,8 @@ try {
    const button=route.startsWith('textbook/')?page.locator('#page-020 .block-speech-button').first():page.locator('main .block-speech-button').first();
    await button.waitFor();await button.evaluate(el=>scrollTo(0,scrollY+el.getBoundingClientRect().top-100));
    await button.focus();await page.keyboard.press('Enter');
-   await page.waitForSelector('.speech-controls[data-state="speaking"]');await center();
-   await page.evaluate(()=>scrollBy(0,250));await center();
+   await page.waitForSelector('.speech-controls[data-state="speaking"]');await bottomRight();
+   await page.evaluate(()=>scrollBy(0,250));await bottomRight();
    await page.getByRole('button',{name:'일시정지',exact:true}).click();
    await page.getByRole('combobox',{name:'읽기 속도'}).selectOption('2.5');
    await page.getByRole('button',{name:'이어읽기',exact:true}).click();
@@ -52,7 +52,7 @@ try {
   await page.getByRole('button',{name:'이어읽기',exact:true}).click();
   assert.equal(await page.evaluate(()=>speechSynthesis.spoken.at(-1).rate),2.5);
   assert.equal(await page.evaluate(()=>speechSynthesis.spoken.at(-1).text),'마지막 문장입니다.');
-  await center();
+  await bottomRight();
   await page.getByRole('button',{name:'정지',exact:true}).click();
   // A second book uses the same shared module after navigation.
   await page.goto(new URL('textbook/02/#page-147',base).href);await page.waitForSelector('body[data-ready="true"]',{timeout:60000});await page.locator('#page-147 .block-speech-button').first().waitFor();
