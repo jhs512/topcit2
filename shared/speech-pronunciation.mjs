@@ -56,8 +56,15 @@ const terms = Object.keys(pronunciations).sort((a,b)=>b.length-a.length).map(esc
 // words, code identifiers, version numbers or URLs.
 const pattern = new RegExp(`https?:\\/\\/\\S+|(?<![A-Za-z0-9_])(${terms})(?![A-Za-z0-9_])`, 'g');
 const roman = 'ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫ';
+const nativeOnes = ['', '한', '두', '세', '네', '다섯', '여섯', '일곱', '여덟', '아홉'];
+const nativeTens = ['', '열', '스물', '서른', '마흔', '쉰', '예순', '일흔', '여든', '아흔'];
+function nativeCount(value) {
+  const number = Number(value);
+  return number === 20 ? '스무' : nativeTens[Math.floor(number / 10)] + nativeOnes[number % 10];
+}
 export function pronunciationText(text) {
-  return text.replace(pattern, (match, term) => term ? pronunciations[term] : match)
+  return text.split(/(https?:\/\/\S+)/g).map(part => /^https?:\/\//.test(part) ? part : part.replace(pattern, (match, term) => term ? pronunciations[term] : match)
     .replace(/(?<![A-Za-z0-9_])V(?=\s*(?:모델|Model)(?![A-Za-z]))/g, '브이')
-    .replace(/[Ⅰ-Ⅻⅰ-ⅻ]/g, symbol => String(roman.indexOf(symbol.toUpperCase()) + 1));
+    .replace(/[Ⅰ-Ⅻⅰ-ⅻ]/g, symbol => String(roman.indexOf(symbol.toUpperCase()) + 1))
+    .replace(/(?<![A-Za-z0-9_.+\-])([1-9][0-9]?)\s*가지/g, (_, number) => `${nativeCount(number)} 가지`)).join('');
 }

@@ -10,6 +10,12 @@ test('technical terms allow Korean particles and prefer full terms',()=>{
   assert.equal(pronunciationText('TCP/IP, DBMS, NoSQL, SQL문, C++, C#'),'티씨피/아이피, 디비엠에스, 노에스큐엘, 에스큐엘문, 씨 플러스 플러스, C#');
   assert.equal(pronunciationText('CPU와 RAM, IPv6, NULL'),'씨피유와 램, 아이피 버전 육, 널');
 });
+test('counts before 가지 use native Korean without rewriting other numbers',()=>{
+  assert.equal(pronunciationText('1가지, 2가지, 3가지, 4가지, 5 가지'), '한 가지, 두 가지, 세 가지, 네 가지, 다섯 가지');
+  assert.equal(pronunciationText('10가지 11가지 20가지 21가지 24가지 99가지'), '열 가지 열한 가지 스무 가지 스물한 가지 스물네 가지 아흔아홉 가지');
+  assert.equal(pronunciationText('4장 4.0 4.5가지 104가지 code4가지 -4가지'), '4장 4.0 4.5가지 104가지 code4가지 -4가지');
+  assert.equal(pronunciationText('https://example.com/4가지'), 'https://example.com/4가지');
+});
 test('English words, identifiers, URLs and ambiguous ASCII Roman letters stay intact',()=>{
   const text='BIT GITHUB APIClient IT2 IT_rate someIT it is fine https://example.com/IT IV V VI v2.5';
   assert.equal(pronunciationText(text),text);
