@@ -26,9 +26,9 @@ try {
    await page.waitForSelector('.speech-controls[data-state="speaking"]');await center();
    await page.evaluate(()=>scrollBy(0,250));await center();
    await page.getByRole('button',{name:'일시정지',exact:true}).click();
-   await page.getByRole('combobox',{name:'읽기 속도'}).selectOption('1.5');
+   await page.getByRole('combobox',{name:'읽기 속도'}).selectOption('2.5');
    await page.getByRole('button',{name:'이어읽기',exact:true}).click();
-   assert.equal(await page.evaluate(()=>speechSynthesis.spoken.at(-1).rate),1.5);
+   assert.equal(await page.evaluate(()=>speechSynthesis.spoken.at(-1).rate),2.5);
    await page.getByRole('button',{name:'읽어주기 닫기 및 정지'}).focus();await page.keyboard.press('Escape');
    assert.ok(await button.evaluate(el=>el===document.activeElement));
    assert.equal(await page.locator('nav .block-speech-button').count(),0);
@@ -36,6 +36,24 @@ try {
     await button.click();await page.screenshot({path:process.env.SPEECH_SCREENSHOT_DIR+'/global-speech-'+width+'.png'});await page.getByRole('button',{name:'정지',exact:true}).click();
    }
   }
+  // Changing speed leaves the current utterance alone and applies to the next sentence.
+  await page.evaluate(()=>{const p=document.createElement('p');p.id='rate-fixture';p.dataset.ttsContent='';p.className='tts-readable';p.textContent='첫 문장입니다. 다음 문장입니다. 마지막 문장입니다.';document.querySelector('main').append(p)});
+  await page.locator('#rate-fixture button').click();
+  const speed=page.getByRole('combobox',{name:'읽기 속도'});
+  assert.deepEqual(await speed.locator('option').evaluateAll(nodes=>nodes.map(n=>Number(n.value))),[0.75,1,1.25,1.5,1.75,2,2.25,2.5]);
+  await speed.selectOption('1');
+  await page.evaluate(()=>speechSynthesis.spoken.at(-1).onend());
+  assert.equal(await page.evaluate(()=>speechSynthesis.spoken.at(-1).rate),1);
+  await speed.selectOption('2.5');
+  assert.equal(await page.evaluate(()=>speechSynthesis.spoken.at(-1).rate),1);
+  await page.evaluate(()=>speechSynthesis.spoken.at(-1).onend());
+  assert.equal(await page.evaluate(()=>speechSynthesis.spoken.at(-1).rate),2.5);
+  await page.getByRole('button',{name:'일시정지',exact:true}).click();
+  await page.getByRole('button',{name:'이어읽기',exact:true}).click();
+  assert.equal(await page.evaluate(()=>speechSynthesis.spoken.at(-1).rate),2.5);
+  assert.equal(await page.evaluate(()=>speechSynthesis.spoken.at(-1).text),'마지막 문장입니다.');
+  await center();
+  await page.getByRole('button',{name:'정지',exact:true}).click();
   // A second book uses the same shared module after navigation.
   await page.goto(new URL('textbook/02/#page-147',base).href);await page.waitForSelector('body[data-ready="true"]',{timeout:60000});await page.locator('#page-147 .block-speech-button').first().waitFor();
   // Options remain selectable; no feedback exists until grading.

@@ -1,4 +1,4 @@
-import { splitSpeech, koreanVoice, StorySpeech } from './speech-engine.mjs';
+import { splitSpeech, koreanVoice, StorySpeech, speechRates } from './speech-engine.mjs';
 
 const excluded = 'nav,button,input,select,textarea,svg,script,style,[role="button"],[data-speech-controls],[data-tts-exclude],.speech-notice,.sr-only,.selection-tag';
 export function visible(element) {
@@ -26,7 +26,7 @@ export function mountSpeech(main) {
   const panel = document.createElement('section');
   panel.className = 'speech-controls'; panel.dataset.speechControls = ''; panel.hidden = true;
   panel.setAttribute('aria-label', '텍스트 읽어주기');
-  panel.innerHTML = `<button type="button" class="speech-close" aria-label="읽어주기 닫기 및 정지">닫기 ×</button><div class="speech-buttons"><button type="button" data-action="play" disabled>이어읽기</button><button type="button" data-action="pause" disabled>일시정지</button><button type="button" data-action="stop" disabled>정지</button><label>속도 <select aria-label="읽기 속도"><option value="0.75">0.75배</option><option value="1" selected>1배</option><option value="1.25">1.25배</option><option value="1.5">1.5배</option></select></label></div><p class="speech-status" role="status"></p><p class="speech-help">이어읽기는 멈춘 문장부터, 속도는 다음 문장부터 적용됩니다. 화면을 떠나면 정지합니다.</p>`;
+  panel.innerHTML = `<button type="button" class="speech-close" aria-label="읽어주기 닫기 및 정지">닫기 ×</button><div class="speech-buttons"><button type="button" data-action="play" disabled>이어읽기</button><button type="button" data-action="pause" disabled>일시정지</button><button type="button" data-action="stop" disabled>정지</button><label>속도 <select aria-label="읽기 속도">${speechRates.map(rate => `<option value="${rate}"${rate === 1 ? ' selected' : ''}>${rate}배</option>`).join('')}</select></label></div><p class="speech-status" role="status"></p><p class="speech-help">이어읽기는 멈춘 문장부터, 속도는 다음 문장부터 적용됩니다. 화면을 떠나면 정지합니다.</p>`;
   document.body.append(panel);
   const notice = document.createElement('p'); notice.className = 'speech-notice'; notice.setAttribute('role', 'status'); notice.hidden = true;
   const content = document.querySelector('main');

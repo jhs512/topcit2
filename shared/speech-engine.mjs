@@ -1,3 +1,5 @@
+export const speechRates = Object.freeze([0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5]);
+
 export function splitSpeech(text, limit = 180) {
   const result = [];
   for (const sentence of text.replace(/\s+/g, ' ').trim().match(/[^.!?。！？]+[.!?。！？]*\s*/gu) || []) {
@@ -74,7 +76,7 @@ export class StorySpeech {
   }
   stop() { this.cancel(); this.index = 0; this.state = 'idle'; this.emit('정지했습니다.'); }
   setRate(rate) {
-    if (![0.75, 1, 1.25, 1.5].includes(rate)) return;
+    if (!speechRates.includes(rate)) return;
     this.rate = rate;
     this.emit(['starting', 'speaking'].includes(this.state) ? '속도는 다음 문장부터 적용됩니다.' : `읽기 속도 ${rate}배`);
   }
