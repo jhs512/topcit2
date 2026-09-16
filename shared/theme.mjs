@@ -10,9 +10,9 @@ function apply(value) {
   const dark = value === 'dark';
   document.documentElement.dataset.theme = dark ? 'dark' : 'light';
   for (const button of buttons) {
-    button.textContent = dark ? '라이트' : '다크';
+    button.textContent = dark ? '다크' : '라이트';
     button.setAttribute('aria-pressed', String(dark));
-    button.setAttribute('aria-label', dark ? '라이트모드로 전환' : '다크모드로 전환');
+    button.setAttribute('aria-label', dark ? '라이트모드로 전환 (현재 다크)' : '다크모드로 전환 (현재 라이트)');
     button.title = button.getAttribute('aria-label');
   }
 }
