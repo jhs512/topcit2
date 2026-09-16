@@ -46,7 +46,7 @@
 - [x] 실무 관점 80개와 여덟 페이지 생성.
 - [x] 사례 분류·목록·기존 주소 호환 적용.
 - [x] 문서 정리 및 로컬 검증.
-- [ ] 커밋·푸시·Pages 공개 검증.
+- [x] 커밋·푸시·Pages 공개 검증.
 
 ### 로컬 검증 결과
 
@@ -62,3 +62,10 @@
 ### 유지보수 기준
 
 분류는 `shared/learning-subjects.mjs`, 사례별 배치는 `reading/case-subjects.mjs`, 실무 원고는 `practical/content.mjs` 및 `additional-content.mjs`에서 관리한다. 생성 HTML보다 원본을 먼저 수정한다. 향후 다른 주제의 사례를 추가하면 분류도 함께 등록한다. 현재 IT 비즈니스에 11편이 있고 나머지 사례 주제는 준비 중이다.
+
+### 공개 배포 결과
+
+- 구현 커밋 `9f7f4e16ab69acd3a29302fe1ae9d657da045a93`을 `main`에 푸시하고 같은 커밋의 Pages `built` 상태를 확인했다.
+- `SITE_BASE=https://jhs512.github.io/topcit2/`에서 `test:subjects`와 `test:practical` 모두 통과했다. 1440·720·390·320px의 구조·진도·기존 주소 검증 및 1440·390·320px의 실무 본문·TTS 검증이다.
+- [문제](https://jhs512.github.io/topcit2/practice/), [실무 관점](https://jhs512.github.io/topcit2/practical/), [사례 모음](https://jhs512.github.io/topcit2/cases/)의 여덟 주제 구성을 확인했다.
+- 이번 구조 전환에 남은 구현 작업은 없다. 콘텐츠 준비 상태는 문제 01·02와 IT 비즈니스 외 사례 주제의 화면에 표시한다.
