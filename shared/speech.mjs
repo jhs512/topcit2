@@ -59,6 +59,8 @@ export function mountSpeech(main) {
   function remove(node) {
     const entry = entries.get(node);
     entry?.button.remove(); entry?.host.classList.remove('speech-block'); entries.delete(node); node.classList.remove('speech-block', 'speech-active');
+    if (entry?.headingText?.parentElement === node) entry.headingText.replaceWith(...entry.headingText.childNodes);
+    node.classList.remove('speech-heading');
     if (/^H[1-6]$/.test(node.tagName)) {
       if (entry?.originalLabel !== null && entry?.originalLabel !== undefined) node.setAttribute('aria-label', entry.originalLabel);
       else node.removeAttribute('aria-label');
@@ -86,11 +88,18 @@ export function mountSpeech(main) {
         if (!eligible(node)) continue;
         const text = readableText(node); if (!text) { remove(node); continue; }
         let entry = entries.get(node);
+        if (entry && !node.contains(entry.button)) { remove(node); entry = undefined; }
         if (!entry) {
           const button = document.createElement('button'); button.type = 'button'; button.className = 'block-speech-button'; button.title = '이 텍스트 읽기';
+          button.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 2L12 8L4 14Z" fill="currentColor"/></svg>';
           const host = node.closest('.tts-option') || node;
+          let headingText;
+          if (/^H[1-6]$/.test(node.tagName)) {
+            headingText = document.createElement('span'); headingText.className = 'speech-heading-text';
+            headingText.append(...node.childNodes); node.append(headingText); node.classList.add('speech-heading');
+          }
           host.classList.add('speech-block'); host.append(button);
-          entry = { button, host, originalLabel: node.getAttribute('aria-label') }; entries.set(node, entry);
+          entry = { button, host, headingText, originalLabel: node.getAttribute('aria-label') }; entries.set(node, entry);
           button.onclick = event => {
             event.preventDefault(); event.stopPropagation();
             const current = readableText(node); if (disposed || !eligible(node) || !current) return;
