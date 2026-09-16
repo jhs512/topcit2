@@ -93,7 +93,9 @@ export function mountSpeech(main) {
         if (!entry) {
           const button = document.createElement('button'); button.type = 'button'; button.className = 'block-speech-button'; button.title = '이 텍스트 읽기';
           button.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 2L12 8L4 14Z" fill="currentColor"/></svg>';
-          const host = node.closest('.tts-option') || node;
+          // Loose Markdown lists contain block paragraphs. Keep the button with
+          // the item's own final paragraph, before any nested list.
+          const host = node.closest('.tts-option') || (node.tagName === 'LI' && [...node.children].filter(child => child.tagName === 'P').at(-1)) || node;
           let headingText;
           if (/^H[1-6]$/.test(node.tagName)) {
             headingText = document.createElement('span'); headingText.className = 'speech-heading-text';
