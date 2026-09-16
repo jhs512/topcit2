@@ -13,11 +13,12 @@ try {
    Object.defineProperty(window,'SpeechSynthesisUtterance',{value:class{constructor(text){this.text=text}}});
   });
   const center = async () => assert.ok(await page.locator('.speech-controls').evaluate(el=>{const r=el.getBoundingClientRect();return getComputedStyle(el).position==='fixed'&&Math.abs(r.x+r.width/2-innerWidth/2)<2&&Math.abs(r.y+r.height/2-innerHeight/2)<2&&r.left>=0&&r.right<=innerWidth&&r.top>=0&&r.bottom<=innerHeight}));
-  for (const route of ['', 'info/', 'practice/', 'cases/05/BIZ-01/', 'textbook/05/#page-020']) {
+  for (const route of ['', 'textbook/', 'info/', 'practice/', 'cases/', 'cases/05/', 'cases/05/BIZ-01/', 'textbook/05/#page-020']) {
    await page.goto(new URL(route,base).href);
    const toggle=page.locator('#site-tts-toggle');await toggle.waitFor();
    if(await toggle.getAttribute('aria-pressed')==='false')await toggle.click();
    assert.equal(await page.evaluate(()=>speechSynthesis.spoken.length),0);
+   if(!route.startsWith('cases/05/BIZ-') && !route.startsWith('textbook/05/')) { await page.waitForSelector('.speech-controls',{state:'attached'}); assert.equal(await page.locator('.block-speech-button').count(),0); continue; }
    if(route.startsWith('textbook/'))await page.waitForSelector('body[data-ready="true"]',{timeout:60000});
    const button=route.startsWith('textbook/')?page.locator('#page-020 .block-speech-button').first():page.locator('main .block-speech-button').first();
    await button.waitFor();await button.evaluate(el=>scrollTo(0,scrollY+el.getBoundingClientRect().top-100));
@@ -51,7 +52,7 @@ try {
   await page.locator('.feedback p .block-speech-button').first().click();await page.locator('#next').focus();await page.keyboard.press('Enter');await page.locator('#prompt .block-speech-button').waitFor();assert.equal(await page.locator('.speech-controls').isVisible(),false);assert.equal(await page.locator('.feedback').count(),0);
   await page.getByRole('button',{name:'설명모드',exact:true}).click();await page.locator('.reading-explanation .block-speech-button').first().waitFor();
   // Explicit opt-in, nested markers, hidden descendants, replacement and removal.
-  await page.evaluate(()=>{const f=document.createElement('section');f.id='tts-fixture';f.innerHTML='<p id="unmarked">UNMARKED</p><div id="outer" class="tts-readable">VISIBLE <span class="tts-readable">CHILD</span><span hidden>SECRET-HIDDEN</span><span aria-hidden="true">SECRET-ARIA</span><span style="display:none">SECRET-CSS</span></div><div id="secret" hidden><p class="tts-readable">SECRET-PARENT</p></div>';document.querySelector('main').append(f)});
+  await page.evaluate(()=>{const f=document.createElement('section');f.id='tts-fixture';f.dataset.ttsContent='';f.innerHTML='<p id="unmarked">UNMARKED</p><div id="outer" class="tts-readable">VISIBLE <span class="tts-readable">CHILD</span><span hidden>SECRET-HIDDEN</span><span aria-hidden="true">SECRET-ARIA</span><span style="display:none">SECRET-CSS</span></div><div id="secret" hidden><p class="tts-readable">SECRET-PARENT</p></div>';document.querySelector('main').append(f)});
   const outer=page.locator('#outer');await outer.locator('.block-speech-button').waitFor();assert.equal(await outer.locator('.block-speech-button').count(),1);assert.equal(await page.locator('#unmarked .block-speech-button,#secret .block-speech-button').count(),0);
   await outer.locator('.block-speech-button').click();assert.equal(await page.evaluate(()=>speechSynthesis.spoken.at(-1).text),'VISIBLE CHILD');
   await outer.evaluate(el=>el.firstChild.data='UPDATED ');await page.waitForFunction(()=>document.querySelector('.speech-controls').hidden);

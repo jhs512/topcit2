@@ -79,17 +79,18 @@ export function parseCases(source, file = 'reading/it-business-stories.md') {
 }
 
 const esc = value => value.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-export function renderMarkdown(text) {
-  return marked.parse(text).replace(/<(h[1-6]|p|li)>/g, '<$1 class="tts-readable">')
+export function renderMarkdown(text, educational = false) {
+  const html = marked.parse(text);
+  return (educational ? html.replace(/<(h[1-6]|p|li)>/g, '<$1 class="tts-readable">') : html)
     .replace(/<a href="#([A-Z][A-Z0-9]*-\d{2}-ref-(\d+))">\d+<\/a>/g, '<sup><a href="#$1" aria-label="참고 $2">[$2]</a></sup>');
 }
 export function renderCase(c) {
-  const section = (key, title, content, style = '') => `<section class="case-${key} ${style}" aria-labelledby="${c.id}-${key}"><h2 id="${c.id}-${key}" class="tts-readable">${title}</h2>${renderMarkdown(content)}</section>`;
-  const story = `<header><p class="case-type tts-readable">${esc(c.type)}</p><p class="case-concept tts-readable">교재 개념: <strong>${esc(c.concept)}</strong></p></header>`
-    + `<section class="case-lesson" aria-labelledby="${c.id}-lesson"><h2 id="${c.id}-lesson" class="tts-readable">이 글에서 배우는 교훈</h2><div class="lesson-abstract"><p class="tts-readable">${esc(c.lesson.abstract)}</p><p class="lesson-basis"><span class="tts-readable">교재 개념을 풀어 쓴 원리이며, 원문 인용은 아닙니다.</span><br>근거: <a href="${esc(c.lesson.basis.url)}">${esc(c.lesson.basis.label)}</a></p></div><div class="lesson-concrete"><p class="tts-readable"><strong>구체적으로는</strong> <span class="lesson-application">${esc(c.lesson.concrete)}</span></p></div></section>`
+  const section = (key, title, content, style = '') => `<section class="case-${key} ${style}" aria-labelledby="${c.id}-${key}"><h2 id="${c.id}-${key}" class="tts-readable">${title}</h2>${renderMarkdown(content, true)}</section>`;
+  const story = `<header><p class="case-type">${esc(c.type)}</p><p class="case-concept">교재 개념: <strong>${esc(c.concept)}</strong></p></header>`
+    + `<section class="case-lesson" aria-labelledby="${c.id}-lesson"><h2 id="${c.id}-lesson" class="tts-readable">이 글에서 배우는 교훈</h2><div class="lesson-abstract"><p class="tts-readable">${esc(c.lesson.abstract)}</p><p class="lesson-basis"><span>교재 개념을 풀어 쓴 원리이며, 원문 인용은 아닙니다.</span><br>근거: <a href="${esc(c.lesson.basis.url)}">${esc(c.lesson.basis.label)}</a></p></div><div class="lesson-concrete"><p class="tts-readable"><strong>구체적으로는</strong> <span class="lesson-application">${esc(c.lesson.concrete)}</span></p></div></section>`
     + (c.introduction ? section('introduction', '들어가기 전에', c.introduction, 'prerequisites') : '')
     + section('body', '본문', c.body)
     + section('conclusion', '결론', c.conclusion);
-  const references = c.referenceItems.length ? `<aside class="case-references" aria-labelledby="${c.id}-references"><h2 id="${c.id}-references" class="tts-readable">참고</h2>${c.referenceContext ? renderMarkdown(c.referenceContext) : ''}<ol>${c.referenceItems.map((r, i) => `<li id="${c.id}-ref-${i + 1}"><a href="${esc(r.url)}">${esc(r.label)}</a></li>`).join('')}</ol></aside>` : '';
+  const references = c.referenceItems.length ? `<aside class="case-references" aria-labelledby="${c.id}-references"><h2 id="${c.id}-references">참고</h2>${c.referenceContext ? renderMarkdown(c.referenceContext) : ''}<ol>${c.referenceItems.map((r, i) => `<li id="${c.id}-ref-${i + 1}"><a href="${esc(r.url)}">${esc(r.label)}</a></li>`).join('')}</ol></aside>` : '';
   return { story, references };
 }

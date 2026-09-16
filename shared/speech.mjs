@@ -65,7 +65,7 @@ export function mountSpeech(main) {
     }
   }
   function eligible(node) {
-    return node.matches('.tts-readable') && visible(node) && !node.closest(excluded) && !node.parentElement?.closest('.tts-readable') && !node.closest('a,button') && (!node.closest('label,form') || node.closest('.tts-option'));
+    return node.matches('.tts-readable') && !!node.closest('[data-tts-content]') && visible(node) && !node.closest(excluded) && !node.parentElement?.closest('.tts-readable') && !node.closest('a,button') && (!node.closest('label,form') || node.closest('.tts-option'));
   }
   function reconcile(roots) {
     if (disposed) return;

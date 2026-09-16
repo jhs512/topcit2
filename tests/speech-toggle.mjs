@@ -51,8 +51,8 @@ try {
     await page.reload(); await page.locator('.block-speech-button').first().waitFor();
     assert.equal(await toggle.getAttribute('aria-pressed'), 'true');
     assert.equal(await page.evaluate(() => speechSynthesis.spoken.length), 0);
-    await page.goto(new URL('info/', base).href); await page.locator('.block-speech-button').first().waitFor();
-    const other = await context.newPage(); await other.goto(new URL('', base).href);
+    await page.goto(new URL('cases/05/BIZ-01/', base).href); await page.locator('.block-speech-button').first().waitFor();
+    const other = await context.newPage(); await other.goto(new URL('practice/05/', base).href);
     await other.locator('.block-speech-button').first().waitFor();
     await other.locator('#site-tts-toggle').click(); await off();
     assert.equal(await toggle.getAttribute('aria-pressed'), 'false');
@@ -70,7 +70,7 @@ try {
   const gate = new Promise(resolve => { release = resolve; });
   const started = new Promise(resolve => { requested = resolve; });
   await page.route('**/shared/speech.mjs', async route => { requested(); await gate; await route.continue(); });
-  await page.goto(new URL('info/', base).href);
+  await page.goto(new URL('cases/05/BIZ-01/', base).href);
   await page.locator('#site-tts-toggle').click(); await started;
   await page.locator('#site-tts-toggle').click(); release();
   await page.waitForResponse('**/shared/speech-engine.mjs'); await tick(page);
