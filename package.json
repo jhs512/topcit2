@@ -3,6 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build:practical": "node scripts/build-practical.mjs",
+    "test:subjects": "node tests/learning-subjects.mjs",
+    "test:practical": "node tests/practical-browser.mjs",
     "test": "node --test tests/reader-catalog.test.mjs tests/practice-engine.test.mjs tests/practice-content.test.mjs",
     "serve": "python -m http.server 4173",
     "test:viewer": "node tests/viewer.mjs",

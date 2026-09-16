@@ -8,8 +8,8 @@ const browser=await chromium.launch();
 try{
  for(const width of [1440,390]){
   const context=await browser.newContext({viewport:{width,height:900}});const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
-  await page.goto(`${base}/practice/index.html`);await page.locator('[data-area="05"]').waitFor();assert.equal(await page.locator('.area-card').count(),6);
-  await page.locator('[data-area="05"]').click();
+  await page.goto(`${base}/practice/index.html`);await page.locator('[data-area="05-01"]').waitFor();assert.equal(await page.locator('.area-card').count(),8);
+  await page.goto(`${base}/practice/05/`);
   const firstId=await page.locator('[data-question-id]').getAttribute('data-question-id');const first=business.find(q=>q.id===firstId);
   await page.locator(`input[value="${first.answer}"]`).check();await page.getByRole('button',{name:'정답 확인',exact:true}).click();await page.locator('.feedback').waitFor();assert.match(await page.locator('.result').innerText(),/정답입니다/);
   await page.reload();await page.locator('[data-question-id]').waitFor();assert.notEqual(await page.locator('[data-question-id]').getAttribute('data-question-id'),firstId);assert.match(await page.locator('.progress-label').innerText(),/완료 1개/);

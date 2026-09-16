@@ -16,8 +16,8 @@ try {
     page.on('pageerror', error => errors.push(error.message));
     await page.goto(base);
     await page.locator('main').getByRole('link', { name: /사례 모음/ }).click();
-    await page.getByRole('heading', { name: '어떤 과목을 읽을까요?' }).waitFor();
-    await page.locator('main').getByRole('link', { name: /IT비즈니스와 윤리/ }).click();
+    await page.getByRole('heading', { name: '어떤 주제를 읽을까요?' }).waitFor();
+    await page.locator('main').getByRole('link', { name: /IT 비즈니스/ }).click();
     assert.equal(await page.locator('.case-list > a').count(), stories.length);
     for (const [index, match] of stories.entries()) {
       await page.locator('.case-list > a').nth(index).click();
@@ -69,7 +69,7 @@ try {
       assert.ok(links.every(url => !/jhs512\.github\.io\/topcit2?\/(viewer|sources)\//.test(url)));
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
       assert.equal(await page.locator('[aria-controls="site-cases"].site-active').innerText(), '사례 모음');
-      assert.ok((await page.locator('#site-cases a[aria-current="page"]').getAttribute('href')).endsWith('/cases/05/'));
+      assert.ok((await page.locator('#site-cases a.site-parent-active').getAttribute('href')).endsWith('/cases/05-01/'));
       await page.reload();
       await page.locator('article h1').waitFor();
       // Follow each newly added basis link to its actual rendered textbook page.
@@ -94,7 +94,7 @@ try {
     if (viewport.width < 760) await page.getByRole('button', { name: /메뉴/ }).click();
     await page.locator('[aria-controls="site-cases"]').click();
     await page.locator('#site-cases').getByRole('link', { name: '전체 사례', exact: true }).click();
-    await page.getByRole('heading', { name: '어떤 과목을 읽을까요?' }).waitFor();
+    await page.getByRole('heading', { name: '어떤 주제를 읽을까요?' }).waitFor();
     await page.close();
   }
   assert.deepEqual(errors, []);

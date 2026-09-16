@@ -24,5 +24,5 @@ for(const n of ['01','02','03','04','05','06']){
   await page.reload();await page.waitForSelector('.reading-explanation');
  }
 }
-await page.goto('http://localhost:4183/practice/');await page.waitForSelector('.area-card');assert.equal(await page.locator('.area-card').count(),6);
+await page.goto('http://localhost:4183/practice/');await page.waitForSelector('.area-card');assert.equal(await page.locator('.area-card').count(),8);
 assert.deepEqual(errors,[]);await browser.close();console.log('PASS: hub, info, 6 textbooks, 6 practice routes, text criteria, mode and reload');
