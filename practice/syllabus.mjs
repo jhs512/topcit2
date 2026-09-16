@@ -1,5 +1,5 @@
 // Scope read from the expanded official V4.0K page on 2026-09-15.
-export const syllabusURL='https://www.topcit.or.kr/introduction/syllabus.do';
+export const syllabusURL=new URL('../syllabus/',import.meta.url).href;
 export const objectives={
  '3.1.1.1':'시스템 아키텍처 개념과 구성','3.1.1.2':'네트워크 개념 및 계층구조','3.1.1.3':'정보보안 개념과 구성',
  '3.2.1.1':'컴퓨터 하드웨어 구성요소','3.2.1.2':'메모리 계층구조와 유형','3.2.2.1':'운영체제 개념과 역할','3.2.2.2':'프로세스 관리','3.2.2.3':'병행성 지원','3.2.2.4':'운영체제 서비스와 종류',
