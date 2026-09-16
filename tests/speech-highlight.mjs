@@ -41,14 +41,15 @@ try {
       await page.evaluate(() => speechSynthesis.spoken.at(-1).onend()); await clear();
       await page.evaluate(() => speechSynthesis.spoken.at(-1).onstart());
       if (!fallback) assert.equal(await page.evaluate(() => [...CSS.highlights.get('speech-sentence')][0].startOffset), 7);
-      // Every remaining spoken chunk must equal its painted source text, including long chunks.
+      // Every spoken chunk belongs to the painted whole sentence shown in the context panel.
       let count = 0;
       while (await page.locator('.speech-controls').getAttribute('data-state') !== 'ended') {
         const beforeStart = await page.evaluate(() => scrollY);
         await page.evaluate(() => speechSynthesis.spoken.at(-1).onstart());
         assert.equal(await page.evaluate(() => scrollY), beforeStart);
         if (!fallback) {
-          assert.equal((await current()).replace(/\s+/g, ' '), await page.evaluate(() => speechSynthesis.spoken.at(-1).text));
+          assert.equal((await current()).replace(/\s+/g, ' '), await page.locator('[data-sentence="0"]').innerText());
+          assert.ok((await current()).replace(/\s+/g, ' ').includes(await page.evaluate(() => speechSynthesis.spoken.at(-1).text)));
           assert.ok(await page.evaluate(() => [...CSS.highlights.get('speech-sentence')].every(r => !r.startContainer.parentElement.closest('a,button'))));
         }
         await page.evaluate(() => speechSynthesis.spoken.at(-1).onend());
@@ -60,7 +61,7 @@ try {
       await target.locator('a').click(); assert.equal(await page.evaluate(() => linkClicked), true);
       // Dark mode must keep the same source ranges; no source rewriting in either renderer.
       await page.evaluate(() => document.documentElement.dataset.theme = 'dark');
-      await page.locator('#cell-text button').click(); await page.evaluate(() => speechSynthesis.spoken.at(-1).onstart());
+      await page.locator('#cell-text button').focus(); await page.keyboard.press('Enter'); await page.evaluate(() => speechSynthesis.spoken.at(-1).onstart());
       if (!fallback) assert.equal(await current(), '표의 첫 문장.');
       await page.getByRole('button', { name: '정지', exact: true }).click(); await clear();
       await button.click(); await page.evaluate(() => speechSynthesis.spoken.at(-1).onstart());
@@ -69,7 +70,7 @@ try {
       // Equal normalized speech can still have different source offsets.
       await target.evaluate(p => p.firstChild.data = '변경된  내용.'); await page.waitForFunction(() => document.querySelector('.speech-controls').hidden); await clear();
       await button.click(); await page.evaluate(() => speechSynthesis.spoken.at(-1).onstart());
-      await page.locator('#cell-text button').click(); await page.evaluate(() => speechSynthesis.spoken.at(-1).onstart());
+      await page.locator('#cell-text button').focus(); await page.keyboard.press('Enter'); await page.evaluate(() => speechSynthesis.spoken.at(-1).onstart());
       if (!fallback) assert.equal(await current(), '표의 첫 문장.');
       await page.getByRole('button', { name: '정지', exact: true }).click(); await clear();
       await button.click(); await page.evaluate(() => speechSynthesis.spoken.at(-1).onstart());

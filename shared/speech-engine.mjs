@@ -1,16 +1,31 @@
 export const speechRates = Object.freeze([0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5]);
 
-export function splitSpeechRanges(text, limit = 180) {
+// Segment sentences before bounded utterances, retaining both sets of offsets.
+export function speechSentences(text) {
   const result = [];
-  for (const match of text.matchAll(/[^.!?。！？]+[.!?。！？]*|[.!?。！？]+/gu)) {
-    let start = match.index, end = start + match[0].length;
+  const segments = new Intl.Segmenter('ko', { granularity: 'sentence' }).segment(text);
+  const abbreviation = /(?:\b(?:Mr|Mrs|Ms|Dr|Prof|Sr|Jr|vs|etc)\.|(?:[A-Za-z]\.){2,})$/i;
+  for (const segment of segments) {
+    let start = segment.index, end = start + segment.segment.length;
     while (start < end && /\s/.test(text[start])) start++;
     while (end > start && /\s/.test(text[end - 1])) end--;
+    if (start === end) continue;
+    const previous = result.at(-1);
+    if (previous && abbreviation.test(previous.text)) {
+      previous.end = end; previous.text = text.slice(previous.start, end);
+    } else result.push({ text: text.slice(start, end), start, end });
+  }
+  return result;
+}
+export function splitSpeechRanges(text, limit = 180) {
+  const result = [];
+  for (const [sentenceIndex, sentence] of speechSentences(text).entries()) {
+    let start = sentence.start; const end = sentence.end;
     while (start < end) {
       let stop = Math.min(start + limit, end);
       if (stop < end) { const space = text.lastIndexOf(' ', stop); if (space > start + limit / 2) stop = space; }
-      if (stop < end && /[\uDC00-\uDFFF]/.test(text[stop]) && /[\uD800-\uDBFF]/.test(text[stop - 1])) stop--;
-      result.push({ text: text.slice(start, stop), start, end: stop });
+      if (stop > start + 1 && stop < end && /[\uDC00-\uDFFF]/.test(text[stop]) && /[\uD800-\uDBFF]/.test(text[stop - 1])) stop--;
+      result.push({ text: text.slice(start, stop), start, end: stop, sentenceIndex, sentenceStart: sentence.start, sentenceEnd: end });
       start = stop; while (start < end && /\s/.test(text[start])) start++;
     }
   }

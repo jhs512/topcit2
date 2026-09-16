@@ -1,4 +1,4 @@
-import { splitSpeechRanges, koreanVoice, StorySpeech, speechRates } from './speech-engine.mjs?v=20260916-sentence-highlight';
+import { splitSpeechRanges, speechSentences, koreanVoice, StorySpeech, speechRates } from './speech-engine.mjs?v=20260916-sentence-context';
 import { excluded, visible, readableText, mapSpeechText, speechRanges } from './speech-text.mjs';
 import { createSpeechHighlight } from './speech-highlight.mjs';
 export { visible, readableText } from './speech-text.mjs';
@@ -9,7 +9,7 @@ export function mountSpeech(main) {
   const panel = document.createElement('section');
   panel.className = 'speech-controls'; panel.dataset.speechControls = ''; panel.hidden = true;
   panel.setAttribute('aria-label', '텍스트 읽어주기');
-  panel.innerHTML = `<button type="button" class="speech-close" aria-label="읽어주기 닫기 및 정지">닫기 ×</button><div class="speech-buttons"><button type="button" data-action="play" disabled>이어읽기</button><button type="button" data-action="pause" disabled>일시정지</button><button type="button" data-action="stop" disabled>정지</button><label>속도 <select aria-label="읽기 속도">${speechRates.map(rate => `<option value="${rate}"${rate === 1 ? ' selected' : ''}>${rate}배</option>`).join('')}</select></label></div><p class="speech-status" role="status"></p><p class="speech-help">이어읽기는 멈춘 문장부터, 속도는 다음 문장부터 적용됩니다. 화면을 떠나면 정지합니다.</p>`;
+  panel.innerHTML = `<button type="button" class="speech-close" aria-label="읽어주기 닫기 및 정지">닫기 ×</button><div class="speech-buttons"><button type="button" data-action="play" disabled>이어읽기</button><button type="button" data-action="pause" disabled>일시정지</button><button type="button" data-action="stop" disabled>정지</button><label>속도 <select aria-label="읽기 속도">${speechRates.map(rate => `<option value="${rate}"${rate === 1 ? ' selected' : ''}>${rate}배</option>`).join('')}</select></label></div><div class="speech-context" hidden aria-label="낭독 문맥" aria-live="off">${['이전 문장', '현재 읽는 문장', '다음 문장'].map((label, i) => `<div class="speech-context-item${i === 1 ? ' speech-current-sentence' : ''}"><span class="speech-context-label">${label}</span><p data-sentence="${i - 1}" tabindex="0"></p></div>`).join('')}</div><p class="speech-status" role="status"></p><p class="speech-help">이어읽기는 멈춘 문장부터, 속도는 다음 문장부터 적용됩니다. 화면을 떠나면 정지합니다.</p>`;
   document.body.append(panel);
   const notice = document.createElement('p'); notice.className = 'speech-notice'; notice.setAttribute('role', 'status'); notice.hidden = true;
   const content = document.querySelector('main');
@@ -20,12 +20,24 @@ export function mountSpeech(main) {
   }
   const synth = window.speechSynthesis, entries = new Map();
   const play = panel.querySelector('[data-action="play"]'), pause = panel.querySelector('[data-action="pause"]'), stop = panel.querySelector('[data-action="stop"]'), close = panel.querySelector('.speech-close');
-  let active, origin, spokenText, observer, mapping, chunks;
+  let active, origin, spokenText, observer, mapping, chunks, sentences, shownSentence;
+  const context = panel.querySelector('.speech-context');
   const highlight = createSpeechHighlight();
   const controller = new StorySpeech(synth, window.SpeechSynthesisUtterance, [], ({ state, message, index }) => {
     if (disposed) return;
-    if (state === 'speaking' && mapping && chunks?.[index]) highlight.show(speechRanges(mapping, chunks[index].start, chunks[index].end));
-    else if (state !== 'paused') highlight.clear();
+    const chunk = chunks?.[index];
+    if (state === 'speaking' && mapping && chunk) {
+      highlight.show(speechRanges(mapping, chunk.sentenceStart, chunk.sentenceEnd));
+      if (shownSentence !== chunk.sentenceIndex) {
+        shownSentence = chunk.sentenceIndex;
+        for (const item of context.querySelectorAll('[data-sentence]')) item.textContent = sentences[shownSentence + Number(item.dataset.sentence)]?.text || '없음';
+      }
+      context.hidden = false;
+    } else if (state !== 'paused') {
+      highlight.clear();
+      if (state !== 'starting' || shownSentence !== chunk?.sentenceIndex) context.hidden = true;
+      if (state !== 'starting') { shownSentence = undefined; context.querySelectorAll('[data-sentence]').forEach(item => item.textContent = ''); }
+    }
     const wasHidden = panel.hidden, focusInside = panel.contains(document.activeElement);
     panel.hidden = !['starting', 'speaking', 'paused', 'error'].includes(state);
     panel.dataset.state = state; play.disabled = state !== 'paused';
@@ -92,7 +104,7 @@ export function mountSpeech(main) {
           button.onclick = event => {
             event.preventDefault(); event.stopPropagation();
             const current = readableText(node); if (disposed || !eligible(node) || !current) return;
-            if (active !== node || current !== spokenText) { dismiss(); active?.classList.remove('speech-active'); active = node; spokenText = current; mapping = mapSpeechText(node); chunks = splitSpeechRanges(mapping.text); controller.chunks = chunks.map(chunk => chunk.text); }
+            if (active !== node || current !== spokenText) { dismiss(); active?.classList.remove('speech-active'); active = node; spokenText = current; mapping = mapSpeechText(node); sentences = speechSentences(mapping.text); chunks = splitSpeechRanges(mapping.text); controller.chunks = chunks.map(chunk => chunk.text); }
             origin = button; controller.start();
           };
         }

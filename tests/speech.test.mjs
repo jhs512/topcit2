@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { splitSpeech, splitSpeechRanges, koreanVoice, StorySpeech } from '../shared/speech-engine.mjs';
+import { splitSpeech, splitSpeechRanges, speechSentences, koreanVoice, StorySpeech } from '../shared/speech-engine.mjs';
 
 const ko = { name: '한국어', lang: 'ko-KR', localService: true };
 function setup(voices = [ko]) {
@@ -64,4 +64,18 @@ test('speech offsets distinguish repeats, abbreviations, newlines and long Korea
     if (i) assert.ok(chunk.start >= chunks[i - 1].end);
   }
   assert.equal(chunks.map(c => c.text).join('').replace(/\s/g, ''), text.replace(/\s/g, ''));
+});
+
+test('sentence context preserves abbreviations, decimals and long utterance membership', () => {
+  const first = 'Dr. Kim은 U.S. API v2.5와 e.g. 예시를 설명합니다.';
+  const long = '긴 문장 내용 '.repeat(80) + '끝입니다.';
+  const text = `${first}\n${long} 같은 문장. 같은 문장. 부호 없는 제목`;
+  const sentences = speechSentences(text), chunks = splitSpeechRanges(text);
+  assert.deepEqual(sentences.map(s => s.text), [first, long, '같은 문장.', '같은 문장.', '부호 없는 제목']);
+  assert.ok(chunks.filter(c => c.sentenceIndex === 1).length > 2);
+  for (const c of chunks) {
+    assert.equal(c.sentenceStart, sentences[c.sentenceIndex].start);
+    assert.equal(c.sentenceEnd, sentences[c.sentenceIndex].end);
+    assert.ok(c.start >= c.sentenceStart && c.end <= c.sentenceEnd);
+  }
 });
