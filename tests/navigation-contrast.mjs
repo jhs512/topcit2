@@ -42,7 +42,7 @@ try {
       if (!process.env.REPRO_ONLY) {
         for (const el of await page.locator('#site-tts-toggle, #site-links > a, .site-group > button').all()) await states(el);
       }
-      for (const name of process.env.REPRO_ONLY ? ['site-textbooks'] : ['site-textbooks', 'site-practice']) {
+      for (const name of process.env.REPRO_ONLY ? ['site-textbooks'] : ['site-textbooks', 'site-practice', 'site-cases']) {
         await page.locator(`[aria-controls="${name}"]`).click();
         const links = process.env.REPRO_ONLY ? [page.locator(`#${name} a`).nth(2)] : await page.locator(`#${name} a`).all();
         for (const link of links) await states(link);

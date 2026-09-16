@@ -7,6 +7,8 @@ body{padding-top:var(--site-height)}
 #site-navigation button{font:inherit;color:inherit;background:transparent;border:0;border-radius:6px;padding:10px 14px;min-height:44px;cursor:pointer}
 #site-navigation nav{display:flex;align-items:center;gap:12px;margin:0;padding:0;border:0;background:none}
 #site-navigation nav>a{padding:10px 14px;min-height:44px;display:block}
+#site-navigation .site-group>button{display:inline-flex;align-items:center;gap:6px}
+#site-navigation .site-chevron{display:block;width:16px;height:16px;flex:none}
 #site-navigation .site-group{position:relative}
 #site-navigation .site-submenu{position:absolute;right:0;top:calc(100% + 9px);width:330px;max-width:calc(100vw - 32px);max-height:calc(100dvh - 90px);overflow:auto;padding:8px;background:var(--paper,#fbfaf7);border:1px solid var(--line,#d9dfd7);border-radius:10px;box-shadow:0 12px 35px #19342626}
 #site-navigation .site-submenu a{display:block;padding:11px 12px;min-height:44px;border-radius:6px;white-space:normal}
