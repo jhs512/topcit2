@@ -10,7 +10,7 @@
 
 [문제은행 열기](practice/) · [IT 비즈니스 문제](practice/05-01/) · [교재 03 문제](practice/03/)
 
-공식 V4.0K 출제기준의 네 평가영역에 자체 연습문제 **3,000개**를 제공합니다. 공식 기출문제가 아닙니다. 기존 600문항과 학습기록을 보존했습니다.
+공식 V4.0K 출제기준의 네 평가영역에 자체 연습문제 **3,000개**를 제공합니다. 공식 기출문제가 아닙니다. 기존 600문항의 지문·보기·정답과 학습기록을 유지하면서 해설을 보완했습니다.
 
 | 공식 영역 | 연습문제 | 전체 시험 배점 비율 |
 | --- | ---: | ---: |
@@ -76,7 +76,7 @@ PDF 뷰어는 포함된 파일로 동작합니다. 텍스트 서재는 Markdown�
 
 `viewer/`는 PDF 뷰어, `sources/`는 PDF 6권, `output/markdown/`은 전사본·공통 서재·대조 기록입니다. 원본 `jhs512/topcit`에서 교재 관련 파일만 복사했습니다. 원본 저장소는 변경하지 않았습니다.
 
-`npm install` 후 `npm test`로 6권의 페이지 순서·문항 형식·배점 비율·기존 600문항 보존을 확인합니다. `python -X utf8 tests/practice-execution.py`로 추가 실행 문항의 정답을 검증합니다. `npx playwright install chromium` 후 `npm run test:viewer`로 PDF 뷰어를 확인합니다. 교재 참고 링크는 새 교재인 `https://jhs512.github.io/topcit2/textbook/교재번호/#page-NNN`를 사용합니다.
+`npm install` 후 `npm test`로 6권의 페이지 순서·문항 형식·배점 비율·검토한 600문항의 기준 해시를 확인합니다. `python -X utf8 tests/practice-execution.py`로 추가 실행 문항의 정답을 검증합니다. `npx playwright install chromium` 후 `npm run test:viewer`로 PDF 뷰어를 확인합니다. 교재 참고 링크는 새 교재인 `https://jhs512.github.io/topcit2/textbook/교재번호/#page-NNN`를 사용합니다.
 
 `npm run serve`로 서버를 실행한 상태에서 `npm run test:navigation`으로 PC·모바일의 6권 이동과 시험 영역 표시를 확인합니다.
 
