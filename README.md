@@ -31,9 +31,9 @@
 
 정답 기록은 이 브라우저에 저장됩니다. 과목 안의 **이 과목 진도 초기화** 버튼으로 해당 과목만 다시 시작할 수 있습니다. 설명모드는 진도를 바꾸지 않습니다. 전체모드에서 맞힌 기록은 랜덤모드와 공유합니다.
 
-## article · 처음부터 따라가는 실무 이야기
+## 심화수업 · 처음부터 따라가는 실무 이야기
 
-[article 열기](article/)에서 가상의 주문 서비스 ‘한끼픽’을 배경으로 여덟 과목의 긴 글을 읽습니다. [시스템아키텍처 이야기](article/03/)는 서버 한 대에서 시작해 Redis·DB 복제·Kafka·MSA를 선택하게 되는 문제와 운영 부담을 시간순으로 다룹니다. 각 글은 독립적으로 읽을 수 있고 UML·구성도·표를 함께 제공합니다. 교재의 순서나 공식 출제 중요도와는 별개인 자체 실무 이야기입니다.
+[심화수업 열기](article/)에서 가상의 주문 서비스 ‘한끼픽’을 배경으로 여덟 과목의 긴 글을 읽습니다. [시스템아키텍처 이야기](article/03/)는 서버 한 대에서 시작해 Redis·DB 복제·Kafka·MSA를 선택하게 되는 문제와 운영 부담을 시간순으로 다룹니다. 각 글은 독립적으로 읽을 수 있고 UML·구성도·표를 함께 제공합니다. 교재의 순서나 공식 출제 중요도와는 별개인 자체 실무 이야기입니다.
 
 ## 핵심노트
 
@@ -152,7 +152,7 @@ GitHub Pages 정적 디렉터리 경로를 사용하므로 끝의 슬래시가 �
 
 [320개 항목 점검표](docs/textbook-alignment-audit.md)에 단원·쪽·연결 이유·본문 보강과 대표 수정 전후를 기록했습니다. 기준 원본의 목차·학습목표·관련 본문을 읽어 대조했으며, 20개 노트를 교재 전체 요약이나 시험 중요도 순위로 보지 않습니다. `node --test tests/textbook-alignment.test.mjs`로 대응·원문 페이지·학생용 생성 내용을 검사하고 `node tests/textbook-references.mjs`로 PC·모바일 전체 항목 표시와 공개 교재 링크를 확인합니다. 점검표를 다시 만들 때는 기준 교재 저장소와 비교 커밋을 확인한 뒤 `node scripts/build-textbook-audit.mjs`를 실행합니다.
 
-## article 편집과 생성
+## 심화수업 편집과 생성
 
 `article/content/과목ID.md`가 8편의 집필 원본이며 `article/catalog.mjs`에 제목·소개·표 제목을 관리합니다. `npm run build:articles`는 Mermaid를 로컬 Chromium에서 SVG로 렌더링하고 정적 HTML·목차·목록·`article/manifest.json`을 만듭니다. `npm install`과 Playwright Chromium이 필요합니다. 게시 화면은 Mermaid CDN이나 브라우저 내 Mermaid 실행에 의존하지 않습니다. 원고의 `mermaid 그림 제목` 코드 블록은 제목 있는 그림과 확대 링크로 생성됩니다.
 
