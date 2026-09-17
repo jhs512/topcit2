@@ -32,9 +32,9 @@ export function caseAlignment(id) {
 export function strengthenNote(subjectId, item, index) {
   const source = alignment[subjectId]?.[index];
   if (!source?.core) throw new Error(`${subjectId}/${index + 1}: 교재 개념 본문이 필요합니다.`);
-  const [title, explanation, example, question] = item;
-  const tail = explanation.split(/(?<=\.)\s/).slice(1).join(' ');
-  return [source.noteTitle || title, source.noteExplanation || `${source.core} ${tail}`, source.noteExample || example, source.noteQuestion || question];
+  const [title, , example, question] = item;
+  if (!source.noteExplanation?.trim()) throw new Error(`${subjectId}/${index + 1}: 완성된 설명 원고가 필요합니다. 문장을 자동으로 이어 붙이지 않습니다.`);
+  return [source.noteTitle || title, source.noteExplanation, source.noteExample || example, source.noteQuestion || question];
 }
 const esc = text => String(text).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 export function renderTextbookConnection(record, id, kind = 'note') {

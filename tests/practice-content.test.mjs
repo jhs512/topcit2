@@ -5,15 +5,16 @@ import {createHash} from 'node:crypto';
 import {objectives,statements} from '../practice/syllabus.mjs';
 import {distribution} from '../practice/distribution.mjs';
 import {questionSubject} from '../shared/learning-subjects.mjs';
-const hashes={business:'4189356715707e1bf5532ac80b3ec019d4d32114b4df40c1e9374aa80b69c2a2','systems-security':'58b6fe9a1cae9c41029a6745091d5f699bf969ff2d5abd266f233738b8a97c85'};
-test('weighted bank: exact ratios, every objective, unique questions, preserved 600 records',async()=>{
+// Reviewed explanation-only edits: docs/student-content-renewal-legacy-edits.json.
+const hashes={business:'b0ec8641021afeb24da05890cf132c8aea261ba1f0503d733de5de812a7e5ad4','systems-security':'d776af840db0e994ea292f5e7f45557b6d9229fc51cadf8c98af2a3b8d26950a'};
+test('weighted bank: exact ratios, every objective, unique questions, reviewed 600 records',async()=>{
  const ids=new Set(),prompts=new Set(),covered=new Set(),subjects={};
  const prefixes={software:'1.',data:'2.','systems-security':'3.',business:'4.'};
  for(const area of distribution.areas){
   const qs=JSON.parse(await readFile(new URL(`../practice/data/${area.id}.json`,import.meta.url),'utf8'));
   assert.equal(qs.length,area.target,area.id);
   assert.equal(qs.length*1000,distribution.total*area.points,area.id);
-  if(hashes[area.id])assert.equal(createHash('sha256').update(JSON.stringify(qs.slice(0,300))).digest('hex'),hashes[area.id],'original 600 questions');
+  if(hashes[area.id])assert.equal(createHash('sha256').update(JSON.stringify(qs.slice(0,300))).digest('hex'),hashes[area.id],'reviewed 600-question editorial baseline');
   const answers=[0,0,0,0];
   for(const q of qs){
    assert.ok(!ids.has(q.id),q.id);ids.add(q.id);

@@ -97,13 +97,27 @@ steps = [
     ('누적합으로 바꾸기', 'a = [sum(a[:i+1]) for i in range(len(a))]'),
 ]
 initial = [-2, 0, 3, -1, 3, 2]
+step_help = [
+    '0보다 큰 값만 남깁니다. 0과 음수는 제외합니다.',
+    '2로 나눈 나머지가 0이 아닌 값만 남깁니다. 음수인 홀수도 포함합니다.',
+    '음수는 양수로 바꾸고 0과 양수는 그대로 둡니다.',
+    '각 값에 -1을 곱해 양수와 음수의 부호를 바꿉니다. 0은 그대로입니다.',
+    '각 값에 자기 자신을 곱합니다. 예를 들어 -2의 제곱은 4입니다.',
+    '값의 크기와 관계없이 지금 놓인 순서를 뒤집습니다.',
+    '작은 값부터 큰 값 순서로 다시 놓습니다.',
+    '같은 값이 여러 번 나오면 처음 나온 것 하나만 남깁니다.',
+    '현재 리스트의 맨 앞 값 하나를 버리고 나머지를 남깁니다.',
+    '위치를 0부터 셀 때 0·2·4번째 값을 남깁니다. 값 자체가 짝수인지 고르는 것은 아닙니다.',
+    '현재 길이를 2로 나눈 몫을 경계로 앞뒤를 나누고 뒷부분을 먼저 놓습니다.',
+    '각 위치를 처음부터 그 위치까지 더한 값으로 바꿉니다. [2, 3, 1]이면 [2, 5, 6]이 됩니다.'
+]
 
 def python_run(sequence):
     env = {'a': initial.copy()}
     trace = []
     for k in sequence:
         exec(steps[k][1], {}, env)
-        trace.append(f'{steps[k][0]} → {env["a"]}')
+        trace.append(f'{len(trace)+1}단계 · {steps[k][0]}: {step_help[k]}\n결과 → {env["a"]}')
     return repr(env['a']), trace
 
 python_candidates = []
@@ -164,7 +178,7 @@ for seq, answer, trace, wrong in python_candidates[:python_target]:
     title = ' → '.join(steps[k][0] for k in seq)
     q = add('software', '1.5.2.2', '리스트 처리와 연산 순서',
             f'다음 Python 3 코드를 실행했을 때 마지막에 출력되는 리스트는?\n처리 순서: {title}',
-            answer, wrong, '각 줄은 바로 앞 단계의 리스트를 입력으로 사용합니다. 필터·변환·순서 변경은 적용 순서에 따라 결과가 달라질 수 있습니다.',
+            answer, wrong, '리스트는 값을 순서대로 담는 자료입니다. 각 줄은 바로 앞 단계에서 바뀐 리스트를 사용합니다. 조건에 맞는 값만 남기는 것이 필터, 값을 바꾸는 것이 변환입니다. 순서까지 바뀔 수 있으므로 매 단계의 결과를 적고 다음 줄로 넘어갑니다.',
             '\n'.join(trace) + f'\n따라서 출력은 {answer}입니다.', kind='code', code=code, language='Python 3',
             reference={'url': 'https://docs.python.org/3/tutorial/datastructures.html', 'title': 'Python 자료구조 공식 문서'})
     proofs.append({'id': q['id'], 'type': 'python', 'code': code, 'expected': answer})
@@ -257,10 +271,18 @@ for sql, pred, agg, principle, grouped, having in sql_candidates[:sql_target]:
     assert len(wrong) == 3, sql
     filtered = sql_result(f'SELECT id, team, amount, paid FROM sales WHERE {pred} ORDER BY id')
     code = table + '\n\n실행할 SQL (SQLite 3):\n' + sql
+    selected_rows = list(db.execute(f'SELECT id, team, amount, paid FROM sales WHERE {pred} ORDER BY id'))
+    group_trace = []
+    group_names = sorted({row[1] for row in selected_rows}) if grouped else [None]
+    for name in group_names:
+        members = [row for row in selected_rows if name is None or row[1] == name]
+        condition = pred if name is None else f'({pred}) AND team={repr(name)}'
+        value = sql_result(f'SELECT {agg} FROM sales WHERE {condition}')
+        group_trace.append(f'{name+"팀" if name else "전체"}: 남은 행 번호 {[row[0] for row in members]}, 금액 {[row[2] if row[2] is not None else "NULL" for row in members]} → {agg} 결과 {value}')
     q = add('data', '2.3.2.4', 'SQL 조건·NULL·집계',
             '아래 표의 데이터만 있는 sales에서 SQL을 실행한 결과는? 행은 표시된 순서로 비교하고 NULL은 값이 없음을 뜻합니다.',
-            answer, wrong, principle + ' WHERE가 먼저 행을 고르고 GROUP BY가 있으면 팀별로 집계한 후 HAVING을 적용합니다.',
-            f'WHERE를 통과한 행(id | team | amount | paid):\n{filtered}\n{principle}\n'+
+            answer, wrong, 'NULL은 값이 없거나 아직 정해지지 않은 상태이며 숫자 0과 다릅니다. WHERE는 조건이 참인 행만 남깁니다. GROUP BY가 있으면 같은 팀을 묶고, 집계 함수로 개수·합계 등을 계산한 뒤 HAVING으로 그룹을 고릅니다. ' + principle,
+            f'1. WHERE를 통과한 행(id | team | amount | paid):\n{filtered}\n2. 남은 자료로 집계하기:\n'+ '\n'.join(group_trace) + f'\n{principle}\n'+
             (f'HAVING {having} 조건을 만족하는 그룹만 유지합니다.\n' if having else '') + f'최종 결과:\n{answer}',
             kind='sql', code=code, language='SQL', reference={'url':'https://www.sqlite.org/lang_select.html','title':'SQLite SELECT 공식 문서'})
     proofs.append({'id':q['id'],'type':'sql','setup':setup,'query':sql,'expected':answer})
@@ -290,7 +312,7 @@ def page_trace(seq, policy):
                 frames.remove(victim)
             frames.append(page)
         used[page] = i
-        trace.append(f'{page} 참조: {"적중" if hit else "부재"}, 보유 페이지 {sorted(frames)}, 누적 부재 {faults}회')
+        trace.append(f'{i+1}번째 · 페이지 {page}: {"이미 메모리에 있어 그대로 사용" if hit else "메모리에 없어 가져옴"}, 보유 페이지 {sorted(frames)}, 누적 부재 {faults}회')
     return faults, trace
 
 patterns = [p for p in it.product(range(4), repeat=7) if p == canonical(p) and len(set(p)) == 4]
@@ -307,7 +329,7 @@ for seq, policy, (answer, trace) in page_cases[:120]:
     q = add('systems-security','3.2.1.2','페이지 교체와 참조 순서',
             f'처음에 비어 있는 페이지 프레임 3개를 사용합니다. 참조열은 {list(seq)}이고 {policy} 정책을 적용합니다. 최초 적재도 부재로 셀 때 전체 페이지 부재 횟수는?',
             f'{answer}회', [(f'{n}회',f'단계별 부재 표시를 합하면 {answer}회입니다. {n}회는 아래 참조 기록과 일치하지 않습니다.') for n in range(3,8) if n!=answer][:3],
-            rules[policy], '\n'.join(trace),kind='trace')
+            '페이지는 메모리를 관리하는 일정한 크기의 단위이고, 프레임은 페이지를 담는 자리입니다. 필요한 페이지가 없어서 가져오는 일을 페이지 부재라고 셉니다. 자리가 가득 차면 하나를 내보내야 합니다. ' + rules[policy] + ' 아래 보유 목록은 확인하기 쉽게 번호순으로 표시한 것이며 교체 순서를 뜻하지 않습니다.', '\n'.join(trace),kind='trace')
     proofs.append({'id':q['id'],'type':'pages','sequence':seq,'policy':policy,'expected':answer})
 
 def schedule(order, arrivals, policy):
@@ -346,8 +368,8 @@ for order,arrivals,policy,(answer,trace,waits) in sched_cases[:80]:
     q = add('systems-security','3.2.2.2','CPU 스케줄링',
             f'작업은 {jobs}입니다. {policy}를 사용하며 {rule} 동률이면 먼저 도착한 작업, 도착도 같으면 제시된 작업 순서를 따릅니다. 문맥 교환 비용과 입출력은 없고 단위는 ms입니다. 네 작업의 대기시간 합은?',
             f'{answer}ms', [(f'{n}ms',f'각 작업의 완료−도착−CPU 시간을 합하면 {answer}ms입니다. {n}ms는 실행 기록에서 계산한 대기시간 합과 다릅니다.') for n in [answer+4,answer+10,answer+1]],
-            '대기시간 = 완료시각 − 도착시각 − CPU 실행시간입니다. 도착하지 않은 작업은 선택할 수 없습니다.',
-            '실행 구간:\n'+'\n'.join(trace)+'\n작업별 대기시간: '+str(waits)+f'\n합계는 {answer}ms입니다.', kind='trace')
+            'CPU 스케줄링은 실행할 작업의 순서를 정하는 것입니다. 비선점은 시작한 작업을 끝날 때까지 실행하고, 선점은 도중에 다른 작업으로 바꿀 수 있다는 뜻입니다. 이 문제에는 입출력 대기가 없으므로 대기시간은 완료시각에서 도착시각과 실제 CPU 실행시간을 뺀 값입니다.',
+            '실행 구간:\n'+'\n'.join(trace)+'\n작업별 계산:\n'+ '\n'.join(f'{p}: 완료 {a+dict(A=3,B=1,C=4,D=2)[p]+waits[p]} − 도착 {a} − 실행 {dict(A=3,B=1,C=4,D=2)[p]} = 대기 {waits[p]}ms' for p,a in zip(order,arrivals)) +f'\n합계는 {answer}ms입니다.', kind='trace')
     proofs.append({'id':q['id'],'type':'schedule','order':order,'arrivals':arrivals,'policy':policy,'expected':answer})
 
 # Access decisions: changed rule precedence and combinations of subject attributes.
@@ -387,7 +409,7 @@ for order,attrs,matched,first,granted in security_cases[:205]:
     trace = '\n'.join(f'{i}번: {"조건 충족" if i in matched else "조건 불충족"}' for i in range(1,first+1))
     q = add('systems-security','3.6.1.3','접근통제 규칙의 우선순위',
             f'다음은 연습용 접근 정책입니다. 위에서 아래로 검사하여 처음 조건이 맞는 규칙 하나로 결정하고 이후 규칙은 평가하지 않습니다. 일치하는 규칙이 없으면 거부합니다.\n{policy}\n요청 속성: {desc}\n적용되는 규칙과 결정은?',
-            result,wrong[:3],'이 문제는 최초 일치 정책입니다. 뒤의 거부가 앞의 허용을 자동으로 덮어쓰는 정책이 아닙니다. MFA는 다중요소 인증입니다.',
+            result,wrong[:3],'접근통제는 요청자가 해당 자료나 기능을 사용해도 되는지 결정하는 것입니다. 이 문제의 최초 일치 정책은 위에서부터 읽다가 처음 맞는 규칙에서 멈춥니다. 실제 시스템마다 정책이 다르므로 지문에 제시한 순서를 따릅니다. MFA는 비밀번호와 보유 기기처럼 서로 다른 종류의 확인 수단을 함께 사용하는 다중 요소 인증입니다. 관리 기기는 조직이 관리 대상으로 등록한 기기를 뜻합니다.',
             trace+f'\n최초로 일치하는 {first}번에서 멈추므로 ‘{result}’입니다. 이후 규칙은 적용하지 않습니다.',kind='policy')
     proofs.append({'id':q['id'],'type':'policy','order':order,'attributes':attrs,'expected':result})
 

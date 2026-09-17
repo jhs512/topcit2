@@ -137,11 +137,13 @@ GitHub Pages 정적 디렉터리 경로를 사용하므로 끝의 슬래시가 �
 
 [출제기준 V4.0K](syllabus/)는 2026-09-16 공식 사이트에서 가져온 4개 평가영역 전체입니다. 번호와 문장은 `syllabus/data.json`에 보관하고 `node scripts/build-syllabus.mjs`로 페이지를 생성합니다. 이후 개정은 자동 반영되지 않습니다. 출제기준을 링크할 때는 자체 복사본을 사용하며, 특정 항목은 `https://jhs512.github.io/topcit2/syllabus/#ref-4.2.2.2`처럼 연결합니다. 원본 출처는 복사본 페이지에서 확인할 수 있습니다.
 
-핵심노트 기반 새 사례의 편집 원본은 `reading/expanded-cases.mjs`입니다. `npm run build:cases`가 `reading/cases/`의 Markdown과 `cases/`의 페이지를 함께 생성합니다. 기존 11편의 원본은 `reading/it-business-stories.md`로 유지합니다.
+핵심노트 기반 새 사례의 본문 원본은 `reading/expanded-cases.mjs`, 교훈 원본은 `reading/case-lessons.json`입니다. `npm run build:cases`가 `reading/cases/`의 Markdown과 `cases/`의 페이지를 함께 생성합니다. 기존 11편의 원본은 `reading/it-business-stories.md`로 유지합니다.
 
 
 ## 핵심노트·사례의 교재 근거
 
-핵심노트의 교재 원개념과 항목별 근거는 `shared/textbook-alignment.json`, 기존 비즈니스 11편의 개별 근거는 `shared/textbook-case-alignment.json`, 추가 학습 설명·질문은 `shared/textbook-study-paths.json`에서 관리합니다. 기존 제목·예시·질문 원본과 결합해 `practical/content.mjs`가 최종 노트를 구성합니다. 대응 내용을 수정한 뒤 `npm run build:practical`과 `npm run build:cases`를 모두 실행합니다. 생성기는 모든 근거 페이지의 실제 존재와 대응 누락을 먼저 검사합니다.
+핵심노트의 완성 설명(`noteExplanation`)·예시·질문과 교재 근거는 `shared/textbook-alignment.json`, 기존 비즈니스 11편의 개별 근거는 `shared/textbook-case-alignment.json`, 추가 학습 설명·질문은 `shared/textbook-study-paths.json`에서 관리합니다. `practical/content.mjs`가 최종 노트를 구성하며 설명 문장을 자동으로 이어 붙이지 않습니다. 대응 내용을 수정한 뒤 `npm run build:practical`과 `npm run build:cases`를 모두 실행합니다. 생성기는 모든 근거 페이지의 실제 존재와 대응 누락을 먼저 검사합니다.
+
+2026-09-17 학생용 설명 개편의 범위·기준·결과는 [개편 계획](docs/2026-09-17-153028-student-content-renewal-plan.md)에 기록합니다. `node scripts/audit-content-renewal.mjs`는 개편 전 기준선과 3,355개 항목 및 교재 12개 파일을 대조합니다. 원본 600문항 중 핵심 개념 설명만 고친 60개는 `docs/student-content-renewal-legacy-edits.json`에 기록했으며, ID·지문·보기·정답·revision은 유지했습니다. `node tests/content-renewal-browser.mjs`는 수업 원고와 화면의 일치, 모바일 줄바꿈과 여러 문단으로 된 문제 해설을 검사합니다. 자동 검사와 학생의 실제 이해도 검증은 구분합니다.
 
 [320개 항목 점검표](docs/textbook-alignment-audit.md)에 단원·쪽·연결 이유·본문 보강과 대표 수정 전후를 기록했습니다. 기준 원본의 목차·학습목표·관련 본문을 읽어 대조했으며, 20개 노트를 교재 전체 요약이나 시험 중요도 순위로 보지 않습니다. `node --test tests/textbook-alignment.test.mjs`로 대응·원문 페이지·학생용 생성 내용을 검사하고 `node tests/textbook-references.mjs`로 PC·모바일 전체 항목 표시와 공개 교재 링크를 확인합니다. 점검표를 다시 만들 때는 기준 교재 저장소와 비교 커밋을 확인한 뒤 `node scripts/build-textbook-audit.mjs`를 실행합니다.

@@ -15,7 +15,9 @@ try {
       await page.locator(`.area-card[href="${s.id}/"]`).click();
       await page.locator('#site-tts-toggle').waitFor();
       assert.equal(await page.locator('.concept').count(), 20);
-      assert.equal(await page.locator('.concept > h2.tts-readable, .concept > p.tts-readable, .concept > .example > p.tts-readable').count(), 80);
+      const paragraphCount = text => text.split(/\n\s*\n/).length;
+      const expectedReadable = s.items.reduce((n, [,explanation,example]) => n + 2 + paragraphCount(explanation) + paragraphCount(example), 0);
+      assert.equal(await page.locator('.concept > h2.tts-readable, .concept > p.tts-readable, .concept > .example > p.tts-readable').count(), expectedReadable);
       assert.match(await page.locator('.editor-note').innerText(), /교재 개념의 뜻을 설명/);
       assert.equal(await page.locator('body').evaluate(el => el.scrollWidth <= innerWidth), true, `${s.id} overflow at ${width}`);
       await page.locator('.contents a').last().click();

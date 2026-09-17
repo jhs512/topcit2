@@ -8,7 +8,8 @@ validateTextbookAlignment();
 
 const root = new URL('../practical/', import.meta.url);
 const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const note = '교재 개념의 뜻을 설명하고, 가상 업무에서 언제 왜 쓰는지 풀어 쓴 자체 해설입니다. 각 항목의 관련 교재 내용에서 단원과 교재 페이지를 확인할 수 있습니다. 20개 노트는 교재 전체 요약이나 시험 중요도 순위가 아니며, 주제 끝의 추가 학습 내용도 함께 확인하세요.';
+const paragraphs = value => value.split(/\n\s*\n/).map(text => `<p class="tts-readable">${escape(text)}</p>`).join('');
+const note = '교재 개념의 뜻을 설명하고, 가상 업무에서 언제 왜 쓰는지 풀어 쓴 자체 해설입니다. 먼저 설명과 예시를 읽고, 확인 질문에 자신의 말로 답해 보세요. 각 항목의 관련 교재 내용에서 단원과 교재 페이지를 확인할 수 있습니다. 20개 노트는 교재 전체 요약이나 시험 중요도 순위가 아니며, 주제 끝의 추가 학습 내용도 함께 확인하세요.';
 const document = (title, prefix, body) => `<!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(title)} · 핵심노트 · TOPCIT</title><link rel="stylesheet" href="${prefix}practice/styles.css"><link rel="stylesheet" href="${prefix}practical/styles.css"><link rel="stylesheet" href="${prefix}shared/site-navigation.css"><script type="module" src="${prefix}shared/site-navigation.mjs"></script></head><body><a class="skip" href="#main">본문으로 바로가기</a><main id="main">${body}</main></body></html>\n`;
 
@@ -18,7 +19,7 @@ for (const subject of subjects) {
 }
 await writeFile(new URL('index.html', root), document('전체', '../', `<header class="intro"><div class="eyebrow">현장에서 생각하고 판단하기</div><h1>핵심노트</h1><p>여덟 주제 · 주제별 핵심 개념 20개 이상 · 총 ${subjects.reduce((n,s)=>n+s.items.length,0)}개</p><p class="editor-note">${note}</p></header><div class="area-grid">${subjects.map(s => `<a class="area-card" href="${s.id}/"><div class="eyebrow">주제 ${s.id} · 핵심 개념 ${s.items.length}개</div><h2>${escape(s.title)}</h2><p>${escape(s.intro)}</p><span class="card-action">핵심노트 읽기 →</span></a>`).join('')}</div>`));
 for (const s of subjects) {
-  const article = s.items.map(([title, explanation, example, question], i) => `<article class="concept" id="concept-${i + 1}" data-tts-content><h2 class="tts-readable">${i + 1}. ${escape(title)}</h2><p class="tts-readable">${escape(explanation)}</p><section class="example"><h3>가상 업무 예시</h3><p class="tts-readable">${escape(example)}</p></section><p class="check tts-readable"><strong>생각해 볼 질문</strong><br>${escape(question)}</p>${renderTextbookConnection(alignment[s.id][i], `concept-${i + 1}`)}<a class="to-contents" href="#contents">목차로 ↑</a></article>`).join('\n');
+  const article = s.items.map(([title, explanation, example, question], i) => `<article class="concept" id="concept-${i + 1}" data-tts-content><h2 class="tts-readable">${i + 1}. ${escape(title)}</h2>${paragraphs(explanation)}<section class="example"><h3>가상 업무 예시</h3>${paragraphs(example)}</section><p class="check tts-readable"><strong>생각해 볼 질문</strong><br>${escape(question)}</p>${renderTextbookConnection(alignment[s.id][i], `concept-${i + 1}`)}<a class="to-contents" href="#contents">목차로 ↑</a></article>`).join('\n');
   const introduction = subjectIntroductions[s.id];
   if (!introduction?.what?.trim() || !introduction?.why?.trim()) throw new Error(`${s.id}: 과목 도입 설명을 확인하세요.`);
   const overview = `<section class="subject-overview" aria-label="과목 이해하기" data-tts-content><h2 class="tts-readable">이게 뭔가요?</h2><p class="tts-readable">${escape(introduction.what)}</p><h2 class="tts-readable">왜 배우나요?</h2><p class="tts-readable">${escape(introduction.why)}</p></section>`;
