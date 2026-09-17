@@ -3,6 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build:articles": "node scripts/build-articles.mjs",
+    "test:articles": "node --test tests/articles.test.mjs",
+    "test:articles-browser": "node tests/articles-browser.mjs",
     "build:practical": "node scripts/build-practical.mjs",
     "test:subjects": "node tests/learning-subjects.mjs",
     "test:practical": "node tests/practical-browser.mjs",
@@ -27,6 +30,7 @@
   },
   "devDependencies": {
     "marked": "^18.0.12",
+    "mermaid": "^11.17.2",
     "playwright": "^1.62.1"
   }
 }

@@ -31,6 +31,10 @@
 
 정답 기록은 이 브라우저에 저장됩니다. 과목 안의 **이 과목 진도 초기화** 버튼으로 해당 과목만 다시 시작할 수 있습니다. 설명모드는 진도를 바꾸지 않습니다. 전체모드에서 맞힌 기록은 랜덤모드와 공유합니다.
 
+## article · 처음부터 따라가는 실무 이야기
+
+[article 열기](article/)에서 가상의 주문 서비스 ‘한끼픽’을 배경으로 여덟 과목의 긴 글을 읽습니다. [시스템아키텍처 이야기](article/03/)는 서버 한 대에서 시작해 Redis·DB 복제·Kafka·MSA를 선택하게 되는 문제와 운영 부담을 시간순으로 다룹니다. 각 글은 독립적으로 읽을 수 있고 UML·구성도·표를 함께 제공합니다. 교재의 순서나 공식 출제 중요도와는 별개인 자체 실무 이야기입니다.
+
 ## 핵심노트
 
 [핵심노트 열기](practical/)에서 여덟 주제별 핵심 개념 스무 개씩, 총 160개를 읽습니다. 교재 요약이나 공식 중요도 순위가 아닌 자체 실무 해설이며, 각 개념에 설명·가상 업무 예시·확인 질문을 제공합니다. 본문은 TTS로 읽을 수 있습니다.
@@ -147,3 +151,9 @@ GitHub Pages 정적 디렉터리 경로를 사용하므로 끝의 슬래시가 �
 2026-09-17 학생용 설명 개편의 범위·기준·결과는 [개편 계획](docs/2026-09-17-153028-student-content-renewal-plan.md)에 기록합니다. `node scripts/audit-content-renewal.mjs`는 개편 전 기준선과 3,355개 항목 및 교재 12개 파일을 대조합니다. 원본 600문항 중 핵심 개념 설명만 고친 60개는 `docs/student-content-renewal-legacy-edits.json`에 기록했으며, ID·지문·보기·정답·revision은 유지했습니다. `node tests/content-renewal-browser.mjs`는 수업 원고와 화면의 일치, 모바일 줄바꿈과 여러 문단으로 된 문제 해설을 검사합니다. 자동 검사와 학생의 실제 이해도 검증은 구분합니다.
 
 [320개 항목 점검표](docs/textbook-alignment-audit.md)에 단원·쪽·연결 이유·본문 보강과 대표 수정 전후를 기록했습니다. 기준 원본의 목차·학습목표·관련 본문을 읽어 대조했으며, 20개 노트를 교재 전체 요약이나 시험 중요도 순위로 보지 않습니다. `node --test tests/textbook-alignment.test.mjs`로 대응·원문 페이지·학생용 생성 내용을 검사하고 `node tests/textbook-references.mjs`로 PC·모바일 전체 항목 표시와 공개 교재 링크를 확인합니다. 점검표를 다시 만들 때는 기준 교재 저장소와 비교 커밋을 확인한 뒤 `node scripts/build-textbook-audit.mjs`를 실행합니다.
+
+## article 편집과 생성
+
+`article/content/과목ID.md`가 8편의 집필 원본이며 `article/catalog.mjs`에 제목·소개·표 제목을 관리합니다. `npm run build:articles`는 Mermaid를 로컬 Chromium에서 SVG로 렌더링하고 정적 HTML·목차·목록·`article/manifest.json`을 만듭니다. `npm install`과 Playwright Chromium이 필요합니다. 게시 화면은 Mermaid CDN이나 브라우저 내 Mermaid 실행에 의존하지 않습니다. 원고의 `mermaid 그림 제목` 코드 블록은 제목 있는 그림과 확대 링크로 생성됩니다.
+
+`npm run test:articles`는 8편의 원본·생성물·그림·표·참조를 검사하고, 로컬 4186 서버에서 `npm run test:articles-browser`는 모든 글을 PC/모바일로 확인합니다. `SITE_BASE`를 지정하면 공개 사이트를 검사합니다. 별도 구성도 `article/diagrams/order-flow.html`은 archify로 검증·생성한 탐색 자료이며, 그 규격은 같은 폴더의 JSON에 보관합니다. 생성된 HTML을 직접 편집하지 않습니다. [기획과 검증 결과](docs/2026-09-17-163844-article-series-plan.md)에 범위와 증거를 기록합니다.

@@ -1,0 +1,7 @@
+const progress=document.querySelector('.reading-progress i');
+if(progress){let pending=false;const update=()=>{const article=document.querySelector('.prose');const start=article.getBoundingClientRect().top+scrollY;const end=start+article.offsetHeight-innerHeight;progress.style.width=`${Math.max(0,Math.min(100,(scrollY-start)/Math.max(1,end-start)*100))}%`;pending=false;};addEventListener('scroll',()=>{if(!pending){pending=true;requestAnimationFrame(update);}},{passive:true});addEventListener('resize',update);update();}
+const toc=document.querySelector('.article-toc details');
+if(toc&&matchMedia('(max-width:620px)').matches)toc.open=false;
+const dialog=document.querySelector('.diagram-dialog');
+if(dialog)dialog.querySelector('img').addEventListener('load',event=>{event.target.style.width=`${Math.max(900,event.target.naturalWidth)}px`;});
+if(dialog){let opener;for(const link of document.querySelectorAll('[data-diagram]'))link.addEventListener('click',event=>{if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;event.preventDefault();opener=link;const title=link.dataset.caption;dialog.querySelector('h2').textContent=title;const img=dialog.querySelector('img');img.src=link.href;img.alt=title;dialog.querySelector('.original-diagram').href=link.href;dialog.showModal();dialog.querySelector('[data-close]').focus();});dialog.querySelector('[data-close]').addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>opener?.focus());}

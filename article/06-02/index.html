@@ -1,0 +1,121 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="한끼픽이 처음 서비스를 만들고 문제를 해결하는 과정을 따라가는 실무 이야기"><title>“서버가 이상해요”라는 메시지로는 아무도 움직일 수 없었다 · article</title><link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="../../shared/site-navigation.css"><script type="module" src="../../shared/site-navigation.mjs"></script><script type="module" src="../reader.mjs"></script></head><body><a class="skip-link" href="#main">본문으로 바로가기</a><div class="reading-progress" aria-hidden="true"><i></i></div><main id="main"><header class="article-hero"><a class="back" href="../">← article 전체 글</a><p class="eyebrow">06-02 · 테크니컬 커뮤니케이션</p><h1>“서버가 이상해요”라는 메시지로는 아무도 움직일 수 없었다</h1><p class="deck">모호한 메시지가 독자별 설명, API 계약, 결정 기록, 운영 절차로 바뀝니다.</p><p class="reading-meta">첫 장애 메시지에서 팀의 기록으로 · 약 12분 · 그림 4개 · 표 3개</p><p class="fiction-label">한끼픽 실무 이야기 · 가상 상황을 따라 배우는 글입니다.</p></header><div class="article-layout"><aside class="article-toc"><details open><summary>이야기 순서</summary><ol><li><a href="#section-1">1. 첫 메시지 — 평가를 관측으로 바꿨다</a></li><li><a href="#section-2">2. 같은 날 — 개발자와 사장님에게 같은 설명을 보내지 않았다</a></li><li><a href="#section-3">3. 다음 주 — 그림 한 장으로 같은 요청을 따라갔다</a></li><li><a href="#section-4">4. 둘째 주 — API 문서는 성공 예시만으로 부족했다</a></li><li><a href="#section-5">5. 셋째 주 — 왜 그렇게 했는지 기억이 사라졌다</a></li><li><a href="#section-6">6. 넷째 주 — 장애 공지에서 추측을 사실처럼 쓰지 않았다</a></li><li><a href="#section-7">7. 다음 달 — 문서를 읽지 않은 사람이 아니라 못 움직이는 문서를 찾았다</a></li><li><a href="#section-8">8. 마지막 메시지 — 설명의 성공은 독자의 다음 행동에 있었다</a></li></ol></details></aside><article class="prose" data-tts-content><p class="tts-readable">점심시간, 한끼픽 단체 대화방에 메시지가 올라왔습니다. “서버가 이상해요. 빨리 확인 부탁드립니다.” 개발자 민서는 서버 상태를 봤고, 운영 담당 지후는 가게에 전화했으며, 기획자 하린은 고객에게 무엇을 말할지 기다렸습니다. 다들 움직였지만 같은 문제를 보고 있는지는 몰랐습니다.</p>
+<p class="tts-readable">가상의 주문 서비스에서 말과 문서가 실제 행동을 바꾸는 과정을 따라갑니다. 사건과 시간은 설명용 설정입니다. 테크니컬 커뮤니케이션은 어려운 기술을 멋있게 표현하는 일이 아니라, 독자가 상황을 이해하고 필요한 판단과 행동을 할 수 있게 만드는 일입니다.</p>
+<h2 id="section-1" class="tts-readable">1. 첫 메시지 — 평가를 관측으로 바꿨다</h2><p class="tts-readable">‘이상하다’는 말에는 증상이 없었습니다. 주문 화면이 안 열리는지, 저장이 안 되는지, 주방에만 안 보이는지 알 수 없었습니다. 민서는 다시 질문해야 했습니다. 지후가 고객 화면을 확인한 뒤 메시지를 고쳤습니다.</p>
+<blockquote>
+<p class="tts-readable">“12시 03분부터 고객 주문 완료 화면은 뜨지만 가게 주문 목록에 일부 주문이 안 보입니다. 현재 확인한 시험 주문은 O-31, O-32입니다. 재주문은 안내하지 않았습니다. 주문 저장 여부와 목록 조회를 나누어 확인해 주세요.”</p>
+</blockquote>
+<p class="tts-readable">이제 민서는 어떤 경로를 추적할지 알았습니다. 아직 원인을 모르므로 ‘DB 고장’이라고 쓰지 않았습니다. 발생 시각, 관측한 현상, 확인 범위, 이미 한 조치, 필요한 다음 행동이 들어갔습니다. <a href="https://sre.google/sre-book/effective-troubleshooting/">Google SRE의 문제 해결 설명</a>도 관측을 바탕으로 가설을 세우고 확인하는 접근을 다룹니다.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="표 1. 모호한 메시지를 관측으로 바꾸기. 가로로 넘겨 읽기"><table><caption>표 1. 모호한 메시지를 관측으로 바꾸기</caption>
+<thead>
+<tr>
+<th>모호한 표현</th>
+<th>독자가 다시 물어야 하는 것</th>
+<th>바꾼 표현</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>서버가 이상해요</td>
+<td>무엇이 어떻게 다른가?</td>
+<td>주문 완료 뒤 가게 목록에 일부 주문이 안 보임</td>
+</tr>
+<tr>
+<td>자주 발생해요</td>
+<td>언제, 몇 번인가?</td>
+<td>12:03 이후 확인한 시험 주문 2건에서 재현</td>
+</tr>
+<tr>
+<td>아마 DB 문제예요</td>
+<td>사실인가 추측인가?</td>
+<td>저장과 조회 중 어느 단계인지 확인 중</td>
+</tr>
+<tr>
+<td>빨리 해 주세요</td>
+<td>누가 무엇을 해야 하는가?</td>
+<td>민서는 저장 여부, 지후는 영향 가게 확인</td>
+</tr>
+</tbody></table></div>
+<p class="tts-readable">문장을 길게 만드는 것이 목표는 아니었습니다. 다음 질문을 줄이는 데 필요한 정보를 넣는 것이었습니다. 반대로 고객 연락처나 결제 비밀값처럼 조사에 필요 없는 정보는 대화방에 붙이지 않았습니다.</p>
+<h2 id="section-2" class="tts-readable">2. 같은 날 — 개발자와 사장님에게 같은 설명을 보내지 않았다</h2><p class="tts-readable">민서는 복제 지연이 원인일 수 있다고 봤습니다. 기술 대화방에는 요청 ID와 조회 경로를 남겼지만 수진에게 “리드 레플리카 lag입니다”라고 말하지 않았습니다. 수진이 필요한 것은 용어의 발음이 아니라 지금 조리해도 되는 주문과 고객에게 할 안내였습니다.</p>
+<p class="tts-readable">하린은 같은 사실을 독자의 행동에 맞춰 나눴습니다. 사실 자체를 바꾸는 것이 아니라 필요한 상세 수준을 달리했습니다. 원인을 확정하지 않았다는 점은 어느 버전에도 유지했습니다.</p>
+<figure class="diagram" id="figure-1"><figcaption>그림 1. 정보 흐름 — 같은 사건에서 독자별 행동으로 설명을 나눈다</figcaption><a class="diagram-link" href="../assets/06-02-1.svg" data-diagram data-caption="정보 흐름 — 같은 사건에서 독자별 행동으로 설명을 나눈다"><img src="../assets/06-02-1.svg" alt="정보 흐름 — 같은 사건에서 독자별 행동으로 설명을 나눈다" loading="lazy"><span>그림 크게 보기 ↗</span></a></figure><div class="table-scroll" tabindex="0" role="region" aria-label="표 2. 독자별 설명과 필요한 행동. 가로로 넘겨 읽기"><table><caption>표 2. 독자별 설명과 필요한 행동</caption>
+<thead>
+<tr>
+<th>독자</th>
+<th>필요한 설명</th>
+<th>요청할 행동</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>개발자</td>
+<td>주문은 저장됐는지, 어느 조회가 늦는지</td>
+<td>요청 ID로 단계별 기록 대조</td>
+</tr>
+<tr>
+<td>가게</td>
+<td>목록 반영이 늦는 주문이 있음</td>
+<td>확인된 번호 기준으로 처리, 중복 확인</td>
+</tr>
+<tr>
+<td>고객</td>
+<td>접수됐어도 목록 반영이 늦을 수 있음</td>
+<td>반복 주문 대신 주문 번호로 문의</td>
+</tr>
+<tr>
+<td>책임자</td>
+<td>확인한 영향 범위와 아직 모르는 부분</td>
+<td>운영 제한·지원 인력·공지 결정</td>
+</tr>
+</tbody></table></div>
+<p class="tts-readable">지후는 안내를 보낸 뒤 “이해하셨죠?”라고만 묻지 않았습니다. 수진에게 지금 주문 O-31이 오면 어떻게 처리할지 말해 달라고 했습니다. 수진의 답에서 중복 주문 위험을 이해했는지 확인할 수 있었습니다. 설명을 전달한 것과 상대가 같은 행동을 떠올린 것은 달랐습니다.</p>
+<h2 id="section-3" class="tts-readable">3. 다음 주 — 그림 한 장으로 같은 요청을 따라갔다</h2><p class="tts-readable">장애가 지나자 도윤은 문서에 서버 상자를 여러 개 그렸습니다. 보기에는 그럴듯했지만 화살표에 뜻이 없었습니다. 요청인지 응답인지, 동기 호출인지 사건 전달인지 구분되지 않았습니다. 팀은 한 가지 질문만 답하는 그림으로 다시 만들었습니다. “주문 저장 뒤 바로 조회하면 어디로 가는가?”</p>
+<figure class="diagram" id="figure-2"><figcaption>그림 2. UML 시퀀스 — 주문 직후에는 주 DB에서 확인한다</figcaption><a class="diagram-link" href="../assets/06-02-2.svg" data-diagram data-caption="UML 시퀀스 — 주문 직후에는 주 DB에서 확인한다"><img src="../assets/06-02-2.svg" alt="UML 시퀀스 — 주문 직후에는 주 DB에서 확인한다" loading="lazy"><span>그림 크게 보기 ↗</span></a></figure><p class="tts-readable">세로 방향은 시간의 흐름이고, 가로 방향은 참여자입니다. 그림은 모든 서버 배치를 보여 주지 않습니다. 요청 한 번의 순서를 보여 줍니다. 글에는 왜 주문 직후 조회를 주 DB로 보내는지, 어떤 조회는 복제본을 써도 되는지를 설명했습니다. 그림과 문장이 서로 다른 질문을 맡게 했습니다.</p>
+<p class="tts-readable">팀은 화살표를 추가할 때마다 뜻을 말로 읽어 봤습니다. “API가 주 DB에 주문을 저장한다.” 읽을 수 없는 화살표는 대체로 설명이 빠져 있거나 불필요했습니다. 도식은 생각을 대신하지 않았지만, 빠진 생각을 드러내는 데 도움이 됐습니다.</p>
+<h2 id="section-4" class="tts-readable">4. 둘째 주 — API 문서는 성공 예시만으로 부족했다</h2><p class="tts-readable">화면 담당 도윤은 주문 API가 항상 주문 번호를 돌려주는 줄 알았습니다. 품절 응답을 받자 화면이 멈췄습니다. 민서는 오류 형식을 보냈다고 생각했지만 실제 문서에는 정상 응답 하나만 있었습니다.</p>
+<p class="tts-readable">API는 프로그램 사이의 약속입니다. 어떤 입력을 보내고 어떤 결과를 받을지, 실패와 재시도 때 무엇을 해야 하는지 합의해야 합니다. 팀은 내부의 모든 구현을 노출하는 대신 호출자가 행동을 결정하는 데 필요한 계약을 적었습니다.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="표 3. 주문 API에서 합의할 성공·실패 의미. 가로로 넘겨 읽기"><table><caption>표 3. 주문 API에서 합의할 성공·실패 의미</caption>
+<thead>
+<tr>
+<th>상황</th>
+<th>응답에 담을 의미</th>
+<th>화면의 행동</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>접수 성공</td>
+<td>주문 번호와 현재 상태</td>
+<td>접수 화면 표시</td>
+</tr>
+<tr>
+<td>품절</td>
+<td>처리되지 않았음과 이유</td>
+<td>메뉴 선택으로 안내</td>
+</tr>
+<tr>
+<td>같은 요청 키의 재시도</td>
+<td>이미 처리한 주문 결과</td>
+<td>새 주문을 만들었다고 표시하지 않음</td>
+</tr>
+<tr>
+<td>같은 키에 다른 내용</td>
+<td>요청 키 재사용 오류</td>
+<td>자동 재시도 중지, 새 시도 확인</td>
+</tr>
+<tr>
+<td>응답을 받지 못함</td>
+<td>처리 여부를 아직 모름</td>
+<td>같은 요청 키로 확인·재시도 정책 적용</td>
+</tr>
+</tbody></table></div>
+<p class="tts-readable">특히 통신 시간 초과는 주문 실패와 같지 않습니다. 서버가 저장한 뒤 응답만 유실됐을 수 있습니다. 이 차이를 문서에 쓰지 않으면 화면은 고객에게 다시 주문하라고 안내할 수 있습니다. 좋은 오류 설명은 코드 번호를 나열하는 데서 끝나지 않고 안전한 다음 행동을 알려 줍니다.</p>
+<h2 id="section-5" class="tts-readable">5. 셋째 주 — 왜 그렇게 했는지 기억이 사라졌다</h2><p class="tts-readable">새로 합류한 개발자는 주문 직후 조회도 복제본으로 보내자고 제안했습니다. 주 DB 부담을 줄일 수 있다는 타당한 이유였습니다. 하지만 팀은 이전 장애 때문에 그 경로를 의도적으로 남겨 둔 상태였습니다. 결정 결과만 코드에 있고 이유는 대화방 깊숙이 묻혀 있었습니다.</p>
+<p class="tts-readable">민서는 짧은 결정 기록을 만들었습니다. 이를 ADR, 아키텍처 결정 기록이라고 부를 수 있습니다. 중요한 것은 약자가 아니라 당시 상황, 비교한 대안, 선택 이유, 부작용, 다시 검토할 조건을 남기는 것입니다.</p>
+<figure class="diagram" id="figure-3"><figcaption>그림 3. 결정 기록의 구조 — 결론과 그 결론이 유효한 조건을 함께 남긴다</figcaption><a class="diagram-link" href="../assets/06-02-3.svg" data-diagram data-caption="결정 기록의 구조 — 결론과 그 결론이 유효한 조건을 함께 남긴다"><img src="../assets/06-02-3.svg" alt="결정 기록의 구조 — 결론과 그 결론이 유효한 조건을 함께 남긴다" loading="lazy"><span>그림 크게 보기 ↗</span></a></figure><p class="tts-readable">기록에는 “주문 직후 확인은 주 DB에서 읽는다. 고객이 방금 한 주문을 못 보는 혼란을 줄인다. 주 DB 읽기 부담은 남는다. 부담이 목표를 넘으면 다른 일관성 보장 방법을 검토한다”라고 썼습니다. ‘최적의 구조’라고 단정하지 않았습니다. 당시 조건에 맞춘 선택임을 남겨야 다음 사람이 존중하면서도 바꿀 수 있습니다.</p>
+<h2 id="section-6" class="tts-readable">6. 넷째 주 — 장애 공지에서 추측을 사실처럼 쓰지 않았다</h2><p class="tts-readable">다시 조회 지연이 발생했습니다. 이번에는 하린이 첫 공지를 맡았습니다. “일부 주문 목록 반영이 늦습니다. 접수 상태를 확인 중이며 반복 주문을 피하고 주문 번호로 문의해 주세요. 다음 안내는 12시 30분에 드리겠습니다.” 원인과 복구 시각을 아직 모르므로 약속하지 않았습니다.</p>
+<p class="tts-readable">팀은 조사하는 사람과 외부에 전달하는 사람을 나눴습니다. <a href="https://sre.google/sre-book/managing-incidents/">Google SRE의 사고 관리 설명</a>은 지휘·운영·소통 역할을 분리하는 접근을 다룹니다. 한끼픽은 작은 팀이므로 한 사람이 여러 역할을 맡을 수 있었지만, 누가 현재 공지를 책임지는지는 분명히 했습니다.</p>
+<figure class="diagram" id="figure-4"><figcaption>그림 4. UML 상태도 — 확인 수준에 맞춰 공지를 갱신한다</figcaption><a class="diagram-link" href="../assets/06-02-4.svg" data-diagram data-caption="UML 상태도 — 확인 수준에 맞춰 공지를 갱신한다"><img src="../assets/06-02-4.svg" alt="UML 상태도 — 확인 수준에 맞춰 공지를 갱신한다" loading="lazy"><span>그림 크게 보기 ↗</span></a></figure><p class="tts-readable">예정 시각에 새로운 사실이 없어도 조사가 계속된다는 안내와 다음 확인 시각을 보냈습니다. 침묵하면 고객은 문제가 끝났는지 방치됐는지 알 수 없습니다. 복구 뒤에는 그래프가 정상이라는 이유만으로 종료하지 않고 실제 주문 조회를 확인했습니다. ‘기술 조치 완료’와 ‘사용자 기능 복구’를 나눠 본 것입니다.</p>
+<h2 id="section-7" class="tts-readable">7. 다음 달 — 문서를 읽지 않은 사람이 아니라 못 움직이는 문서를 찾았다</h2><p class="tts-readable">지후가 휴가를 가기 전 운영 절차를 도윤에게 넘겼습니다. 도윤은 첫 단계부터 막혔습니다. ‘관리 화면에서 확인’이라고 돼 있었지만 어떤 화면인지, 어떤 권한이 필요한지 없었습니다. 지후에게는 당연한 정보가 처음 하는 사람에게는 없었습니다.</p>
+<p class="tts-readable">둘은 문서를 따라 실제로 수행하며 목적, 시작 조건, 단계, 정상 결과, 실패했을 때의 분기, 연락할 역할을 채웠습니다. 운영 비밀번호를 문서에 쓰는 대신 승인된 접근 절차를 가리켰습니다. 화면이 바뀌면 누가 문서를 갱신하는지도 정했습니다. 작성일만 있는 문서보다 유지할 책임자가 있는 문서가 오래 쓸 수 있었습니다.</p>
+<h2 id="section-8" class="tts-readable">8. 마지막 메시지 — 설명의 성공은 독자의 다음 행동에 있었다</h2><p class="tts-readable">처음의 ‘서버가 이상해요’는 거짓말은 아니었습니다. 하지만 누구도 그 문장만으로 안전하게 행동할 수 없었습니다. 팀이 배운 것은 모든 문서를 길게 쓰는 방법이 아니라 독자의 다음 판단에 필요한 사실을 골라 연결하는 방법이었습니다.</p>
+<p class="tts-readable">민서는 기술 설명을 쓴 뒤 세 가지를 확인했습니다. 독자가 모를 용어를 풀었는가, 새 이야기가 왜 나오는지 앞에서 설명했는가, 읽고 나서 무엇을 해야 하는지 알 수 있는가. 글과 UML, 표가 이 질문에 답하지 못하면 더 넣기보다 다시 구성했습니다.</p>
+<p class="tts-readable">다음에 당신이 메시지를 보낼 때 마지막 문장을 잠깐 미뤄 보세요. 상대가 이 글만 보고 같은 화면과 상황을 떠올릴 수 있는지 생각해 보세요. 그 짧은 확인이 다시 묻는 시간을 줄이고, 잘못된 행동을 막고, 팀이 같은 문제를 풀게 만듭니다.</p>
+</article></div><section class="other-stories"><h2>같은 서비스를 다른 관점에서 읽기</h2><div><a href="../01/"><span>01 · 소프트웨어 개발</span>주문 버튼 하나 만들었을 뿐인데</a><a href="../02/"><span>02 · 데이터 이해와 활용</span>주문은 백 건인데, 매출표는 왜 세 가지일까</a><a href="../03/"><span>03 · 시스템아키텍처 이해와 활용</span>서버 한 대로 시작했는데, 점심시간이 무서워졌다</a><a href="../04/"><span>04 · 정보보안 이해와 활용</span>로그인은 했는데, 남의 주문이 보였다</a><a href="../05-01/"><span>05-01 · IT 비즈니스</span>앱부터 만들지 않았더니, 진짜 고객이 보였다</a><a href="../05-02/"><span>05-02 · 윤리</span>편리하게 만들었는데, 누군가에게는 불리해졌다</a><a href="../06-01/"><span>06-01 · 프로젝트 관리</span>축제는 금요일인데, 기능은 아직 월요일에 있었다</a></div></section></main><dialog class="diagram-dialog" aria-labelledby="diagram-title"><div class="dialog-toolbar"><h2 id="diagram-title">그림</h2><button type="button" data-close>닫기</button></div><p>그림이 크면 가로·세로로 넘겨 읽으세요. Esc 키로 닫을 수 있습니다.</p><div class="zoom-scroll" tabindex="0" role="region" aria-label="확대한 그림"><img alt=""></div><a class="original-diagram" target="_blank" rel="noopener">원본 SVG 열기 ↗</a></dialog><footer class="article-footer">article · 한끼픽 실무 이야기</footer></body></html>

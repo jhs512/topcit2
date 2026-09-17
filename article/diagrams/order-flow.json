@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "한끼픽 · 주문 저장과 알림 분리",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    {
+      "id": "customer",
+      "type": "frontend",
+      "label": "고객 화면",
+      "pos": [
+        40,
+        60
+      ],
+      "size": [
+        150,
+        72
+      ]
+    },
+    {
+      "id": "order",
+      "type": "backend",
+      "label": "주문 서비스",
+      "pos": [
+        310,
+        60
+      ],
+      "size": [
+        160,
+        72
+      ]
+    },
+    {
+      "id": "primary",
+      "type": "database",
+      "label": "주문 DB",
+      "sublabel": "주문 + 발행 대기 기록",
+      "pos": [
+        600,
+        60
+      ],
+      "size": [
+        210,
+        82
+      ]
+    },
+    {
+      "id": "relay",
+      "type": "backend",
+      "label": "발행 작업자",
+      "pos": [
+        600,
+        280
+      ],
+      "size": [
+        210,
+        72
+      ]
+    },
+    {
+      "id": "events",
+      "type": "messagebus",
+      "label": "Kafka",
+      "sublabel": "주문 확정 이벤트",
+      "pos": [
+        310,
+        280
+      ],
+      "size": [
+        160,
+        72
+      ]
+    },
+    {
+      "id": "notify",
+      "type": "backend",
+      "label": "알림 서비스",
+      "pos": [
+        40,
+        280
+      ],
+      "size": [
+        150,
+        72
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "from": "customer",
+      "to": "order",
+      "label": "주문 요청"
+    },
+    {
+      "from": "order",
+      "to": "primary",
+      "label": "한 트랜잭션"
+    },
+    {
+      "from": "primary",
+      "to": "relay",
+      "label": "발행 대기 조회",
+      "labelDy": 24
+    },
+    {
+      "from": "relay",
+      "to": "events",
+      "label": "이벤트 발행"
+    },
+    {
+      "from": "events",
+      "to": "notify",
+      "label": "구독 후 처리"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "고객이 기다리는 범위",
+      "items": [
+        "주문이 DB에 저장되면 접수 결과를 응답합니다.",
+        "알림은 뒤에서 처리하며 중복 이벤트를 구분합니다."
+      ]
+    }
+  ]
+}
