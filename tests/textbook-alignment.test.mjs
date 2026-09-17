@@ -34,14 +34,11 @@ test('320 items have textbook concepts, body explanations, specific connections 
   }
 });
 
-test('the exact approved PDF viewer is allowed; incorrect pages, hosts and raw files are rejected', () => {
-  const source = read('reading/it-business-stories.md');
-  assert.doesNotThrow(() => parseCases(source));
-  for (const wrong of [
-    source.replace('?book=05&page=20', '?book=05&page=21'),
-    source.replace('/topcit/viewer/index.html?book=05&page=20', '/topcit2/viewer/index.html?book=05&page=20'),
-    source.replace('/topcit/viewer/index.html?book=05&page=20', '/topcit/sources/book.pdf'),
-  ]) assert.throws(() => parseCases(wrong));
+test('new textbook links are required; mismatched pages and legacy viewers are rejected', () => {
+ const source=read('reading/it-business-stories.md');
+ assert.doesNotThrow(()=>parseCases(source));
+ for(const path of ['/topcit2/textbook/05/#page-021','/topcit/viewer/index.html?book=05&page=20','/topcit2/viewer/index.html?book=05&page=20','/topcit/sources/book.pdf'])
+  assert.throws(()=>parseCases(source.replace('/topcit2/textbook/05/#page-020',path)));
 });
 
 test('mismatched cases now teach the linked concept and EVM uses a monetary comparison', () => {

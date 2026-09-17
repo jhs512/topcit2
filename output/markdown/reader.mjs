@@ -195,7 +195,7 @@ function search() {
   $('#search-status').textContent = matches.length ? `${matches.length}개 페이지에서 찾았습니다${matches.length > 50 ? ' · 앞 50개 표시' : ''}` : '검색 결과가 없습니다.';
   for (const page of matches.slice(0, 50)) {
     const a = document.createElement('a'); a.href = `#${page.node.id}`; a.className = 'result';
-    const label = document.createElement('small'); label.textContent = `PDF ${page.number}쪽${page.title ? ` · ${page.title}` : ''}`;
+    const label = document.createElement('small'); label.textContent = `${page.number}쪽${page.title ? ` · ${page.title}` : ''}`;
     const hit = page.text.toLocaleLowerCase().indexOf(q.toLocaleLowerCase());
     const start = Math.max(0, hit - 40), snippet = page.text.slice(start, start + 150);
     const excerpt = document.createElement('span'); excerpt.textContent = `${start ? '…' : ''}${snippet}…`;
@@ -256,7 +256,7 @@ async function load() {
       applyBookSpeechPolicy(section, book, Number(pageId));
       const label = document.createElement('div'); label.className = 'page-label';
       label.dataset.ttsExclude = '';
-      const a = document.createElement('a'); a.href = `#${section.id}`; a.textContent = `PDF ${Number(pageId)} / ${totalPages}`; label.append(a); section.prepend(label);
+      const a = document.createElement('a'); a.href = `#${section.id}`; a.textContent = `${Number(pageId)} / ${totalPages}`; label.append(a); section.prepend(label);
       let index = 0;
       for (const node of $$('h1,h2,h3,h4,h5,h6', section)) {
         node.id = `p${pageId}-h${++index}`;

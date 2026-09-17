@@ -8,7 +8,7 @@ validateTextbookAlignment();
 
 const root = new URL('../practical/', import.meta.url);
 const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const note = '교재 개념의 뜻을 설명하고, 가상 업무에서 언제 왜 쓰는지 풀어 쓴 자체 해설입니다. 각 항목의 관련 교재 내용에서 단원과 PDF 페이지를 확인할 수 있습니다. 20개 노트는 교재 전체 요약이나 시험 중요도 순위가 아니며, 주제 끝의 추가 학습 내용도 함께 확인하세요.';
+const note = '교재 개념의 뜻을 설명하고, 가상 업무에서 언제 왜 쓰는지 풀어 쓴 자체 해설입니다. 각 항목의 관련 교재 내용에서 단원과 교재 페이지를 확인할 수 있습니다. 20개 노트는 교재 전체 요약이나 시험 중요도 순위가 아니며, 주제 끝의 추가 학습 내용도 함께 확인하세요.';
 const document = (title, prefix, body) => `<!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(title)} · 핵심노트 · TOPCIT</title><link rel="stylesheet" href="${prefix}practice/styles.css"><link rel="stylesheet" href="${prefix}practical/styles.css"><link rel="stylesheet" href="${prefix}shared/site-navigation.css"><script type="module" src="${prefix}shared/site-navigation.mjs"></script></head><body><a class="skip" href="#main">본문으로 바로가기</a><main id="main">${body}</main></body></html>\n`;
 

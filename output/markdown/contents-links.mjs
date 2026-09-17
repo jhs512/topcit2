@@ -23,7 +23,7 @@ export function linkContents(pages, book) {
           const link = document.createElement('a');
           link.href = href;
           link.className = 'contents-link';
-          link.setAttribute('aria-label', `${title}, 교재 ${printed}쪽 · PDF ${target.number}쪽으로 이동`);
+          link.setAttribute('aria-label', `${title}, 목차 표기 ${printed}쪽 · 교재 ${target.number}쪽으로 이동`);
           link.append(...cell.childNodes);
           cell.append(link);
         }

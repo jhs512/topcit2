@@ -8,7 +8,7 @@
 
 여기에는 그 판단이 필요했던 열한 번의 순간을 담았습니다. **FBI·아마존·TSB·허쉬를 다룬 네 편은 1차 출처에 근거한 실제 사례이며, 나머지 일곱 편은 가상 이야기입니다.** 각 편 앞에 유형을 표시했습니다. 실제 사례에는 창작 대화를 넣지 않았으며, 확인된 사실과 수업용 해석을 구분했습니다. 가상 편의 회사·인물·대화·수치는 설명을 위한 설정입니다. 교훈 한 문장은 교재 개념을 풀어 쓴 수업용 판단이며 원문 인용이 아닙니다.
 
-이 자료는 원본 `output/markdown/IT비즈니스와윤리.md` → [기준 기획](it-business-stories-plan.md) → 이 산문의 순서로 작성했습니다. 각 편의 BIZ 번호는 기획의 같은 항목에 대응합니다. 참고 링크의 쪽수는 PDF 페이지입니다.
+이 자료는 원본 `output/markdown/IT비즈니스와윤리.md` → [기준 기획](it-business-stories-plan.md) → 이 산문의 순서로 작성했습니다. 각 편의 BIZ 번호는 기획의 같은 항목에 대응합니다. 참고 링크의 쪽수는 교재 페이지입니다.
 
 ## BIZ-11 · 큰돈을 들이고도 새 시스템을 쓰지 못한 FBI
 
@@ -18,7 +18,7 @@
 ### 이 글에서 배우는 교훈
 
 추상적인 문장: IT 시스템을 도입하기 전에 어떤 업무 문제를 해결할지 정하고, 담당자의 작업 순서와 필요한 기능을 구체적으로 정해야 한다.
-근거: [I.01 비즈니스와 IT의 연계 · PDF 20쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=20)
+근거: [I.01 비즈니스와 IT의 연계 · 20쪽](https://jhs512.github.io/topcit2/textbook/05/#page-020)
 구체적인 문장: 업무를 편하게 만들겠다는 목표만으로 개발을 맡기면, 요구사항과 검증 기준이 부족해 큰돈을 쓰고도 현장에서 사용할 시스템을 얻지 못할 수 있다.
 
 ### 본문
@@ -43,7 +43,7 @@ FBI 사례의 교훈은 전산화 자체를 피하라는 것이 아니다. 개�
 
 1. [FBI 국장의 의회 증언: FBI's Virtual Case File System, 2005년 2월 3일](https://archives.fbi.gov/archives/news/testimony/fbis-virtual-case-file-system)
 2. [미국 법무부 감찰관실: Sentinel 사전 조달계획 감사 요약, 2006년 3월](https://oig.justice.gov/archives/reports/FBI/a0614/exec.htm)
-3. [교재 05: 비즈니스와 IT의 연계 · PDF 20쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=20)
+3. [교재 05: 비즈니스와 IT의 연계 · 20쪽](https://jhs512.github.io/topcit2/textbook/05/#page-020)
 
 
 ## BIZ-01 · 자기 매장에 경쟁자를 들인 아마존
@@ -54,7 +54,7 @@ FBI 사례의 교훈은 전산화 자체를 피하라는 것이 아니다. 개�
 ### 이 글에서 배우는 교훈
 
 추상적인 문장: 비즈니스와 IT를 전략적으로 연계한다는 것은 회사가 고객에게 제공하려는 서비스에 맞춰 업무 방식과 시스템 기능, 운영 방법을 함께 정하는 것이다.
-근거: [I.01 비즈니스와 IT의 연계 · PDF 20쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=20)
+근거: [I.01 비즈니스와 IT의 연계 · 20쪽](https://jhs512.github.io/topcit2/textbook/05/#page-020)
 구체적인 문장: 아마존이 자사 상품을 파는 기존 방식에만 화면을 맞췄다면, 고객이 같은 화면에서 다른 판매자의 가격과 상품을 비교할 기회는 줄어들었을 것이다.
 
 ### 들어가기 전에
@@ -88,7 +88,7 @@ FBI 사례의 교훈은 전산화 자체를 피하라는 것이 아니다. 개�
 1. [2001년 공식 발표](https://press.aboutamazon.com/2001/3/amazon-marketplace-a-winner-for-customers-sellers-and-industry-new-service-grows-over-200-percent-in-first-four-months)
 2. [2016년 주주서한의 회고](https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders)
 3. [초기 성과 발표](https://press.aboutamazon.com/2001/3/amazon-marketplace-a-winner-for-customers-sellers-and-industry-new-service-grows-over-200-percent-in-first-four-months)
-4. [교재: 비즈니스와 IT의 연계 · PDF 20쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=20)
+4. [교재: 비즈니스와 IT의 연계 · 20쪽](https://jhs512.github.io/topcit2/textbook/05/#page-020)
 
 ## BIZ-02 · 전국 배송 버튼을 지운 날
 
@@ -98,7 +98,7 @@ FBI 사례의 교훈은 전산화 자체를 피하라는 것이 아니다. 개�
 ### 이 글에서 배우는 교훈
 
 추상적인 문장: 전략의 방향은 외부 환경의 기회·위협과 내부의 강점·약점을 함께 분석하여 정해야 한다.
-근거: [II.03 SWOT 분석 · PDF 38쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=38)
+근거: [II.03 SWOT 분석 · 38쪽](https://jhs512.github.io/topcit2/textbook/05/#page-038)
 구체적인 문장: 온라인 주문이 늘어도 장거리 포장·배송에 드는 비용이 판매로 남기는 돈보다 크다면, 이 업체는 전국 판매를 늘릴수록 손해를 볼 수 있다.
 
 ### 본문
@@ -129,8 +129,8 @@ SWOT은 내부의 강점·약점과 외부의 기회·위협을 연결하는 분
 
 ### 참고
 
-1. [전략수립: PDF 31–34쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=31)
-2. [환경분석: PDF 35–38쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=35)
+1. [전략수립: PDF 31–34쪽](https://jhs512.github.io/topcit2/textbook/05/#page-031)
+2. [환경분석: PDF 35–38쪽](https://jhs512.github.io/topcit2/textbook/05/#page-035)
 
 ## BIZ-03 · 개발팀장에게 온 세 장의 승인서
 
@@ -140,7 +140,7 @@ SWOT은 내부의 강점·약점과 외부의 기회·위협을 연결하는 분
 ### 이 글에서 배우는 교훈
 
 추상적인 문장: IT 거버넌스는 회사 목표에 맞춰 어떤 IT 과제에 예산과 인력을 쓸지, 누가 최종 결정하고 결과와 위험을 확인할지 정하는 체계다.
-근거: [III.02 IT 거버넌스의 개념 · PDF 42쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=42)
+근거: [III.02 IT 거버넌스의 개념 · 42쪽](https://jhs512.github.io/topcit2/textbook/05/#page-042)
 구체적인 문장: 세 부서가 같은 개발자에게 각자 자기 일을 먼저 하라고 지시하면 작업 순서가 계속 바뀌므로, 부서 간 우선순위를 최종 결정할 사람이 필요하다.
 
 ### 본문
@@ -169,7 +169,7 @@ IT 거버넌스는 IT 자원을 기업 목표에 연결하고 의사결정 권�
 
 ### 참고
 
-1. [IT 거버넌스: PDF 42–45쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=42)
+1. [IT 거버넌스: PDF 42–45쪽](https://jhs512.github.io/topcit2/textbook/05/#page-042)
 
 ## BIZ-04 · 새 건물에 옮겨 갈 오래된 습관
 
@@ -179,7 +179,7 @@ IT 거버넌스는 IT 자원을 기업 목표에 연결하고 의사결정 권�
 ### 이 글에서 배우는 교훈
 
 추상적인 문장: ISP는 경영 목표와 현재 업무·시스템의 분석을 바탕으로 미래의 업무와 정보시스템, 그 목표에 도달할 이행계획을 정하는 것이다.
-근거: [III.04 ISP 구축절차 · PDF 48쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=48)
+근거: [III.04 ISP 구축절차 · 48쪽](https://jhs512.github.io/topcit2/textbook/05/#page-048)
 구체적인 문장: 목표 시스템의 선행조건을 빠뜨린 정보화 계획은, 장비를 도입하고도 업무를 시작하지 못하게 만들 수 있다.
 
 ### 본문
@@ -208,7 +208,7 @@ IT 거버넌스는 IT 자원을 기업 목표에 연결하고 의사결정 권�
 
 ### 참고
 
-1. [ISP: PDF 47–49쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=47)
+1. [ISP: PDF 47–49쪽](https://jhs512.github.io/topcit2/textbook/05/#page-047)
 
 ## BIZ-05 · 맡긴 것은 시스템이었고, 남은 것은 책임이었다
 
@@ -218,7 +218,7 @@ IT 거버넌스는 IT 자원을 기업 목표에 연결하고 의사결정 권�
 ### 이 글에서 배우는 교훈
 
 추상적인 문장: IT 아웃소싱은 위탁업무에 맞는 업체를 선정하고, 합의한 서비스 수준을 기준으로 이행과 성과를 지속적으로 관리해야 한다.
-근거: [IV.04 아웃소싱 도입 프로세스·고려사항 · PDF 58쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=58)
+근거: [IV.04 아웃소싱 도입 프로세스·고려사항 · 58쪽](https://jhs512.github.io/topcit2/textbook/05/#page-058)
 구체적인 문장: 외부 업체의 실적을 우리 업무에 대한 수행 능력으로 간주하면, 위탁한 일의 위험을 제대로 판단할 수 없다.
 
 ### 본문
@@ -247,7 +247,7 @@ IT 거버넌스는 IT 자원을 기업 목표에 연결하고 의사결정 권�
 2. [FCA 최종 통지 4.229–4.235](https://www.fca.org.uk/publication/final-notices/tsb-bank-plc-2022.pdf#page=72)
 3. [FCA 최종 통지 2.9 및 4.235](https://www.fca.org.uk/publication/final-notices/tsb-bank-plc-2022.pdf#page=3)
 4. [2022년 제재 발표](https://www.fca.org.uk/news/press-releases/tsb-fined-48m-operational-resilience-failings)
-5. [교재: IT 아웃소싱 · PDF 57–59쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=57)
+5. [교재: IT 아웃소싱 · PDF 57–59쪽](https://jhs512.github.io/topcit2/textbook/05/#page-057)
 
 ## BIZ-06 · 도장 다섯 개가 화면으로 들어갔다
 
@@ -257,7 +257,7 @@ IT 거버넌스는 IT 자원을 기업 목표에 연결하고 의사결정 권�
 ### 이 글에서 배우는 교훈
 
 추상적인 문장: 프로세스 혁신은 업무의 목적과 흐름을 검토해 불필요한 요소를 제거하고, 개선한 업무를 정보시스템으로 실현하는 것이다.
-근거: [V.05 PI의 수행절차 · PDF 71쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=71)
+근거: [V.05 PI의 수행절차 · 71쪽](https://jhs512.github.io/topcit2/textbook/05/#page-071)
 구체적인 문장: 업무 절차의 필요성을 검토하지 않고 전산화하면, 없앨 수 있었던 대기와 중복까지 시스템의 규칙으로 굳어진다.
 
 ### 본문
@@ -286,8 +286,8 @@ BPR은 성과를 크게 개선하기 위해 업무 프로세스를 근본적으�
 
 ### 참고
 
-1. [사람과 프로세스: PDF 63–66쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=63)
-2. [BPR·PI: PDF 69–72쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=69)
+1. [사람과 프로세스: PDF 63–66쪽](https://jhs512.github.io/topcit2/textbook/05/#page-063)
+2. [BPR·PI: PDF 69–72쪽](https://jhs512.github.io/topcit2/textbook/05/#page-069)
 
 ## BIZ-07 · 허쉬의 전산화는 출하장에서 시험받았다
 
@@ -297,7 +297,7 @@ BPR은 성과를 크게 개선하기 위해 업무 프로세스를 근본적으�
 ### 이 글에서 배우는 교훈
 
 추상적인 문장: ERP는 영업·재고·생산·회계 등 여러 부서가 같은 거래 정보를 사용해 업무를 처리하도록 돕는 시스템이다.
-근거: [VI.01 ERP의 구성·구축절차 · PDF 83쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=83)
+근거: [VI.01 ERP의 구성·구축절차 · 83쪽](https://jhs512.github.io/topcit2/textbook/05/#page-083)
 구체적인 문장: ERP를 도입한 회사는 고객 주문이 재고 확인과 창고 작업을 거쳐 실제 출하까지 처리되는지 확인해야 한다.
 
 ### 본문
@@ -322,11 +322,11 @@ ERP를 도입하면 부서 사이의 정보를 연결할 수 있다. 그 연결�
 
 교재도 ERP 구축을 전사 업무 혁신으로 설명하며, 유기적인 업무 연계와 통합시험·교육·시범운영을 다룬다. [5](#BIZ-07-ref-5)
 
-1. [1999년 보고서, PDF 4쪽](https://www.annualreports.com/HostedData/AnnualReportArchive/h/NYSE_HSY_1999.pdf#page=4)
-2. [1999년 보고서, Operating Results · PDF 1쪽](https://www.annualreports.com/HostedData/AnnualReportArchive/h/NYSE_HSY_1999.pdf#page=1)
+1. [1999년 보고서, 4쪽](https://www.annualreports.com/HostedData/AnnualReportArchive/h/NYSE_HSY_1999.pdf#page=4)
+2. [1999년 보고서, Operating Results · 1쪽](https://www.annualreports.com/HostedData/AnnualReportArchive/h/NYSE_HSY_1999.pdf#page=1)
 3. [2000년 보고서, Enhanced Distribution Capability](https://www.sec.gov/Archives/edgar/data/47111/000105394901500005/d70393.htm)
 4. [2000년 보고서, Systems Issues 및 Enhanced Distribution Capability](https://www.sec.gov/Archives/edgar/data/47111/000105394901500005/d70393.htm)
-5. [교재: ERP · PDF 82–84쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=82)
+5. [교재: ERP · PDF 82–84쪽](https://jhs512.github.io/topcit2/textbook/05/#page-082)
 
 ## BIZ-08 · 열두 상자 뒤에 숨은 서른 상자
 
@@ -336,7 +336,7 @@ ERP를 도입하면 부서 사이의 정보를 연결할 수 있다. 그 연결�
 ### 이 글에서 배우는 교훈
 
 추상적인 문장: SCM은 공급망 참여자들이 정보를 공유하고 협력하여, 개별 기업을 넘어 공급망 전체의 불확실성과 낭비를 줄이는 것이다.
-근거: [VI.01 SCM의 개념·기능 · PDF 86쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=86)
+근거: [VI.01 SCM의 개념·기능 · 86쪽](https://jhs512.github.io/topcit2/textbook/05/#page-086)
 구체적인 문장: 매장·도매상·공장이 실제 판매량과 재고를 공유하지 않고 각각 여유 물량을 더하면, 소비자가 살 양보다 많이 생산해 재고가 남을 수 있다.
 
 ### 본문
@@ -365,7 +365,7 @@ ERP를 도입하면 부서 사이의 정보를 연결할 수 있다. 그 연결�
 
 ### 참고
 
-1. [SCM과 채찍효과: PDF 85–87쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=85)
+1. [SCM과 채찍효과: PDF 85–87쪽](https://jhs512.github.io/topcit2/textbook/05/#page-085)
 
 ## BIZ-09 · 돌아오라는 쿠폰이 도착했다
 
@@ -375,7 +375,7 @@ ERP를 도입하면 부서 사이의 정보를 연결할 수 있다. 그 연결�
 ### 이 글에서 배우는 교훈
 
 추상적인 문장: CRM은 고객 정보와 접촉 이력을 통합하여, 여러 부서와 채널이 고객에게 일관된 서비스를 제공하도록 해야 한다.
-근거: [VI.01 CRM 분류 비교·고객 접점 · PDF 89쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=89)
+근거: [VI.01 CRM 분류 비교·고객 접점 · 89쪽](https://jhs512.github.io/topcit2/textbook/05/#page-089)
 구체적인 문장: 고객 정보를 부서마다 따로 관리하고 공유하지 않으면, 각 부서는 자기 업무를 정상적으로 처리해도 고객은 서로 모순되는 안내나 서비스를 받을 수 있다.
 
 ### 본문
@@ -404,7 +404,7 @@ ERP를 도입하면 부서 사이의 정보를 연결할 수 있다. 그 연결�
 
 ### 참고
 
-1. [CRM: PDF 87–90쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=87)
+1. [CRM: PDF 87–90쪽](https://jhs512.github.io/topcit2/textbook/05/#page-087)
 
 ## BIZ-10 · 통화는 짧아졌고, 기다림은 길어졌다
 
@@ -414,7 +414,7 @@ ERP를 도입하면 부서 사이의 정보를 연결할 수 있다. 그 연결�
 ### 이 글에서 배우는 교훈
 
 추상적인 문장: KPI는 목표 달성 여부를 확인하는 핵심 성과지표이며, 직원이 그 수치를 높이려고 하는 행동이 회사의 목표에도 도움이 되는지 검토해야 한다.
-근거: [VII.05 KPI의 개요·수립 절차 · PDF 111쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=111)
+근거: [VII.05 KPI의 개요·수립 절차 · 111쪽](https://jhs512.github.io/topcit2/textbook/05/#page-111)
 구체적인 문장: 상담원이 통화 시간을 줄이려고 해결되지 않은 문의를 넘기면 고객이 다시 전화하므로, 통화가 짧아져도 전체 대기 시간은 길어질 수 있다.
 
 ### 본문
@@ -451,9 +451,9 @@ KPI는 구성원의 행동을 바꾸므로 회사 목표에 맞는지 검증해�
 
 ### 참고
 
-1. [KPI · PDF 111쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=111)
-2. [BSC · PDF 108–109쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=108)
-3. [PDCA · PDF 25쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=25)
+1. [KPI · 111쪽](https://jhs512.github.io/topcit2/textbook/05/#page-111)
+2. [BSC · PDF 108–109쪽](https://jhs512.github.io/topcit2/textbook/05/#page-108)
+3. [PDCA · 25쪽](https://jhs512.github.io/topcit2/textbook/05/#page-025)
 
 ## 마무리
 

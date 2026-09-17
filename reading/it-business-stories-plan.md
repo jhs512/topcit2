@@ -27,17 +27,17 @@
 
 교재는 2020년 3판이다. 목차(PDF 8–15쪽), 각 장의 학습목표(PDF 16·29·40·51·60·78·105·114·126·165·175·191·203쪽)를 읽어 전체 범위를 살핀 뒤, 선정 주제의 본문을 읽었다. 특히 PDF 18–27, 31–38, 42–49, 53–59, 63–72, 80–90, 92–103, 107–113쪽에서 아래 문장의 근거와 인접 설명을 확인했다. 후반 각 장의 모든 본문을 정독한 것은 아니다.
 
-아래 쪽수는 **인쇄 쪽수가 아닌 PDF 페이지**다. 교재 Markdown의 `<!-- PDF page: ... -->` 표식과 해당 본문을 확인했다. 도식의 생략된 선이나 배치는 근거로 쓰지 않았으며 원본 PDF를 추가 렌더링하지 않았다. 본문만으로 확정하기 어려운 도식 관계를 앞으로 사용할 때는 HTML 또는 원본 PDF와 대조한다.
+아래 쪽수는 **인쇄 쪽수가 아닌 교재 페이지**다. 교재 Markdown의 `<!-- PDF page: ... -->` 표식과 해당 본문을 확인했다. 도식의 생략된 선이나 배치는 근거로 쓰지 않았으며 원본 PDF를 추가 렌더링하지 않았다. 본문만으로 확정하기 어려운 도식 관계를 앞으로 사용할 때는 HTML 또는 원본 PDF와 대조한다.
 
 ## 4. ID별 교훈과 개정 기준
 
-각 산문의 ‘이 글에서 배우는 교훈’에는 아래 ‘추상적인 문장’과 ‘구체적인 문장’을 모두 그대로 쓴다. 추상적인 문장은 교재 개념을 풀어 쓴 원리이며 원문 인용이 아니다. 구체적인 문장은 해당 사례에 적용해 도출한 수업용 해석이다. 원리의 근거 링크는 확인한 교재 단원·PDF 페이지를 가리킨다.
+각 산문의 ‘이 글에서 배우는 교훈’에는 아래 ‘추상적인 문장’과 ‘구체적인 문장’을 모두 그대로 쓴다. 추상적인 문장은 교재 개념을 풀어 쓴 원리이며 원문 인용이 아니다. 구체적인 문장은 해당 사례에 적용해 도출한 수업용 해석이다. 원리의 근거 링크는 확인한 교재 단원·교재 페이지를 가리킨다.
 
 ### BIZ-11 · 큰돈을 들이고도 새 시스템을 쓰지 못한 FBI
 
 - **배치:** 첫 사례. 기존 BIZ-01–10의 ID와 본문은 유지한다.
 - **추상적인 문장:** IT 시스템을 도입하기 전에 어떤 업무 문제를 해결할지 정하고, 담당자의 작업 순서와 필요한 기능을 구체적으로 정해야 한다.
-- **원리 근거:** [I.01 비즈니스와 IT의 연계 · PDF 20쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=20)
+- **원리 근거:** [I.01 비즈니스와 IT의 연계 · 20쪽](https://jhs512.github.io/topcit2/textbook/05/#page-020)
 - **구체적인 문장:** 업무를 편하게 만들겠다는 목표만으로 개발을 맡기면, 요구사항과 검증 기준이 부족해 큰돈을 쓰고도 현장에서 사용할 시스템을 얻지 못할 수 있다.
 - **유형·출처:** 실제 사례. FBI 국장의 2005년 2월 3일 VCF 의회 증언과 법무부 감찰관실의 2006년 3월 Sentinel 감사 요약. 외부 원문 링크는 산문의 참고에 둔다.
 - **사건과 해석:** 최초 계약 당시 요구사항 미완성, 관리 역량과 연속성 부족, 사용하기 어려운 납품 결과, 2005년 3월 개발 종료는 기록으로 확인했다. 업무와 수용 기준을 발주 조직이 구체화해야 한다는 결론은 수업용 해석이다.
@@ -46,10 +46,10 @@
 ### BIZ-01 · 자기 매장에 경쟁자를 들인 아마존
 
 - **추상적인 문장:** 비즈니스와 IT를 전략적으로 연계한다는 것은 회사가 고객에게 제공하려는 서비스에 맞춰 업무 방식과 시스템 기능, 운영 방법을 함께 정하는 것이다.
-- **원리 근거:** [I.01 비즈니스와 IT의 연계 · PDF 20쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=20)
+- **원리 근거:** [I.01 비즈니스와 IT의 연계 · 20쪽](https://jhs512.github.io/topcit2/textbook/05/#page-020)
 - **구체적인 문장:** 아마존이 자사 상품을 파는 기존 방식에만 화면을 맞췄다면, 고객이 같은 화면에서 다른 판매자의 가격과 상품을 비교할 기회는 줄어들었을 것이다.
 - **개념·선정 이유:** 비즈니스–IT 전략 연계. 전략 연계를 기존 업무의 전산화와 구분한다.
-- **교재 근거:** [비즈니스와 IT의 연계 · PDF 20쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=20)
+- **교재 근거:** [비즈니스와 IT의 연계 · 20쪽](https://jhs512.github.io/topcit2/textbook/05/#page-020)
 - **유형·사례 출처:** 실제 성공 사례 · Amazon Marketplace(2000–2001), 2016년 주주서한의 회고. A1·A2
 - **잘못된 판단 또는 선택의 갈등:** 기존 직접판매 보호를 우선하면 고객 선택 확대와 충돌할 수 있다. 이는 선택의 갈등에 대한 해석이며 당시 모든 반대자의 동기를 단정하지 않는다.
 - **인과와 결과:** 외부 판매자의 상품을 자사 상품과 같은 상세페이지에 배치 → 고객의 구매 선택 확대. 초기 거래 증가가 발표됐으나 배치 하나의 인과 효과는 분리되지 않았다.
@@ -67,10 +67,10 @@
 ### BIZ-02 · 전국 배송 버튼을 지운 날
 
 - **추상적인 문장:** 전략의 방향은 외부 환경의 기회·위협과 내부의 강점·약점을 함께 분석하여 정해야 한다.
-- **원리 근거:** [II.03 SWOT 분석 · PDF 38쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=38)
+- **원리 근거:** [II.03 SWOT 분석 · 38쪽](https://jhs512.github.io/topcit2/textbook/05/#page-038)
 - **구체적인 문장:** 온라인 주문이 늘어도 장거리 포장·배송에 드는 비용이 판매로 남기는 돈보다 크다면, 이 업체는 전국 판매를 늘릴수록 손해를 볼 수 있다.
 - **개념·선정 이유:** 환경분석·SWOT·전략수립. 외부 시장 성장과 우리 회사의 실행 가능성을 구분한다.
-- **교재 근거:** [전략수립 · PDF 31쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=31) · [환경분석 · PDF 35쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=35) · [SWOT · PDF 38쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=38)
+- **교재 근거:** [전략수립 · 31쪽](https://jhs512.github.io/topcit2/textbook/05/#page-031) · [환경분석 · 35쪽](https://jhs512.github.io/topcit2/textbook/05/#page-035) · [SWOT · 38쪽](https://jhs512.github.io/topcit2/textbook/05/#page-038)
 - **유형·사례 출처:** 가상 이야기. 해당 없음
 - **잘못된 판단 또는 선택의 갈등:** 온라인 시장 성장과 경쟁사의 진출을 자사 전국 진출의 충분한 근거로 삼았다.
 - **인과와 결과:** 전국몰을 기획 → 장거리 포장·운송 견적을 반영하자 예상 이익 소멸 → 기존 SWOT의 기회 판단을 수정.
@@ -80,10 +80,10 @@
 ### BIZ-03 · 개발팀장에게 온 세 장의 승인서
 
 - **추상적인 문장:** IT 거버넌스는 회사 목표에 맞춰 어떤 IT 과제에 예산과 인력을 쓸지, 누가 최종 결정하고 결과와 위험을 확인할지 정하는 체계다.
-- **원리 근거:** [III.02 IT 거버넌스의 개념 · PDF 42쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=42)
+- **원리 근거:** [III.02 IT 거버넌스의 개념 · 42쪽](https://jhs512.github.io/topcit2/textbook/05/#page-042)
 - **구체적인 문장:** 세 부서가 같은 개발자에게 각자 자기 일을 먼저 하라고 지시하면 작업 순서가 계속 바뀌므로, 부서 간 우선순위를 최종 결정할 사람이 필요하다.
 - **개념·선정 이유:** IT 거버넌스. 요구 승인과 전사 의사결정의 차이를 드러낸다.
-- **교재 근거:** [IT 거버넌스 · PDF 42쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=42)
+- **교재 근거:** [IT 거버넌스 · 42쪽](https://jhs512.github.io/topcit2/textbook/05/#page-042)
 - **유형·사례 출처:** 가상 이야기. 해당 없음
 - **잘못된 판단 또는 선택의 갈등:** 각 본부의 승인으로 공동 개발 인력의 배분까지 결정됐다고 보았다.
 - **인과와 결과:** 동일 예약 기능에 상충하는 변경 요구 → 결정 반복 번복·진행 작업 수정 → 세 기능이 모두 미완성.
@@ -93,10 +93,10 @@
 ### BIZ-04 · 새 건물에 옮겨 갈 오래된 습관
 
 - **추상적인 문장:** ISP는 경영 목표와 현재 업무·시스템의 분석을 바탕으로 미래의 업무와 정보시스템, 그 목표에 도달할 이행계획을 정하는 것이다.
-- **원리 근거:** [III.04 ISP 구축절차 · PDF 48쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=48)
+- **원리 근거:** [III.04 ISP 구축절차 · 48쪽](https://jhs512.github.io/topcit2/textbook/05/#page-048)
 - **구체적인 문장:** 목표 시스템의 선행조건을 빠뜨린 정보화 계획은, 장비를 도입하고도 업무를 시작하지 못하게 만들 수 있다.
 - **개념·선정 이유:** 정보화 전략계획(ISP). 구매 목록과 현행→목표→이행계획의 차이를 이해한다.
-- **교재 근거:** [ISP 개요 · PDF 47쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=47) · [구축절차 · PDF 48쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=48) · [주요 산출물 · PDF 49쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=49)
+- **교재 근거:** [ISP 개요 · 47쪽](https://jhs512.github.io/topcit2/textbook/05/#page-047) · [구축절차 · 48쪽](https://jhs512.github.io/topcit2/textbook/05/#page-048) · [주요 산출물 · 49쪽](https://jhs512.github.io/topcit2/textbook/05/#page-049)
 - **유형·사례 출처:** 가상 이야기. 해당 없음
 - **잘못된 판단 또는 선택의 갈등:** 자동 분류기 설치를 업무 가동 준비와 같게 보고 기준정보·연계·담당자 정리를 누락.
 - **인과와 결과:** 실제 주문으로 도입 전 시연 → 단위 불명확으로 자동 분류 불가 → 필요한 선행 작업 발견.
@@ -106,10 +106,10 @@
 ### BIZ-05 · 맡긴 것은 시스템이었고, 남은 것은 책임이었다
 
 - **추상적인 문장:** IT 아웃소싱은 위탁업무에 맞는 업체를 선정하고, 합의한 서비스 수준을 기준으로 이행과 성과를 지속적으로 관리해야 한다.
-- **원리 근거:** [IV.04 아웃소싱 도입 프로세스·고려사항 · PDF 58쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=58)
+- **원리 근거:** [IV.04 아웃소싱 도입 프로세스·고려사항 · 58쪽](https://jhs512.github.io/topcit2/textbook/05/#page-058)
 - **구체적인 문장:** 외부 업체의 실적을 우리 업무에 대한 수행 능력으로 간주하면, 위탁한 일의 위험을 제대로 판단할 수 없다.
 - **개념·선정 이유:** IT 아웃소싱·공급자 역량 평가·지속적 관리. 아웃소싱의 전문성 활용과 발주자의 검증·관리 책임을 구분한다.
-- **교재 근거:** [아웃소싱 · PDF 57쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=57) · [도입 프로세스 · PDF 58쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=58) · [관리 고려사항 · PDF 59쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=59)
+- **교재 근거:** [아웃소싱 · 57쪽](https://jhs512.github.io/topcit2/textbook/05/#page-057) · [도입 프로세스 · 58쪽](https://jhs512.github.io/topcit2/textbook/05/#page-058) · [관리 고려사항 · 59쪽](https://jhs512.github.io/topcit2/textbook/05/#page-059)
 - **유형·사례 출처:** 실제 사례 · TSB(2018), FCA 조사결과(2022). T1·T2
 - **잘못된 판단 또는 선택의 갈등:** FCA는 과거 경험을 고려했지만 해당 플랫폼 제공·운영 능력에 대한 공식 평가가 충분하지 않았다고 판단했다.
 - **인과와 결과:** 구체적 수행 능력 평가의 공백 → 외주 위험이 충분히 파악되지 않은 채 전환 → 기술·계획·시험 등 복합 실패와 은행 서비스 장애.
@@ -119,10 +119,10 @@
 ### BIZ-06 · 도장 다섯 개가 화면으로 들어갔다
 
 - **추상적인 문장:** 프로세스 혁신은 업무의 목적과 흐름을 검토해 불필요한 요소를 제거하고, 개선한 업무를 정보시스템으로 실현하는 것이다.
-- **원리 근거:** [V.05 PI의 수행절차 · PDF 71쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=71)
+- **원리 근거:** [V.05 PI의 수행절차 · 71쪽](https://jhs512.github.io/topcit2/textbook/05/#page-071)
 - **구체적인 문장:** 업무 절차의 필요성을 검토하지 않고 전산화하면, 없앨 수 있었던 대기와 중복까지 시스템의 규칙으로 굳어진다.
 - **개념·선정 이유:** BPR·PI·변화관리. 전자화 효과와 업무 재설계 효과를 구분한다.
-- **교재 근거:** [사람·조직·프로세스 · PDF 63쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=63) · [BPR · PDF 69쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=69) · [PI · PDF 70쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=70) · [변화관리 · PDF 72쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=72)
+- **교재 근거:** [사람·조직·프로세스 · 63쪽](https://jhs512.github.io/topcit2/textbook/05/#page-063) · [BPR · 69쪽](https://jhs512.github.io/topcit2/textbook/05/#page-069) · [PI · 70쪽](https://jhs512.github.io/topcit2/textbook/05/#page-070) · [변화관리 · 72쪽](https://jhs512.github.io/topcit2/textbook/05/#page-072)
 - **유형·사례 출처:** 가상 이야기. 해당 없음
 - **잘못된 판단 또는 선택의 갈등:** 기존 다섯 확인의 순서를 그대로 유지하면서 전자화만으로 환불 대기를 줄일 수 있다고 보았다.
 - **인과와 결과:** 이동은 감소 → 주간 품질 분석 완료가 모든 환불의 선행조건으로 고정 → 통상 반품도 불필요하게 대기.
@@ -132,10 +132,10 @@
 ### BIZ-07 · 허쉬의 전산화는 출하장에서 시험받았다
 
 - **추상적인 문장:** ERP는 영업·재고·생산·회계 등 여러 부서가 같은 거래 정보를 사용해 업무를 처리하도록 돕는 시스템이다.
-- **원리 근거:** [VI.01 ERP의 구성·구축절차 · PDF 83쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=83)
+- **원리 근거:** [VI.01 ERP의 구성·구축절차 · 83쪽](https://jhs512.github.io/topcit2/textbook/05/#page-083)
 - **구체적인 문장:** ERP를 도입한 회사는 고객 주문이 재고 확인과 창고 작업을 거쳐 실제 출하까지 처리되는지 확인해야 한다.
 - **개념·선정 이유:** ERP·전사 업무 통합. ERP 통합을 전사 업무 전환으로 이해한다.
-- **교재 근거:** [ERP 정의 · PDF 82쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=82) · [ERP 구성·구축 · PDF 83쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=83) · [구축 프로세스 · PDF 84쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=84)
+- **교재 근거:** [ERP 정의 · 82쪽](https://jhs512.github.io/topcit2/textbook/05/#page-082) · [ERP 구성·구축 · 83쪽](https://jhs512.github.io/topcit2/textbook/05/#page-083) · [구축 프로세스 · 84쪽](https://jhs512.github.io/topcit2/textbook/05/#page-084)
 - **유형·사례 출처:** 실제 사례 · Hershey(1999–2000). H1·H2
 - **잘못된 판단 또는 선택의 갈등:** 부서별 기능 가동만을 성공 기준으로 삼는 판단의 한계를 검토한다. 허쉬가 실제로 그 기준만 사용했다고 공시가 입증하는 것은 아니다.
 - **인과와 결과:** 통합 시스템·업무 전환 뒤 고객서비스·창고·출하 곤란 → 출하 감소. 하역 공간 부족도 악화 요인. 이후 시스템 보완·시설 개선과 서비스 회복.
@@ -145,10 +145,10 @@
 ### BIZ-08 · 열두 상자 뒤에 숨은 서른 상자
 
 - **추상적인 문장:** SCM은 공급망 참여자들이 정보를 공유하고 협력하여, 개별 기업을 넘어 공급망 전체의 불확실성과 낭비를 줄이는 것이다.
-- **원리 근거:** [VI.01 SCM의 개념·기능 · PDF 86쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=86)
+- **원리 근거:** [VI.01 SCM의 개념·기능 · 86쪽](https://jhs512.github.io/topcit2/textbook/05/#page-086)
 - **구체적인 문장:** 매장·도매상·공장이 실제 판매량과 재고를 공유하지 않고 각각 여유 물량을 더하면, 소비자가 살 양보다 많이 생산해 재고가 남을 수 있다.
 - **개념·선정 이유:** SCM·채찍효과. 개별 안전 판단과 전체 최적화의 충돌을 이해한다.
-- **교재 근거:** [SCM·채찍효과 · PDF 85쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=85) · [협업·공급망 기능 · PDF 86쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=86)
+- **교재 근거:** [SCM·채찍효과 · 85쪽](https://jhs512.github.io/topcit2/textbook/05/#page-085) · [협업·공급망 기능 · 86쪽](https://jhs512.github.io/topcit2/textbook/05/#page-086)
 - **유형·사례 출처:** 가상 이야기. 해당 없음
 - **잘못된 판단 또는 선택의 갈등:** 바로 아래 업체의 주문량을 최종 수요로 읽고 단계마다 여유분을 추가했다.
 - **인과와 결과:** 행사 판매 12 → 매장 주문 16 → 도매 발주 22 → 공장 계획 30 → 행사 종료 후 발주 급감·과잉재고.
@@ -158,10 +158,10 @@
 ### BIZ-09 · 돌아오라는 쿠폰이 도착했다
 
 - **추상적인 문장:** CRM은 고객 정보와 접촉 이력을 통합하여, 여러 부서와 채널이 고객에게 일관된 서비스를 제공하도록 해야 한다.
-- **원리 근거:** [VI.01 CRM 분류 비교·고객 접점 · PDF 89쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=89)
+- **원리 근거:** [VI.01 CRM 분류 비교·고객 접점 · 89쪽](https://jhs512.github.io/topcit2/textbook/05/#page-089)
 - **구체적인 문장:** 고객 정보를 부서마다 따로 관리하고 공유하지 않으면, 각 부서는 자기 업무를 정상적으로 처리해도 고객은 서로 모순되는 안내나 서비스를 받을 수 있다.
 - **개념·선정 이유:** CRM·고객 접점 통합·고객 평생가치. 고객 중심 통합과 개별 캠페인의 차이를 이해한다.
-- **교재 근거:** [CRM · PDF 87쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=87) · [정의·분류 · PDF 88쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=88) · [고객 접점 · PDF 89쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=89)
+- **교재 근거:** [CRM · 87쪽](https://jhs512.github.io/topcit2/textbook/05/#page-087) · [정의·분류 · 88쪽](https://jhs512.github.io/topcit2/textbook/05/#page-088) · [고객 접점 · 89쪽](https://jhs512.github.io/topcit2/textbook/05/#page-089)
 - **유형·사례 출처:** 가상 이야기. 해당 없음
 - **잘못된 판단 또는 선택의 갈등:** 구매 이력만으로 이탈 고객을 분류하고 미해결 교환 정보를 캠페인·응대에 연결하지 않았다.
 - **인과와 결과:** 마케팅은 재구매 안내, 상담은 해결 대기 → 고객은 반복 설명과 부적절한 메시지를 경험 → 약속 이행과 관계 회복 지연.
@@ -171,10 +171,10 @@
 ### BIZ-10 · 통화는 짧아졌고, 기다림은 길어졌다
 
 - **추상적인 문장:** KPI는 목표 달성 여부를 확인하는 핵심 성과지표이며, 직원이 그 수치를 높이려고 하는 행동이 회사의 목표에도 도움이 되는지 검토해야 한다.
-- **원리 근거:** [VII.05 KPI의 개요·수립 절차 · PDF 111쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=111)
+- **원리 근거:** [VII.05 KPI의 개요·수립 절차 · 111쪽](https://jhs512.github.io/topcit2/textbook/05/#page-111)
 - **구체적인 문장:** 상담원이 통화 시간을 줄이려고 해결되지 않은 문의를 넘기면 고객이 다시 전화하므로, 통화가 짧아져도 전체 대기 시간은 길어질 수 있다.
 - **개념·선정 이유:** KPI·BSC·PDCA. 측정 대상이 사람의 행동과 수요 자체를 바꾸는 과정을 이해한다.
-- **교재 근거:** [BSC · PDF 108쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=108) · [네 관점 · PDF 109쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=109) · [KPI와 구성원 행동 · PDF 111쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=111) · [PDCA · PDF 25쪽](https://jhs512.github.io/topcit/viewer/index.html?book=05&page=25)
+- **교재 근거:** [BSC · 108쪽](https://jhs512.github.io/topcit2/textbook/05/#page-108) · [네 관점 · 109쪽](https://jhs512.github.io/topcit2/textbook/05/#page-109) · [KPI와 구성원 행동 · 111쪽](https://jhs512.github.io/topcit2/textbook/05/#page-111) · [PDCA · 25쪽](https://jhs512.github.io/topcit2/textbook/05/#page-025)
 - **유형·사례 출처:** 가상 이야기. 해당 없음
 - **잘못된 판단 또는 선택의 갈등:** 대기시간 감소를 위해 평균 통화시간을 핵심 평가기준으로 삼고 문제 해결 여부를 누락.
 - **인과와 결과:** 복잡한 문의를 넘겨 짧게 종결 → 미해결 고객 재통화 → 전화량 증가 → 원래 목표인 대기시간 악화.
@@ -191,7 +191,7 @@
 | A2 | [2016 Letter to Shareholders](https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders), High-Velocity Decision Making 마지막 부분 | 자사 상세페이지에서 외부 판매자와 직접 경쟁하도록 한 결정에 내부 이견이 있었다는 경영자의 후대 회고. 반대자의 속마음·회의 장면은 창작하지 않는다. |
 | T1 | [FCA TSB Final Notice, 2022-12-20](https://www.fca.org.uk/publication/final-notices/tsb-bank-plc-2022.pdf), 2.9, 4.229–4.235(PDF 72–73쪽) | 과거 경험 고려와 개별 수행능력 검증 사이의 간극, 공식 평가 부족, 기술·계획·시험·관리의 복합 실패. 공급자 평가를 교훈으로 채택하되 단독 원인으로 만들지 않는다. |
 | T2 | [FCA 사건 발표, 2022-12-20](https://www.fca.org.uk/news/press-releases/tsb-fined-48m-operational-resilience-failings), 첫 5문단 | 2018년 데이터 이전 성공과 서비스 장애를 구분, 12월 정상 운영 복귀, 양 감독기관의 총 제재액. 현행 금융법 해설로 확장하지 않는다. |
-| H1 | [Hershey 1999 Annual Report의 MD&A](https://www.annualreports.com/HostedData/AnnualReportArchive/h/NYSE_HSY_1999.pdf), Operating Results(PDF 1쪽), Capital Structure and Liquidity(PDF 4쪽) | 당시 회사가 작성한 보고서의 보관본. 단계별 도입과 출하 감소 설명을 확인. 매출 감소 전체에는 파스타 사업 매각도 포함되므로 전부 IT 손실로 계산하지 않는다. |
+| H1 | [Hershey 1999 Annual Report의 MD&A](https://www.annualreports.com/HostedData/AnnualReportArchive/h/NYSE_HSY_1999.pdf), Operating Results(1쪽), Capital Structure and Liquidity(4쪽) | 당시 회사가 작성한 보고서의 보관본. 단계별 도입과 출하 감소 설명을 확인. 매출 감소 전체에는 파스타 사업 매각도 포함되므로 전부 IT 손실로 계산하지 않는다. |
 | H2 | [Hershey 2000 Annual Report, SEC 제출본](https://www.sec.gov/Archives/edgar/data/47111/000105394901500005/d70393.htm), Systems Issues / Enhanced Distribution Capability | 시스템 보완 이후 운영 회복과 함께 하역 공간 부족·물류시설 개선을 설명. 시스템과 물류 업무를 함께 검토해야 할 근거. 원인별 손실 기여도는 확인되지 않았다. |
 
 ## 6. 구현·검토 규칙

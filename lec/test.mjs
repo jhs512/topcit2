@@ -19,7 +19,7 @@ try{
    if(lecture.number>1){
     assert.equal(await page.locator('.lesson-block .question').count(),4);
     for(const block of await page.locator('.lesson-block').all()){
-     assert.ok(await block.locator('a[href*="topcit/viewer/index.html?book="]').count());
+     assert.ok(await block.locator('a[href*="topcit2/textbook/"]').count());
      assert.ok(await block.locator('a[href*="/cases/"]').count());
      assert.ok(await block.locator('a[href*="/practice/"]').count());
     }

@@ -6,7 +6,7 @@ export const alignment = JSON.parse(readFileSync(new URL('./textbook-alignment.j
 export const legacyCaseAlignment = JSON.parse(readFileSync(new URL('./textbook-case-alignment.json', import.meta.url), 'utf8'));
 export const studyPaths = JSON.parse(readFileSync(new URL('./textbook-study-paths.json', import.meta.url), 'utf8'));
 export const casePrefixes = { SW: '01', DATA: '02', ARCH: '03', SEC: '04', BIZ: '05-01', ETH: '05-02', PM: '06-01', COM: '06-02' };
-export const textbookUrl = ({ book, page }) => `https://jhs512.github.io/topcit/viewer/index.html?book=${book}&page=${page}`;
+export const textbookUrl = ({ book, page }) => `https://jhs512.github.io/topcit2/textbook/${book}/#page-${String(page).padStart(3, '0')}`;
 export const textbookTitle = id => books.find(book => book.id === id)?.title;
 export function validateTextbookAlignment() {
   const records = [...Object.values(alignment).flat(), ...Object.values(legacyCaseAlignment), ...Object.values(studyPaths).flat()];
@@ -39,10 +39,10 @@ export function strengthenNote(subjectId, item, index) {
 const esc = text => String(text).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 export function renderTextbookConnection(record, id, kind = 'note') {
   if (!record || !textbookTitle(record.book)) throw new Error(`${id}: 교재 대응이 없습니다.`);
-  return `<section class="textbook-connection" aria-labelledby="${esc(id)}-textbook"><h3 id="${esc(id)}-textbook" class="tts-readable">관련 교재 내용</h3><p><strong>${esc(textbookTitle(record.book))}</strong> · ${esc(record.concept)}</p><p class="tts-readable">${esc(record.summary)}</p>${kind === 'case' ? `<p class="tts-readable"><strong>이 사례에 적용한 내용:</strong> ${esc(record.caseReason)}</p>` : ''}<p><a href="${esc(textbookUrl(record))}">교재 PDF ${record.page}쪽 확인 →</a></p><p>${esc(record.relation)} · 교재 원문 인용이 아닌 자체 설명입니다.</p></section>`;
+  return `<section class="textbook-connection" aria-labelledby="${esc(id)}-textbook"><h3 id="${esc(id)}-textbook" class="tts-readable">관련 교재 내용</h3><p><strong>${esc(textbookTitle(record.book))}</strong> · ${esc(record.concept)}</p><p class="tts-readable">${esc(record.summary)}</p>${kind === 'case' ? `<p class="tts-readable"><strong>이 사례에 적용한 내용:</strong> ${esc(record.caseReason)}</p>` : ''}<p><a href="${esc(textbookUrl(record))}">교재 ${record.page}쪽 확인 →</a></p><p>${esc(record.relation)} · 교재 원문 인용이 아닌 자체 설명입니다.</p></section>`;
 }
 export function renderStudyPaths(subjectId) {
   const paths = studyPaths[subjectId];
   if (!paths?.length) throw new Error(`${subjectId}: 추가 학습 경로가 없습니다.`);
-  return `<section class="references textbook-study" aria-labelledby="textbook-study-title" data-tts-content><h2 id="textbook-study-title" class="tts-readable">교재에서 함께 확인할 내용</h2><p class="tts-readable">위 20개 노트는 교재 개념을 업무에 적용하는 길잡이입니다. 다음 이론과 기법은 별도로 읽고 직접 설명하거나 계산해 보세요. 이 목록도 교재 전체를 대신하지는 않습니다.</p>${paths.map((path, i) => `<section><h3 class="tts-readable">${i + 1}. ${esc(path.concept)}</h3><p class="tts-readable">${esc(path.summary)}</p><p class="tts-readable"><strong>확인해 보기:</strong> ${esc(path.question)}</p><a href="${esc(textbookUrl(path))}">${esc(textbookTitle(path.book))} · PDF ${path.page}쪽 →</a></section>`).join('')}</section>`;
+  return `<section class="references textbook-study" aria-labelledby="textbook-study-title" data-tts-content><h2 id="textbook-study-title" class="tts-readable">교재에서 함께 확인할 내용</h2><p class="tts-readable">위 20개 노트는 교재 개념을 업무에 적용하는 길잡이입니다. 다음 이론과 기법은 별도로 읽고 직접 설명하거나 계산해 보세요. 이 목록도 교재 전체를 대신하지는 않습니다.</p>${paths.map((path, i) => `<section><h3 class="tts-readable">${i + 1}. ${esc(path.concept)}</h3><p class="tts-readable">${esc(path.summary)}</p><p class="tts-readable"><strong>확인해 보기:</strong> ${esc(path.question)}</p><a href="${esc(textbookUrl(path))}">${esc(textbookTitle(path.book))} · ${path.page}쪽 →</a></section>`).join('')}</section>`;
 }

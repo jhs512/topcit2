@@ -20,7 +20,7 @@ for (const book of books) {
   const description = document.createElement('p'); description.className = 'description'; description.textContent = book.description;
   const exam = document.createElement('p'); exam.className = 'card-exam'; exam.textContent = examSummary(book.id);
   const bottom = document.createElement('div'); bottom.className = 'card-bottom';
-  const count = document.createElement('span'); count.textContent = `PDF ${book.pages}쪽`; bottom.append(count);
+  const count = document.createElement('span'); count.textContent = `${book.pages}쪽`; bottom.append(count);
   if (book.status === 'ready') {
     card.href = new URL(`../../textbook/${book.id}/#page-${String(book.startPage).padStart(3, '0')}`, import.meta.url).href;
     card.setAttribute('aria-label', `${book.id} ${book.title} 읽기`);

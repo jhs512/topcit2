@@ -9,7 +9,7 @@ const sample = `<!-- case-schema: 2 -->
 교재 개념: 전략
 ### 이 글에서 배우는 교훈
 추상적인 문장: 전략은 환경을 분석하여 정한다.
-근거: [II.03 SWOT 분석 · PDF 38쪽](https://jhs512.github.io/topcit2/textbook/05/#page-038)
+근거: [II.03 SWOT 분석 · 38쪽](https://jhs512.github.io/topcit2/textbook/05/#page-038)
 구체적인 문장: 판단의 근거를 확인한다.
 ### 본문
 담당자는 근거를 확인했다.
@@ -62,7 +62,7 @@ test('all eleven cases have the schema and resolvable numbered references', asyn
 test('both lesson sentences and textbook basis are mandatory, distinct and ordered', () => {
   const abstract = '추상적인 문장: 전략은 환경을 분석하여 정한다.';
   const concrete = '구체적인 문장: 판단의 근거를 확인한다.';
-  const basis = '근거: [II.03 SWOT 분석 · PDF 38쪽](https://jhs512.github.io/topcit2/textbook/05/#page-038)';
+  const basis = '근거: [II.03 SWOT 분석 · 38쪽](https://jhs512.github.io/topcit2/textbook/05/#page-038)';
   const invalid = [
     ...[abstract, concrete, basis].map(line => sample.replace(line, '')),
     ...[abstract, concrete, basis].map(line => sample.replace(line, line + '\n' + line)),
@@ -71,7 +71,7 @@ test('both lesson sentences and textbook basis are mandatory, distinct and order
     sample.replace(abstract, '__SWAP__').replace(concrete, abstract).replace('__SWAP__', concrete),
     sample.replace('판단의 근거를 확인한다.', '전략은 환경을 분석하여 정한다.'),
     sample.replace('page-038', 'page-039'),
-    sample.replace('II.03 SWOT 분석 · PDF 38쪽', '교재'),
+    sample.replace('II.03 SWOT 분석 · 38쪽', '교재'),
     sample.replace('/textbook/05/#page-038', '/viewer/?book=05&page=38'),
   ];
   for (const source of invalid) assert.throws(() => parseCases(source, 'draft.md'), /draft\.md \[BIZ-01\]/);

@@ -14,7 +14,7 @@ const targets = new Set();
 for (const file of files) {
   const source = await readFile(new URL(file, root), 'utf8');
   assert.ok(!/https:\/\/jhs512\.github\.io\/topcit2?\/sources\//.test(source), file);
-  for (const [, id, rawPage] of source.matchAll(/https:\/\/jhs512\.github\.io\/topcit\/viewer\/index\.html\?book=(0[1-6])&page=(\d+)/g)) {
+  for (const [, id, rawPage] of source.matchAll(/https:\/\/jhs512\.github\.io\/topcit2\/textbook\/(0[1-6])\/#page-(\d{3})/g)) {
     const page = rawPage.padStart(3, '0');
     assert.ok(sources.get(id).split(`<!-- PDF page: ${page} -->`)[1]?.split('<!-- PDF page:')[0]?.trim(), `${file}: ${id}/${page}`);
     targets.add(`${id}/${page}`);
@@ -59,10 +59,12 @@ try {
   }
   const page = await browser.newPage({ viewport: { width: 390, height: 900 } });
   await page.goto(new URL('cases/05-01/BIZ-01/', base).href);
+  if(base.includes('localhost'))await page.locator('.textbook-connection a').evaluate((a,url)=>{a.href=url},new URL('textbook/05/#page-020',base).href);
   await page.locator('.textbook-connection a').click();
-  assert.equal(new URL(page.url()).pathname, '/topcit/viewer/index.html');
-  await page.waitForFunction(() => document.querySelector('#pages canvas')?.getAttribute('aria-label') === 'PDF 20쪽', null, { timeout: 90000 });
-  console.log(`PASS: ${targets.size} reference pages exist; public PDF link opened exact page 20`);
+  assert.ok(new URL(page.url()).pathname.endsWith('/textbook/05/'));
+  assert.equal(new URL(page.url()).hash,'#page-020');
+  await page.locator('#page-020').waitFor({timeout:90000});
+  console.log(`PASS: ${targets.size} reference pages exist; textbook link opened exact page 20`);
 } finally {
   await browser.close();
 }

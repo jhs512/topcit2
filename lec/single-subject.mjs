@@ -55,38 +55,38 @@ export const singleSubjects={
     "references": [
       [
         [
-          "교재 03 · 시스템아키텍처 개념 · PDF 24쪽",
-          "https://jhs512.github.io/topcit/viewer/index.html?book=03&page=24"
+          "교재 03 · 시스템아키텍처 개념 · 24쪽",
+          "https://jhs512.github.io/topcit2/textbook/03/#page-024"
         ]
       ],
       [
         [
-          "교재 03 · 네트워크 통신 · PDF 37쪽",
-          "https://jhs512.github.io/topcit/viewer/index.html?book=03&page=37"
+          "교재 03 · 네트워크 통신 · 37쪽",
+          "https://jhs512.github.io/topcit2/textbook/03/#page-037"
         ],
         [
-          "교재 03 · 운영체제 · PDF 45쪽",
-          "https://jhs512.github.io/topcit/viewer/index.html?book=03&page=45"
+          "교재 03 · 운영체제 · 45쪽",
+          "https://jhs512.github.io/topcit2/textbook/03/#page-045"
         ]
       ],
       [
         [
-          "교재 03 · 성능 요구사항과 용량 산정 · PDF 115쪽",
-          "https://jhs512.github.io/topcit/viewer/index.html?book=03&page=115"
+          "교재 03 · 성능 요구사항과 용량 산정 · 115쪽",
+          "https://jhs512.github.io/topcit2/textbook/03/#page-115"
         ],
         [
-          "교재 03 · 고가용성 · PDF 122쪽",
-          "https://jhs512.github.io/topcit/viewer/index.html?book=03&page=122"
+          "교재 03 · 고가용성 · 122쪽",
+          "https://jhs512.github.io/topcit2/textbook/03/#page-122"
         ]
       ],
       [
         [
-          "교재 03 · 재난복구시스템 · PDF 125쪽",
-          "https://jhs512.github.io/topcit/viewer/index.html?book=03&page=125"
+          "교재 03 · 재난복구시스템 · 125쪽",
+          "https://jhs512.github.io/topcit2/textbook/03/#page-125"
         ],
         [
-          "교재 03 · 복구 목표 · PDF 126쪽",
-          "https://jhs512.github.io/topcit/viewer/index.html?book=03&page=126"
+          "교재 03 · 복구 목표 · 126쪽",
+          "https://jhs512.github.io/topcit2/textbook/03/#page-126"
         ]
       ]
     ]
@@ -146,38 +146,38 @@ export const singleSubjects={
     "references": [
       [
         [
-          "교재 04 · 정보보안의 개요 · PDF 15쪽",
-          "https://jhs512.github.io/topcit/viewer/index.html?book=04&page=15"
+          "교재 04 · 정보보안의 개요 · 15쪽",
+          "https://jhs512.github.io/topcit2/textbook/04/#page-015"
         ]
       ],
       [
         [
-          "교재 04 · 인증 · PDF 33쪽",
-          "https://jhs512.github.io/topcit/viewer/index.html?book=04&page=33"
+          "교재 04 · 인증 · 33쪽",
+          "https://jhs512.github.io/topcit2/textbook/04/#page-033"
         ],
         [
-          "교재 04 · 접근통제 · PDF 41쪽",
-          "https://jhs512.github.io/topcit/viewer/index.html?book=04&page=41"
+          "교재 04 · 접근통제 · 41쪽",
+          "https://jhs512.github.io/topcit2/textbook/04/#page-041"
         ]
       ],
       [
         [
-          "교재 04 · 암호 기술 · PDF 24쪽",
-          "https://jhs512.github.io/topcit/viewer/index.html?book=04&page=24"
+          "교재 04 · 암호 기술 · 24쪽",
+          "https://jhs512.github.io/topcit2/textbook/04/#page-024"
         ],
         [
-          "교재 04 · 해시 함수 · PDF 29쪽",
-          "https://jhs512.github.io/topcit/viewer/index.html?book=04&page=29"
+          "교재 04 · 해시 함수 · 29쪽",
+          "https://jhs512.github.io/topcit2/textbook/04/#page-029"
         ],
         [
-          "교재 04 · 전자서명 · PDF 37쪽",
-          "https://jhs512.github.io/topcit/viewer/index.html?book=04&page=37"
+          "교재 04 · 전자서명 · 37쪽",
+          "https://jhs512.github.io/topcit2/textbook/04/#page-037"
         ]
       ],
       [
         [
-          "교재 04 · 시스템 보안 관리 · PDF 94쪽",
-          "https://jhs512.github.io/topcit/viewer/index.html?book=04&page=94"
+          "교재 04 · 시스템 보안 관리 · 94쪽",
+          "https://jhs512.github.io/topcit2/textbook/04/#page-094"
         ]
       ]
     ]

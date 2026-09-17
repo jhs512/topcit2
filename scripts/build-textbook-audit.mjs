@@ -77,16 +77,16 @@ for (const subject of subjects) {
   lines.push(`## ${subject.id} ${subject.title}`, '', '### 핵심노트 20개', '', '| 노트 | 교재·단원·근거 | 연결 설명 | 본문 보강 |', '| --- | --- | --- | --- |');
   subject.items.forEach((item, i) => {
     const r = alignment[subject.id][i];
-    lines.push(`| [${i+1}. ${cell(item[0])}](../practical/${subject.id}/index.html#concept-${i+1}) | ${cell(textbookTitle(r.book))} · ${cell(r.concept)} · [PDF ${r.page}쪽](${textbookUrl(r)}) | ${cell(r.summary)} · ${r.relation} | ${cell(r.core)} |`);
+    lines.push(`| [${i+1}. ${cell(item[0])}](../practical/${subject.id}/index.html#concept-${i+1}) | ${cell(textbookTitle(r.book))} · ${cell(r.concept)} · [${r.page}쪽](${textbookUrl(r)}) | ${cell(r.summary)} · ${r.relation} | ${cell(r.core)} |`);
   });
   lines.push('', '### 사례 20편', '', '| 사례 | 교재·단원·근거 | 사례와 연결되는 이유 | 수정 |', '| --- | --- | --- | --- |');
   const cases = [...(subject.id === '05-01' ? original : []), ...expandedCaseSources().find(s => s.subjectId === subject.id).cases];
   cases.forEach(c => {
     const r = caseAlignment(c.id), number = Number(c.id.split('-')[1]);
-    lines.push(`| [${c.id} ${cell(c.title)}](../cases/${subject.id}/${c.id}/index.html) | ${cell(textbookTitle(r.book))} · ${cell(r.concept)} · [PDF ${r.page}쪽](${textbookUrl(r)}) | ${cell(r.caseReason)} · ${r.relation} | ${changes.has(`${subject.id}/${number}`) ? '상황·행동/결과 보강 및 근거 표시' : number <= 11 && subject.id === '05-01' ? '본문·외부 근거 유지, 교재 연결 표시' : '노트 기반 교훈 보강 및 교재 연결 표시'} |`);
+    lines.push(`| [${c.id} ${cell(c.title)}](../cases/${subject.id}/${c.id}/index.html) | ${cell(textbookTitle(r.book))} · ${cell(r.concept)} · [${r.page}쪽](${textbookUrl(r)}) | ${cell(r.caseReason)} · ${r.relation} | ${changes.has(`${subject.id}/${number}`) ? '상황·행동/결과 보강 및 근거 표시' : number <= 11 && subject.id === '05-01' ? '본문·외부 근거 유지, 교재 연결 표시' : '노트 기반 교훈 보강 및 교재 연결 표시'} |`);
   });
   lines.push('', '### 추가로 학습할 목표', '');
-  for (const r of studyPaths[subject.id]) lines.push(`- **${r.concept}**: ${r.summary} 확인 질문: ${r.question} [${textbookTitle(r.book)} PDF ${r.page}쪽](${textbookUrl(r)})`);
+  for (const r of studyPaths[subject.id]) lines.push(`- **${r.concept}**: ${r.summary} 확인 질문: ${r.question} [${textbookTitle(r.book)} ${r.page}쪽](${textbookUrl(r)})`);
   lines.push('');
 }
 writeFileSync(new URL('docs/textbook-alignment-audit.md', root), lines.join('\n').trimEnd() + '\n');
