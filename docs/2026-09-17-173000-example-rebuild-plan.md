@@ -32,4 +32,8 @@
 - 원본 위치 확인: `topcit2` main, origin `jhs512/topcit2`. 핵심노트 160개, 기존 사례 11편 + 추가 사례 149편.
 - 1단계 완료: 핵심노트 160개 개별 판정. 유지 68개, 보강 78개, 교체 14개. 과목 도입과 본문 속 학교 상황, 확인 질문도 함께 수정했다. `docs/example-review-notes.json`에 목적·판정 이유·교재 위치 기록.
 - 1단계 검증: `npm run build:practical`, `npm run test:core` 통과. `SITE_BASE=http://127.0.0.1:4197/ npm run test:practical`에서 1440·390·320px, 8과목·160개 앵커·가로 넘침·TTS 검사 통과. 자동 검사는 누락과 화면 회귀를 확인하며 설득력은 별도 개별 원고 검토로 판단했다.
-- 2단계 예정: 160편 사례의 사건·행동·결론과 교훈·교재 연결 문장 전수 대조.
+- 1단계 공개: `d478607`을 main에 푸시했고 GitHub Pages 배포 성공을 확인했다.
+- 2단계 완료: 사례 160편 개별 판정. 유지 100편, 보강 52편, 교체 8편. `docs/example-review-cases.json`에 목적·판정 이유·교재 위치를 기록했다. 사건·행동·결론과 교훈·교재 적용 문장을 함께 고쳤으며, 유지한 기존 긴 사례 11편도 각각 이유를 남겼다.
+- 주요 개편: ARCH-01은 종이 주문의 처리 한계와 통계 복구의 우선순위를 비교한다. ARCH-08은 서비스 복구 시간과 데이터 손실을 별도로 계산한다. SEC-01은 급여 자료로 기밀성·무결성·가용성을 구분한다. COM 사례는 실제 전달 문장과 수신자의 판단을 넣어 각 소통 방법의 목적을 보여 준다.
+- 2단계 검증: `npm run build:cases`, `npm run test:case-schema`, `npm run test:core` 통과. 기존 사례 11편의 교재 링크·출처·이동 검사와 핵심 콘텐츠 1440·900·390·320px 검사를 통과했다. 별도 브라우저 전수 검사에서 160편 모두 1440·320px 제목·결론·가로 넘침·JavaScript 오류를 확인했다. ARCH-01의 PC·모바일 렌더링도 이미지로 확인했다.
+- 실제 사례 근거 재확인: [FBI 증언](https://archives.fbi.gov/archives/news/testimony/fbis-virtual-case-file-system)과 [OIG 감사 요약](https://oig.justice.gov/archives/reports/FBI/a0614/exec.htm)의 요구·관리 실패, [아마존 당시 발표](https://press.aboutamazon.com/2001/3/amazon-marketplace-a-winner-for-customers-sellers-and-industry-new-service-grows-over-200-percent-in-first-four-months)의 마켓플레이스 도입 및 초기 성과, [FCA 발표](https://www.fca.org.uk/news/press-releases/tsb-fined-48m-operational-resilience-failings)의 TSB 이전·운영 실패, [허쉬의 SEC 제출 보고서](https://www.sec.gov/Archives/edgar/data/47111/000105394901500005/d70393.htm)의 출하장 제약과 개선 내용을 대조했다. 이는 주요 사건·교훈의 대조이며 각 문장의 모든 원자료를 새로 검증했다는 의미는 아니다.
