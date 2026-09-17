@@ -14,20 +14,15 @@ try{
    assert.equal(await page.locator('h1').innerText(),lecture.title);
    assert.equal(await page.locator('meta[name=robots]').getAttribute('content'),'noindex, nofollow, noarchive');
    assert.equal(await page.locator('tbody tr').count(),7);
-   if(lecture.study){
-    assert.equal(await page.locator('.lesson-stage').count(),4);
-    assert.equal(await page.locator('.lesson-block').count(),0);
-    assert.equal(await page.locator('main a[href*="/cases/"]').count(),1);
-    assert.equal(await page.locator('#materials a').count(),4);
-    for(const stage of await page.locator('.lesson-stage').all()){
-     assert.ok(await stage.locator('a[href*="topcit/viewer/index.html?book="]').count());
-     assert.equal(await stage.locator('.step-output').count(),1);
+   assert.equal(await page.locator('.lesson-stage,#materials,#scenario,#application,.step-output').count(),0);
+   assert.equal(await page.locator('.lesson-block').count(),lecture.number===1?5:4);
+   if(lecture.number>1){
+    assert.equal(await page.locator('.lesson-block .question').count(),4);
+    for(const block of await page.locator('.lesson-block').all()){
+     assert.ok(await block.locator('a[href*="topcit/viewer/index.html?book="]').count());
+     assert.ok(await block.locator('a[href*="/cases/"]').count());
+     assert.ok(await block.locator('a[href*="/practice/"]').count());
     }
-    await page.locator('.lesson-steps a').last().click();
-    assert.equal(new URL(page.url()).hash,'#lesson-step-4');
-    assert.equal(await page.locator('#application').count(),1);
-   }else{
-    assert.equal(await page.locator('.lesson-stage,#materials,#scenario,#application').count(),0);
    }
    assert.equal(await page.locator('#site-navigation a[href*="/lec/"]').count(),0);
    const linkProblems=await page.locator('a[href]').evaluateAll(links=>links.flatMap(link=>{

@@ -1,6 +1,11 @@
 // Exact, case-sensitive technical terms found in the learning sources.
 // Keep display text and sentence offsets intact; apply only to utterance text.
 export const pronunciations = Object.freeze({
+  서버:'써버', Server:'써버', server:'써버', SERVER:'써버',
+  Client:'클라이언트', client:'클라이언트', CLIENT:'클라이언트',
+  Browser:'브라우저', browser:'브라우저', BROWSER:'브라우저',
+  Cache:'캐시', cache:'캐시', CACHE:'캐시',
+  Router:'라우터', router:'라우터', ROUTER:'라우터',
   IT:'아이티', ICT:'아이씨티', AI:'에이아이', IoT:'아이오티',
   API:'에이피아이', UI:'유아이', UX:'유엑스', IDE:'아이디이',
   CPU:'씨피유', GPU:'지피유', OS:'오에스', SW:'에스더블유', HW:'에이치더블유',

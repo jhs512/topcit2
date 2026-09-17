@@ -10,6 +10,12 @@ test('technical terms allow Korean particles and prefer full terms',()=>{
   assert.equal(pronunciationText('TCP/IP, DBMS, NoSQL, SQL문, C++, C#'),'티씨피/아이피, 디비엠에스, 노에스큐엘, 에스큐엘문, 씨 플러스 플러스, C#');
   assert.equal(pronunciationText('CPU와 RAM, IPv6, NULL'),'씨피유와 램, 아이피 버전 육, 널');
 });
+test('server pronunciation covers particles and compounds without changing identifiers or URLs',()=>{
+  assert.equal(pronunciationText('서버는 웹서버와 서버리스, 서버를 연결한다.'), '써버는 웹써버와 써버리스, 써버를 연결한다.');
+  assert.equal(pronunciationText('Server와 server, SERVER, Client Browser Cache Router'), '써버와 써버, 써버, 클라이언트 브라우저 캐시 라우터');
+  const untouched='ServerError server_name cacheKey https://example.com/서버/Server';
+  assert.equal(pronunciationText(untouched), untouched);
+});
 test('counts before 가지 use native Korean without rewriting other numbers',()=>{
   assert.equal(pronunciationText('1가지, 2가지, 3가지, 4가지, 5 가지'), '한 가지, 두 가지, 세 가지, 네 가지, 다섯 가지');
   assert.equal(pronunciationText('10가지 11가지 20가지 21가지 24가지 99가지'), '열 가지 열한 가지 스무 가지 스물한 가지 스물네 가지 아흔아홉 가지');
