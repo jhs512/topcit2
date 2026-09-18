@@ -30,6 +30,12 @@ test('English words, identifiers, URLs and ambiguous ASCII Roman letters stay in
 test('every dictionary term matches literally without regex side effects',()=>{
   for(const [term,spoken] of Object.entries(pronunciations))assert.equal(pronunciationText(term),spoken,term);
 });
+test('complexity notation uses requested Korean readings without altering words or URLs',()=>{
+  assert.equal(pronunciationText('logn, n, nlogn, n², n³, 2ⁿ'), '로그엔, 엔, 엔로그엔, 엔제곱, 엔세제곱, 이엔제곱');
+  assert.equal(pronunciationText('O(log n), O(n log n), n^2과 n^3, 2^n'), 'O(로그엔), O(엔로그엔), 엔제곱과 엔세제곱, 이엔제곱');
+  const unchanged='lognormal nlogname n_count n2 n^20 https://example.com/nlogn';
+  assert.equal(pronunciationText(unchanged), unchanged);
+});
 test('speech engine sends pronunciation at 3x without changing source chunks',()=>{
   const chunks=['IT는 API를 쓴다.','V 모델과 Ⅴ장.'],spoken=[];
   const engine=new StorySpeech({getVoices:()=>[{lang:'ko-KR'}],cancel(){},resume(){},speak:u=>spoken.push(u)},class{constructor(text){this.text=text}},chunks,()=>{}, {setTimeout(){},clearTimeout(){}});

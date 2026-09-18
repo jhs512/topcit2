@@ -63,12 +63,15 @@ const pattern = new RegExp(`https?:\\/\\/\\S+|(?<![A-Za-z0-9_])(${terms})(?![A-Z
 const roman = 'ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫ';
 const nativeOnes = ['', '한', '두', '세', '네', '다섯', '여섯', '일곱', '여덟', '아홉'];
 const nativeTens = ['', '열', '스물', '서른', '마흔', '쉰', '예순', '일흔', '여든', '아흔'];
+const complexity = /(?<![A-Za-z0-9_])(?:n\s*log\s*n|log\s*n|n(?:²|³|\s*\^\s*[23])|2(?:ⁿ|\s*\^\s*n)|n)(?![A-Za-z0-9_²³ⁿ^])/g;
+const complexityNames = { logn: '로그엔', n: '엔', nlogn: '엔로그엔', 'n²': '엔제곱', 'n^2': '엔제곱', 'n³': '엔세제곱', 'n^3': '엔세제곱', '2ⁿ': '이엔제곱', '2^n': '이엔제곱' };
 function nativeCount(value) {
   const number = Number(value);
   return number === 20 ? '스무' : nativeTens[Math.floor(number / 10)] + nativeOnes[number % 10];
 }
 export function pronunciationText(text) {
   return text.split(/(https?:\/\/\S+)/g).map(part => /^https?:\/\//.test(part) ? part : part.replace(pattern, (match, term) => term ? pronunciations[term] : match)
+    .replace(complexity, term => complexityNames[term.replace(/\s/g, '')])
     .replace(/(?<![A-Za-z0-9_])V(?=\s*(?:모델|Model)(?![A-Za-z]))/g, '브이')
     .replace(/[Ⅰ-Ⅻⅰ-ⅻ]/g, symbol => String(roman.indexOf(symbol.toUpperCase()) + 1))
     .replace(/(?<![A-Za-z0-9_.+\-])([1-9][0-9]?)\s*가지/g, (_, number) => `${nativeCount(number)} 가지`)).join('');
