@@ -1,0 +1,15 @@
+/* Shared token colors preserve the page's code font, spacing and scroll behavior. */
+.syntax-highlight .token.comment,.syntax-highlight .token.prolog{color:#586974}
+.syntax-highlight .token.keyword,.syntax-highlight .token.atrule{color:#7c2697;font-weight:600}
+.syntax-highlight .token.string,.syntax-highlight .token.char,.syntax-highlight .token.attr-value{color:#176839}
+.syntax-highlight .token.number,.syntax-highlight .token.boolean,.syntax-highlight .token.constant{color:#a14409}
+.syntax-highlight .token.function,.syntax-highlight .token.builtin,.syntax-highlight .token.class-name{color:#145da4}
+.syntax-highlight .token.operator,.syntax-highlight .token.punctuation{color:#465569}
+.syntax-highlight .token.tag,.syntax-highlight .token.property,.syntax-highlight .token.attr-name{color:#9e2441}
+:root[data-theme=dark] .syntax-highlight .token.comment,:root[data-theme=dark] .syntax-highlight .token.prolog{color:#a2b0bf}
+:root[data-theme=dark] .syntax-highlight .token.keyword,:root[data-theme=dark] .syntax-highlight .token.atrule{color:#dfb2ff}
+:root[data-theme=dark] .syntax-highlight .token.string,:root[data-theme=dark] .syntax-highlight .token.char,:root[data-theme=dark] .syntax-highlight .token.attr-value{color:#a4dfa5}
+:root[data-theme=dark] .syntax-highlight .token.number,:root[data-theme=dark] .syntax-highlight .token.boolean,:root[data-theme=dark] .syntax-highlight .token.constant{color:#ffc18a}
+:root[data-theme=dark] .syntax-highlight .token.function,:root[data-theme=dark] .syntax-highlight .token.builtin,:root[data-theme=dark] .syntax-highlight .token.class-name{color:#91ccff}
+:root[data-theme=dark] .syntax-highlight .token.operator,:root[data-theme=dark] .syntax-highlight .token.punctuation{color:#d1dbe8}
+:root[data-theme=dark] .syntax-highlight .token.tag,:root[data-theme=dark] .syntax-highlight .token.property,:root[data-theme=dark] .syntax-highlight .token.attr-name{color:#ffa7bc}

@@ -1,4 +1,5 @@
 import { bindThemeButton } from './theme.mjs';
+import './code-highlight.mjs';
 import { learningSubjects } from './learning-subjects.mjs';
 import { books } from '../output/markdown/books.mjs';
 import { initializeTts } from './speech-loader.mjs?v=20260917-pronunciation';

@@ -26,11 +26,14 @@
     "test:core": "node --test tests/core-expansion.test.mjs",
     "test:core-browser": "node tests/core-expansion-browser.mjs",
     "build:practice": "python -X utf8 scripts/build-practice-expansion.py",
-    "test:practice-execution": "python -X utf8 tests/practice-execution.py"
+    "test:practice-execution": "python -X utf8 tests/practice-execution.py",
+    "build:syntax": "node scripts/build-syntax.mjs",
+    "test:syntax": "node tests/code-highlight.mjs"
   },
   "devDependencies": {
     "marked": "^18.0.12",
     "mermaid": "^11.17.2",
-    "playwright": "^1.62.1"
+    "playwright": "^1.62.1",
+    "prismjs": "1.30.0"
   }
 }

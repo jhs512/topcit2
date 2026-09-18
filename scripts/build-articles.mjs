@@ -34,7 +34,7 @@ try{
     const md=new Marked({renderer:{
       heading({tokens,depth}){const text=this.parser.parseInline(tokens);if(depth===1)return '';const id=`section-${++section}`;if(depth===2)headings.push({id,text});return `<h${depth} id="${id}" class="tts-readable">${text}</h${depth}>`;},
       paragraph({tokens}){return `<p class="tts-readable">${this.parser.parseInline(tokens)}</p>\n`;},
-      code({text,lang}){if(lang?.startsWith('mermaid ')){const index=diagrams.length+1,title=lang.slice(8).trim();diagrams.push({text,title,index});return `<figure class="diagram" id="figure-${index}"><figcaption>그림 ${index}. ${esc(title)}</figcaption><a class="diagram-link" href="../assets/${article.id}-${index}.svg" data-diagram data-caption="${esc(title)}"><img src="../assets/${article.id}-${index}.svg" alt="${esc(title)}" loading="lazy"><span>그림 크게 보기 ↗</span></a></figure>`;}return `<pre><code>${esc(text)}</code></pre>`;},
+      code({text,lang}){if(lang?.startsWith('mermaid ')){const index=diagrams.length+1,title=lang.slice(8).trim();diagrams.push({text,title,index});return `<figure class="diagram" id="figure-${index}"><figcaption>그림 ${index}. ${esc(title)}</figcaption><a class="diagram-link" href="../assets/${article.id}-${index}.svg" data-diagram data-caption="${esc(title)}"><img src="../assets/${article.id}-${index}.svg" alt="${esc(title)}" loading="lazy"><span>그림 크게 보기 ↗</span></a></figure>`;}return `<pre><code data-language="${esc(lang || "")}">${esc(text)}</code></pre>`;},
     }});
     let body=md.parse(source);
     let tableCount=0;
