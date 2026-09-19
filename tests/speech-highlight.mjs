@@ -1,5 +1,6 @@
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
+import { pronunciationText } from '../shared/speech-pronunciation.mjs';
 const base = process.env.SITE_BASE || 'http://localhost:4186/';
 const browser = await chromium.launch();
 try {
@@ -49,8 +50,8 @@ try {
         assert.equal(await page.evaluate(() => scrollY), beforeStart);
         if (!fallback) {
           assert.equal((await current()).replace(/\s+/g, ' '), await page.locator('[data-sentence="0"]').innerText());
-          assert.ok((await current()).replace(/\s+/g, ' ').includes(await page.evaluate(() => speechSynthesis.spoken.at(-1).text)));
-          assert.ok(await page.evaluate(() => [...CSS.highlights.get('speech-sentence')].every(r => !r.startContainer.parentElement.closest('a,button'))));
+          assert.ok(pronunciationText((await current()).replace(/\s+/g, ' ')).includes(await page.evaluate(() => speechSynthesis.spoken.at(-1).text)));
+          assert.ok(await page.evaluate(() => [...CSS.highlights.get('speech-sentence')].every(r => !r.startContainer.parentElement.closest('button,[data-speech-controls]'))));
         }
         await page.evaluate(() => speechSynthesis.spoken.at(-1).onend());
         assert.ok(++count < 30);

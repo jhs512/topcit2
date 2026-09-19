@@ -1,5 +1,5 @@
 import { splitSpeechRanges, speechSentences, koreanVoice, StorySpeech, speechRates } from './speech-engine.mjs?v=20260917-pronunciation';
-import { excluded, visible, readableText, mapSpeechText, speechRanges } from './speech-text.mjs';
+import { excluded, visible, readableText, mapSpeechText, speechRanges, speechChunkText } from './speech-text.mjs';
 import { createSpeechHighlight } from './speech-highlight.mjs';
 export { visible, readableText } from './speech-text.mjs';
 
@@ -120,7 +120,7 @@ export function mountSpeech(main) {
           button.onclick = event => {
             event.preventDefault(); event.stopPropagation();
             const current = readableText(node); if (disposed || !eligible(node) || !current) return;
-            if (active !== node || current !== spokenText) { dismiss(); active?.classList.remove('speech-active'); active = node; spokenText = current; mapping = mapSpeechText(node); sentences = speechSentences(mapping.text); chunks = splitSpeechRanges(mapping.text); controller.chunks = chunks.map(chunk => chunk.text); }
+            if (active !== node || current !== spokenText) { dismiss(); active?.classList.remove('speech-active'); active = node; spokenText = current; mapping = mapSpeechText(node); sentences = speechSentences(mapping.text); chunks = splitSpeechRanges(mapping.text); controller.chunks = chunks.map(chunk => speechChunkText(mapping, chunk.start, chunk.end)); }
             origin = button; controller.start();
           };
         }

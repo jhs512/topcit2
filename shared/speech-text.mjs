@@ -40,6 +40,31 @@ export function mapSpeechText(element) {
   return { text: points.map(p => p.char).join(''), points, nodes: new Map(points.map(p => [p.node, p.node.data])) };
 }
 export const readableText = element => mapSpeechText(element).text;
+// Build utterance text separately so display text and highlight offsets stay exact.
+export function speechChunkText(mapping, start, end) {
+  let result = '';
+  for (let i = start; i < end;) {
+    const parent = mapping.points[i]?.node.parentElement;
+    const semantic = parent?.closest('[data-tts-text]') || parent?.closest('sup,sub,code');
+    if (!semantic) { result += mapping.text[i++]; continue; }
+    let stop = i + 1;
+    while (stop < end && semantic.contains(mapping.points[stop]?.node)) stop++;
+    const value = mapping.text.slice(i, stop);
+    const whole = (i === 0 || !semantic.contains(mapping.points[i - 1]?.node)) && (stop === mapping.points.length || !semantic.contains(mapping.points[stop]?.node));
+    if (!whole) { result += value; i = stop; continue; }
+    const before = mapping.text.slice(0, i);
+    if (semantic.hasAttribute('data-tts-text')) result += semantic.dataset.ttsText;
+    else if (semantic.tagName === 'CODE') result += '`' + value + '`';
+    else if (semantic.tagName === 'SUP' && !semantic.querySelector('a') && /(?<![A-Za-z0-9_])(?:[A-Za-z]|\d+)$/.test(before) && /^-?\d+(?:\.\d+)?$|^[nN]$/.test(value)) result += '^' + value;
+    else if (semantic.tagName === 'SUB' && /log$/.test(before) && /^\d+$/.test(value)) result += [...value].map(digit => '₀₁₂₃₄₅₆₇₈₉'[Number(digit)]).join('');
+    else if (semantic.tagName === 'SUB' && /log$/.test(before) && /^[nN]$/.test(value)) result += value;
+    else if (semantic.tagName === 'SUB' && /(?<![A-Za-z0-9_])[A-Za-z]$/.test(before) && /^\d+$/.test(value)) result += ' 아래첨자 ' + value;
+    else if (semantic.tagName === 'SUP' && /^\d+$/.test(value)) result += ' 각주 ' + value + ' ';
+    else result += value;
+    i = stop;
+  }
+  return result;
+}
 export function speechRanges(mapping, start, end) {
   const ranges = []; let range, previous;
   for (const point of mapping.points.slice(start, end)) {

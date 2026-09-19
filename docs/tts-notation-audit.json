@@ -1,0 +1,301 @@
+{
+  "sourceCount": 3014,
+  "categories": {
+    "complexity": {
+      "count": 68,
+      "samples": [
+        {
+          "source": "textbook/01",
+          "text": " 스택(Stack): 엑세스(삽입/삭제), LIFO(Last-In-First-Out) | 위치 | 자료 | | --- | --- | | top | 마지"
+        },
+        {
+          "source": "textbook/01",
+          "text": " 나타낼 빅-오(Big Oh) 표기법¹을 사용하여 O(n)로 표기한다. 알고리즘에 따라 logn, n, nlogn, n², n³, 2"
+        },
+        {
+          "source": "textbook/01",
+          "text": "을 사용하여 O(n)로 표기한다. 알고리즘에 따라 logn, n, nlogn, n², n³, 2ⁿ 등의 실행 시간 함수가 있다. 문제"
+        },
+        {
+          "source": "textbook/01",
+          "text": "n)로 표기한다. 알고리즘에 따라 logn, n, nlogn, n², n³, 2ⁿ 등의 실행 시간 함수가 있다. 문제 해결을 위해 다수"
+        },
+        {
+          "source": "textbook/01",
+          "text": "n값의 변화에 따른 실행 빈도 수의 계산 | logn | N) | 로그형, 입력 자료를 나누어 그 중 하나만 처리 | | O("
+        },
+        {
+          "source": "textbook/01",
+          "text": " 입력 자료를 나누어 그 중 하나만 처리 | | O(N) | 선형, 입력 자료를 차례로 하나씩 모두 처리 | | O(NlogN) "
+        },
+        {
+          "source": "textbook/01",
+          "text": ", 입력 자료를 차례로 하나씩 모두 처리 | | O(NlogN) | 분할과 합병형, 자료를 분할하여 각각 처리하고 합병 | | O(N²)"
+        },
+        {
+          "source": "textbook/01",
+          "text": "형, 자료를 분할하여 각각 처리하고 합병 | | O(N²) | 제곱형, 기본연산 loop 구조가 2중인 경우 | | O(N³) | "
+        }
+      ]
+    },
+    "superscripts": {
+      "count": 51,
+      "samples": [
+        {
+          "source": "textbook/01",
+          "text": "다. 알고리즘에 따라 logn, n, nlogn, n², n³, 2ⁿ 등의 실행 시간 함수가 있다. 문제 해결을 위해 다수의 알고"
+        },
+        {
+          "source": "textbook/01",
+          "text": "고리즘에 따라 logn, n, nlogn, n², n³, 2ⁿ 등의 실행 시간 함수가 있다. 문제 해결을 위해 다수의 알고리즘을 "
+        },
+        {
+          "source": "textbook/01",
+          "text": " 따라 logn, n, nlogn, n², n³, 2ⁿ 등의 실행 시간 함수가 있다. 문제 해결을 위해 다수의 알고리즘을 작성하고"
+        },
+        {
+          "source": "textbook/01",
+          "text": "n | < | n | < | nlogn | < | n² | < | n³ | < | 2ⁿ | | --- | --- | --- | "
+        },
+        {
+          "source": "textbook/01",
+          "text": " | < | nlogn | < | n² | < | n³ | < | 2ⁿ | | --- | --- | --- | --- | ---"
+        },
+        {
+          "source": "textbook/01",
+          "text": "ogn | < | n² | < | n³ | < | 2ⁿ | | --- | --- | --- | --- | --- | --- | "
+        },
+        {
+          "source": "textbook/01",
+          "text": " 자료를 분할하여 각각 처리하고 합병 | | O(N²) | 제곱형, 기본연산 loop 구조가 2중인 경우 | | O(N³) |"
+        },
+        {
+          "source": "textbook/01",
+          "text": "기본연산 loop 구조가 2중인 경우 | | O(N³) | 세제곱형, 기본연산 loop 구조가 3중 경우 | | O(2ⁿ) |"
+        }
+      ]
+    },
+    "subscripts": {
+      "count": 15,
+      "samples": [
+        {
+          "source": "textbook/01",
+          "text": "크기와 무관하게 바로 해를 구함 | | O(log<sub>N</sub>) | 로그형, 입력 자료를 나누어 그 중 하나만 처리 | | O(N) |"
+        },
+        {
+          "source": "textbook/01",
+          "text": "료를 차례로 하나씩 모두 처리 | | O(Nlog<sub>N</sub>) | 분할과 합병형, 자료를 분할하여 각각 처리하고 합병 | | O(N²"
+        },
+        {
+          "source": "textbook/01",
+          "text": "파일에서 삽입정렬을 수행</td><td>O(nlog<sub>2</sub>n)</td><td>O(n<sup>1.5</sup>)</td><td>O(n)"
+        },
+        {
+          "source": "textbook/01",
+          "text": " 한 번 더 많음)<br>• 평균검색시간: O(log₂n)</td></tr> <tr><td>피보나치탐색<br>(Fibinacci"
+        },
+        {
+          "source": "textbook/01",
+          "text": "하므로 속도가 빠름<br>• 평균검색시간: O(log₂n)</td></tr> <tr><td>보간탐색<br>(Interpolati"
+        },
+        {
+          "source": "textbook/02",
+          "text": "분집합 X, Y가 있다. 이 때 임의의 레코드 쌍 t₁와 t₂의 X의 값이 동일하면 항상 이 두 레코드의 Y값도 동일할 때, Y는"
+        },
+        {
+          "source": "textbook/02",
+          "text": "X, Y가 있다. 이 때 임의의 레코드 쌍 t₁와 t₂의 X의 값이 동일하면 항상 이 두 레코드의 Y값도 동일할 때, Y는 X에 "
+        },
+        {
+          "source": "textbook/02",
+          "text": "n layer 1, Visible layer<br>W₃ᵀ, W₃, W₂ᵀ, W₂, W₁ᵀ, W₁<br><!-- 생략: 표 86 D"
+        }
+      ]
+    },
+    "comparison": {
+      "count": 375,
+      "samples": [
+        {
+          "source": "textbook/02",
+          "text": "및 특징, DTD와 비교 | 35 | | 0h) > **CONTENTS** | 목차 | 교재 쪽수 | | --- "
+        },
+        {
+          "source": "textbook/02",
+          "text": "eta Join): 일반적인 조인 조건(=, 〈, ≤, 〉, ≥, ≠)을 가진 조인 연산동등조인(Equi-Join): 조인 조건"
+        },
+        {
+          "source": "textbook/02",
+          "text": "in): 일반적인 조인 조건(=, 〈, ≤, 〉, ≥, ≠)을 가진 조인 연산동등조인(Equi-Join): 조인 조건에 동등 조"
+        },
+        {
+          "source": "textbook/02",
+          "text": ": 일반적인 조인 조건(=, 〈, ≤, 〉, ≥, ≠)을 가진 조인 연산동등조인(Equi-Join): 조인 조건에 동등 조건(="
+        },
+        {
+          "source": "textbook/04",
+          "text": "암호 키의 관계암호화 키 = 복호화 키암호화 키 ≠ 복호화 키 암호화 키비공개공개 복호화 키비공개비공개 알고리즘공개공개 "
+        },
+        {
+          "source": "textbook/04",
+          "text": " x, y가 있을 때 h(x&#x27;)=y(단 x≠x&#x27;)가 되는 x&#x27;를 찾는 것이 어려움 충돌 저항성h(x"
+        },
+        {
+          "source": "textbook/04",
+          "text": ")=h(x&#x27;)인 x와 x&#x27;(단 x≠x&#x27;)를 찾는 것이 어려움 해쉬 함수는 해쉬 값을 이용하여"
+        },
+        {
+          "source": "textbook/04",
+          "text": " ## III. 정보보안 최신 기술 >>> 주제 최신 정보보안 위협 및 대응기술에 대해 이해하기 >>>"
+        }
+      ]
+    },
+    "mathSymbols": {
+      "count": 1316,
+      "samples": [
+        {
+          "source": "textbook/01",
+          "text": "순차적으로 검색하는 방법• 효율적인 블록의 크기는 √n• 프로그램 작성과 갱신이 쉬움• 평균적으로 O(log(n))의 성능 이"
+        },
+        {
+          "source": "textbook/02",
+          "text": "Full Functional DependencyX′⊂X 이고 X′→Y 를 만족하는 애트리뷰트 X′이 존재하지 않음 부분 함수 "
+        },
+        {
+          "source": "textbook/02",
+          "text": "tial Functional DependencyX′⊂X 이고 X′→Y 를 만족하는 애트리뷰트 X′이 존재함 사원번호사원이름빌딩"
+        },
+        {
+          "source": "textbook/02",
+          "text": " 구분추론내용 기본 추론 규칙재귀성 규칙Y ⊆ X이면 X→Y이다 부가성 규칙X→Y 이면, XZ→YZ이다 이행성 규칙X"
+        },
+        {
+          "source": "textbook/02",
+          "text": "연산자 연산자기호설명 합집합(Union)∪합병 가능한 두 개의 릴레이션 중 하나 이상의 릴레이션에 속하는 투플(Tup"
+        },
+        {
+          "source": "textbook/02",
+          "text": "션을 만드는 이항 연산 교집합(Intersect)∩합병 가능한 두 개의 릴레이션에 모두 속하는 투플로 구성된 릴레이션을 만드는"
+        },
+        {
+          "source": "textbook/02",
+          "text": "을 만드는 이항 연산 차집합(Difference)−• 합병 가능한 두 개의 릴레이션이 있을 때 하나의 릴레이션에는 있지만, 다"
+        },
+        {
+          "source": "textbook/02",
+          "text": " 카티션 프로덕트(Cartesian product)×두 개의 릴레이션의 투플로 구성 가능한 모든 투플 조합으로 구성된 릴레이션을"
+        }
+      ]
+    },
+    "fractions": {
+      "count": 104,
+      "samples": [
+        {
+          "source": "textbook/01",
+          "text": "속 비교하면서 검색하는 방법• 파일의 탐색 대상을 ½씩 줄여가면서 탐색하므로 효율적임• 레코드 수가 많을 수록 효과적임(최악의 "
+        },
+        {
+          "source": "textbook/02",
+          "text": " 컴퓨터 CPU Memory 1/0 [그림 16] 집단화 ### 06 또 다른 ERD 표기법: Cr"
+        },
+        {
+          "source": "textbook/02",
+          "text": "함 사원번호사원이름빌딩번호시작일자 1789박지성152000 / 07 / 12 1412이영표231999 / 02 / 19 1789박지성192"
+        },
+        {
+          "source": "textbook/02",
+          "text": "박지성152000 / 07 / 12 1412이영표231999 / 02 / 19 1789박지성192000 / 05 / 24 1412이영표322"
+        },
+        {
+          "source": "textbook/02",
+          "text": "이영표231999 / 02 / 19 1789박지성192000 / 05 / 24 1412이영표322001 / 04 / 21 사원번호 → 사원이"
+        },
+        {
+          "source": "textbook/02",
+          "text": "박지성192000 / 05 / 24 1412이영표322001 / 04 / 21 사원번호 → 사원이름: 부분함수종속사원번호, 빌딩번호 → 시작일"
+        },
+        {
+          "source": "textbook/03",
+          "text": "osun.com/site/data/html_dir/2018/10/05/2018100502710.html) 우리가 생활하고 있는"
+        },
+        {
+          "source": "textbook/03",
+          "text": "/site/data/html_dir/2018/10/05/2018100502710.html) 우리가 생활하고 있는 환경에서 컴퓨터 시스템이 제공"
+        }
+      ]
+    },
+    "units": {
+      "count": 1713,
+      "samples": [
+        {
+          "source": "textbook/01",
+          "text": " 밝혀진 내용에 따르면 SRI의 부하 최대 목표치 80%를 충족하기 위하여 7개 중 3개의 예외 처리를 생략했다는 사실이 있었고, "
+        },
+        {
+          "source": "textbook/01",
+          "text": " 점을 보면 아래와 같다. - 전체 개발비의 40%, 많게는 60% 이상이 소프트웨어 테스팅 비용에 소요된다는 것과 테스팅이 "
+        },
+        {
+          "source": "textbook/01",
+          "text": "와 같다. - 전체 개발비의 40%, 많게는 60% 이상이 소프트웨어 테스팅 비용에 소요된다는 것과 테스팅이 중요하다는 것은 "
+        },
+        {
+          "source": "textbook/01",
+          "text": " 자료를 보면 해외 IT 프로젝트 실패 항목들 중 50%가 요구사항 관리와 관련되어 있고, 프로젝트 전체 비용 중 70~80%가 요"
+        },
+        {
+          "source": "textbook/01",
+          "text": "리와 관련되어 있고, 프로젝트 전체 비용 중 70~80%가 요구사항 관리 실패로 인한 재작업 비용이라고 한다. 위의 Standish"
+        },
+        {
+          "source": "textbook/01",
+          "text": " IT 기업의 어플리케이션 생명주기 비용 중 60%가 소프트웨어 유지보수 단계에 집중되어 있다. 이에 따라, 체계적인 소프트웨"
+        },
+        {
+          "source": "textbook/01",
+          "text": "요하나요?** 전체 소프트웨어 공정 비용 중 60%가 유지보수 비용이고 그중 60%가 기능 강화에 드는 비용이다. 나머지는 1"
+        },
+        {
+          "source": "textbook/01",
+          "text": "어 공정 비용 중 60%가 유지보수 비용이고 그중 60%가 기능 강화에 드는 비용이다. 나머지는 17% 오류 수정 , 18%는 다른"
+        }
+      ]
+    },
+    "arrows": {
+      "count": 7165,
+      "samples": [
+        {
+          "source": "textbook/01",
+          "text": "며, 일반적인 소프트웨어 생명주기는 [타당성 검토 → 개발 계획 → 요구사항 분석 → 설계 → 구현 → 테스트 → 운용 → 유지"
+        },
+        {
+          "source": "textbook/01",
+          "text": "소프트웨어 생명주기는 [타당성 검토 → 개발 계획 → 요구사항 분석 → 설계 → 구현 → 테스트 → 운용 → 유지보수]의 활동으"
+        },
+        {
+          "source": "textbook/01",
+          "text": "는 [타당성 검토 → 개발 계획 → 요구사항 분석 → 설계 → 구현 → 테스트 → 운용 → 유지보수]의 활동으로 구성된다. "
+        },
+        {
+          "source": "textbook/01",
+          "text": "성 검토 → 개발 계획 → 요구사항 분석 → 설계 → 구현 → 테스트 → 운용 → 유지보수]의 활동으로 구성된다. "
+        },
+        {
+          "source": "textbook/01",
+          "text": "→ 개발 계획 → 요구사항 분석 → 설계 → 구현 → 테스트 → 운용 → 유지보수]의 활동으로 구성된다. #### "
+        },
+        {
+          "source": "textbook/01",
+          "text": "획 → 요구사항 분석 → 설계 → 구현 → 테스트 → 운용 → 유지보수]의 활동으로 구성된다. #### 나) 목적 "
+        },
+        {
+          "source": "textbook/01",
+          "text": "구사항 분석 → 설계 → 구현 → 테스트 → 운용 → 유지보수]의 활동으로 구성된다. #### 나) 목적 - "
+        },
+        {
+          "source": "textbook/01",
+          "text": "가장 오래된 자료) | | 데이터 입력 순서 → | | | | --- | --- | --- | | | | 데이터"
+        }
+      ]
+    }
+  }
+}

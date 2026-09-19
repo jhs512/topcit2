@@ -1,5 +1,6 @@
 // Exact, case-sensitive technical terms found in the learning sources.
 // Keep display text and sentence offsets intact; apply only to utterance text.
+import { mathSpeechText } from './speech-math.mjs';
 export const pronunciations = Object.freeze({
   서버:'써버', Server:'써버', server:'써버', SERVER:'써버',
   Client:'클라이언트', client:'클라이언트', CLIENT:'클라이언트',
@@ -45,6 +46,10 @@ export const pronunciations = Object.freeze({
   PM:'피엠', PMO:'피엠오', WBS:'더블유비에스', RFP:'알에프피',
   RFI:'알에프아이', PERT:'퍼트', CPM:'씨피엠', EVM:'이브이엠',
   CPI:'씨피아이', SPI:'에스피아이', RTO:'알티오', RPO:'알피오',
+  EV:'이브이', PV:'피브이', AC:'에이씨', NPV:'엔피브이', TCO:'티씨오',
+  MTBF:'엠티비에프', MTTR:'엠티티알', CAPEX:'캐펙스', OPEX:'오펙스',
+  ALU:'에이엘유', RISC:'리스크', CISC:'시스크', SIMD:'심디', MIMD:'밈디',
+  ACID:'애시드', CRUD:'크루드', MSA:'엠에스에이', REST:'레스트', JWT:'제이더블유티',
   PDCA:'피디씨에이', SWOT:'스왓', BI:'비아이', DW:'디더블유',
   FIFO:'피포', LRU:'엘알유', LFU:'엘에프유', FCFS:'에프씨에프에스',
   SJF:'에스제이에프', HRN:'에이치알엔',
@@ -63,15 +68,14 @@ const pattern = new RegExp(`https?:\\/\\/\\S+|(?<![A-Za-z0-9_])(${terms})(?![A-Z
 const roman = 'ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫ';
 const nativeOnes = ['', '한', '두', '세', '네', '다섯', '여섯', '일곱', '여덟', '아홉'];
 const nativeTens = ['', '열', '스물', '서른', '마흔', '쉰', '예순', '일흔', '여든', '아흔'];
-const complexity = /(?<![A-Za-z0-9_])(?:n\s*log\s*n|log\s*n|n(?:²|³|\s*\^\s*[23])|2(?:ⁿ|\s*\^\s*n)|n)(?![A-Za-z0-9_²³ⁿ^])/g;
-const complexityNames = { logn: '로그엔', n: '엔', nlogn: '엔로그엔', 'n²': '엔제곱', 'n^2': '엔제곱', 'n³': '엔세제곱', 'n^3': '엔세제곱', '2ⁿ': '이엔제곱', '2^n': '이엔제곱' };
+// These spans are identifiers/addresses, not arithmetic. Preserve them verbatim.
+const protectedSpans = /(https?:\/\/\S+|`[^`\n]+`|\b\d{4}[-/]\d{1,2}[-/]\d{1,2}\b|\b\d{1,2}\/\d{1,2}\/\d{2,4}\b|\b(?:\d{1,3}\.){3}\d{1,3}(?:\/\d{1,2})?|\b[vV]\d+(?:\.\d+)+|\b\d+(?:\.\d+){2,}|\b\d{1,2}:\d{2}(?::\d{2})?|[A-Za-z]:\\[^\s]+|\b[A-Za-z_][\w]*_[\w]+\b)/g;
 function nativeCount(value) {
   const number = Number(value);
   return number === 20 ? '스무' : nativeTens[Math.floor(number / 10)] + nativeOnes[number % 10];
 }
 export function pronunciationText(text) {
-  return text.split(/(https?:\/\/\S+)/g).map(part => /^https?:\/\//.test(part) ? part : part.replace(pattern, (match, term) => term ? pronunciations[term] : match)
-    .replace(complexity, term => complexityNames[term.replace(/\s/g, '')])
+  return text.split(protectedSpans).map((part, index) => index % 2 ? (part.startsWith('`') ? part.slice(1,-1) : part) : mathSpeechText(part).replace(pattern, (match, term) => term ? pronunciations[term] : match)
     .replace(/(?<![A-Za-z0-9_])V(?=\s*(?:모델|Model)(?![A-Za-z]))/g, '브이')
     .replace(/[Ⅰ-Ⅻⅰ-ⅻ]/g, symbol => String(roman.indexOf(symbol.toUpperCase()) + 1))
     .replace(/(?<![A-Za-z0-9_.+\-])([1-9][0-9]?)\s*가지/g, (_, number) => `${nativeCount(number)} 가지`)).join('');

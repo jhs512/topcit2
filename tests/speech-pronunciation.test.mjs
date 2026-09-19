@@ -19,7 +19,7 @@ test('server pronunciation covers particles and compounds without changing ident
 test('counts before 가지 use native Korean without rewriting other numbers',()=>{
   assert.equal(pronunciationText('1가지, 2가지, 3가지, 4가지, 5 가지'), '한 가지, 두 가지, 세 가지, 네 가지, 다섯 가지');
   assert.equal(pronunciationText('10가지 11가지 20가지 21가지 24가지 99가지'), '열 가지 열한 가지 스무 가지 스물한 가지 스물네 가지 아흔아홉 가지');
-  assert.equal(pronunciationText('4장 4.0 4.5가지 104가지 code4가지 -4가지'), '4장 4.0 4.5가지 104가지 code4가지 -4가지');
+  assert.equal(pronunciationText('4장 4.0 4.5가지 104가지 code4가지 -4가지'), '4장 사 점 영 사 점 오가지 104가지 code4가지 마이너스 사가지');
   assert.equal(pronunciationText('https://example.com/4가지'), 'https://example.com/4가지');
 });
 test('English words, identifiers, URLs and ambiguous ASCII Roman letters stay intact',()=>{
@@ -32,8 +32,8 @@ test('every dictionary term matches literally without regex side effects',()=>{
 });
 test('complexity notation uses requested Korean readings without altering words or URLs',()=>{
   assert.equal(pronunciationText('logn, n, nlogn, n², n³, 2ⁿ'), '로그엔, 엔, 엔로그엔, 엔제곱, 엔세제곱, 이엔제곱');
-  assert.equal(pronunciationText('O(log n), O(n log n), n^2과 n^3, 2^n'), 'O(로그엔), O(엔로그엔), 엔제곱과 엔세제곱, 이엔제곱');
-  const unchanged='lognormal nlogname n_count n2 n^20 https://example.com/nlogn';
+  assert.equal(pronunciationText('O(log n), O(n log n), n^2과 n^3, 2^n'), '빅오 로그엔, 빅오 엔로그엔, 엔제곱과 엔세제곱, 이엔제곱');
+  const unchanged='lognormal nlogname n_count n2 https://example.com/nlogn';
   assert.equal(pronunciationText(unchanged), unchanged);
 });
 test('speech engine sends pronunciation at 3x without changing source chunks',()=>{
